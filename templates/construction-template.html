@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="[Company Name] — Premium construction services in [Location]. Specializing in residential, commercial, and industrial projects." />
+  <title>[Company Name] — Construction | Lumary Studio</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F172A',
+            secondary: '#1E293B',
+            accent: '#F59E0B',
+            surface: '#F8FAFC',
+            muted: '#94A3B8',
+          },
+          fontFamily: {
+            heading: ['Bebas Neue', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+          },
+          borderRadius: {
+            DEFAULT: '12px',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  
+  <!-- Lenis -->
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  </style>
+</head>
+<body class="bg-primary text-white">
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-4 left-4 right-4 z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 rounded-2xl transition-all duration-500 bg-transparent">
+      <div class="flex items-center justify-between">
+        <a href="/" class="text-2xl font-heading text-white">[LOGO]</a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#services" class="text-sm text-white/80 hover:text-white transition-colors">Services</a>
+          <a href="#projects" class="text-sm text-white/80 hover:text-white transition-colors">Projects</a>
+          <a href="#about" class="text-sm text-white/80 hover:text-white transition-colors">About</a>
+          <a href="#contact" class="px-5 py-2.5 bg-accent text-primary rounded-lg text-sm font-semibold hover:bg-accent/90 transition-all">Get a Quote</a>
+        </div>
+        <button class="md:hidden text-white" aria-label="Menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero (The Awakening) -->
+  <section class="hero min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="hero-bg absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bbd40a9f1?w=1600&q=80" alt="" class="w-full h-full object-cover" loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-primary/90"></div>
+    </div>
+    <div class="relative z-10 text-center max-w-4xl px-6">
+      <h1 class="hero-heading text-7xl md:text-9xl font-heading text-white leading-none mb-6">Build Beyond<br />Boundaries</h1>
+      <p class="hero-subtext text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">Premium construction services for ambitious projects across Tanzania.</p>
+      <a href="#contact" class="hero-cta inline-flex items-center gap-2 px-10 py-5 bg-accent text-primary rounded-xl font-semibold text-lg hover:bg-accent/90 transition-all duration-300 shadow-lg shadow-accent/25">Start Your Project <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
+      <span class="text-sm text-muted">Scroll to explore</span>
+      <div class="w-6 h-10 border-2 border-muted rounded-full mx-auto mt-2 flex justify-center p-1"><div class="w-1.5 h-2.5 bg-accent rounded-full animate-bounce"></div></div>
+    </div>
+  </section>
+
+  <!-- Stats (The Counter) -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="stat"><div class="stat-number text-5xl font-heading text-accent" data-target="150">0</div><p class="text-muted mt-2">Projects Completed</p></div>
+      <div class="stat"><div class="stat-number text-5xl font-heading text-accent" data-target="12">0</div><p class="text-muted mt-2">Years Experience</p></div>
+      <div class="stat"><div class="stat-number text-5xl font-heading text-accent" data-target="98">0</div><p class="text-muted mt-2">Satisfied Clients</p></div>
+      <div class="stat"><div class="stat-number text-5xl font-heading text-accent" data-target="25">0</div><p class="text-muted mt-2">Expert Team</p></div>
+    </div>
+  </section>
+
+  <!-- Services (The Cascade) -->
+  <section id="services" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16"><span class="text-sm font-semibold text-accent uppercase tracking-widest">What We Do</span><h2 class="text-5xl md:text-6xl font-heading mt-4">Our Services</h2></div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card service-card p-8 rounded-xl border border-white/10 bg-secondary hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-pointer">
+          <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><i data-lucide="building-2" class="w-7 h-7 text-accent"></i></div>
+          <h3 class="text-2xl font-heading mb-3">General Construction</h3>
+          <p class="text-muted">Residential, commercial, and industrial construction with uncompromising quality.</p>
+        </div>
+        <div class="card service-card p-8 rounded-xl border border-white/10 bg-secondary hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-pointer">
+          <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><i data-lucide="pencil-ruler" class="w-7 h-7 text-accent"></i></div>
+          <h3 class="text-2xl font-heading mb-3">Architecture & Design</h3>
+          <p class="text-muted">Innovative architectural designs that blend aesthetics with functionality.</p>
+        </div>
+        <div class="card service-card p-8 rounded-xl border border-white/10 bg-secondary hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-pointer">
+          <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><i data-lucide="hard-hat" class="w-7 h-7 text-accent"></i></div>
+          <h3 class="text-2xl font-heading mb-3">Project Management</h3>
+          <p class="text-muted">End-to-end project oversight ensuring on-time, on-budget delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-accent/20 via-primary to-primary/90"></div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <h2 class="text-5xl md:text-6xl font-heading text-white mb-6">Ready to Build?</h2>
+      <p class="text-lg text-gray-300 mb-10">Let's discuss your project. Free consultation, no obligation.</p>
+      <a href="#contact" class="px-10 py-5 bg-accent text-primary rounded-xl font-semibold text-lg hover:bg-accent/90 transition-all duration-300 shadow-lg shadow-accent/25">Get Your Free Quote</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 px-6 border-t border-white/5">
+    <div class="max-w-6xl mx-auto text-center text-sm text-muted">&copy; 2026 [Company Name]. All rights reserved.</div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/255712345678" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-green-400 hover:scale-110 transition-all duration-300" aria-label="WhatsApp">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // Lenis
+    const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    // Navbar
+    const navInner = document.querySelector('#navbar div');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        navInner.classList.add('bg-primary/90', 'backdrop-blur-xl', 'shadow-lg', 'border', 'border-white/10');
+        navInner.classList.remove('bg-transparent');
+      } else {
+        navInner.classList.remove('bg-primary/90', 'backdrop-blur-xl', 'shadow-lg', 'border', 'border-white/10');
+        navInner.classList.add('bg-transparent');
+      }
+    });
+
+    // Hero animation (The Awakening)
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      tl.fromTo('.hero img', { scale: 1.1, opacity: 0 }, { scale: 1, opacity: 1, duration: 2, ease: 'power4.out' })
+        .fromTo('.hero h1', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, '-=1')
+        .fromTo('.hero p', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.5')
+        .fromTo('.hero a', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.3');
+    }
+
+    // Counters
+    document.querySelectorAll('.stat-number').forEach(counter => {
+      const target = parseInt(counter.dataset.target);
+      gsap.to(counter, {
+        innerText: target,
+        duration: 2,
+        ease: 'power3.out',
+        snap: { innerText: 1 },
+        scrollTrigger: { trigger: counter, start: 'top 85%' }
+      });
+    });
+
+    // Service cards (The Cascade)
+    gsap.fromTo('.service-card', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'power2.out', scrollTrigger: { trigger: '#services .grid', start: 'top 85%' } });
+  </script>
+</body>
+</html>

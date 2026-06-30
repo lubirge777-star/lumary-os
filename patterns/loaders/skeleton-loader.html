@@ -1,0 +1,67 @@
+<!-- Lumary OS — Pattern: Skeleton Loader -->
+<!-- Use: Content loading state, async data fetching -->
+<!-- States: loading → loaded with GSAP reveal -->
+
+<div class="skeleton-loader space-y-6 p-8" aria-busy="true" aria-label="Loading content">
+  <!-- Hero skeleton -->
+  <div class="space-y-4">
+    <div class="h-12 bg-white/5 rounded-xl animate-pulse w-3/4"></div>
+    <div class="h-4 bg-white/5 rounded-lg animate-pulse w-1/2"></div>
+    <div class="h-4 bg-white/5 rounded-lg animate-pulse w-2/3"></div>
+  </div>
+  
+  <!-- Card grid skeleton -->
+  <div class="grid grid-cols-3 gap-6 mt-12">
+    <div class="p-6 rounded-xl bg-white/5 space-y-4">
+      <div class="w-12 h-12 bg-white/5 rounded-xl animate-pulse"></div>
+      <div class="h-4 bg-white/5 rounded-lg animate-pulse w-3/4"></div>
+      <div class="h-3 bg-white/5 rounded-lg animate-pulse w-full"></div>
+      <div class="h-3 bg-white/5 rounded-lg animate-pulse w-2/3"></div>
+    </div>
+    <div class="p-6 rounded-xl bg-white/5 space-y-4 animate-pulse" style="animation-delay: 100ms">
+      <div class="w-12 h-12 bg-white/5 rounded-xl"></div>
+      <div class="h-4 bg-white/5 rounded-lg w-3/4"></div>
+      <div class="h-3 bg-white/5 rounded-lg w-full"></div>
+      <div class="h-3 bg-white/5 rounded-lg w-2/3"></div>
+    </div>
+    <div class="p-6 rounded-xl bg-white/5 space-y-4 animate-pulse" style="animation-delay: 200ms">
+      <div class="w-12 h-12 bg-white/5 rounded-xl"></div>
+      <div class="h-4 bg-white/5 rounded-lg w-3/4"></div>
+      <div class="h-3 bg-white/5 rounded-lg w-full"></div>
+      <div class="h-3 bg-white/5 rounded-lg w-2/3"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Transition skeleton → real content
+function showContent(skeletonId, contentId) {
+  const skeleton = document.getElementById(skeletonId);
+  const content = document.getElementById(contentId);
+  
+  gsap.to(skeleton, {
+    opacity: 0,
+    duration: 0.3,
+    onComplete: () => {
+      skeleton.style.display = 'none';
+      content.style.display = 'block';
+      gsap.from(content, {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        ease: 'power2.out'
+      });
+    }
+  });
+}
+</script>
+
+<style>
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+.animate-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+</style>

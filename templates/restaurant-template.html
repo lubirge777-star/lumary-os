@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="[Restaurant Name] — Experience exceptional dining in [Location]. View our menu, make a reservation, and explore our story." />
+  <title>[Restaurant Name] — Fine Dining | Lumary Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#1A0F0A', secondary: '#2D1810', accent: '#E85D3A', surface: '#FFF8F0', muted: '#A08068', text: '#F5E6D3' },
+          fontFamily: { heading: ['Cormorant Garamond', 'serif'], body: ['Nunito', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <style>
+    body { font-family: 'Nunito', sans-serif; background: #1A0F0A; color: #F5E6D3; }
+    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  </style>
+</head>
+<body>
+  <!-- Simplified structure — hero, ambiance, menu, location, footer -->
+  <nav class="fixed top-4 left-4 right-4 z-50"><div class="max-w-6xl mx-auto px-6 py-4 rounded-2xl bg-primary/80 backdrop-blur-xl border border-white/10"><div class="flex justify-between items-center"><a href="/" class="text-2xl font-heading">[Logo]</a><div class="hidden md:flex items-center gap-8"><a href="#menu" class="text-sm hover:text-accent transition-colors">Menu</a><a href="#reservations" class="px-5 py-2.5 bg-accent text-white rounded-lg text-sm font-semibold">Reserve a Table</a></div></div></div></nav>
+  
+  <section class="hero min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#1A0F0A] to-[#2D1810]">
+    <div class="text-center max-w-4xl px-6 z-10">
+      <h1 class="text-6xl md:text-8xl font-heading mb-4">An Experience<br />to Savor</h1>
+      <p class="text-lg text-[#A08068] mb-10 max-w-xl mx-auto">Where every dish tells a story. Fine dining in the heart of Dar es Salaam.</p>
+      <a href="#reservations" class="inline-flex px-10 py-5 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent/90 transition-all">Make a Reservation</a>
+    </div>
+  </section>
+  
+  <footer class="py-16 px-6 border-t border-white/5 text-center text-sm text-muted">&copy; 2026 [Restaurant Name]. All rights reserved.</footer>
+</body>
+</html>

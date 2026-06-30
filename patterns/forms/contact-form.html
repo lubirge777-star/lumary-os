@@ -1,0 +1,111 @@
+<!-- Lumary OS — Pattern: Contact Form -->
+<!-- Use: Contact page, quote request, consultation booking -->
+<!-- Validation: Real-time with visual feedback -->
+
+<form class="contact-form max-w-xl mx-auto space-y-6" novalidate>
+  <!-- Name -->
+  <div class="form-group">
+    <label for="name" class="block text-sm font-medium text-white mb-2">Full Name</label>
+    <input type="text" id="name" name="name" required
+           class="w-full px-4 py-3 bg-transparent border border-white/10 rounded-xl text-white
+                  focus:border-accent focus:ring-1 focus:ring-accent outline-none
+                  placeholder:text-gray-500 transition-all duration-200"
+           placeholder="John Doe"
+           aria-describedby="name-error" />
+    <p id="name-error" class="text-sm text-red-400 mt-1 hidden" role="alert">Please enter your name.</p>
+  </div>
+
+  <!-- Email -->
+  <div class="form-group">
+    <label for="email" class="block text-sm font-medium text-white mb-2">Email Address</label>
+    <input type="email" id="email" name="email" required
+           class="w-full px-4 py-3 bg-transparent border border-white/10 rounded-xl text-white
+                  focus:border-accent focus:ring-1 focus:ring-accent outline-none
+                  placeholder:text-gray-500 transition-all duration-200"
+           placeholder="john@example.com"
+           aria-describedby="email-error" />
+    <p id="email-error" class="text-sm text-red-400 mt-1 hidden" role="alert">Please enter a valid email.</p>
+  </div>
+
+  <!-- Phone -->
+  <div class="form-group">
+    <label for="phone" class="block text-sm font-medium text-white mb-2">Phone Number</label>
+    <input type="tel" id="phone" name="phone"
+           class="w-full px-4 py-3 bg-transparent border border-white/10 rounded-xl text-white
+                  focus:border-accent focus:ring-1 focus:ring-accent outline-none
+                  placeholder:text-gray-500 transition-all duration-200"
+           placeholder="+255 712 345 678" />
+  </div>
+
+  <!-- Message -->
+  <div class="form-group">
+    <label for="message" class="block text-sm font-medium text-white mb-2">Message</label>
+    <textarea id="message" name="message" rows="4" required
+              class="w-full px-4 py-3 bg-transparent border border-white/10 rounded-xl text-white
+                     focus:border-accent focus:ring-1 focus:ring-accent outline-none
+                     placeholder:text-gray-500 transition-all duration-200 resize-none"
+              placeholder="Tell us about your project..."
+              aria-describedby="message-error"></textarea>
+    <p id="message-error" class="text-sm text-red-400 mt-1 hidden" role="alert">Please enter a message.</p>
+  </div>
+
+  <!-- Submit -->
+  <button type="submit" class="btn-submit w-full px-8 py-4 bg-accent text-white font-semibold rounded-xl
+                              hover:bg-accent-light transition-all duration-200 
+                              disabled:opacity-50 disabled:cursor-not-allowed">
+    <span class="btn-text">Send Message</span>
+    <span class="btn-spinner hidden">
+      <svg class="animate-spin w-5 h-5 mx-auto" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+    </span>
+  </button>
+</form>
+
+<script>
+// Real-time validation
+document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(field => {
+  field.addEventListener('blur', () => validateField(field));
+  field.addEventListener('input', () => {
+    if (field.dataset.touched) validateField(field);
+  });
+  field.addEventListener('focus', () => { field.dataset.touched = 'true'; });
+});
+
+function validateField(field) {
+  const error = document.getElementById(`${field.id}-error`);
+  if (!field.validity.valid || (field.hasAttribute('required') && !field.value.trim())) {
+    field.classList.add('border-red-400', 'focus:border-red-400');
+    field.classList.remove('border-white/10', 'focus:border-accent');
+    if (error) error.classList.remove('hidden');
+    return false;
+  } else {
+    field.classList.remove('border-red-400', 'focus:border-red-400');
+    field.classList.add('border-green-500/50');
+    if (error) error.classList.add('hidden');
+    return true;
+  }
+}
+
+// Form submission
+document.querySelector('.contact-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-submit');
+  const text = btn.querySelector('.btn-text');
+  const spinner = btn.querySelector('.btn-spinner');
+  
+  btn.disabled = true;
+  text.classList.add('hidden');
+  spinner.classList.remove('hidden');
+  
+  // Simulate API call
+  await new Promise(r => setTimeout(r, 1500));
+  
+  spinner.classList.add('hidden');
+  text.textContent = '✓ Message Sent!';
+  text.classList.remove('hidden');
+  
+  setTimeout(() => {
+    text.textContent = 'Send Message';
+    btn.disabled = false;
+  }, 3000);
+});
+</script>
