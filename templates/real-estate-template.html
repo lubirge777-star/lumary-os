@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Agency Name] — Premium Real Estate | Lumary Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#0C0C0C', secondary: '#1C1C1E', accent: '#D4AF37', muted: '#8E8E93', surface: '#FAFAFA' },
+          fontFamily: { heading: ['Playfair Display', 'serif'], body: ['Inter', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <style>body { font-family: 'Inter', sans-serif; background: #0C0C0C; color: #F5F5F7; } h1,h2,h3,h4 { font-family: 'Playfair Display', serif; } @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; } }</style>
+</head>
+<body>
+  <nav class="fixed top-4 left-4 right-4 z-50"><div class="max-w-6xl mx-auto px-6 py-4 rounded-2xl bg-black/80 backdrop-blur-xl border border-white/10"><div class="flex justify-between items-center">
+    <a href="/" class="text-xl font-heading text-[#D4AF37]">[Agency Name]</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#properties" class="text-sm text-white/70 hover:text-[#D4AF37] transition-colors">Properties</a>
+      <a href="#about" class="text-sm text-white/70 hover:text-[#D4AF37] transition-colors">About</a>
+      <a href="#contact" class="px-5 py-2.5 border border-[#D4AF37] text-[#D4AF37] rounded-lg text-sm font-semibold hover:bg-[#D4AF37]/10 transition-all">Contact Us</a>
+    </div>
+  </div></div></nav>
+
+  <!-- Hero -->
+  <section class="hero min-h-screen flex items-end relative overflow-hidden">
+    <div class="absolute inset-0"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80" alt="" class="w-full h-full object-cover" /><div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pb-24 w-full">
+      <p class="text-sm tracking-[0.3em] text-[#D4AF37] uppercase mb-4">Premium Real Estate</p>
+      <h1 class="text-6xl md:text-8xl font-heading text-white leading-none mb-6">Your Dream Home<br />Awaits</h1>
+      <p class="text-lg text-white/60 max-w-xl mb-10">Curated luxury properties in Tanzania's most desirable locations.</p>
+      <div class="flex gap-4">
+        <a href="#properties" class="px-8 py-4 bg-[#D4AF37] text-black rounded-xl font-semibold hover:bg-[#D4AF37]/90 transition-all">Browse Properties</a>
+        <a href="#contact" class="px-8 py-4 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/5 transition-all">Schedule a Tour</a>
+      </div>
+    </div>
+  </section>
+  <footer class="py-12 px-6 border-t border-white/5 text-center text-sm text-muted">&copy; 2026 [Agency Name]. All rights reserved.</footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Product Name] — [Tagline] | Lumary Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#0F172A', secondary: '#1E293B', accent: '#3B82F6', muted: '#64748B' },
+          fontFamily: { heading: ['DM Sans', 'sans-serif'], body: ['Inter', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <style>body { font-family: 'Inter', sans-serif; } h1,h2,h3 { font-family: 'DM Sans', sans-serif; } @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }</style>
+</head>
+<body class="bg-primary text-white">
+  <!-- Navigation -->
+  <nav class="fixed top-4 left-4 right-4 z-50"><div class="max-w-6xl mx-auto px-6 py-4 rounded-2xl bg-primary/80 backdrop-blur-xl border border-white/10"><div class="flex justify-between items-center">
+    <a href="/" class="text-xl font-heading font-bold">Logo</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#features" class="text-sm text-muted hover:text-white transition-colors">Features</a>
+      <a href="#pricing" class="text-sm text-muted hover:text-white transition-colors">Pricing</a>
+      <a href="#contact" class="px-5 py-2.5 bg-accent text-white rounded-lg text-sm font-semibold">Get Early Access</a>
+    </div>
+  </div></div></nav>
+
+  <!-- Hero (Split Layout) -->
+  <section class="min-h-screen flex items-center pt-20 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-sm font-semibold text-accent uppercase tracking-widest">Launching Soon</span>
+        <h1 class="text-5xl md:text-6xl font-heading font-bold mt-4 mb-6 leading-tight">The Future of [Industry] Is Here</h1>
+        <p class="text-lg text-muted mb-8">[Product] helps [target audience] achieve [outcome] with [key differentiator].</p>
+        <div class="flex gap-4">
+          <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:border-accent outline-none" />
+          <button class="px-6 py-3 bg-accent text-white rounded-xl font-semibold hover:bg-accent/90 transition-all">Get Early Access</button>
+        </div>
+        <p class="text-xs text-muted mt-3">Join 500+ early adopters. No spam, unsubscribe anytime.</p>
+      </div>
+      <div class="aspect-video bg-gradient-to-br from-accent/20 to-primary rounded-2xl border border-white/10 flex items-center justify-center text-muted">Product Demo</div>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="py-16 px-6 border-y border-white/5">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-12 items-center opacity-50">
+      <span class="text-lg font-semibold text-muted">Company 1</span>
+      <span class="text-lg font-semibold text-muted">Company 2</span>
+      <span class="text-lg font-semibold text-muted">Company 3</span>
+      <span class="text-lg font-semibold text-muted">Company 4</span>
+      <span class="text-lg font-semibold text-muted">Company 5</span>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16"><h2 class="text-4xl font-heading font-bold">Everything You Need</h2><p class="text-muted mt-4 max-w-xl mx-auto">Built for [target audience] who demand the best.</p></div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl border border-white/10 bg-secondary hover:-translate-y-1 hover:shadow-xl transition-all duration-300"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5"><svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3 class="text-lg font-semibold mb-3">Lightning Fast</h3><p class="text-sm text-muted">Optimized for speed. Your team will thank you.</p></div>
+        <div class="p-8 rounded-2xl border border-white/10 bg-secondary hover:-translate-y-1 hover:shadow-xl transition-all duration-300"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5"><svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><h3 class="text-lg font-semibold mb-3">Enterprise Security</h3><p class="text-sm text-muted">Bank-level encryption. Your data stays yours.</p></div>
+        <div class="p-8 rounded-2xl border border-white/10 bg-secondary hover:-translate-y-1 hover:shadow-xl transition-all duration-300"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5"><svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div><h3 class="text-lg font-semibold mb-3">Seamless Integration</h3><p class="text-sm text-muted">Works with your existing tools. No disruption.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-6 text-center bg-gradient-to-b from-accent/10 to-primary">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-4xl font-heading font-bold mb-6">Ready to Transform Your Workflow?</h2>
+      <p class="text-muted mb-8">Join hundreds of businesses already using [Product].</p>
+      <a href="#" class="inline-flex px-10 py-5 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent/90 transition-all">Start Free Trial</a>
+    </div>
+  </section>
+
+  <footer class="py-12 px-6 border-t border-white/5 text-center text-sm text-muted">&copy; 2026 [Product Name]. All rights reserved.</footer>
+</body>
+</html>
