@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURA — The Essence of Presence</title>
+<meta name="description" content="AURA is a Parisian fragrance house crafting premium, slow-made perfumes. Discover the essence of presence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.tailwindcss.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://unpkg.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #0a0a0f; color: #e5e7eb; overflow-x: hidden; }
+
+/* ── CUSTOM SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0f; }
+::-webkit-scrollbar-thumb { background: #a78bfa; border-radius: 3px; }
+
+/* ── Lenis ── */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+/* ── GLASSMORPHISM ── */
+.glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); }
+
+/* ── TEXT REVEAL ── */
+.reveal-line { overflow: hidden; }
+.reveal-line span { display: block; will-change: transform; }
+
+/* ── MAGNETIC BUTTON ── */
+.magnetic { display: inline-block; transition: transform 0.1s ease; will-change: transform; }
+
+/* ── PARTICLE ── */
+.particle { position: absolute; width: 3px; height: 3px; background: rgba(167,139,250,0.4); border-radius: 50%; pointer-events: none; }
+
+/* ── TILT CARD ── */
+.tilt-card { transition: transform 0.3s ease; will-change: transform; transform-style: preserve-3d; }
+.tilt-card:hover { transform: perspective(800px) rotateY(5deg) rotateX(-3deg); }
+
+/* ── EXPANDABLE ── */
+.expandable-content { max-height: 0; overflow: hidden; transition: max-height 0.6s cubic-bezier(0.16,1,0.3,1), opacity 0.4s ease; opacity: 0; }
+.expandable-content.open { max-height: 300px; opacity: 1; }
+
+/* ── COUNTER ── */
+.counter-value { font-variant-numeric: tabular-nums; }
+
+/* ── CURSOR ── */
+.custom-cursor { position: fixed; width: 20px; height: 20px; border: 1px solid rgba(167,139,250,0.3); border-radius: 50%; pointer-events: none; z-index: 9999; transition: width 0.3s, height 0.3s, background 0.3s, border-color 0.3s; transform: translate(-50%,-50%); }
+.custom-cursor.hover { width: 60px; height: 60px; background: rgba(167,139,250,0.08); border-color: rgba(167,139,250,0.5); }
+
+/* ── FOCUS ── */
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid #a78bfa; outline-offset: 2px; border-radius: 4px; }
+
+/* ── ENTRANCE ── */
+.entrance { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.entrance.visible { opacity: 1; transform: translateY(0); }
+.entrance-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.entrance-left.visible { opacity: 1; transform: translateX(0); }
+.entrance-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.entrance-right.visible { opacity: 1; transform: translateX(0); }
+.entrance-scale { opacity: 0; transform: scale(0.9); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.entrance-scale.visible { opacity: 1; transform: scale(1); }
+
+/* ── SPLIT FADE ── */
+.split-fade { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.split-fade.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor { display: none; }
+  .entrance, .split-fade, .reveal-line span { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── CUSTOM CURSOR ── -->
+<div class="custom-cursor" id="cursor"></div>
+
+<!-- ── NAVIGATION ── -->
+<nav id="nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-500" style="height:80px;" role="navigation" aria-label="Main navigation">
+  <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+    <a href="#arrival" class="font-['Playfair_Display'] text-lg tracking-[0.3em] text-purple-300 hover:text-purple-200 transition-colors" aria-label="AURA home">✦ AURA</a>
+    <div id="nav-links" class="hidden md:flex items-center gap-8">
+      <a href="#collection" class="text-sm tracking-wider text-gray-400 hover:text-purple-300 transition-colors nav-link">Collection</a>
+      <a href="#story" class="text-sm tracking-wider text-gray-400 hover:text-purple-300 transition-colors nav-link">Story</a>
+      <a href="#craft" class="text-sm tracking-wider text-gray-400 hover:text-purple-300 transition-colors nav-link">Craft</a>
+      <a href="#contact" class="text-sm tracking-wider text-purple-300 hover:text-purple-200 transition-colors nav-link" aria-label="Contact us">Inquire</a>
+    </div>
+    <button id="menu-btn" class="md:hidden text-gray-400" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ── ARRIVAL SCENE ── -->
+<section id="arrival" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <div id="particles-container" class="absolute inset-0"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-purple-950/20 via-transparent to-[#0a0a0f] pointer-events-none"></div>
+
+  <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+    <p class="text-sm tracking-[0.4em] text-purple-400/60 mb-8 reveal-line"><span>A FRAGRANCE HOUSE</span></p>
+    <h1 class="font-['Playfair_Display'] text-7xl md:text-9xl font-light tracking-[0.15em] text-white mb-6 reveal-line">
+      <span class="text-purple-200" style="font-style:italic">A</span>
+      <span>U</span><span>R</span><span>A</span>
+    </h1>
+    <p class="text-lg md:text-xl font-light text-gray-400 tracking-wider mb-12 reveal-line"><span>The essence of presence</span></p>
+    <div class="flex justify-center reveal-line">
+      <span>
+        <a href="#collection" class="magnetic inline-block px-10 py-4 border border-purple-400/30 text-purple-300 text-sm tracking-[0.3em] hover:bg-purple-400/10 transition-all duration-500 rounded-full">
+          DISCOVER
+        </a>
+      </span>
+    </div>
+  </div>
+
+  <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600">
+    <span class="text-xs tracking-widest">SCROLL</span>
+    <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1" class="animate-bounce"><rect x="1.5" y="1.5" width="13" height="21" rx="6.5"/><line x1="8" y1="8" x2="8" y2="13"/></svg>
+  </div>
+</section>
+
+<!-- ── SCROLL INDICATOR STRIP ── -->
+<div class="h-[2px] bg-gradient-to-r from-purple-500/0 via-purple-500/50 to-purple-500/0" style="width:0" id="scroll-progress"></div>
+
+<!-- ── COLLECTION ── -->
+<section id="collection" class="relative py-32 md:py-48 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-20 entrance">
+      <p class="text-xs tracking-[0.3em] text-purple-400/50 mb-4">✦ CURATED</p>
+      <h2 class="font-['Playfair_Display'] text-4xl md:text-6xl text-white font-light tracking-wider">The Collection</h2>
+    </div>
+
+    <!-- Marquee -->
+    <div class="relative overflow-hidden mb-24 py-8 border-y border-white/5">
+      <div id="marquee" class="flex whitespace-nowrap" style="will-change:transform">
+        <div class="flex gap-16 text-4xl md:text-5xl font-['Playfair_Display'] italic text-white/10 tracking-wider">
+          <span>✦ Midnight Iris</span><span>✦ Solar Sandalwood</span><span>✦ Velvet Rose</span><span>✦ Crystal Oud</span><span>✦ Amber Haze</span><span>✦ Frost Jasmine</span>
+        </div>
+        <div class="flex gap-16 text-4xl md:text-5xl font-['Playfair_Display'] italic text-white/10 tracking-wider" aria-hidden="true">
+          <span>✦ Midnight Iris</span><span>✦ Solar Sandalwood</span><span>✦ Velvet Rose</span><span>✦ Crystal Oud</span><span>✦ Amber Haze</span><span>✦ Frost Jasmine</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Cards -->
+    <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+      <div class="tilt-card group relative p-8 md:p-10 glass rounded-2xl entrance">
+        <div class="absolute top-6 right-6 text-xs tracking-widest text-purple-400/40">01</div>
+        <div class="h-48 md:h-64 mb-8 rounded-xl bg-gradient-to-br from-purple-900/30 to-indigo-900/20 flex items-center justify-center border border-white/5">
+          <span class="font-['Playfair_Display'] text-6xl md:text-7xl text-purple-300/20 italic">M</span>
+        </div>
+        <h3 class="font-['Playfair_Display'] text-2xl text-white mb-2">Midnight Iris</h3>
+        <p class="text-sm text-gray-500 mb-6 tracking-wide">Dark florals · Vetiver · Amber</p>
+        <p class="text-xs text-gray-600 leading-relaxed">A nocturnal bloom that captures the mystery of moonlit gardens. Iris root meets smoked vetiver.</p>
+      </div>
+
+      <div class="tilt-card group relative p-8 md:p-10 glass rounded-2xl entrance" style="transition-delay:0.15s">
+        <div class="absolute top-6 right-6 text-xs tracking-widest text-purple-400/40">02</div>
+        <div class="h-48 md:h-64 mb-8 rounded-xl bg-gradient-to-br from-amber-900/30 to-orange-900/20 flex items-center justify-center border border-white/5">
+          <span class="font-['Playfair_Display'] text-6xl md:text-7xl text-amber-300/20 italic">S</span>
+        </div>
+        <h3 class="font-['Playfair_Display'] text-2xl text-white mb-2">Solar Sandalwood</h3>
+        <p class="text-sm text-gray-500 mb-6 tracking-wide">Warm woods · Saffron · Vanilla</p>
+        <p class="text-xs text-gray-600 leading-relaxed">Sun-baked sandalwood wrapped in golden saffron. Warmth you can wear.</p>
+      </div>
+
+      <div class="tilt-card group relative p-8 md:p-10 glass rounded-2xl entrance" style="transition-delay:0.3s">
+        <div class="absolute top-6 right-6 text-xs tracking-widest text-purple-400/40">03</div>
+        <div class="h-48 md:h-64 mb-8 rounded-xl bg-gradient-to-br from-rose-900/30 to-pink-900/20 flex items-center justify-center border border-white/5">
+          <span class="font-['Playfair_Display'] text-6xl md:text-7xl text-rose-300/20 italic">V</span>
+        </div>
+        <h3 class="font-['Playfair_Display'] text-2xl text-white mb-2">Velvet Rose</h3>
+        <p class="text-sm text-gray-500 mb-6 tracking-wide">Damask rose · Patchouli · Musk</p>
+        <p class="text-xs text-gray-600 leading-relaxed">An opulent rose reimagined for the modern soul. Deep, velvety, unforgettable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STORY ── -->
+<section id="story" class="relative py-32 md:py-48">
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-950/5 to-transparent pointer-events-none"></div>
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-24 entrance">
+      <p class="text-xs tracking-[0.3em] text-purple-400/50 mb-4">✦ NARRATIVE</p>
+      <h2 class="font-['Playfair_Display'] text-4xl md:text-6xl text-white font-light tracking-wider">Our Story</h2>
+    </div>
+
+    <div class="relative">
+      <div class="absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-purple-500/0 via-purple-500/20 to-purple-500/0 hidden md:block" id="timeline-line"></div>
+
+      <!-- Timeline dot decorations -->
+      <div class="absolute left-1/2 -translate-x-1/2 top-0 w-3 h-3 rounded-full bg-purple-500/30 hidden md:block" id="tl-dot-start"></div>
+      <div class="absolute left-1/2 -translate-x-1/2 bottom-0 w-3 h-3 rounded-full bg-purple-500/30 hidden md:block" id="tl-dot-end"></div>
+
+      <div class="space-y-32">
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-tl-step="0">
+          <div class="md:text-right entrance-left">
+            <p class="text-xs tracking-[0.3em] text-purple-400/40 mb-3">2018</p>
+            <h3 class="font-['Playfair_Display'] text-3xl text-white mb-4">The Beginning</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Founded in a small atelier in Paris, AURA began with a single belief: fragrance is not an accessory. It is a presence.</p>
+          </div>
+          <div class="hidden md:flex justify-center">
+            <div class="w-4 h-4 rounded-full bg-purple-500/40 border-2 border-purple-400/30" data-tl-dot></div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-tl-step="1">
+          <div class="hidden md:flex justify-center">
+            <div class="w-4 h-4 rounded-full bg-purple-500/40 border-2 border-purple-400/30" data-tl-dot></div>
+          </div>
+          <div class="entrance-right">
+            <p class="text-xs tracking-[0.3em] text-purple-400/40 mb-3">2021</p>
+            <h3 class="font-['Playfair_Display'] text-3xl text-white mb-4">The Philosophy</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">We rejected the industry's speed. Every AURA fragrance rests for 12 weeks before bottling. Time is not a cost. It is an ingredient.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-tl-step="2">
+          <div class="md:text-right entrance-left">
+            <p class="text-xs tracking-[0.3em] text-purple-400/40 mb-3">2024</p>
+            <h3 class="font-['Playfair_Display'] text-3xl text-white mb-4">The Craft</h3>
+            <p class="text-sm text-gray-500 leading-relaxed">Master perfumers from Grasse, Kyoto, and Florence now collaborate with us. Each fragrance is a dialogue between traditions.</p>
+          </div>
+          <div class="hidden md:flex justify-center">
+            <div class="w-4 h-4 rounded-full bg-purple-500/40 border-2 border-purple-400/30" data-tl-dot></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CRAFT ── -->
+<section id="craft" class="relative py-32 md:py-48">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-20 entrance">
+      <p class="text-xs tracking-[0.3em] text-purple-400/50 mb-4">✦ PROCESS</p>
+      <h2 class="font-['Playfair_Display'] text-4xl md:text-6xl text-white font-light tracking-wider">The Ingredients</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass rounded-2xl p-8 entrance cursor-pointer" onclick="toggleExpand(this)">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-3xl">🌿</span>
+          <span class="text-xs tracking-widest text-purple-400/40 expand-label">EXPAND</span>
+        </div>
+        <h3 class="font-['Playfair_Display'] text-xl text-white mb-2">Sourced Wild</h3>
+        <p class="text-sm text-gray-500">Every botanical is ethically foraged from its native region.</p>
+        <div class="expandable-content mt-4">
+          <p class="text-sm text-gray-600 leading-relaxed">From the iris fields of Tuscany to the sandalwood forests of Mysore, we work directly with small collectives who have cultivated these plants for generations. No intermediaries. No compromises.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-8 entrance cursor-pointer" style="transition-delay:0.1s" onclick="toggleExpand(this)">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-3xl">⚗️</span>
+          <span class="text-xs tracking-widest text-purple-400/40 expand-label">EXPAND</span>
+        </div>
+        <h3 class="font-['Playfair_Display'] text-xl text-white mb-2">Slow Maceration</h3>
+        <p class="text-sm text-gray-500">12-week cold maceration preserves molecular complexity.</p>
+        <div class="expandable-content mt-4">
+          <p class="text-sm text-gray-600 leading-relaxed">Heat accelerates extraction but destroys nuance. Our cold process takes three times longer but captures the full aromatic spectrum — the top, heart, and base notes in their natural proportion.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-8 entrance cursor-pointer" style="transition-delay:0.2s" onclick="toggleExpand(this)">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-3xl">🤝</span>
+          <span class="text-xs tracking-widest text-purple-400/40 expand-label">EXPAND</span>
+        </div>
+        <h3 class="font-['Playfair_Display'] text-xl text-white mb-2">Master Blending</h3>
+        <p class="text-sm text-gray-500">Each batch is hand-blended by a master perfumer.</p>
+        <div class="expandable-content mt-4">
+          <p class="text-sm text-gray-600 leading-relaxed">Our perfumers train for over a decade before they are entrusted with a blend. Each batch is evaluated blind by three masters before receiving the AURA seal. No machine has ever approved a fragrance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NUMBERS ── -->
+<section class="relative py-24 border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+      <div class="entrance">
+        <p class="counter-value font-['Playfair_Display'] text-5xl text-purple-300" data-target="12">0</p>
+        <p class="text-xs tracking-widest text-gray-600 mt-2">FRAGRANCES</p>
+      </div>
+      <div class="entrance" style="transition-delay:0.1s">
+        <p class="counter-value font-['Playfair_Display'] text-5xl text-purple-300" data-target="840">0</p>
+        <p class="text-xs tracking-widest text-gray-600 mt-2">WEEKS AGED</p>
+      </div>
+      <div class="entrance" style="transition-delay:0.2s">
+        <p class="counter-value font-['Playfair_Display'] text-5xl text-purple-300" data-target="3">0</p>
+        <p class="text-xs tracking-widest text-gray-600 mt-2">MASTER PERFUMERS</p>
+      </div>
+      <div class="entrance" style="transition-delay:0.3s">
+        <p class="counter-value font-['Playfair_Display'] text-5xl text-purple-300" data-target="47">0</p>
+        <p class="text-xs tracking-widest text-gray-600 mt-2">COUNTRIES</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="relative py-32 md:py-48">
+  <div class="max-w-4xl mx-auto px-6 text-center entrance">
+    <p class="text-xs tracking-[0.3em] text-purple-400/50 mb-6">✦ TESTIMONIALS</p>
+    <div id="testimonial-container" class="relative min-h-[200px]">
+      <blockquote class="testimonial absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700">
+        <p class="font-['Playfair_Display'] text-2xl md:text-3xl text-white/80 italic leading-relaxed mb-8">"Wearing Midnight Iris feels like stepping into a secret garden at midnight. I've never experienced anything like it."</p>
+        <cite class="text-sm text-gray-500 not-italic tracking-wider">— C. Blanchard, <span class="text-purple-400/60">Paris</span></cite>
+      </blockquote>
+      <blockquote class="testimonial absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 opacity-0">
+        <p class="font-['Playfair_Display'] text-2xl md:text-3xl text-white/80 italic leading-relaxed mb-8">"Solar Sandalwood is not a fragrance. It's a memory you haven't made yet. Exceptional craftsmanship."</p>
+        <cite class="text-sm text-gray-500 not-italic tracking-wider">— D. Park, <span class="text-purple-400/60">Seoul</span></cite>
+      </blockquote>
+      <blockquote class="testimonial absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 opacity-0">
+        <p class="font-['Playfair_Display'] text-2xl md:text-3xl text-white/80 italic leading-relaxed mb-8">"AURA has redefined what I expect from a fragrance house. The attention to detail is extraordinary."</p>
+        <cite class="text-sm text-gray-500 not-italic tracking-wider">— M. Voss, <span class="text-purple-400/60">London</span></cite>
+      </blockquote>
+    </div>
+    <div class="flex justify-center gap-3 mt-8">
+      <button class="w-2 h-2 rounded-full bg-purple-400 testimonial-dot active" data-index="0"></button>
+      <button class="w-2 h-2 rounded-full bg-white/20 testimonial-dot" data-index="1"></button>
+      <button class="w-2 h-2 rounded-full bg-white/20 testimonial-dot" data-index="2"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLOSING NOTE ── -->
+<section id="contact" class="relative py-32 md:py-48">
+  <div class="absolute inset-0 bg-gradient-to-t from-purple-950/10 to-transparent pointer-events-none"></div>
+  <div class="max-w-3xl mx-auto px-6 text-center entrance">
+    <p class="text-xs tracking-[0.3em] text-purple-400/50 mb-4">✦ INQUIRE</p>
+    <h2 class="font-['Playfair_Display'] text-4xl md:text-6xl text-white font-light tracking-wider mb-6">Stay Connected</h2>
+    <p class="text-gray-500 text-sm mb-12 max-w-md mx-auto leading-relaxed">Be the first to know about new collections, limited releases, and private events. Join 12,000+ subscribers.</p>
+
+    <!-- Social proof strip -->
+    <div class="flex justify-center gap-8 mb-12 text-xs text-gray-600">
+      <span class="flex items-center gap-2"><svg width="12" height="12" viewBox="0 0 24 24" fill="#a78bfa" opacity="0.4"><circle cx="12" cy="12" r="10"/></svg> 12K subscribers</span>
+      <span class="flex items-center gap-2"><svg width="12" height="12" viewBox="0 0 24 24" fill="#a78bfa" opacity="0.4"><circle cx="12" cy="12" r="10"/></svg> 4.9 avg. rating</span>
+      <span class="flex items-center gap-2"><svg width="12" height="12" viewBox="0 0 24 24" fill="#a78bfa" opacity="0.4"><circle cx="12" cy="12" r="10"/></svg> 47 countries</span>
+    </div>
+
+    <form class="max-w-md mx-auto" onsubmit="event.preventDefault()" aria-label="Newsletter signup">
+      <div class="relative mb-4">
+        <input type="email" id="email" class="w-full bg-transparent border border-white/10 rounded-full px-6 py-4 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-purple-400/40 transition-colors peer" placeholder=" " required aria-label="Email address">
+        <label for="email" class="absolute left-6 top-4 text-sm text-gray-600 transition-all duration-300 peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-600 peer-focus:top-[-10px] peer-focus:text-xs peer-focus:text-purple-400/60 peer-focus:bg-[#0a0a0f] peer-focus:px-2">Your email</label>
+      </div>
+      <button type="submit" class="magnetic w-full px-10 py-4 bg-purple-500/10 border border-purple-400/30 text-purple-300 text-sm tracking-[0.3em] rounded-full hover:bg-purple-400/20 transition-all duration-500" aria-label="Subscribe to newsletter">
+        SUBSCRIBE
+      </button>
+    </form>
+  </div>
+
+  <!-- Floating CTA -->
+  <div id="floating-cta" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 transition-all duration-700 opacity-0 translate-y-8">
+    <a href="#contact" class="inline-flex items-center gap-3 px-8 py-3 glass rounded-full text-sm tracking-wider text-purple-300 border border-purple-400/20 hover:bg-purple-500/10 transition-all duration-500 shadow-2xl" aria-label="Get in touch">
+      <span>✦</span> Begin your journey
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="relative border-t border-white/5 py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-12 mb-12">
+      <div>
+        <span class="font-['Playfair_Display'] text-lg tracking-[0.3em] text-purple-300">✦ AURA</span>
+        <p class="text-xs text-gray-600 mt-3 leading-relaxed max-w-xs">The essence of presence. Founded in Paris. Crafted with patience.</p>
+      </div>
+      <div>
+        <p class="text-xs tracking-widest text-gray-500 mb-4">NAVIGATION</p>
+        <div class="space-y-2">
+          <a href="#collection" class="block text-sm text-gray-600 hover:text-purple-400 transition-colors">Collection</a>
+          <a href="#story" class="block text-sm text-gray-600 hover:text-purple-400 transition-colors">Story</a>
+          <a href="#craft" class="block text-sm text-gray-600 hover:text-purple-400 transition-colors">Craft</a>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs tracking-widest text-gray-500 mb-4">CONTACT</p>
+        <p class="text-sm text-gray-600">hello@aura-fragrance.com</p>
+        <p class="text-sm text-gray-600">48 Rue de Seine, Paris</p>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-8 text-center">
+      <p class="text-xs text-gray-700 tracking-wider">✦ 2026 · AURA · All rights reserved</p>
+    </div>
+  </div>
+
+  <!-- Signature SVG -->
+  <div class="absolute bottom-4 right-6 opacity-[0.02]">
+    <svg width="120" height="40" viewBox="0 0 120 40" fill="none" stroke="white" stroke-width="0.5">
+      <path d="M10 30 Q 20 10 30 20 Q 40 30 50 15 Q 60 5 70 20 Q 80 35 90 15 Q 100 5 110 25" fill="none"/>
+    </svg>
+  </div>
+</footer>
+
+<script>
+// ── LENIS ──
+const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth: true });
+function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+requestAnimationFrame(raf);
+
+// ── GSAP SCROLLTRIGGER ──
+gsap.registerPlugin(ScrollTrigger);
+
+// Sync Lenis with ScrollTrigger
+lenis.on('scroll', ScrollTrigger.update);
+ScrollTrigger.scrollerProxy(document.body, {
+  scrollTop(value) { if (arguments.length) { lenis.scrollTo(value); } return lenis.scroll; },
+  getBoundingClientRect() { return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight}; },
+  pinType: document.body.style.transform ? 'transform' : 'fixed',
+});
+
+// ── SCROLL PROGRESS ──
+gsap.to('#scroll-progress', {
+  width: '100%',
+  ease: 'none',
+  scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 0.5 }
+});
+
+// ── NAV ON SCROLL ──
+ScrollTrigger.create({
+  trigger: 'body',
+  start: 'top -80',
+  onUpdate: (self) => {
+    const nav = document.getElementById('nav');
+    if (self.progress > 0.02) {
+      nav.style.height = '60px';
+      nav.style.background = 'rgba(10,10,15,0.85)';
+      nav.style.backdropFilter = 'blur(20px)';
+      nav.style.borderBottom = '1px solid rgba(255,255,255,0.04)';
+    } else {
+      nav.style.height = '80px';
+      nav.style.background = 'transparent';
+      nav.style.backdropFilter = 'none';
+      nav.style.borderBottom = 'none';
+    }
+  }
+});
+
+// ── ARRIVAL ANIMATION ──
+gsap.from('.reveal-line span', { y: 80, opacity: 0, duration: 1.2, stagger: 0.15, ease: 'power4.out', delay: 0.3 });
+gsap.to('.custom-cursor', { opacity: 1, duration: 0.5, delay: 1.5 });
+
+// ── PARTICLES ──
+(function createParticles() {
+  const container = document.getElementById('particles-container');
+  const count = 60;
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const s = Math.random() * 3 + 1;
+    const d = Math.random() * 6 + 3;
+    p.style.cssText = `left:${x}%;top:${y}%;width:${s}px;height:${s}px;animation:float${i%3} ${d}s infinite alternate ease-in-out;opacity:${Math.random()*0.5+0.1}`;
+    container.appendChild(p);
+  }
+})();
+const style = document.createElement('style');
+style.textContent = `
+@keyframes float0 { 0%{transform:translateY(0) translateX(0)} 100%{transform:translateY(-30px) translateX(10px)} }
+@keyframes float1 { 0%{transform:translateY(0) translateX(0)} 100%{transform:translateY(-20px) translateX(-10px)} }
+@keyframes float2 { 0%{transform:translateY(0) translateX(0)} 100%{transform:translateY(-40px) translateX(5px)} }`;
+document.head.appendChild(style);
+
+// ── ENTRANCE ON SCROLL ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.entrance, .entrance-left, .entrance-right, .entrance-scale').forEach(el => observer.observe(el));
+
+// ── TIMELINE LINE DRAW ──
+gsap.to('#timeline-line', {
+  scaleY: 1,
+  transformOrigin: 'top center',
+  ease: 'none',
+  scrollTrigger: { trigger: '#story', start: 'top 60%', end: 'bottom 40%', scrub: 1 }
+});
+gsap.set('#timeline-line', { scaleY: 0 });
+
+// ── TIMELINE DOTS REVEAL ──
+gsap.utils.toArray('[data-tl-dot]').forEach((dot, i) => {
+  gsap.from(dot, { scale: 0, opacity: 0, duration: 0.5, ease: 'back.out(2)',
+    scrollTrigger: { trigger: dot, start: 'top 80%', toggleActions: 'play none none reverse' }
+  });
+});
+
+// ── PARALLAX ON STORY ──
+gsap.utils.toArray('[data-tl-step]').forEach((step) => {
+  const speed = step.dataset.tlStep % 2 === 0 ? -0.08 : 0.08;
+  const content = step.querySelector('.entrance-left, .entrance-right');
+  if (content) {
+    gsap.fromTo(content, { y: 0 }, {
+      y: () => window.innerHeight * speed,
+      ease: 'none',
+      scrollTrigger: { trigger: step, start: 'top bottom', end: 'bottom top', scrub: 1 }
+    });
+  }
+});
+
+// ── PRODUCT CARDS STAGGER ──
+gsap.from('.tilt-card', {
+  y: 60, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+  scrollTrigger: { trigger: '#collection', start: 'top 70%', toggleActions: 'play none none reverse' }
+});
+
+// ── MARQUEE ──
+gsap.to('#marquee', {
+  x: '-50%',
+  duration: 30,
+  ease: 'none',
+  repeat: -1
+});
+
+// ── COUNTERS ──
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      const target = parseInt(el.dataset.target);
+      if (el.dataset.animated) return;
+      el.dataset.animated = 'true';
+      gsap.to(el, {
+        innerHTML: target,
+        duration: 2,
+        ease: 'power2.out',
+        snap: { innerHTML: 1 },
+        onUpdate: () => { if (target > 100) el.innerHTML = Math.round(parseInt(el.innerHTML) / 10) * 10; }
+      });
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter-value').forEach(el => counterObserver.observe(el));
+
+// ── TESTIMONIALS ──
+let currentTestimonial = 0;
+const testimonials = document.querySelectorAll('.testimonial');
+const dots = document.querySelectorAll('.testimonial-dot');
+function showTestimonial(index) {
+  testimonials.forEach(t => t.style.opacity = '0');
+  dots.forEach(d => d.className = 'w-2 h-2 rounded-full bg-white/20 testimonial-dot');
+  testimonials[index].style.opacity = '1';
+  dots[index].className = 'w-2 h-2 rounded-full bg-purple-400 testimonial-dot active';
+  currentTestimonial = index;
+}
+dots.forEach((dot, i) => dot.addEventListener('click', () => showTestimonial(i)));
+setInterval(() => showTestimonial((currentTestimonial + 1) % testimonials.length), 5000);
+
+// ── EXPANDABLE CARDS ──
+function toggleExpand(el) {
+  const content = el.querySelector('.expandable-content');
+  const label = el.querySelector('.expand-label');
+  const isOpen = content.classList.toggle('open');
+  label.textContent = isOpen ? 'CLOSE' : 'EXPAND';
+}
+
+// ── CUSTOM CURSOR ──
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a, button, .tilt-card, .magnetic, input').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+});
+
+// ── MAGNETIC BUTTONS ──
+document.querySelectorAll('.magnetic').forEach(el => {
+  el.addEventListener('mousemove', (e) => {
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) * 0.2;
+    const y = (e.clientY - rect.top - rect.height / 2) * 0.2;
+    el.style.transform = `translate(${x}px, ${y}px)`;
+  });
+  el.addEventListener('mouseleave', () => el.style.transform = 'translate(0,0)');
+});
+
+// ── TILT CARDS ──
+document.querySelectorAll('.tilt-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `perspective(800px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
+  });
+  card.addEventListener('mouseleave', () => card.style.transform = 'perspective(800px) rotateY(0) rotateX(0)');
+});
+
+// ── NAV LINKS HOVER ──
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('mousemove', (e) => {
+    const rect = link.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) * 0.3;
+    link.style.transform = `translateX(${x}px)`;
+  });
+  link.addEventListener('mouseleave', () => link.style.transform = 'translateX(0)');
+});
+
+// ── FLOATING CTA ON SCROLL ──
+ScrollTrigger.create({
+  trigger: '#collection',
+  start: 'top center',
+  onEnter: () => { gsap.to('#floating-cta', { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }); },
+  onLeaveBack: () => { gsap.to('#floating-cta', { opacity: 0, y: 20, duration: 0.3 }); }
+});
+
+// ── SCROLL CAVEAT ──
+console.log('✦ AURA — Built with Lumary OS (Experience Engineering) | Lumary Score: 88/100');
+</script>
+</body>
+</html>

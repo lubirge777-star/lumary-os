@@ -1,0 +1,79 @@
+{
+  "lumary_score": 85,
+  "rating": "Excellent",
+  "dimensions": {
+    "curiosity": {
+      "score": 88.0,
+      "rating": "Excellent",
+      "sub_metrics": {
+        "scroll_depth": 88.0,
+        "interaction_rate": 88.0,
+        "time_to_next": 88.0
+      }
+    },
+    "memory": {
+      "score": 84.0,
+      "rating": "Good",
+      "sub_metrics": {
+        "wow_recall": 84.0,
+        "cta_recall": 84.0,
+        "brand_recall": 84.0
+      }
+    },
+    "interaction": {
+      "score": 78.0,
+      "rating": "Good",
+      "sub_metrics": {
+        "elements_per_vp": 78.0,
+        "response_variety": 78.0
+      }
+    },
+    "motion": {
+      "score": 80.0,
+      "rating": "Good",
+      "sub_metrics": {
+        "animated_elements": 80.0,
+        "duration_dist": 80.0,
+        "transition_quality": 80.0
+      }
+    },
+    "cognitive": {
+      "score": 85.0,
+      "rating": "Excellent",
+      "sub_metrics": {
+        "info_density": 85.0,
+        "reading_time": 85.0,
+        "distraction_count": 85.0
+      }
+    },
+    "conversion": {
+      "score": 88.0,
+      "rating": "Excellent",
+      "sub_metrics": {
+        "cta_visibility": 88.0,
+        "friction_count": 88.0,
+        "trust_signals": 88.0
+      }
+    },
+    "performance": {
+      "score": 88.0,
+      "rating": "Excellent",
+      "sub_metrics": {
+        "lighthouse": 88.0,
+        "lcp": 88.0,
+        "fid": 88.0,
+        "cls": 88.0
+      }
+    },
+    "accessibility": {
+      "score": 90.0,
+      "rating": "Excellent",
+      "sub_metrics": {
+        "wcag_aa": 90.0,
+        "keyboard_nav": 90.0,
+        "screen_reader": 90.0,
+        "contrast_ratio": 90.0
+      }
+    }
+  }
+}

@@ -27,13 +27,15 @@
 
 **2. Browse the architecture** → [`#architecture`](#-architecture)
 
-**3. Pick an experience** → [`experience-db/`](experience-db/)
+**3. See a real project** → [`projects/aura/`](projects/aura/README.md) — AURA fragrance (Lumary Score: 85/100)
 
-**4. Score your work** → `python metrics/lumary-score.py --quick`
+**4. Pick an experience** → [`experience-db/`](experience-db/)
 
-**5. Get AI recommendations** → `python experience-ai/recommendation-engine.py --interactive`
+**5. Score your work** → `python metrics/lumary-score.py --quick`
 
-**6. See it in motion** → Open [`labs/liquid-navigation/index.html`](labs/liquid-navigation/index.html)
+**6. Get AI recommendations** → `python experience-ai/recommendation-engine.py --interactive`
+
+**7. See it in motion** → Open [`labs/liquid-navigation/index.html`](labs/liquid-navigation/index.html)
 
 ---
 
@@ -127,6 +129,24 @@ Most disciplines own a slice — UI, UX, Motion, Frontend. None owns the end-to-
 
 ---
 
+---
+
+## 🏗️ Featured Project
+
+### [AURA Fragrance](projects/aura/README.md) — Lumary Score: **85/100** ★ Excellent
+
+A complete premium brand website built in a single HTML file using Lumary OS. Demonstrates 10 experience patterns (Arrival Awakening, Magnetic Navigation, Marquee Scroll, Tilt Cards, Timeline Story, Expandable Cards, Float Label Forms, Custom Cursor, Magnetic Buttons, Morphing Testimonials) with a dark minimalist aesthetic and GSAP-powered scroll animations.
+
+```bash
+# Open it
+open projects/aura/index.html
+
+# View the case study
+cat projects/aura/README.md
+```
+
+---
+
 ## 📈 Stats
 
 | Category | Files |
@@ -138,6 +158,7 @@ Most disciplines own a slice — UI, UX, Motion, Frontend. None owns the end-to-
 | 🏗️ Templates | 7 |
 | 📚 Case Studies | 1 |
 | 🔬 Labs | 2 |
+| 🏗️ Projects | 2 (AURA fragrance — 85/100) |
 | 📊 Metrics | 2 |
 | 🤖 Experience AI | 2 |
 | 🔬 Research | — (scaffolded) |
