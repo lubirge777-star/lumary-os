@@ -112,4 +112,10 @@ Build experiences. Not pages.
 
 ---
 
-*Lumary OS v1.0 — Start building.*
+## A Note on These Claims
+
+The statements in this manifesto are **guiding principles**, not scientific certainties. "People remember emotions, not layouts" is a north star — in practice, people remember a combination of factors: brand familiarity, usefulness, content, visual identity, and emotional moments. See `docs/caveats.md` for a full discussion.
+
+---
+
+*Lumary OS v3.0 — Experience Engineering.*

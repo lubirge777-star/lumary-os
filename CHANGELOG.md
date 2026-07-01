@@ -4,6 +4,22 @@ All notable changes to Lumary OS will be documented here.
 
 ---
 
+## [3.0.1] — 2026-07-01 — Polish & Ecosystem Foundation
+
+### Added
+- **SVG Hero** (`assets/hero.svg`) — Visual stack diagram: Philosophy → Experience Engineering → 5 Pillars → System Layers → Website
+- **Animated Lab Preview** (`assets/liquid-nav-preview.svg`) — SMIL-animated SVG demonstrating Liquid Navigation behavior (scroll shrink, glassmorphism, magnetic hover)
+- **Research** (`research/`) — Evidence-based design directory: Fitts's Law, Hick's Law, cognitive load, reading patterns, emotional design, peak-end rule, attention, trust, color psychology
+- **Certification** (`certification/`) — Bronze → Silver → Gold → Master levels with requirements, assessment process
+- **Vocabulary** (`docs/vocabulary.md`) — Proprietary Lumary terms: Arrival Scene, Story Progression, Interaction Reward, Experience Primitive, Narrative Block
+- **Caveats** (`docs/caveats.md`) — Honest documentation of limitations, exceptions, and when to break rules
+- **Roadmap** (`ROADMAP.md`) — v4.0 vision: CLI → Framework → VS Code Extension → DevTools → AI Assistant → Marketplace
+
+### Changed
+- README completely restructured — short, beautiful, minimal landing with "START HERE" flow. SVG hero at top, book-like progression (Philosophy → Architecture → Experience Engineering → Case Studies → Metrics), comparison table (Traditional Agency vs Lumary OS), collapsible animated preview
+- Manifesto updated with caveat footnote acknowledging "people remember emotions" is a guiding principle, not scientific fact
+- Version updated to reflect ecosystem foundation
+
 ## [3.0.0] — 2026-07-01 — Experience Engineering
 
 ### Added

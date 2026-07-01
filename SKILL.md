@@ -56,7 +56,7 @@ Run checklist from docs/23-quality-assurance.md + metrics/README.md:
 - Handoff per playbooks/delivery-playbook.md
 
 ## Reference Files
-- docs/ — 26 comprehensive documentation chapters
+- docs/ — 26 docs + vocabulary + caveats
 - experience-db/ — 55+ experience implementations with GSAP code (20 categories)
 - patterns/ — 20 production HTML patterns (8 categories)
 - component-bible/ — 4 component systems
@@ -64,13 +64,16 @@ Run checklist from docs/23-quality-assurance.md + metrics/README.md:
 - color-bible/ — 9 industry palettes
 - motion-bible/ — 10 animation recipes
 - psychology-atlas/ — 12 cognitive principles
-- case-studies/ — Experience reverse-engineering framework
-- labs/ — Experimental interaction playground
-- metrics/ — Lumary Score (8 dimensions)
-- experience-ai/ — AI-accelerated experience architecture
+- case-studies/ — Apple Vision Pro reverse-engineering
+- labs/ — Liquid Navigation interactive prototype
+- metrics/ — Lumary Score CLI (8 dimensions)
+- experience-ai/ — Recommendation engine (12 industries × 8 emotions)
+- research/ — Cognitive science evidence (Fitts, Hick, attention, emotion)
+- certification/ — Bronze/Silver/Gold/Master program
 - prompts/ — 10 prompt templates for Stitch + OpenCode
 - playbooks/ — 3 playbooks (acquisition, delivery, maintenance)
-- skills/ — 4 agent skills (lumary-studio, lumary-designer, lumary-pro-max)
+- skills/ — 5 agent skills (lumary-studio, lumary-designer, lumary-pro-max)
+- assets/ — SVG hero image + animated lab preview
 
 ## Core Concepts
 
