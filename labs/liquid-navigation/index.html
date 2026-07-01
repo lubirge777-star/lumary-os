@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumary OS — Liquid Navigation</title>
+<style>
+:root {
+  --nav-height: 80px;
+  --nav-height-scrolled: 60px;
+  --nav-bg: rgba(10, 10, 14, 0.85);
+  --nav-bg-scrolled: rgba(10, 10, 14, 0.72);
+  --nav-border: rgba(255, 255, 255, 0.06);
+  --nav-border-scrolled: rgba(255, 255, 255, 0.10);
+  --nav-shadow: 0 2px 40px rgba(0, 0, 0, 0.4);
+  --text-primary: #f0f0f4;
+  --text-secondary: rgba(255, 255, 255, 0.5);
+  --text-link: rgba(255, 255, 255, 0.75);
+  --text-link-hover: #ffffff;
+  --accent: #6c5ce7;
+  --accent-glow: rgba(108, 92, 231, 0.25);
+  --hero-gradient-start: #0a0a0e;
+  --hero-gradient-end: #12121a;
+  --section-alt: #0e0e14;
+  --blur-amount: 18px;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--hero-gradient-start);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  transition:
+    height 0.5s var(--ease-smooth),
+    background 0.5s var(--ease-smooth),
+    border-color 0.5s var(--ease-smooth),
+    box-shadow 0.5s var(--ease-smooth),
+    backdrop-filter 0.5s var(--ease-smooth),
+    padding 0.5s var(--ease-smooth);
+  will-change: height, background, backdrop-filter;
+}
+
+nav.scrolled {
+  height: var(--nav-height-scrolled);
+  background: var(--nav-bg-scrolled);
+  border-color: var(--nav-border-scrolled);
+  box-shadow: var(--nav-shadow);
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+  padding: 0 40px;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  transition: transform 0.4s var(--ease-smooth);
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), #a29bfe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  transition: transform 0.4s var(--ease-spring), border-radius 0.4s var(--ease-smooth);
+}
+
+nav.scrolled .logo-icon {
+  transform: scale(0.85);
+  border-radius: 6px;
+}
+
+.logo-text {
+  transition: opacity 0.3s var(--ease-smooth), transform 0.3s var(--ease-smooth);
+}
+
+nav.scrolled .logo-text {
+  opacity: 0.9;
+  transform: scale(0.95);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 18px;
+  text-decoration: none;
+  color: var(--text-link);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition:
+    color 0.3s var(--ease-smooth),
+    background 0.3s var(--ease-smooth);
+  will-change: transform;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--text-link-hover);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-links a .link-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-sm);
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), var(--accent-glow) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-smooth);
+  pointer-events: none;
+}
+
+.nav-links a:hover .link-bg {
+  opacity: 1;
+}
+
+.nav-links a .link-text {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+.nav-cta {
+  background: linear-gradient(135deg, var(--accent), #a29bfe) !important;
+  color: #fff !important;
+  padding: 8px 22px !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius-sm) !important;
+  transition:
+    transform 0.3s var(--ease-spring),
+    box-shadow 0.3s var(--ease-smooth) !important;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px) scale(1.03) !important;
+  box-shadow: 0 4px 20px var(--accent-glow) !important;
+}
+
+.nav-cta .link-bg {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.4s var(--ease-smooth), opacity 0.3s var(--ease-smooth);
+  transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+  background: linear-gradient(180deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 50%, var(--section-alt) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  transform: translate(-50%, 0);
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(108, 92, 231, 0.12);
+  border: 1px solid rgba(108, 92, 231, 0.2);
+  color: #a29bfe;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto 36px;
+  position: relative;
+  z-index: 1;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.3s var(--ease-spring),
+    box-shadow 0.3s var(--ease-smooth),
+    background 0.3s var(--ease-smooth);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #a29bfe);
+  color: #fff;
+  box-shadow: 0 4px 24px var(--accent-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 32px var(--accent-glow);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.10);
+  transform: translateY(-2px);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.scroll-indicator .mouse {
+  width: 22px;
+  height: 34px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-indicator .mouse::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 3px;
+  animation: scrollWheel 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+}
+
+@keyframes scrollWheel {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  50% { transform: translateX(-50%) translateY(8px); opacity: 0.3; }
+}
+
+section {
+  padding: 100px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-alt {
+  background: var(--section-alt);
+  max-width: none;
+  padding: 100px 24px;
+}
+
+.section-alt > div {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 56px;
+}
+
+.section-header h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 520px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition:
+    transform 0.4s var(--ease-smooth),
+    border-color 0.4s var(--ease-smooth),
+    box-shadow 0.4s var(--ease-smooth);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.15), rgba(162, 155, 254, 0.08));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.prose {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.prose h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+  margin-top: 48px;
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  border-top: 1px solid var(--nav-border);
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0 20px;
+  }
+
+  nav.scrolled {
+    padding: 0 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 100px 28px 40px;
+    background: rgba(10, 10, 14, 0.96);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    transform: translateX(100%);
+    transition: transform 0.5s var(--ease-smooth);
+    will-change: transform;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  .nav-links a .link-bg {
+    display: none;
+  }
+
+  .hero {
+    padding: 100px 20px 60px;
+  }
+
+  section,
+  .section-alt {
+    padding: 60px 20px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    width: 100%;
+    border-left: none;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.85rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-icon">L</span>
+      <span class="logo-text">Lumary OS</span>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#overview" class="nav-link"><span class="link-bg"></span><span class="link-text">Overview</span></a></li>
+      <li><a href="#features" class="nav-link"><span class="link-bg"></span><span class="link-text">Features</span></a></li>
+      <li><a href="#research" class="nav-link"><span class="link-bg"></span><span class="link-text">Research</span></a></li>
+      <li><a href="#docs" class="nav-link"><span class="link-bg"></span><span class="link-text">Docs</span></a></li>
+      <li><a href="#contact" class="nav-link nav-cta"><span class="link-text">Get Started</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="overview">
+  <span class="hero-badge">&#9670; Experimental Lab &mdash; v0.1</span>
+  <h1>Liquid Navigation</h1>
+  <p>
+    A morphing navigation interface that transitions between thick and minimal states,
+    with magnetic link tracking and glassmorphism aesthetics.
+  </p>
+  <div class="hero-actions">
+    <a href="#features" class="btn btn-primary">Explore &darr;</a>
+    <a href="#research" class="btn btn-secondary">Read the research</a>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="mouse"></div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="section-header">
+    <h2>Core Interactions</h2>
+    <p>Every detail is engineered for fluid, responsive feel across devices and input methods.</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">&#9670;</div>
+      <h3>Morphing States</h3>
+      <p>The navigation bar seamlessly transitions from a bold 80px header into a sleek 60px floating element as the user scrolls past the hero threshold.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">&#9671;</div>
+      <h3>Magnetic Tracking</h3>
+      <p>Each link subtly shifts toward the cursor on hover using real-time mouse position interpolation for a responsive, almost organic feel.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">&#9672;</div>
+      <h3>Glassmorphism</h3>
+      <p>In scrolled state, the nav adopts a blurred backdrop with semi-transparent background, creating depth through the frosted-glass effect.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">&#9673;</div>
+      <h3>Responsive Canvas</h3>
+      <p>A slide-in hamburger menu replaces the inline links on mobile, preserving the same premium feel with a dark blurred overlay panel.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="research">
+  <div>
+    <div class="section-header">
+      <h2>Design Research</h2>
+      <p>Notes from the exploration of liquid navigation patterns in modern UI.</p>
+    </div>
+    <div class="prose">
+      <h2>On Morphing Interfaces</h2>
+      <p>
+        The concept of a navigation bar that changes its physical properties in response to scroll
+        position draws from material physics. At rest, the nav is substantial &mdash; grounded. As the
+        user descends into content, it sheds mass, becoming a lightweight contextual overlay. This
+        mirrors how our peripheral vision narrows when focusing on a task.
+      </p>
+      <p>
+        Key to the illusion is the easing curve: <code>cubic-bezier(0.22, 1, 0.36, 1)</code>. This
+        custom easing gives the transition a natural deceleration &mdash; like a door sliding into
+        its frame with a soft pneumatic dampener. No linear movements. No jarring stops.
+      </p>
+
+      <h2>Magnetic Hover as Affordance</h2>
+      <p>
+        Traditional link hovers change color. Magnetic hover goes further by adding a spatial
+        dimension &mdash; the link text shifts in the direction of the cursor, creating a physical
+        pull. This is implemented by tracking <code>mousemove</code> events over each link and
+        applying a clamped delta to a <code>transform: translate()</code> on the text span.
+      </p>
+      <p>
+        The maximum displacement is kept small (~4px) so it reads as a micro-interaction rather
+        than a distracting animation. Combined with a radial gradient "glow" that follows the
+        cursor, the effect is subtle but deeply satisfying.
+      </p>
+
+      <h2>Glassmorphism Constraints</h2>
+      <p>
+        <code>backdrop-filter: blur(18px)</code> provides the frosted-glass effect. On scroll, the
+        background alpha drops from 0.85 to 0.72, letting more of the page content show through.
+        The border lightens in opacity to maintain legibility. A box-shadow with 40px spread adds
+        a soft atmospheric halo that separates the nav from the background.
+      </p>
+      <p>
+        Care must be taken on low-end devices: <code>will-change</code> hints are set on animated
+        properties and the blur radius is kept moderate to avoid jank. On mobile, the backdrop-filter
+        is applied only when scrolled to minimize compositing cost.
+      </p>
+
+      <h2>Performance Strategy</h2>
+      <p>
+        All animations are GPU-composited where possible: <code>transform</code> and
+        <code>opacity</code> for the magnetic effect, <code>height</code> and
+        <code>backdrop-filter</code> for the nav morph. The scroll handler uses a passive listener
+        with a requestAnimationFrame throttle to stay at 60fps even during rapid scrolling.
+      </p>
+      <p>
+        On mobile, the backdrop-filter on the nav is toggled only when scrolled, and the hamburger
+        menu uses <code>translateX</code> for the slide-in panel &mdash; avoiding layout thrashing
+        by reading <code>scrollY</code> only once per frame.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="docs">
+  <div class="section-header">
+    <h2>Documentation</h2>
+    <p>Implementation notes, CSS custom properties API, and usage guidelines.</p>
+  </div>
+  <div class="prose">
+    <h2>CSS Custom Properties API</h2>
+    <p>
+      The component is fully themed via CSS custom properties defined on <code>:root</code>.
+      Override any value to customize: <code>--nav-height</code>, <code>--nav-bg</code>,
+      <code>--accent</code>, <code--blur-amount</code>, <code>--ease-smooth</code>,
+      and <code>--radius</code> for shape control. The nav reads <code>--mx</code> and
+      <code>--my</code> custom properties for the radial gradient cursor glow.
+    </p>
+
+    <h2>Scroll State Machine</h2>
+    <p>
+      A <code>scrolled</code> CSS class is toggled on the <code>&lt;nav&gt;</code> element when
+      <code>window.scrollY &gt; 100</code>. The CSS handles all visual transitions via the
+      declared <code>transition</code> rules. No JS-driven inline styles for the morph &mdash;
+      keeping style logic in CSS where it belongs.
+    </p>
+
+    <h2>Magnetic Effect Details</h2>
+    <p>
+      Each <code>.nav-link</code> gets a <code>mousemove</code> listener that computes the delta
+      between the cursor and the link center, then applies a clamped <code>translate(x, y)</code>
+      on the <code>.link-text</code> child. On <code>mouseleave</code>, the transform smoothly
+      returns to zero via the CSS <code>transition</code> rule.
+    </p>
+  </div>
+</section>
+
+<section class="section-alt" id="contact">
+  <div>
+    <div class="section-header">
+      <h2>Get Involved</h2>
+      <p>This is an open experimental lab. Contribute, fork, or just observe.</p>
+    </div>
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+      <div class="card" style="text-align:center;">
+        <div class="card-icon" style="margin:0 auto 18px;">&#9998;</div>
+        <h3>Contribute</h3>
+        <p>Submit PRs or open issues on the Lumary OS monorepo.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="card-icon" style="margin:0 auto 18px;">&#9733;</div>
+        <h3>Star</h3>
+        <p>Show support for experimental interface research.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="card-icon" style="margin:0 auto 18px;">&#9993;</div>
+        <h3>Contact</h3>
+        <p>Reach out to the Lumary OS design team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Lumary OS &mdash; Liquid Navigation Lab &bull; Experimental &bull; 2026</p>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  var nav = document.getElementById('navbar');
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
+  var links = navLinks.querySelectorAll('.nav-link:not(.nav-cta)');
+  var ticking = false;
+  var lastScrollY = 0;
+  var THRESHOLD = 100;
+  var MAGNETIC_RANGE = 4;
+
+  function updateNav() {
+    var scrollY = window.scrollY;
+    if (scrollY > THRESHOLD) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+    ticking = false;
+  }
+
+  function onScroll() {
+    lastScrollY = window.scrollY;
+    if (!ticking) {
+      requestAnimationFrame(updateNav);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  updateNav();
+
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+  }
+
+  function initMagnetic(link) {
+    var textEl = link.querySelector('.link-text');
+    if (!textEl) return;
+
+    function onMove(e) {
+      var rect = link.getBoundingClientRect();
+      var cx = rect.left + rect.width / 2;
+      var cy = rect.top + rect.height / 2;
+      var dx = e.clientX - cx;
+      var dy = e.clientY - cy;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var maxDist = 150;
+      var strength = dist < maxDist ? (1 - dist / maxDist) : 0;
+      var tx = clamp(dx * 0.12 * strength, -MAGNETIC_RANGE, MAGNETIC_RANGE);
+      var ty = clamp(dy * 0.12 * strength, -MAGNETIC_RANGE, MAGNETIC_RANGE);
+
+      textEl.style.transform = 'translate(' + tx + 'px, ' + ty + 'px)';
+
+      var pctX = ((e.clientX - rect.left) / rect.width * 100);
+      var pctY = ((e.clientY - rect.top) / rect.height * 100);
+      link.style.setProperty('--mx', pctX + '%');
+      link.style.setProperty('--my', pctY + '%');
+    }
+
+    function onLeave() {
+      textEl.style.transform = '';
+    }
+
+    link.addEventListener('mousemove', onMove, { passive: true });
+    link.addEventListener('mouseleave', onLeave, { passive: true });
+  }
+
+  for (var i = 0; i < links.length; i++) {
+    initMagnetic(links[i]);
+  }
+
+  hamburger.addEventListener('click', function() {
+    var isOpen = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  var mobileLinks = navLinks.querySelectorAll('a');
+  for (var j = 0; j < mobileLinks.length; j++) {
+    mobileLinks[j].addEventListener('click', function() {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  document.addEventListener('click', function(e) {
+    if (!nav.contains(e.target) && navLinks.classList.contains('open')) {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+})();
+</script>
+</body>
+</html>

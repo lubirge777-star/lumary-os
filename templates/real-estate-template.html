@@ -3,47 +3,988 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[Agency Name] — Premium Real Estate | Lumary Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <title>Savannah Estates — Premium Real Estate | Tanzania</title>
+  <meta name="description" content="Savannah Estates offers premium real estate services in Tanzania. Specializing in luxury homes, commercial properties, and investment opportunities." />
+  <link rel="canonical" href="https://savannahestates.co.tz/" />
+  <meta property="og:title" content="Savannah Estates — Premium Real Estate" />
+  <meta property="og:description" content="Curated luxury properties in Tanzania's most desirable locations." />
+  <meta property="og:image" content="https://savannahestates.co.tz/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Savannah Estates",
+    "image": "https://savannahestates.co.tz/logo.png",
+    "address": { "@type": "PostalAddress", "streetAddress": "152 Haile Selassie Road", "addressLocality": "Dar es Salaam", "addressCountry": "TZ" },
+    "telephone": "+255712345678",
+    "url": "https://savannahestates.co.tz",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "156" },
+    "priceRange": "$$$$"
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { primary: '#0C0C0C', secondary: '#1C1C1E', accent: '#D4AF37', muted: '#8E8E93', surface: '#FAFAFA' },
-          fontFamily: { heading: ['Playfair Display', 'serif'], body: ['Inter', 'sans-serif'] },
+          colors: { primary: 'var(--primary)', secondary: 'var(--secondary)', accent: 'var(--accent)', surface: 'var(--surface)', muted: 'var(--muted)' },
+          fontFamily: { heading: ['Cormorant Garamond', 'serif'], body: ['Inter', 'sans-serif'] },
+          borderRadius: { DEFAULT: '12px' },
         }
       }
     }
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
-  <style>body { font-family: 'Inter', sans-serif; background: #0C0C0C; color: #F5F5F7; } h1,h2,h3,h4 { font-family: 'Playfair Display', serif; } @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; } }</style>
-</head>
-<body>
-  <nav class="fixed top-4 left-4 right-4 z-50"><div class="max-w-6xl mx-auto px-6 py-4 rounded-2xl bg-black/80 backdrop-blur-xl border border-white/10"><div class="flex justify-between items-center">
-    <a href="/" class="text-xl font-heading text-[#D4AF37]">[Agency Name]</a>
-    <div class="hidden md:flex items-center gap-8">
-      <a href="#properties" class="text-sm text-white/70 hover:text-[#D4AF37] transition-colors">Properties</a>
-      <a href="#about" class="text-sm text-white/70 hover:text-[#D4AF37] transition-colors">About</a>
-      <a href="#contact" class="px-5 py-2.5 border border-[#D4AF37] text-[#D4AF37] rounded-lg text-sm font-semibold hover:bg-[#D4AF37]/10 transition-all">Contact Us</a>
-    </div>
-  </div></div></nav>
 
-  <!-- Hero -->
-  <section class="hero min-h-screen flex items-end relative overflow-hidden">
-    <div class="absolute inset-0"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80" alt="" class="w-full h-full object-cover" /><div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div></div>
-    <div class="relative z-10 max-w-6xl mx-auto px-6 pb-24 w-full">
-      <p class="text-sm tracking-[0.3em] text-[#D4AF37] uppercase mb-4">Premium Real Estate</p>
-      <h1 class="text-6xl md:text-8xl font-heading text-white leading-none mb-6">Your Dream Home<br />Awaits</h1>
-      <p class="text-lg text-white/60 max-w-xl mb-10">Curated luxury properties in Tanzania's most desirable locations.</p>
-      <div class="flex gap-4">
-        <a href="#properties" class="px-8 py-4 bg-[#D4AF37] text-black rounded-xl font-semibold hover:bg-[#D4AF37]/90 transition-all">Browse Properties</a>
-        <a href="#contact" class="px-8 py-4 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/5 transition-all">Schedule a Tour</a>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');</script>
+
+  <style>
+    :root {
+      --primary: #0F172A;
+      --secondary: #1E293B;
+      --accent: #D4AF37;
+      --surface: #F8FAFC;
+      --muted: #94A3B8;
+      --bg: #0F172A;
+      --text: #F8FAFC;
+      --card-bg: #1E293B;
+      --border: rgba(255,255,255,0.05);
+      --border-hover: rgba(255,255,255,0.1);
+      --overlay: rgba(15,23,42,0.85);
+      --shadow: rgba(0,0,0,0.3);
+    }
+    html.light {
+      --primary: #FFFFFF;
+      --secondary: #F1F5F9;
+      --accent: #B8960F;
+      --surface: #0F172A;
+      --muted: #64748B;
+      --bg: #FFFFFF;
+      --text: #0F172A;
+      --card-bg: #F8FAFC;
+      --border: rgba(0,0,0,0.08);
+      --border-hover: rgba(0,0,0,0.12);
+      --overlay: rgba(255,255,255,0.85);
+      --shadow: rgba(0,0,0,0.08);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; letter-spacing: 0.01em; line-height: 1.1; }
+    h1 { font-size: clamp(2.5rem, 8vw, 5rem); }
+    h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+    img, video, iframe { max-width: 100%; height: auto; }
+    section[id] { scroll-margin-top: 80px; }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    ::selection { background: #D4AF37; color: #0F172A; }
+    @media (max-width: 767px) {
+      .mobile-touch-target { min-height: 48px; }
+      nav a, .nav-link { padding: 12px 0; }
+    }
+    .tilt-card { will-change: transform; }
+    .testimonial-slide { will-change: transform, opacity; }
+    .morph-dot.active { transform: scale(1.3); background: var(--accent) !important; }
+  </style>
+</head>
+<body class="bg-[var(--bg)] text-[var(--text)] antialiased">
+  <!-- Skip to content (accessibility) -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-accent focus:text-[var(--bg)] focus:rounded-lg">Skip to main content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div class="progress-container fixed top-0 left-0 right-0 z-[100] h-0.5 bg-[var(--border)]">
+    <div class="progress-fill h-full bg-accent origin-left" style="transform: scaleX(0);"></div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="fixed top-0 md:top-4 left-0 md:left-4 right-0 md:right-4 z-50" role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 rounded-none md:rounded-2xl transition-all duration-500 bg-transparent">
+      <div class="flex items-center justify-between">
+        <a href="/" class="nav-link text-2xl font-heading text-accent">
+          <span class="nav-label">SAVANNAH ESTATES</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#properties" class="nav-link text-sm text-[var(--text)]/80 hover:text-accent transition-colors duration-200"><span class="nav-label">Properties</span></a>
+          <a href="#about" class="nav-link text-sm text-[var(--text)]/80 hover:text-accent transition-colors duration-200"><span class="nav-label">About</span></a>
+          <a href="#services" class="nav-link text-sm text-[var(--text)]/80 hover:text-accent transition-colors duration-200"><span class="nav-label">Services</span></a>
+          <a href="#testimonials" class="nav-link text-sm text-[var(--text)]/80 hover:text-accent transition-colors duration-200"><span class="nav-label">Testimonials</span></a>
+          <button id="themeToggle" class="theme-toggle p-2 rounded-lg text-[var(--muted)] hover:text-accent transition-colors" aria-label="Toggle theme">
+            <svg class="dark-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="light-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+          <a href="#contact" class="px-5 py-2.5 border border-accent text-accent rounded-lg text-sm font-semibold hover:bg-accent/10 transition-all duration-200">Schedule a Tour</a>
+        </div>
+        <div class="flex items-center gap-2 md:hidden">
+          <button id="themeToggleMobile" class="theme-toggle p-2 rounded-lg text-[var(--muted)] hover:text-accent transition-colors" aria-label="Toggle theme">
+            <svg class="dark-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="light-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+          <button class="text-[var(--text)] p-2" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
       </div>
     </div>
-  </section>
-  <footer class="py-12 px-6 border-t border-white/5 text-center text-sm text-muted">&copy; 2026 [Agency Name]. All rights reserved.</footer>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 bg-[var(--bg)] z-40 translate-x-full transition-transform duration-300 ease-in-out md:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl">
+      <a href="#properties" class="text-[var(--text)] hover:text-accent transition-colors" onclick="closeMenu()">Properties</a>
+      <a href="#about" class="text-[var(--text)] hover:text-accent transition-colors" onclick="closeMenu()">About</a>
+      <a href="#services" class="text-[var(--text)] hover:text-accent transition-colors" onclick="closeMenu()">Services</a>
+      <a href="#testimonials" class="text-[var(--text)] hover:text-accent transition-colors" onclick="closeMenu()">Testimonials</a>
+      <a href="#contact" onclick="closeMenu()" class="px-8 py-4 border border-accent text-accent rounded-xl font-semibold">Schedule a Tour</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <section class="hero min-h-screen flex items-end relative overflow-hidden">
+      <div class="hero-bg absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80" alt="" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-[var(--bg)]/60 to-transparent"></div>
+      </div>
+      <div class="relative z-10 max-w-6xl mx-auto px-4 md:px-6 pb-16 md:pb-24 w-full">
+        <p class="hero-badge text-xs md:text-sm tracking-[0.3em] text-accent uppercase mb-4 font-semibold">Premium Real Estate</p>
+        <h1 class="hero-heading font-heading leading-none mb-6">
+          Your Dream Home<br /><span class="text-accent">Awaits</span>
+        </h1>
+        <p class="hero-subtext text-sm md:text-lg lg:text-xl text-[var(--text)]/70 max-w-xl mb-10">
+          Curated luxury properties in Tanzania's most desirable locations.
+        </p>
+        <div class="hero-cta flex flex-col sm:flex-row gap-4">
+          <a href="#properties" class="inline-flex items-center gap-2 px-6 py-4 sm:px-10 sm:py-5 bg-accent text-[var(--bg)] rounded-xl font-semibold text-base sm:text-lg hover:bg-accent/90 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-[var(--shadow)] w-full sm:w-auto justify-center">
+            Browse Properties <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#contact" class="px-6 py-4 sm:px-10 sm:py-5 border border-[var(--border-hover)] text-[var(--text)] rounded-xl font-semibold text-base sm:text-lg hover:bg-[var(--border)] transition-all duration-300 w-full sm:w-auto text-center">Schedule a Tour</a>
+        </div>
+      </div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center scroll-indicator">
+        <span class="text-xs md:text-sm text-muted">Scroll to explore</span>
+        <div class="w-6 h-10 border-2 border-muted rounded-full mx-auto mt-2 flex justify-center p-1">
+          <div class="w-1.5 h-2.5 bg-accent rounded-full animate-bounce"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOCIAL PROOF ===== -->
+    <section class="py-16 px-4 md:px-6 border-y border-[var(--border)]">
+      <div class="max-w-6xl mx-auto">
+        <p class="text-center text-xs md:text-sm text-muted mb-8 uppercase tracking-widest">Trusted by discerning homeowners & investors</p>
+        <div class="flex flex-wrap justify-center gap-12 items-center opacity-40">
+          <span class="text-xl font-heading text-[var(--text)]/60">Barclays TZ</span>
+          <span class="text-xl font-heading text-[var(--text)]/60">Standard Chartered</span>
+          <span class="text-xl font-heading text-[var(--text)]/60">Knight Frank</span>
+          <span class="text-xl font-heading text-[var(--text)]/60">Centum RE</span>
+          <span class="text-xl font-heading text-[var(--text)]/60">Acorn Holdings</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section id="stats" class="stats-section py-16 md:py-20 lg:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
+        <div class="stat-item p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)]">
+          <div class="stat-number text-4xl md:text-5xl font-heading text-accent" data-target="500">0</div>
+          <div class="stat-prefix hidden">+</div>
+          <p class="text-muted mt-2 text-xs md:text-sm">Properties Sold</p>
+        </div>
+        <div class="stat-item p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)]">
+          <div class="stat-number text-4xl md:text-5xl font-heading text-accent" data-target="15">0</div>
+          <div class="stat-prefix hidden">+</div>
+          <p class="text-muted mt-2 text-xs md:text-sm">Years Experience</p>
+        </div>
+        <div class="stat-item p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)]">
+          <div class="stat-number text-4xl md:text-5xl font-heading text-accent" data-target="98">0</div>
+          <div class="stat-prefix hidden">%</div>
+          <p class="text-muted mt-2 text-xs md:text-sm">Client Satisfaction</p>
+        </div>
+        <div class="stat-item p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)]">
+          <div class="stat-number text-4xl md:text-5xl font-heading text-accent" data-target="50">0</div>
+          <div class="stat-prefix hidden">+</div>
+          <p class="text-muted mt-2 text-xs md:text-sm">Active Listings</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT + TIMELINE ===== -->
+    <section id="about" class="about-section py-16 md:py-20 lg:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-[var(--border-hover)]">
+            <img src="https://images.unsplash.com/photo-1758691737543-09a1b2b715fa?w=800&q=80" alt="Our team at a property" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/10 rounded-2xl -z-10 border border-accent/20"></div>
+        </div>
+        <div>
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">Our Story</span>
+          <h2 class="font-heading mt-4 mb-6">A Legacy of Distinction</h2>
+          <div class="space-y-4 text-muted leading-relaxed text-sm md:text-base">
+            <p>Founded in 2011, Savannah Estates has been at the forefront of Tanzania's luxury real estate market. Our deep local knowledge and global network make us the preferred partner for discerning buyers and sellers.</p>
+            <p>With 500+ successful transactions and a 98% satisfaction rate, we don't just find properties — we find the perfect home for every chapter of your life.</p>
+          </div>
+          <div class="timeline mt-10 relative pl-8 before:absolute before:left-[11px] before:top-2 before:bottom-0 before:w-0.5 before:bg-[var(--border)]">
+            <div class="timeline-item relative mb-8">
+              <div class="absolute left-[-26px] top-1 w-[22px] h-[22px] rounded-full bg-accent border-[5px] border-[var(--bg)] shadow-[0_0_0_2px_rgba(212,175,55,0.3)]"></div>
+              <span class="text-xs md:text-sm font-semibold text-accent">2011</span>
+              <p class="text-xs md:text-sm text-muted mt-1">Agency founded with a vision to redefine luxury real estate in Tanzania.</p>
+            </div>
+            <div class="timeline-item relative mb-8">
+              <div class="absolute left-[-26px] top-1 w-[22px] h-[22px] rounded-full bg-accent border-[5px] border-[var(--bg)] shadow-[0_0_0_2px_rgba(212,175,55,0.3)]"></div>
+              <span class="text-xs md:text-sm font-semibold text-accent">2018</span>
+              <p class="text-xs md:text-sm text-muted mt-1">Expanded portfolio to include commercial and investment properties.</p>
+            </div>
+            <div class="timeline-item relative mb-8">
+              <div class="absolute left-[-26px] top-1 w-[22px] h-[22px] rounded-full bg-accent border-[5px] border-[var(--bg)] shadow-[0_0_0_2px_rgba(212,175,55,0.3)]"></div>
+              <span class="text-xs md:text-sm font-semibold text-accent">2026</span>
+              <p class="text-xs md:text-sm text-muted mt-1">500+ properties sold. Recognized as Tanzania's premier real estate agency.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="py-16 md:py-20 lg:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">What We Offer</span>
+          <h2 class="font-heading mt-4">Our Services</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto text-sm md:text-base">Comprehensive real estate solutions tailored to your needs.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div class="tilt-card service-card p-6 md:p-8 rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><i data-lucide="home" class="w-7 h-7 text-accent"></i></div>
+            <h3 class="font-heading mb-3">Residential Sales</h3>
+            <p class="text-muted leading-relaxed text-sm md:text-base">Luxury homes, villas, and apartments in Tanzania's most exclusive neighborhoods. Every property is hand-selected.</p>
+          </div>
+          <div class="tilt-card service-card p-6 md:p-8 rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><i data-lucide="building-2" class="w-7 h-7 text-accent"></i></div>
+            <h3 class="font-heading mb-3">Commercial Real Estate</h3>
+            <p class="text-muted leading-relaxed text-sm md:text-base">Prime commercial spaces, office buildings, and retail properties for businesses seeking premium locations.</p>
+          </div>
+          <div class="tilt-card service-card p-6 md:p-8 rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><i data-lucide="trending-up" class="w-7 h-7 text-accent"></i></div>
+            <h3 class="font-heading mb-3">Investment Advisory</h3>
+            <p class="text-muted leading-relaxed text-sm md:text-base">Expert guidance on property investment, market analysis, and portfolio diversification strategies.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section id="process" class="process-section py-16 md:py-20 lg:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">How It Works</span>
+          <h2 class="font-heading mt-4">Your Journey Home</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto text-sm md:text-base">A seamless experience from first consultation to closing day.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative">
+          <div class="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-[var(--border)]"></div>
+          <div class="process-step text-center relative">
+            <div class="w-24 h-24 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-[var(--bg)]"><span class="text-2xl font-bold text-accent">01</span></div>
+            <h3 class="text-base md:text-lg font-semibold mb-3">Consultation</h3>
+            <p class="text-xs md:text-sm text-muted">We learn your needs, preferences, and budget.</p>
+          </div>
+          <div class="process-step text-center relative">
+            <div class="w-24 h-24 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-[var(--bg)]"><span class="text-2xl font-bold text-accent">02</span></div>
+            <h3 class="text-base md:text-lg font-semibold mb-3">Match</h3>
+            <p class="text-xs md:text-sm text-muted">We curate properties that match your criteria.</p>
+          </div>
+          <div class="process-step text-center relative">
+            <div class="w-24 h-24 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-[var(--bg)]"><span class="text-2xl font-bold text-accent">03</span></div>
+            <h3 class="text-base md:text-lg font-semibold mb-3">Tour</h3>
+            <p class="text-xs md:text-sm text-muted">Private viewings of your shortlisted properties.</p>
+          </div>
+          <div class="process-step text-center relative">
+            <div class="w-24 h-24 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-[var(--bg)]"><span class="text-2xl font-bold text-accent">04</span></div>
+            <h3 class="text-base md:text-lg font-semibold mb-3">Close</h3>
+            <p class="text-xs md:text-sm text-muted">We guide you through offer, negotiation, and closing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROPERTIES / GALLERY ===== -->
+    <section id="properties" class="gallery-section py-16 md:py-20 lg:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">Featured Properties</span>
+          <h2 class="font-heading mt-4">Exceptional Homes</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto text-sm md:text-base">Each property is a testament to our commitment to excellence.</p>
+        </div>
+        <!-- Property type filter tabs -->
+        <div class="flex flex-wrap justify-center gap-3 mb-6">
+          <button class="property-filter px-5 py-2.5 rounded-full text-sm font-medium bg-accent text-[var(--bg)] transition-all duration-200" data-type="all">All</button>
+          <button class="property-filter px-5 py-2.5 rounded-full text-sm font-medium bg-[var(--border)] text-muted hover:text-[var(--text)] hover:bg-[var(--border-hover)] transition-all duration-200" data-type="residential">Residential</button>
+          <button class="property-filter px-5 py-2.5 rounded-full text-sm font-medium bg-[var(--border)] text-muted hover:text-[var(--text)] hover:bg-[var(--border-hover)] transition-all duration-200" data-type="commercial">Commercial</button>
+        </div>
+        <!-- Price filter tabs -->
+        <div class="flex flex-wrap justify-center gap-3 mb-2">
+          <button class="price-filter px-5 py-2.5 rounded-full text-sm font-medium bg-accent text-[var(--bg)] transition-all duration-200" data-price-range="all">All Prices</button>
+          <button class="price-filter px-5 py-2.5 rounded-full text-sm font-medium bg-[var(--border)] text-muted hover:text-[var(--text)] hover:bg-[var(--border-hover)] transition-all duration-200" data-price-range="0-2000000">Under $2M</button>
+          <button class="price-filter px-5 py-2.5 rounded-full text-sm font-medium bg-[var(--border)] text-muted hover:text-[var(--text)] hover:bg-[var(--border-hover)] transition-all duration-200" data-price-range="2000000-4000000">$2M-$4M</button>
+          <button class="price-filter px-5 py-2.5 rounded-full text-sm font-medium bg-[var(--border)] text-muted hover:text-[var(--text)] hover:bg-[var(--border-hover)] transition-all duration-200" data-price-range="4000000-999999999">Over $4M</button>
+        </div>
+        <p id="propertyCounter" class="text-center text-sm text-muted mb-6">Showing 6 properties</p>
+        <div class="property-grid columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+          <div class="gallery-item break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer" data-type="residential" data-title="Waterfront Estate" data-price="$2.5M" data-price-num="2500000" data-details="6 bed, 8 bath — 4,500 sq ft — Private dock & infinity pool" data-gallery="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80,https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80,https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80,https://images.unsplash.com/photo-1776362355123-ca966d36e29c?w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Luxury waterfront villa" class="w-full h-auto object-cover" loading="lazy" />
+            <span class="virtual-tour-badge absolute top-3 left-3 z-10 px-3 py-1 bg-accent/90 text-[var(--bg)] text-xs font-semibold rounded-full backdrop-blur-sm">Virtual Tour</span>
+            <div class="property-info absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[var(--overlay)] to-transparent opacity-100 transition-opacity duration-300">
+              <h3 class="text-lg font-heading text-white">Waterfront Estate</h3>
+              <p class="text-xs text-white/80">$2.5M — 6 bed, 8 bath</p>
+            </div>
+            <div class="absolute inset-0 bg-[var(--overlay)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+              <div class="text-center"><h3 class="text-xl font-heading mb-2 text-[var(--text)]">Waterfront Estate</h3><p class="text-xs md:text-sm text-muted mb-4">$2.5M — 6 bed, 8 bath</p><button class="view-property-btn px-4 py-2 bg-accent text-[var(--bg)] rounded-lg text-sm font-medium hover:bg-accent/90 transition-all">View Details</button></div>
+            </div>
+          </div>
+          <div class="gallery-item break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer" data-type="residential" data-title="Skyline Penthouse" data-price="$1.8M" data-price-num="1800000" data-details="4 bed, 5 bath — 3,200 sq ft — Rooftop terrace & city views" data-gallery="https://images.unsplash.com/photo-1776362355123-ca966d36e29c?w=1200&q=80,https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80,https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80,https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1776362355123-ca966d36e29c?w=600&q=80" alt="Modern penthouse apartment" class="w-full h-auto object-cover" loading="lazy" />
+            <span class="virtual-tour-badge absolute top-3 left-3 z-10 px-3 py-1 bg-accent/90 text-[var(--bg)] text-xs font-semibold rounded-full backdrop-blur-sm">Virtual Tour</span>
+            <div class="property-info absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[var(--overlay)] to-transparent opacity-100 transition-opacity duration-300">
+              <h3 class="text-lg font-heading text-white">Skyline Penthouse</h3>
+              <p class="text-xs text-white/80">$1.8M — 4 bed, 5 bath</p>
+            </div>
+            <div class="absolute inset-0 bg-[var(--overlay)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+              <div class="text-center"><h3 class="text-xl font-heading mb-2 text-[var(--text)]">Skyline Penthouse</h3><p class="text-xs md:text-sm text-muted mb-4">$1.8M — 4 bed, 5 bath</p><button class="view-property-btn px-4 py-2 bg-accent text-[var(--bg)] rounded-lg text-sm font-medium hover:bg-accent/90 transition-all">View Details</button></div>
+            </div>
+          </div>
+          <div class="gallery-item break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer" data-type="residential" data-title="Hillside Retreat" data-price="$3.2M" data-price-num="3200000" data-details="7 bed, 9 bath — 6,800 sq ft — Wine cellar & guest house" data-gallery="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80,https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80,https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80,https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Contemporary hillside home" class="w-full h-auto object-cover" loading="lazy" />
+            <div class="property-info absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[var(--overlay)] to-transparent opacity-100 transition-opacity duration-300">
+              <h3 class="text-lg font-heading text-white">Hillside Retreat</h3>
+              <p class="text-xs text-white/80">$3.2M — 7 bed, 9 bath</p>
+            </div>
+            <div class="absolute inset-0 bg-[var(--overlay)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+              <div class="text-center"><h3 class="text-xl font-heading mb-2 text-[var(--text)]">Hillside Retreat</h3><p class="text-xs md:text-sm text-muted mb-4">$3.2M — 7 bed, 9 bath</p><button class="view-property-btn px-4 py-2 bg-accent text-[var(--bg)] rounded-lg text-sm font-medium hover:bg-accent/90 transition-all">View Details</button></div>
+            </div>
+          </div>
+          <div class="gallery-item break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer" data-type="commercial" data-title="Commercial Tower" data-price="$5.0M" data-price-num="5000000" data-details="15,000 sq ft — 12 floors — Prime CBD location — Full lease" data-gallery="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80,https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80,https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80,https://images.unsplash.com/photo-1776362355123-ca966d36e29c?w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80" alt="Commercial office building" class="w-full h-auto object-cover" loading="lazy" />
+            <div class="property-info absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[var(--overlay)] to-transparent opacity-100 transition-opacity duration-300">
+              <h3 class="text-lg font-heading text-white">Commercial Tower</h3>
+              <p class="text-xs text-white/80">$5.0M — 15,000 sq ft</p>
+            </div>
+            <div class="absolute inset-0 bg-[var(--overlay)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+              <div class="text-center"><h3 class="text-xl font-heading mb-2 text-[var(--text)]">Commercial Tower</h3><p class="text-xs md:text-sm text-muted mb-4">$5.0M — 15,000 sq ft</p><button class="view-property-btn px-4 py-2 bg-accent text-[var(--bg)] rounded-lg text-sm font-medium hover:bg-accent/90 transition-all">View Details</button></div>
+            </div>
+          </div>
+          <div class="gallery-item break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer" data-type="residential" data-title="Gated Estate" data-price="$4.1M" data-price-num="4100000" data-details="8 bed, 10 bath — 7,500 sq ft — 24/7 security & tennis court" data-gallery="https://images.unsplash.com/photo-1776362355123-ca966d36e29c?w=1200&q=80,https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80,https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80,https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1776362355123-ca966d36e29c?w=600&q=80" alt="Luxury gated community home" class="w-full h-auto object-cover" loading="lazy" />
+            <div class="property-info absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[var(--overlay)] to-transparent opacity-100 transition-opacity duration-300">
+              <h3 class="text-lg font-heading text-white">Gated Estate</h3>
+              <p class="text-xs text-white/80">$4.1M — 8 bed, 10 bath</p>
+            </div>
+            <div class="absolute inset-0 bg-[var(--overlay)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+              <div class="text-center"><h3 class="text-xl font-heading mb-2 text-[var(--text)]">Gated Estate</h3><p class="text-xs md:text-sm text-muted mb-4">$4.1M — 8 bed, 10 bath</p><button class="view-property-btn px-4 py-2 bg-accent text-[var(--bg)] rounded-lg text-sm font-medium hover:bg-accent/90 transition-all">View Details</button></div>
+            </div>
+          </div>
+          <div class="gallery-item break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer" data-type="residential" data-title="Beachfront Villa" data-price="$6.8M" data-price-num="6800000" data-details="10 bed, 12 bath — 9,200 sq ft — Private beach access & helipad" data-gallery="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=1200&q=80,https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80,https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80,https://images.unsplash.com/photo-1677553512940-f79af72efd1b?w=1200&q=80">
+            <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=600&q=80" alt="Beachfront property" class="w-full h-auto object-cover" loading="lazy" />
+            <div class="property-info absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[var(--overlay)] to-transparent opacity-100 transition-opacity duration-300">
+              <h3 class="text-lg font-heading text-white">Beachfront Villa</h3>
+              <p class="text-xs text-white/80">$6.8M — 10 bed, 12 bath</p>
+            </div>
+            <div class="absolute inset-0 bg-[var(--overlay)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+              <div class="text-center"><h3 class="text-xl font-heading mb-2 text-[var(--text)]">Beachfront Villa</h3><p class="text-xs md:text-sm text-muted mb-4">$6.8M — 10 bed, 12 bath</p><button class="view-property-btn px-4 py-2 bg-accent text-[var(--bg)] rounded-lg text-sm font-medium hover:bg-accent/90 transition-all">View Details</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MAP SECTION ===== -->
+    <section id="map" class="py-16 md:py-20 lg:py-24 px-4 md:px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">Locations</span>
+          <h2 class="font-heading mt-4">Explore Our Locations</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto text-sm md:text-base">Discover premium properties across Tanzania's most sought-after destinations.</p>
+        </div>
+        <div class="map-placeholder rounded-2xl overflow-hidden border border-[var(--border)]" style="background: var(--card-bg); background-image: radial-gradient(circle, var(--border-hover) 1px, transparent 1px); background-size: 30px 30px;">
+          <div class="flex flex-col items-center justify-center py-24 px-6">
+            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="map-pin" class="w-8 h-8 text-accent"></i></div>
+            <p class="text-lg font-heading text-[var(--text)] mb-2">Interactive map coming soon</p>
+            <p class="text-sm text-muted text-center max-w-md">We're mapping our properties. Check back soon for an interactive experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MORPHING TESTIMONIALS (exp-055) ===== -->
+    <section id="testimonials" class="py-16 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">Testimonials</span>
+        <h2 class="font-heading text-4xl md:text-5xl mt-4 mb-14 md:mb-20">What Our Clients Say</h2>
+        <div class="testimonial-morph relative min-h-[280px] md:min-h-[240px]" role="region" aria-label="Testimonials" aria-live="polite">
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="0">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"Savannah Estates found us the perfect home. Their knowledge of the market and attention to detail made the entire process seamless."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Elizabeth Mwangi</p>
+              <p class="text-xs md:text-sm text-muted mt-1">Homeowner, Dar es Salaam</p>
+            </div>
+          </div>
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="1">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"Exceptional service from start to finish. Savannah Estates helped us sell our property above asking price in just two weeks."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">David Kamau</p>
+              <p class="text-xs md:text-sm text-muted mt-1">Property Investor</p>
+            </div>
+          </div>
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="2">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"The team's market expertise and negotiation skills were outstanding. They made a complex transaction feel effortless."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Ruth Ochieng</p>
+              <p class="text-xs md:text-sm text-muted mt-1">CEO, Ochieng Group</p>
+            </div>
+          </div>
+        </div>
+        <div class="morph-dots flex justify-center gap-3 mt-10" role="tablist" aria-label="Testimonial navigation">
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="0" aria-label="Testimonial 1"></button>
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="1" aria-label="Testimonial 2"></button>
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="2" aria-label="Testimonial 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="faq-section py-16 md:py-20 lg:py-24 px-4 md:px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">FAQ</span>
+          <h2 class="font-heading mt-4">Common Questions</h2>
+        </div>
+        <div class="space-y-4">
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[48px]"><span class="font-semibold text-sm md:text-base">How do I start the buying process?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-4 md:px-6 pb-6 text-muted leading-relaxed text-sm md:text-base">Book a free consultation. We'll discuss your needs, budget, and preferences, then curate a selection of properties for private viewings.</div>
+          </details>
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[48px]"><span class="font-semibold text-sm md:text-base">What areas do you serve?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-4 md:px-6 pb-6 text-muted leading-relaxed text-sm md:text-base">We specialize in Tanzania and surrounding regions. Our coverage includes residential, commercial, and luxury markets across the area.</div>
+          </details>
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[48px]"><span class="font-semibold text-sm md:text-base">How do you determine property pricing?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-4 md:px-6 pb-6 text-muted leading-relaxed text-sm md:text-base">We use comprehensive market analysis, recent comparable sales, property condition, location factors, and current market trends to determine accurate pricing.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section py-16 md:py-20 lg:py-24 px-4 md:px-6 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-accent/20 via-[var(--bg)] to-[var(--bg)]/90"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(212,175,55,0.08),transparent_50%)]"></div>
+      <div class="relative z-10 max-w-3xl mx-auto text-center">
+        <h2 class="font-heading text-[var(--text)] mb-6">Find Your Perfect Property</h2>
+        <p class="text-sm md:text-lg text-[var(--text)]/70 mb-10 max-w-xl mx-auto">Let's start your journey. Free consultation, no obligation.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact" class="px-6 py-4 sm:px-10 sm:py-5 bg-accent text-[var(--bg)] rounded-xl font-semibold text-base sm:text-lg hover:bg-accent/90 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-[var(--shadow)] w-full sm:w-auto text-center">Schedule a Tour</a>
+          <a href="tel:+255712345678" class="px-6 py-4 sm:px-10 sm:py-5 bg-[var(--border-hover)] text-[var(--text)] rounded-xl font-semibold text-base sm:text-lg border border-[var(--border-hover)] hover:bg-[var(--border-hover)]/20 transition-all duration-300 w-full sm:w-auto text-center">Call Us Now</a>
+        </div>
+        <p class="text-xs md:text-sm text-muted mt-6">Response within 24 hours</p>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section py-16 md:py-20 lg:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
+        <div>
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">Contact</span>
+          <h2 class="font-heading mt-4 mb-6">Let's Talk</h2>
+          <p class="text-muted mb-8 text-sm md:text-base">Ready to find your dream property? Fill out the form and we'll get back to you within 24 hours.</p>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center gap-4"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="phone" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Phone</p><a href="tel:+255712345678" class="text-xs md:text-sm text-muted hover:text-accent transition-colors">+255 712 345 678</a></div></div>
+            <div class="flex items-center gap-4"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="mail" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Email</p><a href="mailto:hello@savannahestates.com" class="text-xs md:text-sm text-muted hover:text-accent transition-colors">hello@savannahestates.com</a></div></div>
+            <div class="flex items-center gap-4"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="map-pin" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Location</p><p class="text-xs md:text-sm text-muted">Dar es Salaam, Tanzania</p></div></div>
+          </div>
+        </div>
+        <form class="contact-form space-y-4 md:space-y-6" novalidate>
+          <div class="form-group"><label for="name" class="block text-sm font-medium mb-2">Full Name</label><input type="text" id="name" name="name" required class="w-full px-4 py-3 min-h-[44px] bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-[var(--muted)] transition-all duration-200" placeholder="John Doe" /><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter your name.</p></div>
+          <div class="form-group"><label for="email" class="block text-sm font-medium mb-2">Email Address</label><input type="email" id="email" name="email" required class="w-full px-4 py-3 min-h-[44px] bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-[var(--muted)] transition-all duration-200" placeholder="john@example.com" /><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter a valid email.</p></div>
+          <div class="form-group"><label for="phone" class="block text-sm font-medium mb-2">Phone Number</label><input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 min-h-[44px] bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-[var(--muted)] transition-all duration-200" placeholder="+255 712 345 678" /><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter your phone number.</p></div>
+          <div class="form-group"><label for="tour-date" class="block text-sm font-medium mb-2">Preferred Tour Date</label><input type="date" id="tour-date" name="tour-date" class="w-full px-4 py-3 min-h-[44px] bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all duration-200" /></div>
+          <div class="form-group"><label for="message" class="block text-sm font-medium mb-2">Tell us about your property needs</label><textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 min-h-[44px] bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-[var(--muted)] transition-all duration-200 resize-none" placeholder="I'm looking for..."></textarea><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter a message.</p></div>
+          <button type="submit" class="btn-submit w-full px-8 py-4 min-h-[48px] bg-accent text-[var(--bg)] font-semibold rounded-xl hover:bg-accent/90 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"><span class="btn-text">Schedule Tour</span><span class="btn-spinner hidden"><svg class="animate-spin w-5 h-5 mx-auto" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg></span></button>
+          <div class="form-success hidden text-center py-4 bg-green-500/10 rounded-xl text-green-400 font-semibold text-sm" role="alert">Message sent successfully! We'll be in touch within 24 hours.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="py-12 md:py-16 px-4 md:px-6 border-t border-[var(--border)]">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div class="sm:col-span-2 md:col-span-1">
+          <a href="/" class="text-2xl font-heading text-accent mb-4 block">SAVANNAH ESTATES</a>
+          <p class="text-xs md:text-sm text-muted leading-relaxed max-w-xs">Curated luxury properties in Tanzania's most desirable locations.</p>
+          <div class="flex gap-4 mt-6">
+            <a href="#" aria-label="Instagram" class="text-muted hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="LinkedIn" class="text-muted hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Facebook" class="text-muted hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          </div>
+        </div>
+        <div><h4 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider mb-4">Properties</h4><ul class="space-y-3"><li><a href="#" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Luxury Homes</a></li><li><a href="#" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Commercial</a></li><li><a href="#" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Land & Plots</a></li><li><a href="#" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Rentals</a></li></ul></div>
+        <div><h4 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider mb-4">Company</h4><ul class="space-y-3"><li><a href="#about" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">About Us</a></li><li><a href="#properties" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Listings</a></li><li><a href="#services" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Services</a></li><li><a href="#contact" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Contact</a></li></ul></div>
+        <div><h4 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider mb-4">Contact</h4><ul class="space-y-3"><li class="text-xs md:text-sm text-muted">Dar es Salaam, Tanzania</li><li><a href="tel:+255712345678" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">+255 712 345 678</a></li><li><a href="mailto:hello@savannahestates.com" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">hello@savannahestates.com</a></li></ul></div>
+      </div>
+      <div class="pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs md:text-sm text-muted">&copy; 2026 Savannah Estates. All rights reserved.</p>
+        <div class="flex gap-6"><a href="#" class="text-xs text-muted hover:text-[var(--text)] transition-colors">Privacy Policy</a><a href="#" class="text-xs text-muted hover:text-[var(--text)] transition-colors">Terms of Service</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/255712345678?text=Hi%20Savannah%20Estates%2C%20I'd%20like%20to%20schedule%20a%20property%20tour." target="_blank" rel="noopener noreferrer" class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-green-400 hover:scale-110 hover:-translate-y-1 transition-all duration-300" aria-label="Contact us on WhatsApp"><svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="fixed bottom-24 right-6 z-50 w-12 h-12 bg-accent/20 backdrop-blur-xl border border-accent/30 rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-accent/30" aria-label="Back to top"><svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg></button>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.468.0"></script>
+
+
+  <script>
+  (function() {
+    var html = document.documentElement;
+    function updateThemeIcons() {
+      var isLight = html.classList.contains('light');
+      document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+        var darkIcon = btn.querySelector('.dark-icon');
+        var lightIcon = btn.querySelector('.light-icon');
+        if (darkIcon) darkIcon.classList.toggle('hidden', isLight);
+        if (lightIcon) lightIcon.classList.toggle('hidden', !isLight);
+      });
+    }
+    function setTheme(theme) {
+      if (theme === 'light') {
+        html.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+      }
+      updateThemeIcons();
+    }
+    var savedTheme = localStorage.getItem('theme');
+    var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (savedTheme) setTheme(savedTheme);
+    else setTheme(prefersLight ? 'light' : 'dark');
+    document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        setTheme(html.classList.contains('light') ? 'dark' : 'light');
+      });
+    });
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme')) setTheme(e.matches ? 'light' : 'dark');
+    });
+  })();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ===== LENIS (smooth scroll) =====
+    if (!reducedMotion && typeof Lenis !== 'undefined') {
+      const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), orientation: 'vertical', smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    // ===== LUCIDE ICONS =====
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    // ===== MOBILE MENU =====
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    if (menuBtn) {
+      menuBtn.addEventListener('click', function() {
+        menuOpen = !menuOpen;
+        mobileMenu.style.transform = menuOpen ? 'translateX(0)' : 'translateX(100%)';
+        menuBtn.setAttribute('aria-expanded', menuOpen);
+        menuBtn.innerHTML = menuOpen
+          ? '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>'
+          : '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+        document.body.style.overflow = menuOpen ? 'hidden' : '';
+      });
+    }
+    window.closeMenu = function() { menuOpen = false; if (mobileMenu) mobileMenu.style.transform = 'translateX(100%)'; if (menuBtn) { menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>'; } document.body.style.overflow = ''; };
+
+    // ===== NAVBAR =====
+    const navInner = document.querySelector('#navbar > div');
+    if (navInner) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          navInner.classList.add('bg-[var(--primary)]/90', 'backdrop-blur-xl', 'shadow-lg', 'border', 'border-[var(--border-hover)]');
+          navInner.classList.remove('bg-transparent', 'border-transparent');
+        } else {
+          navInner.classList.remove('bg-[var(--primary)]/90', 'backdrop-blur-xl', 'shadow-lg', 'border', 'border-[var(--border-hover)]');
+          navInner.classList.add('bg-transparent');
+        }
+      }, { passive: true });
+    }
+
+    // ===== SCROLL PROGRESS =====
+    const progressFill = document.querySelector('.progress-fill');
+    if (progressFill && !reducedMotion) {
+      gsap.to(progressFill, { scaleX: 1, ease: 'none', scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 0.3 } });
+    }
+
+    // ===== HERO: THE AWAKENING (exp-001) =====
+    if (!reducedMotion) {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      tl.fromTo('.hero img', { scale: 1.1, opacity: 0 }, { scale: 1, opacity: 1, duration: 2, ease: 'power4.out' })
+        .fromTo('.hero-badge', { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=1.5')
+        .fromTo('.hero-heading', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, '-=0.5')
+        .fromTo('.hero-subtext', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.5')
+        .fromTo('.hero-cta', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.3')
+        .fromTo('.scroll-indicator', { opacity: 0 }, { opacity: 1, duration: 0.5 }, '-=0.2');
+    }
+
+    // ===== COUNTERS: THE COUNTER (exp-004) =====
+    document.querySelectorAll('.stat-number').forEach(function(counter) {
+      const target = parseInt(counter.dataset.target);
+      const prefix = counter.closest('.stat-item')?.querySelector('.stat-prefix')?.textContent || '';
+      gsap.to(counter, {
+        innerText: target, duration: 2, ease: 'power3.out', snap: { innerText: 1 },
+        scrollTrigger: { trigger: counter, start: 'top 85%' },
+        onUpdate: function() {
+          const val = Math.floor(this.targets()[0].innerText);
+          counter.textContent = val + prefix;
+        }
+      });
+    });
+
+    // ===== TIMELINE SCROLL (exp-021) =====
+    if (!reducedMotion) {
+      gsap.utils.toArray('.timeline-item').forEach(function(item, i) {
+        gsap.from(item, { x: -30, opacity: 0, duration: 0.6, delay: i * 0.2, ease: 'power2.out', scrollTrigger: { trigger: item, start: 'top 85%' } });
+      });
+    }
+
+    // ===== SERVICE CARDS: THE CASCADE (exp-002) =====
+    if (!reducedMotion) {
+      gsap.fromTo('.service-card', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'power2.out', scrollTrigger: { trigger: '#services .grid', start: 'top 85%' } });
+    }
+
+    // ===== PROCESS STEPS =====
+    if (!reducedMotion) {
+      gsap.fromTo('.process-step', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.2, ease: 'power2.out', scrollTrigger: { trigger: '.process-section', start: 'top 80%' } });
+    }
+
+    // ===== GALLERY ITEMS =====
+    if (!reducedMotion) {
+      gsap.utils.toArray('.gallery-item').forEach(function(item, i) {
+        gsap.from(item, { y: 30, opacity: 0, duration: 0.5, delay: i * 0.1, ease: 'power2.out', scrollTrigger: { trigger: item, start: 'top 90%' } });
+      });
+    }
+
+    // ===== MORPHING TESTIMONIALS (exp-055) =====
+    function initMorphingTestimonials(container) {
+      if (!container) return;
+      var slides = container.querySelectorAll('.testimonial-slide');
+      var dots = document.querySelectorAll('.morph-dot');
+      if (slides.length < 2) return;
+      var current = 0, isAnimating = false, interval;
+      function showSlide(index) {
+        if (isAnimating || index === current) return;
+        isAnimating = true;
+        var prev = slides[current];
+        var next = slides[index];
+        gsap.to(prev, { opacity: 0, y: -10, filter: 'blur(4px)', duration: 0.5, ease: 'power2.in', onComplete: function() { prev.classList.remove('active'); prev.style.transform = ''; prev.style.filter = ''; }});
+        gsap.set(next, { opacity: 0, y: 10, filter: 'blur(4px)' });
+        next.classList.add('active');
+        gsap.to(next, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.7, ease: 'power2.out', onComplete: function() { isAnimating = false; }});
+        dots.forEach(function(d) { d.classList.remove('active'); d.setAttribute('aria-selected', 'false'); });
+        if (dots[index]) { dots[index].classList.add('active'); dots[index].setAttribute('aria-selected', 'true'); }
+        current = index;
+      }
+      function nextSlide() { showSlide((current + 1) % slides.length); }
+      dots.forEach(function(d) { d.addEventListener('click', function() { showSlide(parseInt(this.dataset.index)); clearInterval(interval); startInterval(); }); });
+      function startInterval() { interval = setInterval(nextSlide, 5000); }
+      container.addEventListener('mouseenter', function() { clearInterval(interval); });
+      container.addEventListener('mouseleave', function() { startInterval(); });
+      var touchStartX = 0;
+      container.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+      container.addEventListener('touchend', function(e) { var diff = e.changedTouches[0].clientX - touchStartX; if (Math.abs(diff) > 50) { if (diff < 0) nextSlide(); else showSlide((current - 1 + slides.length) % slides.length); } clearInterval(interval); startInterval(); }, { passive: true });
+      slides[0].classList.add('active');
+      gsap.set(slides[0], { opacity: 1, y: 0, filter: 'blur(0px)' });
+      if (dots[0]) { dots[0].classList.add('active'); dots[0].setAttribute('aria-selected', 'true'); }
+      startInterval();
+    }
+    if (!reducedMotion) {
+      initMorphingTestimonials(document.querySelector('.testimonial-morph'));
+    }
+
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.faq-item summary').forEach(function(summary) {
+      summary.addEventListener('click', function(e) {
+        const details = this.closest('details');
+        const isOpen = details.hasAttribute('open');
+        document.querySelectorAll('.faq-item[open]').forEach(function(d) { if (d !== details) d.removeAttribute('open'); });
+        if (!reducedMotion) {
+          if (isOpen) { gsap.to(details.querySelector('div'), { height: 0, opacity: 0, duration: 0.2, onComplete: function() { details.removeAttribute('open'); } }); e.preventDefault(); }
+        }
+      });
+    });
+
+    // ===== FORM VALIDATION =====
+    document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(function(field) {
+      field.addEventListener('blur', function() { validateField(field); });
+      field.addEventListener('input', function() { if (field.dataset.touched) validateField(field); });
+      field.addEventListener('focus', function() { field.dataset.touched = 'true'; });
+    });
+    function validateField(field) {
+      const error = field.parentElement.querySelector('.form-error');
+      if (!field.validity.valid || (field.hasAttribute('required') && !field.value.trim())) {
+        field.classList.add('border-red-400'); field.classList.remove('border-[var(--border-hover)]');
+        if (error) error.classList.remove('hidden'); return false;
+      } else {
+        field.classList.remove('border-red-400'); field.classList.add('border-green-500/50', 'border');
+        if (error) error.classList.add('hidden'); return true;
+      }
+    }
+    document.querySelector('.contact-form')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.btn-submit');
+      const text = btn.querySelector('.btn-text');
+      const spinner = btn.querySelector('.btn-spinner');
+      const success = this.querySelector('.form-success');
+      btn.disabled = true; text.classList.add('hidden'); spinner.classList.remove('hidden');
+      await new Promise(function(r) { setTimeout(r, 1500); });
+      spinner.classList.add('hidden'); success.classList.remove('hidden'); btn.style.display = 'none';
+      gtag('event', 'form_submit', { 'form_location': 'contact' });
+    });
+
+    // ===== CTA SECTION ANIMATION =====
+    if (!reducedMotion) {
+      gsap.fromTo('.cta-section h2', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: '.cta-section', start: 'top 80%' } });
+      gsap.fromTo('.cta-section p', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, delay: 0.15, ease: 'power2.out', scrollTrigger: { trigger: '.cta-section', start: 'top 80%' } });
+      gsap.fromTo('.cta-section .flex', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, delay: 0.3, ease: 'power2.out', scrollTrigger: { trigger: '.cta-section', start: 'top 80%' } });
+    }
+
+    // ===== BACK TO TOP =====
+    const backBtn = document.getElementById('backToTop');
+    if (backBtn) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) { backBtn.classList.remove('opacity-0', 'invisible'); backBtn.classList.add('opacity-100'); }
+        else { backBtn.classList.add('opacity-0', 'invisible'); backBtn.classList.remove('opacity-100'); }
+      }, { passive: true });
+      backBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+
+    // ===== ANALYTICS EVENTS =====
+    document.querySelectorAll('.btn-primary, .hero-cta').forEach(function(btn) {
+      btn.addEventListener('click', function() { if (typeof gtag !== 'undefined') gtag('event', 'cta_click', { 'cta_text': this.textContent.trim() }); });
+    });
+    document.querySelector('.whatsapp-float')?.addEventListener('click', function() { if (typeof gtag !== 'undefined') gtag('event', 'whatsapp_click'); });
+
+    // ===== SCROLL DEPTH TRACKING =====
+    if (typeof gtag !== 'undefined') {
+      var trackedDepths = new Set();
+      window.addEventListener('scroll', function() {
+        var depth = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+        [25, 50, 75, 100].forEach(function(t) { if (depth >= t && !trackedDepths.has(t)) { trackedDepths.add(t); gtag('event', 'scroll_depth', { 'percent': t }); } });
+      }, { passive: true });
+    }
+
+    // ===== MAGNETIC NAV (exp-005) =====
+    if (!reducedMotion) {
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        var text = link.querySelector('.nav-label');
+        if (text) {
+          link.addEventListener('mousemove', function(e) {
+            var rect = link.getBoundingClientRect();
+            var x = (e.clientX - rect.left - rect.width / 2) * 0.15;
+            var y = (e.clientY - rect.top - rect.height / 2) * 0.15;
+            gsap.to(text, { x: x, y: y, duration: 0.3, ease: 'power2.out' });
+          });
+          link.addEventListener('mouseleave', function() {
+            gsap.to(text, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
+          });
+        }
+      });
+    }
+
+    // ===== PROPERTY FILTER =====
+    (function() {
+      var typeFilters = document.querySelectorAll('.property-filter');
+      var priceFilters = document.querySelectorAll('.price-filter');
+      var items = document.querySelectorAll('.gallery-item');
+      var counter = document.getElementById('propertyCounter');
+      var currentType = 'all', currentPriceRange = 'all';
+      function updateCounter() {
+        var visible = 0;
+        items.forEach(function(item) { if (item.style.display !== 'none') visible++; });
+        if (counter) counter.textContent = 'Showing ' + visible + ' propert' + (visible === 1 ? 'y' : 'ies');
+      }
+      function applyFilters() {
+        items.forEach(function(item) {
+          var typeMatch = currentType === 'all' || item.dataset.type === currentType;
+          var price = parseInt(item.dataset.priceNum) || 0;
+          var priceMatch = currentPriceRange === 'all';
+          if (!priceMatch) {
+            var parts = currentPriceRange.split('-');
+            var min = parseInt(parts[0]), max = parseInt(parts[1]);
+            priceMatch = price >= min && price <= max;
+          }
+          if (typeMatch && priceMatch) {
+            if (item.style.display === 'none') {
+              gsap.set(item, { display: '', opacity: 0, scale: 0.9 });
+              gsap.to(item, { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.out', clearProps: 'scale' });
+            }
+          } else {
+            if (item.style.display !== 'none') {
+              gsap.to(item, { opacity: 0, scale: 0.85, duration: 0.3, ease: 'power2.in', onComplete: function() { item.style.display = 'none'; } });
+            }
+          }
+        });
+        updateCounter();
+      }
+      typeFilters.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          typeFilters.forEach(function(f) { f.classList.remove('bg-accent', 'text-[var(--bg)]'); f.classList.add('bg-[var(--border)]', 'text-muted'); });
+          this.classList.add('bg-accent', 'text-[var(--bg)]'); this.classList.remove('bg-[var(--border)]', 'text-muted');
+          currentType = this.dataset.type;
+          applyFilters();
+        });
+      });
+      priceFilters.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          priceFilters.forEach(function(f) { f.classList.remove('bg-accent', 'text-[var(--bg)]'); f.classList.add('bg-[var(--border)]', 'text-muted'); });
+          this.classList.add('bg-accent', 'text-[var(--bg)]'); this.classList.remove('bg-[var(--border)]', 'text-muted');
+          currentPriceRange = this.dataset.priceRange;
+          applyFilters();
+        });
+      });
+    })();
+
+    // ===== PROPERTY DETAIL MODAL =====
+    (function() {
+      var modal = document.getElementById('propertyModal');
+      if (!modal) return;
+      var close = document.getElementById('propertyModalClose');
+      var img = document.getElementById('propModalImg');
+      var title = document.getElementById('propModalTitle');
+      var details = document.getElementById('propModalDetails');
+      var price = document.getElementById('propModalPrice');
+      var thumbnailsContainer = document.getElementById('propModalThumbnails');
+      var currentGallery = [];
+      var currentGalleryIndex = 0;
+      function setGalleryImage(index, animate) {
+        if (index < 0 || index >= currentGallery.length) return;
+        currentGalleryIndex = index;
+        var src = currentGallery[index];
+        if (animate && !reducedMotion) {
+          gsap.to(img, { opacity: 0, scale: 1.05, duration: 0.2, ease: 'power2.in', onComplete: function() {
+            img.src = src;
+            gsap.to(img, { opacity: 1, scale: 1, duration: 0.35, ease: 'power2.out' });
+          }});
+        } else {
+          img.src = src;
+          gsap.set(img, { opacity: 1, scale: 1 });
+        }
+        thumbnailsContainer.querySelectorAll('.gallery-thumb').forEach(function(t, i) {
+          t.classList.toggle('border-accent', i === index);
+          t.classList.toggle('border-transparent', i !== index);
+        });
+      }
+      function buildThumbnails() {
+        if (!thumbnailsContainer) return;
+        thumbnailsContainer.innerHTML = '';
+        currentGallery.forEach(function(src, i) {
+          var thumb = document.createElement('button');
+          thumb.className = 'gallery-thumb w-16 h-12 rounded-lg overflow-hidden shrink-0 border-2 transition-all duration-200 ' + (i === 0 ? 'border-accent' : 'border-transparent');
+          thumb.innerHTML = '<img src="' + src.replace('w=1200', 'w=80') + '" alt="" class="w-full h-full object-cover" loading="lazy">';
+          thumb.setAttribute('aria-label', 'View image ' + (i + 1));
+          thumb.addEventListener('click', function() { setGalleryImage(i, true); });
+          thumbnailsContainer.appendChild(thumb);
+        });
+      }
+      function openModal(item) {
+        if (!item) return;
+        var itemImg = item.querySelector('img');
+        var galleryAttr = item.dataset.gallery || '';
+        if (galleryAttr) {
+          currentGallery = galleryAttr.split(',').map(function(s) { return s.trim(); });
+          if (currentGallery.length > 0) {
+            currentGalleryIndex = 0;
+            buildThumbnails();
+            setGalleryImage(0, false);
+          }
+        } else {
+          if (img) { img.src = itemImg ? itemImg.src.replace('w=600', 'w=1200') : ''; img.alt = itemImg ? itemImg.alt : ''; }
+        }
+        if (title) title.textContent = item.dataset.title || '';
+        if (details) details.textContent = item.dataset.details || '';
+        if (price) price.textContent = item.dataset.price || '';
+        gsap.to(modal, { opacity: 1, visibility: 'visible', duration: 0.3 });
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() { gsap.to(modal, { opacity: 0, visibility: 'hidden', duration: 0.2 }); document.body.style.overflow = ''; }
+      document.querySelectorAll('.view-property-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) { e.stopPropagation(); openModal(this.closest('.gallery-item')); });
+      });
+      document.querySelectorAll('.gallery-item').forEach(function(item) {
+        item.addEventListener('click', function(e) { if (!e.target.closest('.view-property-btn')) openModal(this); });
+      });
+      if (close) close.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+    })();
+
+    // ===== DATE PICKER MIN =====
+    (function() {
+      var dateInput = document.getElementById('tour-date');
+      if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+    })();
+
+  });
+  </script>
+
+  <!-- ===== PROPERTY DETAIL MODAL ===== -->
+  <div id="propertyModal" class="fixed inset-0 z-[70] p-4 opacity-0 invisible transition-all duration-300" style="background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center;">
+    <div class="max-w-2xl w-full rounded-3xl overflow-hidden" style="background: var(--card-bg); border: 1px solid var(--border);">
+      <div class="aspect-[16/9] overflow-hidden bg-secondary relative">
+        <img id="propModalImg" src="" alt="" class="w-full h-full object-cover">
+      </div>
+      <!-- Thumbnail strip -->
+      <div id="propModalThumbnails" class="flex gap-2 px-4 pt-3 pb-2 overflow-x-auto scrollbar-hide" style="background: var(--card-bg);"></div>
+      <div class="p-6 md:p-8 pt-3">
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <h3 id="propModalTitle" class="text-xl md:text-2xl font-heading" style="color: var(--text);"></h3>
+            <p id="propModalPrice" class="text-lg font-semibold mt-1" style="color: var(--accent);"></p>
+          </div>
+          <button id="propertyModalClose" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-[var(--border)] transition-colors" aria-label="Close" style="color: var(--muted);">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <p id="propModalDetails" class="leading-relaxed" style="color: var(--muted);"></p>
+        <a href="#contact" class="inline-block mt-6 px-6 py-3 bg-accent text-[var(--bg)] rounded-xl font-semibold text-sm hover:bg-accent/90 transition-all" onclick="document.getElementById('propertyModalClose').click()">Schedule a Viewing</a>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

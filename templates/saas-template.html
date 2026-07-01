@@ -3,81 +3,817 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[Product Name] — [Tagline] | Lumary Studio</title>
+  <title>Cloudburst — Deploy with confidence | Tanzania</title>
+  <meta name="description" content="Cloudburst helps engineering teams achieve ship faster. SaaS platform for DevOps with enterprise-grade security and seamless integrations." />
+  <link rel="canonical" href="https://cloudburst.co.tz/" />
+  <meta property="og:title" content="Cloudburst — Deploy with confidence" />
+  <meta property="og:description" content="Cloudburst — The SaaS platform engineering teams trusts to ship faster." />
+  <meta property="og:image" content="https://cloudburst.co.tz/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Cloudburst",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "Cloudburst helps engineering teams achieve ship faster with zero-downtime deployments.",
+    "url": "https://cloudburst.co.tz",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "256" },
+    "offers": { "@type": "Offer", "price": "$49", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { primary: '#0F172A', secondary: '#1E293B', accent: '#3B82F6', muted: '#64748B' },
+          colors: { primary: 'var(--primary)', secondary: 'var(--secondary)', accent: 'var(--accent)', surface: 'var(--surface)', muted: 'var(--muted)' },
           fontFamily: { heading: ['DM Sans', 'sans-serif'], body: ['Inter', 'sans-serif'] },
+          borderRadius: { DEFAULT: '12px' },
         }
       }
     }
   </script>
-  <style>body { font-family: 'Inter', sans-serif; } h1,h2,h3 { font-family: 'DM Sans', sans-serif; } @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }</style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');</script>
+
+  <style>
+    :root {
+      --primary: #0F172A;
+      --secondary: #1E293B;
+      --accent: #3B82F6;
+      --surface: #F8FAFC;
+      --muted: #64748B;
+      --bg: #0F172A;
+      --text: #F8FAFC;
+      --card-bg: #1E293B;
+      --border: rgba(255,255,255,0.05);
+      --border-hover: rgba(255,255,255,0.1);
+      --overlay: rgba(15,23,42,0.85);
+      --shadow: rgba(0,0,0,0.3);
+    }
+    html.light {
+      --primary: #FFFFFF;
+      --secondary: #F1F5F9;
+      --accent: #2563EB;
+      --surface: #0F172A;
+      --muted: #64748B;
+      --bg: #FFFFFF;
+      --text: #0F172A;
+      --card-bg: #F8FAFC;
+      --border: rgba(0,0,0,0.08);
+      --border-hover: rgba(0,0,0,0.12);
+      --overlay: rgba(255,255,255,0.85);
+      --shadow: rgba(0,0,0,0.08);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    h1, h2, h3, h4 { font-family: 'DM Sans', sans-serif; letter-spacing: -0.02em; line-height: 1.1; }
+    h1 { font-size: clamp(2.5rem, 8vw, 5rem); }
+    h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+    img, video, iframe { max-width: 100%; height: auto; }
+    section[id] { scroll-margin-top: 80px; }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    ::selection { background: #3B82F6; color: #FFFFFF; }
+    @media (max-width: 767px) {
+      .mobile-touch-target { min-height: 48px; }
+      nav a, .nav-link { padding: 12px 0; }
+    }
+    .tilt-card { will-change: transform; }
+    .testimonial-slide { will-change: transform, opacity, filter; }
+    .morph-dot.active { transform: scale(1.3); background: var(--accent) !important; }
+  </style>
 </head>
-<body class="bg-primary text-white">
-  <!-- Navigation -->
-  <nav class="fixed top-4 left-4 right-4 z-50"><div class="max-w-6xl mx-auto px-6 py-4 rounded-2xl bg-primary/80 backdrop-blur-xl border border-white/10"><div class="flex justify-between items-center">
-    <a href="/" class="text-xl font-heading font-bold">Logo</a>
-    <div class="hidden md:flex items-center gap-8">
-      <a href="#features" class="text-sm text-muted hover:text-white transition-colors">Features</a>
-      <a href="#pricing" class="text-sm text-muted hover:text-white transition-colors">Pricing</a>
-      <a href="#contact" class="px-5 py-2.5 bg-accent text-white rounded-lg text-sm font-semibold">Get Early Access</a>
-    </div>
-  </div></div></nav>
+<body class="bg-[var(--bg)] text-[var(--text)] antialiased">
+  <!-- Skip to content (accessibility) -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg">Skip to main content</a>
 
-  <!-- Hero (Split Layout) -->
-  <section class="min-h-screen flex items-center pt-20 px-6">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <span class="text-sm font-semibold text-accent uppercase tracking-widest">Launching Soon</span>
-        <h1 class="text-5xl md:text-6xl font-heading font-bold mt-4 mb-6 leading-tight">The Future of [Industry] Is Here</h1>
-        <p class="text-lg text-muted mb-8">[Product] helps [target audience] achieve [outcome] with [key differentiator].</p>
-        <div class="flex gap-4">
-          <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:border-accent outline-none" />
-          <button class="px-6 py-3 bg-accent text-white rounded-xl font-semibold hover:bg-accent/90 transition-all">Get Early Access</button>
+  <!-- Scroll Progress Bar -->
+  <div class="progress-container fixed top-0 left-0 right-0 z-[100] h-0.5 bg-[var(--border)]">
+    <div class="progress-fill h-full bg-accent origin-left" style="transform: scaleX(0);"></div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="fixed top-0 md:top-4 left-0 md:left-4 right-0 md:right-4 z-50" role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 rounded-none md:rounded-2xl transition-all duration-500 bg-transparent">
+      <div class="flex items-center justify-between">
+        <a href="/" class="nav-link text-xl font-heading font-bold text-[var(--text)]">
+          <span class="nav-label">CLOUDBURST</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#features" class="nav-link text-sm text-[var(--text)]/80 hover:text-accent transition-colors duration-200"><span class="nav-label">Features</span></a>
+          <a href="#pricing" class="nav-link text-sm text-[var(--text)]/80 hover:text-accent transition-colors duration-200"><span class="nav-label">Pricing</span></a>
+          <a href="#about" class="nav-link text-sm text-[var(--text)]/80 hover:text-accent transition-colors duration-200"><span class="nav-label">About</span></a>
+          <a href="#testimonials" class="nav-link text-sm text-[var(--text)]/80 hover:text-accent transition-colors duration-200"><span class="nav-label">Testimonials</span></a>
+          <button id="themeToggle" class="theme-toggle p-2 rounded-lg text-[var(--muted)] hover:text-accent transition-colors" aria-label="Toggle theme">
+            <svg class="dark-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="light-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+          <a href="#contact" class="px-5 py-2.5 bg-accent text-white rounded-lg text-sm font-semibold hover:bg-accent/90 transition-all duration-200">Get Early Access</a>
         </div>
-        <p class="text-xs text-muted mt-3">Join 500+ early adopters. No spam, unsubscribe anytime.</p>
+        <div class="flex items-center gap-2 md:hidden">
+          <button id="themeToggleMobile" class="theme-toggle p-2 rounded-lg text-[var(--muted)] hover:text-accent transition-colors" aria-label="Toggle theme">
+            <svg class="dark-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="light-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+          <button class="text-[var(--text)] p-2" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
       </div>
-      <div class="aspect-video bg-gradient-to-br from-accent/20 to-primary rounded-2xl border border-white/10 flex items-center justify-center text-muted">Product Demo</div>
     </div>
-  </section>
+  </nav>
 
-  <!-- Social Proof -->
-  <section class="py-16 px-6 border-y border-white/5">
-    <div class="max-w-6xl mx-auto flex flex-wrap justify-center gap-12 items-center opacity-50">
-      <span class="text-lg font-semibold text-muted">Company 1</span>
-      <span class="text-lg font-semibold text-muted">Company 2</span>
-      <span class="text-lg font-semibold text-muted">Company 3</span>
-      <span class="text-lg font-semibold text-muted">Company 4</span>
-      <span class="text-lg font-semibold text-muted">Company 5</span>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 bg-[var(--bg)] z-40 translate-x-full transition-transform duration-300 ease-in-out md:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl">
+      <a href="#features" class="text-[var(--text)] hover:text-accent transition-colors" onclick="closeMenu()">Features</a>
+      <a href="#pricing" class="text-[var(--text)] hover:text-accent transition-colors" onclick="closeMenu()">Pricing</a>
+      <a href="#about" class="text-[var(--text)] hover:text-accent transition-colors" onclick="closeMenu()">About</a>
+      <a href="#testimonials" class="text-[var(--text)] hover:text-accent transition-colors" onclick="closeMenu()">Testimonials</a>
+      <a href="#contact" onclick="closeMenu()" class="px-8 py-4 bg-accent text-white rounded-xl font-semibold">Get Early Access</a>
     </div>
-  </section>
+  </div>
 
-  <!-- Features -->
-  <section id="features" class="py-24 px-6">
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <section class="hero min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div class="hero-bg absolute inset-0">
+        <div class="w-full h-full bg-gradient-to-br from-[var(--bg)] via-[var(--bg)] to-[var(--bg)]/90"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.15),transparent_60%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.08),transparent_50%)]"></div>
+      </div>
+      <div class="relative z-10 text-center max-w-4xl px-4 md:px-6">
+        <span class="hero-badge inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-xs md:text-sm text-accent font-semibold mb-6">Launching Soon</span>
+        <h1 class="hero-heading font-heading font-bold leading-none mb-6">
+          The Future of<br /><span class="text-accent">DevOps</span> Is Here
+        </h1>
+        <p class="hero-subtext text-sm md:text-lg lg:text-xl text-muted max-w-2xl mx-auto mb-10">
+          Cloudburst helps engineering teams achieve ship faster with zero-downtime deployments.
+        </p>
+        <!-- Dashboard Preview Mockup -->
+        <div class="dashboard-mockup mt-10 relative mx-auto max-w-2xl rounded-2xl overflow-hidden border border-[var(--border-hover)]" style="aspect-ratio: 16/10; background: linear-gradient(135deg, var(--card-bg) 0%, rgba(59,130,246,0.15) 100%);"><div class="absolute inset-0 flex items-center justify-center"><div class="text-center"><div class="w-16 h-1 rounded-full bg-accent mx-auto mb-4"></div><p class="text-sm text-muted">Dashboard Preview</p></div></div></div>
+        <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+          <form onsubmit="return false;" class="flex-1 flex flex-col sm:flex-row gap-2 w-full">
+            <input type="email" placeholder="Enter your email" class="w-full sm:flex-1 px-4 py-4 min-h-[48px] bg-[var(--border-hover)] border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-[var(--muted)] transition-all duration-200" />
+            <a href="#pricing" class="w-full sm:w-auto px-6 py-4 min-h-[48px] bg-accent text-white rounded-xl font-semibold hover:bg-accent/90 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-[var(--shadow)] text-center inline-flex items-center justify-center">Get Early Access</a>
+          </form>
+        </div>
+        <!-- Scarcity -->
+        <div class="max-w-xs mx-auto mt-4">
+          <p class="text-xs text-muted">Limited early access — 147 of 500 spots filled</p>
+          <div class="h-1 rounded-full bg-[var(--border)] mt-2"><div class="h-full rounded-full bg-accent" style="width: 30%"></div></div>
+        </div>
+        <p class="text-xs md:text-sm text-muted mt-4">Join 500+ early adopters. No spam, unsubscribe anytime.</p>
+      </div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center scroll-indicator">
+        <span class="text-xs md:text-sm text-muted">Scroll to explore</span>
+        <div class="w-6 h-10 border-2 border-muted rounded-full mx-auto mt-2 flex justify-center p-1">
+          <div class="w-1.5 h-2.5 bg-accent rounded-full animate-bounce"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOCIAL PROOF ===== -->
+    <section class="py-16 px-4 md:px-6 border-y border-[var(--border)]">
+      <div class="max-w-6xl mx-auto">
+        <p class="text-center text-xs md:text-sm text-muted mb-8 uppercase tracking-widest">Trusted by innovative teams worldwide</p>
+        <div class="flex flex-wrap justify-center gap-12 items-center opacity-40">
+          <span class="text-xl font-heading font-bold text-[var(--text)]/60">TechCorp</span>
+          <span class="text-xl font-heading font-bold text-[var(--text)]/60">DataFlow</span>
+          <span class="text-xl font-heading font-bold text-[var(--text)]/60">GrowthLab</span>
+          <span class="text-xl font-heading font-bold text-[var(--text)]/60">NexGen</span>
+          <span class="text-xl font-heading font-bold text-[var(--text)]/60">CloudFirst</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section id="stats" class="stats-section py-16 md:py-20 lg:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
+        <div class="stat-item p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)]">
+          <div class="stat-number text-4xl md:text-5xl font-heading font-bold text-accent" data-target="500">0</div>
+          <div class="stat-prefix hidden">+</div>
+          <p class="text-muted mt-2 text-xs md:text-sm">Active Users</p>
+        </div>
+        <div class="stat-item p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)]">
+          <div class="stat-number text-4xl md:text-5xl font-heading font-bold text-accent" data-target="98">0</div>
+          <div class="stat-prefix hidden">%</div>
+          <p class="text-muted mt-2 text-xs md:text-sm">Uptime SLA</p>
+        </div>
+        <div class="stat-item p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)]">
+          <div class="stat-number text-4xl md:text-5xl font-heading font-bold text-accent" data-target="256">0</div>
+          <div class="stat-prefix hidden">+</div>
+          <p class="text-muted mt-2 text-xs md:text-sm">Businesses Served</p>
+        </div>
+        <div class="stat-item p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)]">
+          <div class="stat-number text-4xl md:text-5xl font-heading font-bold text-accent" data-target="15">0</div>
+          <div class="stat-prefix hidden">+</div>
+          <p class="text-muted mt-2 text-xs md:text-sm">Integrations</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT + TIMELINE ===== -->
+    <section id="about" class="about-section py-16 md:py-20 lg:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-[var(--border-hover)]">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80" alt="Our team collaborating" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/10 rounded-2xl -z-10 border border-accent/20"></div>
+        </div>
+        <div>
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">Our Story</span>
+          <h2 class="font-heading font-bold mt-4 mb-6">Built to Transform Industries</h2>
+          <div class="space-y-4 text-muted leading-relaxed text-sm md:text-base">
+            <p>Founded in 2020, Cloudburst emerged from a simple observation: DevOps deserved better tools. Our team of engineers and designers set out to build a platform that would redefine what's possible.</p>
+            <p>Today, Cloudburst serves 500+ businesses across East Africa, processing millions of operations monthly with 99.98% uptime. But we're just getting started.</p>
+          </div>
+          <!-- Timeline -->
+          <div class="timeline mt-10 relative pl-8 before:absolute before:left-[11px] before:top-2 before:bottom-0 before:w-0.5 before:bg-[var(--border)]">
+            <div class="timeline-item relative mb-8">
+              <div class="absolute left-[-26px] top-1 w-[22px] h-[22px] rounded-full bg-accent border-[5px] border-[var(--bg)] shadow-[0_0_0_2px_rgba(59,130,246,0.3)]"></div>
+              <span class="text-xs md:text-sm font-semibold text-accent">2020</span>
+              <p class="text-xs md:text-sm text-muted mt-1">Product conceived. Small team, big vision. First prototype built.</p>
+            </div>
+            <div class="timeline-item relative mb-8">
+              <div class="absolute left-[-26px] top-1 w-[22px] h-[22px] rounded-full bg-accent border-[5px] border-[var(--bg)] shadow-[0_0_0_2px_rgba(59,130,246,0.3)]"></div>
+              <span class="text-xs md:text-sm font-semibold text-accent">2022</span>
+              <p class="text-xs md:text-sm text-muted mt-1">Public launch. 100+ businesses onboarded in first quarter.</p>
+            </div>
+            <div class="timeline-item relative mb-8">
+              <div class="absolute left-[-26px] top-1 w-[22px] h-[22px] rounded-full bg-accent border-[5px] border-[var(--bg)] shadow-[0_0_0_2px_rgba(59,130,246,0.3)]"></div>
+              <span class="text-xs md:text-sm font-semibold text-accent">2026</span>
+              <p class="text-xs md:text-sm text-muted mt-1">500+ users, 15 integrations, 99.98% uptime. Scaling globally.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section id="features" class="py-16 md:py-20 lg:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">Features</span>
+          <h2 class="font-heading font-bold mt-4">Everything You Need</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto text-sm md:text-base">Built for engineering teams who demand the best.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div class="tilt-card service-card p-6 md:p-8 rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><i data-lucide="zap" class="w-10 h-10 md:w-12 md:h-12 text-accent"></i></div>
+            <h3 class="text-lg md:text-xl font-heading font-bold mb-3">Lightning Fast</h3>
+            <p class="text-muted leading-relaxed text-sm md:text-base">Optimized for speed. Sub-second response times, 99.98% uptime, and real-time sync across all devices.</p>
+          </div>
+          <div class="tilt-card service-card p-6 md:p-8 rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><i data-lucide="shield" class="w-10 h-10 md:w-12 md:h-12 text-accent"></i></div>
+            <h3 class="text-lg md:text-xl font-heading font-bold mb-3">Enterprise Security</h3>
+            <p class="text-muted leading-relaxed text-sm md:text-base">Bank-level encryption, SOC 2 compliance, and granular permission controls. Your data stays yours.</p>
+          </div>
+          <div class="tilt-card service-card p-6 md:p-8 rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="w-14 h-14 md:w-16 md:h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6"><i data-lucide="puzzle" class="w-10 h-10 md:w-12 md:h-12 text-accent"></i></div>
+            <h3 class="text-lg md:text-xl font-heading font-bold mb-3">Seamless Integration</h3>
+            <p class="text-muted leading-relaxed text-sm md:text-base">Connect with 15+ tools your team already uses. Zapier, Slack, Salesforce — we play well with others.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section id="process" class="process-section py-16 md:py-20 lg:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">How It Works</span>
+          <h2 class="font-heading font-bold mt-4">Your Journey to Success</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto text-sm md:text-base">Get up and running in minutes. Our streamlined onboarding process ensures you see value fast.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative">
+          <div class="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-[var(--border)]"></div>
+          <div class="process-step text-center relative">
+            <div class="w-24 h-24 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-[var(--bg)]"><span class="text-2xl font-bold text-accent">01</span></div>
+            <h3 class="text-base md:text-lg font-semibold mb-3">Sign Up</h3>
+            <p class="text-xs md:text-sm text-muted">Create your account in under 2 minutes. No credit card required.</p>
+          </div>
+          <div class="process-step text-center relative">
+            <div class="w-24 h-24 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-[var(--bg)]"><span class="text-2xl font-bold text-accent">02</span></div>
+            <h3 class="text-base md:text-lg font-semibold mb-3">Connect</h3>
+            <p class="text-xs md:text-sm text-muted">Integrate your existing tools with one-click setup.</p>
+          </div>
+          <div class="process-step text-center relative">
+            <div class="w-24 h-24 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-[var(--bg)]"><span class="text-2xl font-bold text-accent">03</span></div>
+            <h3 class="text-base md:text-lg font-semibold mb-3">Configure</h3>
+            <p class="text-xs md:text-sm text-muted">Tailor the platform to your workflow with smart defaults.</p>
+          </div>
+          <div class="process-step text-center relative">
+            <div class="w-24 h-24 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-[var(--bg)]"><span class="text-2xl font-bold text-accent">04</span></div>
+            <h3 class="text-base md:text-lg font-semibold mb-3">Scale</h3>
+            <p class="text-xs md:text-sm text-muted">Unlock advanced features as your team grows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section id="pricing" class="gallery-section py-16 md:py-20 lg:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">Pricing</span>
+          <h2 class="font-heading font-bold mt-4">Plans for Every Team</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto text-sm md:text-base">Start free, upgrade when you need more power.</p>
+        </div>
+        <!-- Pricing Toggle -->
+        <div class="flex items-center justify-center gap-3 mb-10">
+          <span class="text-sm font-medium toggle-label-monthly text-accent transition-colors duration-200">Monthly</span>
+          <button id="pricingToggle" class="relative w-12 h-6 rounded-full transition-colors duration-300" style="background: var(--accent); opacity: 0.5;" role="switch" aria-checked="true" aria-label="Toggle annual pricing">
+            <span class="absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform duration-300" style="transform: translateX(0);"></span>
+          </button>
+          <span class="text-sm font-medium toggle-label-annual text-muted transition-colors duration-200">Annual <span class="text-accent text-xs font-semibold">Save 20%</span></span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div class="gallery-item group relative rounded-2xl overflow-hidden border border-[var(--border-hover)] bg-[var(--card-bg)] p-6 md:p-8 text-center">
+            <h3 class="text-lg md:text-xl font-heading font-bold mb-2">Starter</h3>
+            <div class="text-3xl md:text-4xl font-heading font-bold text-accent mb-2" data-monthly="Free" data-annual="Free">Free</div>
+            <p class="text-xs md:text-sm text-muted mb-6 pricing-period">Always free</p>
+            <ul class="text-left space-y-3 mb-8 text-xs md:text-sm"><li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Up to 50 users</li><li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 1GB storage</li><li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Basic analytics</li></ul>
+            <a href="#contact" class="block w-full py-3 border border-[var(--border-hover)] rounded-xl text-xs md:text-sm font-semibold hover:bg-[var(--border)] transition-all duration-200">Get Started</a>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden border border-accent/30 bg-[var(--card-bg)] p-6 md:p-8 text-center relative">
+            <span class="absolute top-4 right-4 px-3 py-1 bg-accent/10 text-accent text-xs font-semibold rounded-full">Popular</span>
+            <h3 class="text-lg md:text-xl font-heading font-bold mb-2">Pro</h3>
+            <div class="text-3xl md:text-4xl font-heading font-bold text-accent mb-2" data-monthly="$39" data-annual="$29">$29</div>
+            <p class="text-xs md:text-sm text-muted mb-6 pricing-period">per month, billed annually</p>
+            <ul class="text-left space-y-3 mb-8 text-xs md:text-sm"><li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Unlimited users</li><li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> 50GB storage</li><li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Advanced analytics + API</li></ul>
+            <a href="#contact" class="block w-full py-3 bg-accent text-white rounded-xl text-xs md:text-sm font-semibold hover:bg-accent/90 transition-all duration-200">Start Trial</a>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden border border-[var(--border-hover)] bg-[var(--card-bg)] p-6 md:p-8 text-center">
+            <h3 class="text-lg md:text-xl font-heading font-bold mb-2">Enterprise</h3>
+            <div class="text-3xl md:text-4xl font-heading font-bold text-accent mb-2" data-monthly="Custom" data-annual="Custom">Custom</div>
+            <p class="text-xs md:text-sm text-muted mb-6 pricing-period">Tailored for your team</p>
+            <ul class="text-left space-y-3 mb-8 text-xs md:text-sm"><li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Unlimited everything</li><li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Dedicated support</li><li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> SSO + custom integrations</li></ul>
+            <a href="#contact" class="block w-full py-3 border border-[var(--border-hover)] rounded-xl text-xs md:text-sm font-semibold hover:bg-[var(--border)] transition-all duration-200">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MORPHING TESTIMONIALS (exp-055) ===== -->
+    <section id="testimonials" class="py-16 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">Testimonials</span>
+        <h2 class="font-heading text-4xl md:text-5xl mt-4 mb-14 md:mb-20 font-bold">Trusted by Industry Leaders</h2>
+        <div class="testimonial-morph relative min-h-[280px] md:min-h-[240px]" role="region" aria-label="Testimonials" aria-live="polite">
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="0">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"Cloudburst transformed our workflow. Setup took minutes, and the results were immediate. Highly recommended for any DevOps team."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Sarah Kim</p>
+              <p class="text-xs md:text-sm text-muted mt-1">CTO, TechCorp</p>
+            </div>
+          </div>
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="1">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"The integrations alone saved us 20+ hours per week. Cloudburst is now essential to our daily operations."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Marcus Rivera</p>
+              <p class="text-xs md:text-sm text-muted mt-1">VP Engineering, DataFlow Inc.</p>
+            </div>
+          </div>
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="2">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"From onboarding to daily use, Cloudburst has been a game-changer. The support team is exceptional."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Aisha Lema</p>
+              <p class="text-xs md:text-sm text-muted mt-1">Product Manager, GrowthLab</p>
+            </div>
+          </div>
+        </div>
+        <div class="morph-dots flex justify-center gap-3 mt-10" role="tablist" aria-label="Testimonial navigation">
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="0" aria-label="Testimonial 1"></button>
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="1" aria-label="Testimonial 2"></button>
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="2" aria-label="Testimonial 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="faq-section py-16 md:py-20 lg:py-24 px-4 md:px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">FAQ</span>
+          <h2 class="font-heading font-bold mt-4">Common Questions</h2>
+        </div>
+        <div class="space-y-4">
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[48px]"><span class="font-semibold text-sm md:text-base">How does the free trial work?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-4 md:px-6 pb-6 text-muted leading-relaxed text-sm md:text-base">Start your 14-day free trial with full access to all Pro features. No credit card required. Cancel anytime with one click.</div>
+          </details>
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[48px]"><span class="font-semibold text-sm md:text-base">Can I upgrade or downgrade my plan?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-4 md:px-6 pb-6 text-muted leading-relaxed text-sm md:text-base">Yes. Upgrade anytime to unlock more features. Downgrade at the end of your billing cycle. Changes take effect immediately.</div>
+          </details>
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[48px]"><span class="font-semibold text-sm md:text-base">What kind of support do you offer?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-4 md:px-6 pb-6 text-muted leading-relaxed text-sm md:text-base">All plans include email support with 4-hour response time. Pro plans get priority chat support. Enterprise includes a dedicated account manager.</div>
+          </details>
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-[var(--card-bg)] [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-4 md:p-6 cursor-pointer list-none min-h-[48px]"><span class="font-semibold text-sm md:text-base">Is my data secure?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-4 md:px-6 pb-6 text-muted leading-relaxed text-sm md:text-base">Absolutely. We use bank-level encryption (AES-256), SOC 2 Type II compliant infrastructure, and regular third-party security audits.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section py-16 md:py-20 lg:py-24 px-4 md:px-6 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-accent/20 via-[var(--bg)] to-[var(--bg)]/90"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(59,130,246,0.08),transparent_50%)]"></div>
+      <div class="relative z-10 max-w-3xl mx-auto text-center">
+        <h2 class="font-heading font-bold text-[var(--text)] mb-6">Ready to Transform Your Workflow?</h2>
+        <p class="text-sm md:text-lg text-muted mb-10 max-w-xl mx-auto">Join 500+ businesses already using Cloudburst.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact" class="px-6 py-4 sm:px-10 sm:py-5 bg-accent text-white rounded-xl font-semibold text-base sm:text-lg hover:bg-accent/90 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-[var(--shadow)] w-full sm:w-auto text-center">Start Free Trial</a>
+          <a href="#" class="px-6 py-4 sm:px-10 sm:py-5 bg-[var(--border-hover)] text-[var(--text)] rounded-xl font-semibold text-base sm:text-lg border border-[var(--border-hover)] hover:bg-[var(--border-hover)]/20 transition-all duration-300 w-full sm:w-auto text-center">Book a Demo</a>
+        </div>
+        <p class="text-xs md:text-sm text-muted mt-6">No credit card required. 14-day free trial.</p>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section py-16 md:py-20 lg:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
+        <div>
+          <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">Contact</span>
+          <h2 class="font-heading font-bold mt-4 mb-6">Let's Talk</h2>
+          <p class="text-muted mb-8 text-sm md:text-base">Have questions? Our team is here to help. We typically respond within 4 hours.</p>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center gap-4"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="mail" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Email</p><a href="mailto:hello@cloudburst.com" class="text-xs md:text-sm text-muted hover:text-accent transition-colors">hello@cloudburst.com</a></div></div>
+            <div class="flex items-center gap-4"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="message-circle" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Live Chat</p><p class="text-xs md:text-sm text-muted">Available Mon–Fri, 9AM–6PM EST</p></div></div>
+            <div class="flex items-center gap-4"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="map-pin" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Location</p><p class="text-xs md:text-sm text-muted">Dar es Salaam, Tanzania</p></div></div>
+          </div>
+        </div>
+        <form class="contact-form space-y-4 md:space-y-6" novalidate>
+          <div class="form-group"><label for="name" class="block text-sm font-medium mb-2">Full Name</label><input type="text" id="name" name="name" required class="w-full px-4 py-3 min-h-[44px] bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-[var(--muted)] transition-all duration-200" placeholder="John Doe" /><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter your name.</p></div>
+          <div class="form-group"><label for="email" class="block text-sm font-medium mb-2">Email Address</label><input type="email" id="email" name="email" required class="w-full px-4 py-3 min-h-[44px] bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-[var(--muted)] transition-all duration-200" placeholder="john@example.com" /><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter a valid email.</p></div>
+          <div class="form-group"><label for="company" class="block text-sm font-medium mb-2">Company Name</label><input type="text" id="company" name="company" class="w-full px-4 py-3 min-h-[44px] bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-[var(--muted)] transition-all duration-200" placeholder="Acme Inc." /></div>
+          <div class="form-group"><label for="message" class="block text-sm font-medium mb-2">How can we help?</label><textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 min-h-[44px] bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-[var(--muted)] transition-all duration-200 resize-none" placeholder="Tell us about your needs..."></textarea><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter a message.</p></div>
+          <button type="submit" class="btn-submit w-full px-8 py-4 min-h-[48px] bg-accent text-white font-semibold rounded-xl hover:bg-accent/90 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"><span class="btn-text">Send Message</span><span class="btn-spinner hidden"><svg class="animate-spin w-5 h-5 mx-auto" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg></span></button>
+          <div class="form-success hidden text-center py-4 bg-green-500/10 rounded-xl text-green-400 font-semibold text-sm" role="alert">Message sent successfully! We'll be in touch within 4 hours.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="py-12 md:py-16 px-4 md:px-6 border-t border-[var(--border)]">
     <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16"><h2 class="text-4xl font-heading font-bold">Everything You Need</h2><p class="text-muted mt-4 max-w-xl mx-auto">Built for [target audience] who demand the best.</p></div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-8 rounded-2xl border border-white/10 bg-secondary hover:-translate-y-1 hover:shadow-xl transition-all duration-300"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5"><svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3 class="text-lg font-semibold mb-3">Lightning Fast</h3><p class="text-sm text-muted">Optimized for speed. Your team will thank you.</p></div>
-        <div class="p-8 rounded-2xl border border-white/10 bg-secondary hover:-translate-y-1 hover:shadow-xl transition-all duration-300"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5"><svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><h3 class="text-lg font-semibold mb-3">Enterprise Security</h3><p class="text-sm text-muted">Bank-level encryption. Your data stays yours.</p></div>
-        <div class="p-8 rounded-2xl border border-white/10 bg-secondary hover:-translate-y-1 hover:shadow-xl transition-all duration-300"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5"><svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div><h3 class="text-lg font-semibold mb-3">Seamless Integration</h3><p class="text-sm text-muted">Works with your existing tools. No disruption.</p></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div class="sm:col-span-2 md:col-span-1">
+          <a href="/" class="text-2xl font-heading font-bold text-[var(--text)] mb-4 block">CLOUDBURST</a>
+          <p class="text-xs md:text-sm text-muted leading-relaxed max-w-xs">The SaaS platform engineering teams trusts to ship faster.</p>
+          <div class="flex gap-4 mt-6">
+            <a href="#" aria-label="Twitter" class="text-muted hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" aria-label="LinkedIn" class="text-muted hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="GitHub" class="text-muted hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+          </div>
+        </div>
+        <div><h4 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider mb-4">Product</h4><ul class="space-y-3"><li><a href="#features" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Features</a></li><li><a href="#pricing" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Pricing</a></li><li><a href="#" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Changelog</a></li><li><a href="#" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">API Docs</a></li></ul></div>
+        <div><h4 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider mb-4">Company</h4><ul class="space-y-3"><li><a href="#about" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">About</a></li><li><a href="#" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Blog</a></li><li><a href="#" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Careers</a></li><li><a href="#contact" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Contact</a></li></ul></div>
+        <div><h4 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider mb-4">Legal</h4><ul class="space-y-3"><li><a href="#" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Privacy Policy</a></li><li><a href="#" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Terms of Service</a></li><li><a href="#" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">Cookie Policy</a></li><li><a href="#" class="text-xs md:text-sm text-muted hover:text-[var(--text)] transition-colors">GDPR</a></li></ul></div>
+      </div>
+      <div class="pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs md:text-sm text-muted">&copy; 2026 Cloudburst. All rights reserved.</p>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- CTA -->
-  <section class="py-24 px-6 text-center bg-gradient-to-b from-accent/10 to-primary">
-    <div class="max-w-xl mx-auto">
-      <h2 class="text-4xl font-heading font-bold mb-6">Ready to Transform Your Workflow?</h2>
-      <p class="text-muted mb-8">Join hundreds of businesses already using [Product].</p>
-      <a href="#" class="inline-flex px-10 py-5 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent/90 transition-all">Start Free Trial</a>
-    </div>
-  </section>
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/255712345678?text=Hi%20Cloudburst%2C%20I'd%20like%20to%20learn%20more." target="_blank" rel="noopener noreferrer" class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-green-400 hover:scale-110 hover:-translate-y-1 transition-all duration-300" aria-label="Contact us on WhatsApp"><svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
-  <footer class="py-12 px-6 border-t border-white/5 text-center text-sm text-muted">&copy; 2026 [Product Name]. All rights reserved.</footer>
+  <!-- Back to Top -->
+  <button id="backToTop" class="fixed bottom-24 right-6 z-50 w-12 h-12 bg-accent/20 backdrop-blur-xl border border-accent/30 rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-accent/30" aria-label="Back to top"><svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg></button>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.468.0"></script>
+
+
+  <script>
+  (function() {
+    var html = document.documentElement;
+    function updateThemeIcons() {
+      var isLight = html.classList.contains('light');
+      document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+        var darkIcon = btn.querySelector('.dark-icon');
+        var lightIcon = btn.querySelector('.light-icon');
+        if (darkIcon) darkIcon.classList.toggle('hidden', isLight);
+        if (lightIcon) lightIcon.classList.toggle('hidden', !isLight);
+      });
+    }
+    function setTheme(theme) {
+      if (theme === 'light') {
+        html.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+      }
+      updateThemeIcons();
+    }
+    var savedTheme = localStorage.getItem('theme');
+    var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (savedTheme) setTheme(savedTheme);
+    else setTheme(prefersLight ? 'light' : 'dark');
+    document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        setTheme(html.classList.contains('light') ? 'dark' : 'light');
+      });
+    });
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme')) setTheme(e.matches ? 'light' : 'dark');
+    });
+  })();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ===== LENIS (smooth scroll) =====
+    if (!reducedMotion && typeof Lenis !== 'undefined') {
+      const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), orientation: 'vertical', smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    // ===== LUCIDE ICONS =====
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    // ===== MOBILE MENU =====
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    if (menuBtn) {
+      menuBtn.addEventListener('click', function() {
+        menuOpen = !menuOpen;
+        mobileMenu.style.transform = menuOpen ? 'translateX(0)' : 'translateX(100%)';
+        menuBtn.setAttribute('aria-expanded', menuOpen);
+        menuBtn.innerHTML = menuOpen
+          ? '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>'
+          : '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+        document.body.style.overflow = menuOpen ? 'hidden' : '';
+      });
+    }
+    window.closeMenu = function() { menuOpen = false; if (mobileMenu) mobileMenu.style.transform = 'translateX(100%)'; if (menuBtn) { menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>'; } document.body.style.overflow = ''; };
+
+    // ===== NAVBAR =====
+    const navInner = document.querySelector('#navbar > div');
+    if (navInner) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          navInner.classList.add('bg-[var(--primary)]/90', 'backdrop-blur-xl', 'shadow-lg', 'border', 'border-[var(--border-hover)]');
+          navInner.classList.remove('bg-transparent', 'border-transparent');
+        } else {
+          navInner.classList.remove('bg-[var(--primary)]/90', 'backdrop-blur-xl', 'shadow-lg', 'border', 'border-[var(--border-hover)]');
+          navInner.classList.add('bg-transparent');
+        }
+      }, { passive: true });
+    }
+
+    // ===== SCROLL PROGRESS =====
+    const progressFill = document.querySelector('.progress-fill');
+    if (progressFill && !reducedMotion) {
+      gsap.to(progressFill, { scaleX: 1, ease: 'none', scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 0.3 } });
+    }
+
+    // ===== HERO: THE AWAKENING (exp-001) =====
+    if (!reducedMotion) {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      tl.fromTo('.hero-badge', { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 })
+        .fromTo('.hero-heading', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, '-=0.3')
+        .fromTo('.hero-subtext', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.5')
+        .fromTo('.hero-cta', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.3')
+        .fromTo('.scroll-indicator', { opacity: 0 }, { opacity: 1, duration: 0.5 }, '-=0.2')
+        .fromTo('.dashboard-mockup', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' }, '-=0.5');
+    }
+
+    // ===== COUNTERS: THE COUNTER (exp-004) =====
+    document.querySelectorAll('.stat-number').forEach(function(counter) {
+      const target = parseInt(counter.dataset.target);
+      const prefix = counter.closest('.stat-item')?.querySelector('.stat-prefix')?.textContent || '';
+      gsap.to(counter, {
+        innerText: target, duration: 2, ease: 'power3.out', snap: { innerText: 1 },
+        scrollTrigger: { trigger: counter, start: 'top 85%' },
+        onUpdate: function() {
+          const val = Math.floor(this.targets()[0].innerText);
+          counter.textContent = val + prefix;
+        }
+      });
+    });
+
+    // ===== TIMELINE SCROLL (exp-021) =====
+    if (!reducedMotion) {
+      gsap.utils.toArray('.timeline-item').forEach(function(item, i) {
+        gsap.from(item, { x: -30, opacity: 0, duration: 0.6, delay: i * 0.2, ease: 'power2.out', scrollTrigger: { trigger: item, start: 'top 85%' } });
+      });
+    }
+
+    // ===== FEATURE CARDS: THE CASCADE (exp-002) =====
+    if (!reducedMotion) {
+      gsap.fromTo('.service-card', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'power2.out', scrollTrigger: { trigger: '#features .grid', start: 'top 85%' } });
+    }
+
+    // ===== PROCESS STEPS =====
+    if (!reducedMotion) {
+      gsap.fromTo('.process-step', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.2, ease: 'power2.out', scrollTrigger: { trigger: '.process-section', start: 'top 80%' } });
+    }
+
+    // ===== GALLERY ITEMS (pricing) =====
+    if (!reducedMotion) {
+      gsap.utils.toArray('.gallery-item').forEach(function(item, i) {
+        gsap.from(item, { y: 30, opacity: 0, duration: 0.5, delay: i * 0.1, ease: 'power2.out', scrollTrigger: { trigger: item, start: 'top 90%' } });
+      });
+    }
+
+    // ===== PRICING TOGGLE =====
+    (function() {
+      var toggle = document.getElementById('pricingToggle');
+      var knob = toggle ? toggle.querySelector('span') : null;
+      var prices = document.querySelectorAll('[data-monthly][data-annual]');
+      var periods = document.querySelectorAll('.pricing-period');
+      var monthlyLabels = ['Always free', '$39/mo', 'Contact us'];
+      var annualLabels = ['Always free', 'per month, billed annually', 'Tailored for your team'];
+      var isAnnual = true;
+      if (!toggle || !knob) return;
+      function updatePricing(annual) {
+        prices.forEach(function(el, i) {
+          el.textContent = annual ? el.dataset.annual : el.dataset.monthly;
+        });
+        periods.forEach(function(el, i) {
+          el.textContent = annual ? annualLabels[i] : monthlyLabels[i];
+        });
+        knob.style.transform = annual ? 'translateX(0)' : 'translateX(24px)';
+        toggle.style.opacity = annual ? '0.5' : '1';
+        document.querySelector('.toggle-label-monthly').style.color = annual ? '' : 'var(--accent)';
+        document.querySelector('.toggle-label-annual').style.color = annual ? 'var(--accent)' : '';
+      }
+      toggle.addEventListener('click', function() { isAnnual = !isAnnual; updatePricing(isAnnual); });
+    })();
+
+    // ===== MORPHING TESTIMONIALS (exp-055) =====
+    function initMorphingTestimonials(container) {
+      if (!container) return;
+      var slides = container.querySelectorAll('.testimonial-slide');
+      var dots = document.querySelectorAll('.morph-dot');
+      if (slides.length < 2) return;
+      var current = 0, isAnimating = false, interval;
+      function showSlide(index) {
+        if (isAnimating || index === current) return;
+        isAnimating = true;
+        var prev = slides[current];
+        var next = slides[index];
+        gsap.to(prev, { opacity: 0, y: -10, filter: 'blur(4px)', duration: 0.5, ease: 'power2.in', onComplete: function() { prev.classList.remove('active'); prev.style.transform = ''; prev.style.filter = ''; }});
+        gsap.set(next, { opacity: 0, y: 10, filter: 'blur(4px)' });
+        next.classList.add('active');
+        gsap.to(next, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.7, ease: 'power2.out', onComplete: function() { isAnimating = false; }});
+        dots.forEach(function(d) { d.classList.remove('active'); d.setAttribute('aria-selected', 'false'); });
+        if (dots[index]) { dots[index].classList.add('active'); dots[index].setAttribute('aria-selected', 'true'); }
+        current = index;
+      }
+      function nextSlide() { showSlide((current + 1) % slides.length); }
+      dots.forEach(function(d) { d.addEventListener('click', function() { showSlide(parseInt(this.dataset.index)); clearInterval(interval); startInterval(); }); });
+      function startInterval() { interval = setInterval(nextSlide, 5000); }
+      container.addEventListener('mouseenter', function() { clearInterval(interval); });
+      container.addEventListener('mouseleave', function() { startInterval(); });
+      var touchStartX = 0;
+      container.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+      container.addEventListener('touchend', function(e) { var diff = e.changedTouches[0].clientX - touchStartX; if (Math.abs(diff) > 50) { if (diff < 0) nextSlide(); else showSlide((current - 1 + slides.length) % slides.length); } clearInterval(interval); startInterval(); }, { passive: true });
+      slides[0].classList.add('active');
+      gsap.set(slides[0], { opacity: 1, y: 0, filter: 'blur(0px)' });
+      if (dots[0]) { dots[0].classList.add('active'); dots[0].setAttribute('aria-selected', 'true'); }
+      startInterval();
+    }
+    if (!reducedMotion) {
+      initMorphingTestimonials(document.querySelector('.testimonial-morph'));
+    }
+
+    // ===== CTA SECTION ANIMATION =====
+    if (!reducedMotion) {
+      gsap.fromTo('.cta-section .relative > h2, .cta-section .relative > p, .cta-section .relative > div, .cta-section .relative > p:last-child', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'power2.out', scrollTrigger: { trigger: '.cta-section', start: 'top 80%' } });
+    }
+
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.faq-item summary').forEach(function(summary) {
+      summary.addEventListener('click', function(e) {
+        const details = this.closest('details');
+        const isOpen = details.hasAttribute('open');
+        document.querySelectorAll('.faq-item[open]').forEach(function(d) { if (d !== details) d.removeAttribute('open'); });
+        if (!reducedMotion) {
+          if (isOpen) { gsap.to(details.querySelector('div'), { height: 0, opacity: 0, duration: 0.2, onComplete: function() { details.removeAttribute('open'); } }); e.preventDefault(); }
+        }
+      });
+    });
+
+    // ===== FORM VALIDATION =====
+    document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(function(field) {
+      field.addEventListener('blur', function() { validateField(field); });
+      field.addEventListener('input', function() { if (field.dataset.touched) validateField(field); });
+      field.addEventListener('focus', function() { field.dataset.touched = 'true'; });
+    });
+    function validateField(field) {
+      const error = field.parentElement.querySelector('.form-error');
+      if (!field.validity.valid || (field.hasAttribute('required') && !field.value.trim())) {
+        field.classList.add('border-red-400'); field.classList.remove('border-[var(--border-hover)]');
+        if (error) error.classList.remove('hidden'); return false;
+      } else {
+        field.classList.remove('border-red-400'); field.classList.add('border-green-500/50', 'border');
+        if (error) error.classList.add('hidden'); return true;
+      }
+    }
+    document.querySelector('.contact-form')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.btn-submit');
+      const text = btn.querySelector('.btn-text');
+      const spinner = btn.querySelector('.btn-spinner');
+      const success = this.querySelector('.form-success');
+      btn.disabled = true; text.classList.add('hidden'); spinner.classList.remove('hidden');
+      await new Promise(function(r) { setTimeout(r, 1500); });
+      spinner.classList.add('hidden'); success.classList.remove('hidden'); btn.style.display = 'none';
+      gtag('event', 'form_submit', { 'form_location': 'contact' });
+    });
+
+    // ===== BACK TO TOP =====
+    const backBtn = document.getElementById('backToTop');
+    if (backBtn) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) { backBtn.classList.remove('opacity-0', 'invisible'); backBtn.classList.add('opacity-100'); }
+        else { backBtn.classList.add('opacity-0', 'invisible'); backBtn.classList.remove('opacity-100'); }
+      }, { passive: true });
+      backBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+
+    // ===== ANALYTICS EVENTS =====
+    document.querySelectorAll('.btn-primary, .hero-cta').forEach(function(btn) {
+      btn.addEventListener('click', function() { if (typeof gtag !== 'undefined') gtag('event', 'cta_click', { 'cta_text': this.textContent.trim() }); });
+    });
+    document.querySelector('.whatsapp-float')?.addEventListener('click', function() { if (typeof gtag !== 'undefined') gtag('event', 'whatsapp_click'); });
+
+    // ===== SCROLL DEPTH TRACKING =====
+    if (typeof gtag !== 'undefined') {
+      var trackedDepths = new Set();
+      window.addEventListener('scroll', function() {
+        var depth = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+        [25, 50, 75, 100].forEach(function(t) { if (depth >= t && !trackedDepths.has(t)) { trackedDepths.add(t); gtag('event', 'scroll_depth', { 'percent': t }); } });
+      }, { passive: true });
+    }
+
+    // ===== TILT CARD =====
+    if (!reducedMotion) {
+      document.querySelectorAll('.tilt-card').forEach(function(card) {
+        card.addEventListener('mousemove', function(e) {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          gsap.to(card, { rotationY: x * 8, rotationX: y * -8, transformPerspective: 1000, duration: 0.3, ease: 'power2.out' });
+        });
+        card.addEventListener('mouseleave', function() {
+          gsap.to(card, { rotationY: 0, rotationX: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
+        });
+      });
+    }
+
+    // ===== MAGNETIC NAV (exp-005) =====
+    if (!reducedMotion) {
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        var text = link.querySelector('.nav-label');
+        if (text) {
+          link.addEventListener('mousemove', function(e) {
+            var rect = link.getBoundingClientRect();
+            var x = (e.clientX - rect.left - rect.width / 2) * 0.15;
+            var y = (e.clientY - rect.top - rect.height / 2) * 0.15;
+            gsap.to(text, { x: x, y: y, duration: 0.3, ease: 'power2.out' });
+          });
+          link.addEventListener('mouseleave', function() {
+            gsap.to(text, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
+          });
+        }
+      });
+    }
+
+
+  });
+  </script>
 </body>
 </html>

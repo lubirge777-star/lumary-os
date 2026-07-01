@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumary OS — Experience-Driven Design System</title>
+  <meta name="description" content="Lumary OS is a comprehensive, experience-driven design system. 26 documents, 21 experience categories, 8 pattern types, 4 component systems, 7 templates, 2 playbooks, 8 prompts." />
+  <link rel="canonical" href="https://lumary-os.github.io/style-guide" />
+  <meta property="og:title" content="Lumary OS — Experience-Driven Design System" />
+  <meta property="og:description" content="The complete catalog of the Lumary OS design system: docs, experiences, patterns, components, templates, playbooks, and prompts." />
+  <meta property="og:image" content="https://lumary-os.github.io/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Lumary OS Design System",
+    "description": "A comprehensive, experience-driven design system for building premium web experiences. Includes 26 documentation chapters, 21 experience categories, 8 pattern types, 4 component systems, 7 industry templates, 2 playbooks, and 8 AI prompts.",
+    "url": "https://lumary-os.github.io/style-guide",
+    "author": { "@type": "Organization", "name": "Lumary Studio" },
+    "version": "1.0.0",
+    "dateModified": "2026-06-30"
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#0F172A', secondary: '#1E293B', accent: '#F59E0B', surface: '#F8FAFC', muted: '#94A3B8' },
+          fontFamily: { heading: ['Bebas Neue', 'sans-serif'], body: ['DM Sans', 'sans-serif'] },
+          borderRadius: { DEFAULT: '12px' },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'DM Sans', sans-serif; background: #0F172A; color: #F8FAFC; }
+    h1, h2, h3, h4, .font-heading { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; line-height: 1.1; }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    ::selection { background: #F59E0B; color: #0F172A; }
+    .sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 280px; overflow-y: auto; z-index: 40; background: #0F172A; border-right: 1px solid rgba(255,255,255,0.05); padding: 2rem 1.5rem; }
+    .sidebar a { display: block; padding: 0.375rem 0; font-size: 0.875rem; color: #94A3B8; transition: color 0.2s; }
+    .sidebar a:hover, .sidebar a.active { color: #F59E0B; }
+    .sidebar .section-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: #64748B; margin-top: 1.25rem; margin-bottom: 0.5rem; font-weight: 600; }
+    .main-content { margin-left: 280px; }
+    .section-card { background: #1E293B; border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 1.5rem; transition: border-color 0.3s, transform 0.3s; }
+    .section-card:hover { border-color: rgba(245,158,11,0.3); transform: translateY(-2px); }
+    .badge { display: inline-block; padding: 0.125rem 0.5rem; border-radius: 999px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    @media (max-width: 768px) { .sidebar { display: none; } .main-content { margin-left: 0; } }
+  </style>
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar scrollbar-hide" role="navigation" aria-label="Style guide navigation">
+    <a href="/" class="text-2xl font-heading text-white mb-6 block hover:text-accent transition-colors">Lumary OS</a>
+    <div class="section-label">Overview</div>
+    <a href="#stats">Quick Stats</a>
+    <a href="#docs">Documentation</a>
+    <div class="section-label">Design System</div>
+    <a href="#experiences">Experience Database</a>
+    <a href="#patterns">Pattern Library</a>
+    <a href="#components">Component Bible</a>
+    <div class="section-label">Assets</div>
+    <a href="#templates">Templates</a>
+    <a href="#playbooks">Playbooks &amp; Prompts</a>
+    <a href="#bibles">Color, Motion &amp; Psychology</a>
+    <div class="section-label">Info</div>
+    <a href="#footer">Version &amp; Credits</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- ===== HEADER ===== -->
+    <section class="hero-section min-h-[60vh] flex items-center justify-center relative overflow-hidden px-6" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.08),transparent_60%)]"></div>
+      <div class="relative z-10 text-center max-w-3xl">
+        <span class="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-sm text-accent font-semibold mb-6">Design System v1.0</span>
+        <h1 class="text-7xl md:text-9xl font-heading text-white leading-none mb-4">Lumary <span class="text-accent">OS</span></h1>
+        <p class="text-xl md:text-2xl text-muted mb-8">Experience-Driven Design System</p>
+        <p class="text-sm text-muted max-w-xl mx-auto">26 documents &middot; 21 experience categories &middot; 8 pattern types &middot; 4 component systems &middot; 7 templates &middot; 2 playbooks &middot; 8 prompts</p>
+        <div class="flex gap-4 justify-center mt-8">
+          <a href="#docs" class="px-6 py-3 bg-accent text-primary rounded-xl font-semibold hover:bg-accent/90 transition-all">Explore Docs</a>
+          <a href="#experiences" class="px-6 py-3 bg-white/5 text-white rounded-xl border border-white/10 hover:bg-white/10 transition-all">View Experiences</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DESIGN PRINCIPLES ===== -->
+    <section id="principles" class="py-24 px-6 bg-secondary/30">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Design Principles</h2>
+        <p class="text-muted mb-12 max-w-xl">The foundational beliefs that guide every decision in Lumary OS.</p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="section-card p-8 flex gap-4 items-start"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0"><span class="text-accent font-heading text-xl">01</span></div><div><h3 class="text-lg font-heading mb-1">Experiences Over Features</h3><p class="text-sm text-muted">Don't just list what you do. Make people feel something. Every interaction should leave an emotional imprint.</p></div></div>
+          <div class="section-card p-8 flex gap-4 items-start"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0"><span class="text-accent font-heading text-xl">02</span></div><div><h3 class="text-lg font-heading mb-1">Progress Over Polish</h3><p class="text-sm text-muted">Ship fast, iterate faster. Lumary OS is designed to be modular and composable so you can launch quickly and refine continuously.</p></div></div>
+          <div class="section-card p-8 flex gap-4 items-start"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0"><span class="text-accent font-heading text-xl">03</span></div><div><h3 class="text-lg font-heading mb-1">Accessibility Is Not Optional</h3><p class="text-sm text-muted">WCAG 2.1 AA is the floor, not the ceiling. Skip links, reduced motion, semantic HTML, ARIA — every template ships fully accessible.</p></div></div>
+          <div class="section-card p-8 flex gap-4 items-start"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center shrink-0"><span class="text-accent font-heading text-xl">04</span></div><div><h3 class="text-lg font-heading mb-1">Consistency Through Systems</h3><p class="text-sm text-muted">One design token set, one component architecture, one experience vocabulary. Every template is built from the same atomic pieces.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ARCHITECTURE OVERVIEW ===== -->
+    <section id="architecture" class="py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Architecture</h2>
+        <p class="text-muted mb-12 max-w-xl">How the Lumary OS design system is structured — a layered approach from atomic tokens to full templates.</p>
+        <div class="relative">
+          <div class="grid md:grid-cols-5 gap-4">
+            <div class="section-card p-6 text-center"><div class="text-2xl font-heading text-accent mb-1">Layer 1</div><h3 class="text-sm font-semibold mb-1">Tokens</h3><p class="text-xs text-muted">Colors, typography, spacing, radii</p></div>
+            <div class="section-card p-6 text-center"><div class="text-2xl font-heading text-accent mb-1">Layer 2</div><h3 class="text-sm font-semibold mb-1">Experiences</h3><p class="text-xs text-muted">53+ micro-interactions across 19 categories</p></div>
+            <div class="section-card p-6 text-center"><div class="text-2xl font-heading text-accent mb-1">Layer 3</div><h3 class="text-sm font-semibold mb-1">Patterns</h3><p class="text-xs text-muted">20+ reusable layout and UI patterns</p></div>
+            <div class="section-card p-6 text-center"><div class="text-2xl font-heading text-accent mb-1">Layer 4</div><h3 class="text-sm font-semibold mb-1">Components</h3><p class="text-xs text-muted">4 component systems with full variant sets</p></div>
+            <div class="section-card p-6 text-center"><div class="text-2xl font-heading text-accent mb-1">Layer 5</div><h3 class="text-sm font-semibold mb-1">Templates</h3><p class="text-xs text-muted">7 industry-specific full-page websites</p></div>
+          </div>
+        </div>
+        <div class="mt-8 section-card p-8">
+          <h3 class="text-xl font-heading mb-3">How Layers Compose</h3>
+          <p class="text-sm text-muted leading-relaxed">Tokens inform every experience. Experiences are combined into patterns. Patterns are assembled using components. Components are wired together in templates. Each layer references the one below it. This means changing a token in the Color Bible automatically cascades through every template. Experiences like The Awakening (hero) and The Counter (stats) can be mixed and matched across any template without code changes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== QUICK STATS ===== -->
+    <section id="stats" class="stats-section py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading text-center mb-4">By the Numbers</h2>
+        <p class="text-muted text-center mb-16 max-w-xl mx-auto">The complete Lumary OS design system in metrics</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="stat-item section-card text-center p-8">
+            <div class="stat-number text-5xl font-heading text-accent" data-target="26">0</div>
+            <p class="text-muted mt-2">Documents</p>
+          </div>
+          <div class="stat-item section-card text-center p-8">
+            <div class="stat-number text-5xl font-heading text-accent" data-target="53">0</div>
+            <div class="stat-prefix hidden">+</div>
+            <p class="text-muted mt-2">Experiences</p>
+          </div>
+          <div class="stat-item section-card text-center p-8">
+            <div class="stat-number text-5xl font-heading text-accent" data-target="20">0</div>
+            <div class="stat-prefix hidden">+</div>
+            <p class="text-muted mt-2">Patterns</p>
+          </div>
+          <div class="stat-item section-card text-center p-8">
+            <div class="stat-number text-5xl font-heading text-accent" data-target="4">0</div>
+            <p class="text-muted mt-2">Component Systems</p>
+          </div>
+          <div class="stat-item section-card text-center p-8">
+            <div class="stat-number text-5xl font-heading text-accent" data-target="7">0</div>
+            <p class="text-muted mt-2">Templates</p>
+          </div>
+          <div class="stat-item section-card text-center p-8">
+            <div class="stat-number text-5xl font-heading text-accent" data-target="2">0</div>
+            <p class="text-muted mt-2">Playbooks</p>
+          </div>
+          <div class="stat-item section-card text-center p-8">
+            <div class="stat-number text-5xl font-heading text-accent" data-target="8">0</div>
+            <p class="text-muted mt-2">Prompts</p>
+          </div>
+          <div class="stat-item section-card text-center p-8">
+            <div class="stat-number text-5xl font-heading text-accent" data-target="3">0</div>
+            <p class="text-muted mt-2">Reference Atlases</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DOCUMENTATION ===== -->
+    <section id="docs" class="py-24 px-6 bg-secondary/30">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Documentation</h2>
+        <p class="text-muted mb-12 max-w-xl">The complete Lumary OS knowledge base — 26 documents covering philosophy, design, development, business, and operations.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="docsGrid">
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">00</span><h3 class="text-lg font-heading text-white mb-1">Manifesto</h3><p class="text-xs text-muted">The vision and mission of Lumary OS</p><a href="docs/00-manifesto.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">01</span><h3 class="text-lg font-heading text-white mb-1">Philosophy</h3><p class="text-xs text-muted">Core design philosophy and principles</p><a href="docs/01-philosophy.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">02</span><h3 class="text-lg font-heading text-white mb-1">Principles</h3><p class="text-xs text-muted">Foundational design principles</p><a href="docs/02-principles.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">03</span><h3 class="text-lg font-heading text-white mb-1">Experience Language</h3><p class="text-xs text-muted">The vocabulary of experiences</p><a href="docs/03-experience-language.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">04</span><h3 class="text-lg font-heading text-white mb-1">Emotion Engineering</h3><p class="text-xs text-muted">Engineering emotional responses</p><a href="docs/04-emotion-engineering.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">05</span><h3 class="text-lg font-heading text-white mb-1">Storytelling</h3><p class="text-xs text-muted">Narrative-driven design approaches</p><a href="docs/05-storytelling.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">06</span><h3 class="text-lg font-heading text-white mb-1">Design Language</h3><p class="text-xs text-muted">Visual design language and tokens</p><a href="docs/06-design-language.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">07</span><h3 class="text-lg font-heading text-white mb-1">Motion Language</h3><p class="text-xs text-muted">Animation and motion guidelines</p><a href="docs/07-motion-language.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">08</span><h3 class="text-lg font-heading text-white mb-1">Interaction Language</h3><p class="text-xs text-muted">Interaction patterns and behaviors</p><a href="docs/08-interaction-language.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">09</span><h3 class="text-lg font-heading text-white mb-1">Layout Architecture</h3><p class="text-xs text-muted">Grid systems and layout principles</p><a href="docs/09-layout-architecture.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">10</span><h3 class="text-lg font-heading text-white mb-1">Component System</h3><p class="text-xs text-muted">Reusable component architecture</p><a href="docs/10-component-system.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">11</span><h3 class="text-lg font-heading text-white mb-1">Accessibility</h3><p class="text-xs text-muted">A11y standards and best practices</p><a href="docs/11-accessibility.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">12</span><h3 class="text-lg font-heading text-white mb-1">Performance</h3><p class="text-xs text-muted">Performance optimization guide</p><a href="docs/12-performance.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">13</span><h3 class="text-lg font-heading text-white mb-1">Color Bible</h3><p class="text-xs text-muted">Comprehensive color system</p><a href="docs/13-color-bible.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">14</span><h3 class="text-lg font-heading text-white mb-1">Motion Bible</h3><p class="text-xs text-muted">Animation reference and easing</p><a href="docs/14-motion-bible.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">15</span><h3 class="text-lg font-heading text-white mb-1">Psychology Atlas</h3><p class="text-xs text-muted">Psychological principles in design</p><a href="docs/15-psychology-atlas.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">16</span><h3 class="text-lg font-heading text-white mb-1">Development Workflow</h3><p class="text-xs text-muted">Dev processes and tooling</p><a href="docs/16-development-workflow.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">17</span><h3 class="text-lg font-heading text-white mb-1">Business Model</h3><p class="text-xs text-muted">Monetization and business strategy</p><a href="docs/17-business-model.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">18</span><h3 class="text-lg font-heading text-white mb-1">AI Prompting for Design</h3><p class="text-xs text-muted">AI-assisted design workflows</p><a href="docs/18-ai-prompting-for-design.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">19</span><h3 class="text-lg font-heading text-white mb-1">Stitch Integration</h3><p class="text-xs text-muted">Integration with Stitch platform</p><a href="docs/19-stitch-integration.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">20</span><h3 class="text-lg font-heading text-white mb-1">Analytics &amp; Conversion</h3><p class="text-xs text-muted">Tracking and conversion optimization</p><a href="docs/20-analytics-and-conversion.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">21</span><h3 class="text-lg font-heading text-white mb-1">SEO Strategy</h3><p class="text-xs text-muted">Search engine optimization guide</p><a href="docs/21-seo-strategy.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">22</span><h3 class="text-lg font-heading text-white mb-1">Responsive Strategy</h3><p class="text-xs text-muted">Responsive design approach</p><a href="docs/22-responsive-strategy.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">23</span><h3 class="text-lg font-heading text-white mb-1">Quality Assurance</h3><p class="text-xs text-muted">QA processes and checklists</p><a href="docs/23-quality-assurance.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">24</span><h3 class="text-lg font-heading text-white mb-1">Client Onboarding</h3><p class="text-xs text-muted">Client engagement and onboarding</p><a href="docs/24-client-onboarding.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">25</span><h3 class="text-lg font-heading text-white mb-1">Maintenance &amp; Support</h3><p class="text-xs text-muted">Ongoing maintenance protocols</p><a href="docs/25-maintenance-and-support.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">26</span><h3 class="text-lg font-heading text-white mb-1">Security Checklist</h3><p class="text-xs text-muted">Security best practices and audit</p><a href="docs/26-security-checklist.md" class="text-xs text-accent mt-2 inline-block hover:underline">Read more →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE DATABASE ===== -->
+    <section id="experiences" class="py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Experience Database</h2>
+        <p class="text-muted mb-12 max-w-xl">53+ micro-experiences organized across 19 categories. Each experience is a reusable interaction pattern designed to evoke specific emotional responses.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="expGrid">
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">2</span><h3 class="text-lg font-heading text-white mb-1">Arrival</h3><p class="text-xs text-muted">Entry animations and first impressions</p><span class="badge bg-green-500/10 text-green-400 mt-2 inline-block">Ready</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">2</span><h3 class="text-lg font-heading text-white mb-1">Cards</h3><p class="text-xs text-muted">Card interactions including tilt and expand</p><span class="badge bg-green-500/10 text-green-400 mt-2 inline-block">Ready</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Cursor</h3><p class="text-xs text-muted">Custom cursor interactions and reveals</p><span class="badge bg-green-500/10 text-green-400 mt-2 inline-block">Ready</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">2</span><h3 class="text-lg font-heading text-white mb-1">Heroes</h3><p class="text-xs text-muted">Hero section layouts and animations</p><span class="badge bg-green-500/10 text-green-400 mt-2 inline-block">Ready</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">2</span><h3 class="text-lg font-heading text-white mb-1">Lighting</h3><p class="text-xs text-muted">Spotlight, gradient shift effects</p><span class="badge bg-green-500/10 text-green-400 mt-2 inline-block">Ready</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">2</span><h3 class="text-lg font-heading text-white mb-1">Loaders</h3><p class="text-xs text-muted">Brand loaders and skeleton screens</p><span class="badge bg-green-500/10 text-green-400 mt-2 inline-block">Ready</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">2</span><h3 class="text-lg font-heading text-white mb-1">Navigation</h3><p class="text-xs text-muted">Magnetic nav, progress nav patterns</p><span class="badge bg-green-500/10 text-green-400 mt-2 inline-block">Ready</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">2</span><h3 class="text-lg font-heading text-white mb-1">Particles</h3><p class="text-xs text-muted">Particle fields and constellation effects</p><span class="badge bg-green-500/10 text-green-400 mt-2 inline-block">Ready</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Scroll</h3><p class="text-xs text-muted">Scroll-driven storytelling</p><span class="badge bg-green-500/10 text-green-400 mt-2 inline-block">Ready</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Signature Moments</h3><p class="text-xs text-muted">Memorable highlight interactions</p><span class="badge bg-green-500/10 text-green-400 mt-2 inline-block">Ready</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">2</span><h3 class="text-lg font-heading text-white mb-1">Storytelling</h3><p class="text-xs text-muted">Before/after, timeline narratives</p><span class="badge bg-green-500/10 text-green-400 mt-2 inline-block">Ready</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">2</span><h3 class="text-lg font-heading text-white mb-1">Transitions</h3><p class="text-xs text-muted">Page and morph transitions</p><span class="badge bg-green-500/10 text-green-400 mt-2 inline-block">Ready</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Hover</h3><p class="text-xs text-muted">Hover-based micro-interactions</p><span class="badge bg-amber-500/10 text-amber-400 mt-2 inline-block">Draft</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Parallax</h3><p class="text-xs text-muted">Parallax scrolling effects</p><span class="badge bg-amber-500/10 text-amber-400 mt-2 inline-block">Draft</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Text</h3><p class="text-xs text-muted">Text animations and typography effects</p><span class="badge bg-amber-500/10 text-amber-400 mt-2 inline-block">Draft</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Forms</h3><p class="text-xs text-muted">Form interactions and validation</p><span class="badge bg-amber-500/10 text-amber-400 mt-2 inline-block">Draft</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Video</h3><p class="text-xs text-muted">Video backgrounds and controls</p><span class="badge bg-amber-500/10 text-amber-400 mt-2 inline-block">Draft</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Audio</h3><p class="text-xs text-muted">Sound effects and audio interactions</p><span class="badge bg-amber-500/10 text-amber-400 mt-2 inline-block">Draft</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Scrolling</h3><p class="text-xs text-muted">Advanced scroll-based experiences</p><span class="badge bg-amber-500/10 text-amber-400 mt-2 inline-block">Draft</span></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Images</h3><p class="text-xs text-muted">Image reveal and gallery experiences</p><span class="badge bg-amber-500/10 text-amber-400 mt-2 inline-block">Draft</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PATTERN LIBRARY ===== -->
+    <section id="patterns" class="py-24 px-6 bg-secondary/30">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Pattern Library</h2>
+        <p class="text-muted mb-12 max-w-xl">20+ reusable layout and component patterns organized by type. Each pattern includes code, variants, and usage guidelines.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">4</span><h3 class="text-lg font-heading text-white mb-1">Buttons</h3><p class="text-xs text-muted">Primary, secondary, ghost, icon button variants</p><a href="patterns/buttons/" class="text-xs text-accent mt-2 inline-block hover:underline">Browse →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Cards</h3><p class="text-xs text-muted">Card component patterns and layouts</p><a href="patterns/cards/" class="text-xs text-accent mt-2 inline-block hover:underline">Browse →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Footers</h3><p class="text-xs text-muted">Footer layout patterns (4-column, minimal)</p><a href="patterns/footers/" class="text-xs text-accent mt-2 inline-block hover:underline">Browse →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">2</span><h3 class="text-lg font-heading text-white mb-1">Forms</h3><p class="text-xs text-muted">Contact forms, signup forms with validation</p><a href="patterns/forms/" class="text-xs text-accent mt-2 inline-block hover:underline">Browse →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">2</span><h3 class="text-lg font-heading text-white mb-1">Hero</h3><p class="text-xs text-muted">Hero section layouts (fullscreen, split)</p><a href="patterns/hero/" class="text-xs text-accent mt-2 inline-block hover:underline">Browse →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Loaders</h3><p class="text-xs text-muted">Loading states and skeleton screens</p><a href="patterns/loaders/" class="text-xs text-accent mt-2 inline-block hover:underline">Browse →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">1</span><h3 class="text-lg font-heading text-white mb-1">Navigation</h3><p class="text-xs text-muted">Navigation bar patterns and mobile menus</p><a href="patterns/navigation/" class="text-xs text-accent mt-2 inline-block hover:underline">Browse →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">7</span><h3 class="text-lg font-heading text-white mb-1">Sections</h3><p class="text-xs text-muted">CTA, stats, process, gallery, FAQ, timeline sections</p><a href="patterns/sections/" class="text-xs text-accent mt-2 inline-block hover:underline">Browse →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMPONENT BIBLE ===== -->
+    <section id="components" class="py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Component Bible</h2>
+        <p class="text-muted mb-12 max-w-xl">Four comprehensive component systems. Each system includes HTML, CSS, JS, accessibility, and variant documentation.</p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="section-card p-8"><div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-5"><i data-lucide="square-dashed" class="w-7 h-7 text-accent"></i></div><h3 class="text-2xl font-heading mb-2">Button System</h3><p class="text-sm text-muted mb-4">Complete button component system with 8 variants, loading states, icon support, and accessibility attributes.</p><a href="component-bible/button-system.md" class="text-sm text-accent hover:underline">View System →</a></div>
+          <div class="section-card p-8"><div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-5"><i data-lucide="credit-card" class="w-7 h-7 text-accent"></i></div><h3 class="text-2xl font-heading mb-2">Card System</h3><p class="text-sm text-muted mb-4">Flexible card component with image, content, hover states, and responsive grid variants.</p><a href="component-bible/card-system.md" class="text-sm text-accent hover:underline">View System →</a></div>
+          <div class="section-card p-8"><div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-5"><i data-lucide="file-text" class="w-7 h-7 text-accent"></i></div><h3 class="text-2xl font-heading mb-2">Form System</h3><p class="text-sm text-muted mb-4">Form components with validation, error states, loading spinners, and accessibility labels.</p><a href="component-bible/form-system.md" class="text-sm text-accent hover:underline">View System →</a></div>
+          <div class="section-card p-8"><div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-5"><i data-lucide="menu" class="w-7 h-7 text-accent"></i></div><h3 class="text-2xl font-heading mb-2">Navigation System</h3><p class="text-sm text-muted mb-4">Navigation components including navbar, mobile menu, breadcrumbs, and tabs with full ARIA support.</p><a href="component-bible/navigation-system.md" class="text-sm text-accent hover:underline">View System →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEMPLATES ===== -->
+    <section id="templates" class="py-24 px-6 bg-secondary/30">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Templates</h2>
+        <p class="text-muted mb-12 max-w-xl">7 industry-specific website templates. Each template is fully OS-compliant with all experiences, patterns, and components integrated.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="section-card"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"><span class="text-accent font-heading text-lg">C</span></div><h3 class="text-lg font-heading text-white">Construction</h3></div><p class="text-xs text-muted mb-3">Industry: Construction &amp; Engineering</p><div class="flex flex-wrap gap-1 mb-3"><span class="badge bg-accent/10 text-accent text-[10px]">Awakening</span><span class="badge bg-accent/10 text-accent text-[10px]">Cascade</span><span class="badge bg-accent/10 text-accent text-[10px]">Counter</span><span class="badge bg-accent/10 text-accent text-[10px]">Magnetic Nav</span><span class="badge bg-accent/10 text-accent text-[10px]">Tilt Card</span><span class="badge bg-accent/10 text-accent text-[10px]">Timeline</span></div><a href="templates/construction-template.html" class="text-xs text-accent hover:underline">Preview →</a></div>
+          <div class="section-card"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"><span class="text-accent font-heading text-lg">S</span></div><h3 class="text-lg font-heading text-white">SaaS</h3></div><p class="text-xs text-muted mb-3">Industry: Software &amp; Technology</p><div class="flex flex-wrap gap-1 mb-3"><span class="badge bg-accent/10 text-accent text-[10px]">Awakening</span><span class="badge bg-accent/10 text-accent text-[10px]">Cascade</span><span class="badge bg-accent/10 text-accent text-[10px]">Counter</span><span class="badge bg-accent/10 text-accent text-[10px]">Magnetic Nav</span><span class="badge bg-accent/10 text-accent text-[10px]">Tilt Card</span><span class="badge bg-accent/10 text-accent text-[10px]">Timeline</span></div><a href="templates/saas-template.html" class="text-xs text-accent hover:underline">Preview →</a></div>
+          <div class="section-card"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"><span class="text-accent font-heading text-lg">R</span></div><h3 class="text-lg font-heading text-white">Real Estate</h3></div><p class="text-xs text-muted mb-3">Industry: Real Estate &amp; Property</p><div class="flex flex-wrap gap-1 mb-3"><span class="badge bg-accent/10 text-accent text-[10px]">Awakening</span><span class="badge bg-accent/10 text-accent text-[10px]">Cascade</span><span class="badge bg-accent/10 text-accent text-[10px]">Counter</span><span class="badge bg-accent/10 text-accent text-[10px]">Magnetic Nav</span><span class="badge bg-accent/10 text-accent text-[10px]">Tilt Card</span><span class="badge bg-accent/10 text-accent text-[10px]">Timeline</span></div><a href="templates/real-estate-template.html" class="text-xs text-accent hover:underline">Preview →</a></div>
+          <div class="section-card"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"><span class="text-accent font-heading text-lg">R</span></div><h3 class="text-lg font-heading text-white">Restaurant</h3></div><p class="text-xs text-muted mb-3">Industry: Food &amp; Hospitality</p><div class="flex flex-wrap gap-1 mb-3"><span class="badge bg-accent/10 text-accent text-[10px]">Awakening</span><span class="badge bg-accent/10 text-accent text-[10px]">Cascade</span><span class="badge bg-accent/10 text-accent text-[10px]">Counter</span><span class="badge bg-accent/10 text-accent text-[10px]">Magnetic Nav</span><span class="badge bg-accent/10 text-accent text-[10px]">Tilt Card</span><span class="badge bg-accent/10 text-accent text-[10px]">Timeline</span></div><a href="templates/restaurant-template.html" class="text-xs text-accent hover:underline">Preview →</a></div>
+          <div class="section-card"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"><span class="text-accent font-heading text-lg">E</span></div><h3 class="text-lg font-heading text-white">E-Commerce</h3></div><p class="text-xs text-muted mb-3">Industry: Retail &amp; E-Commerce</p><p class="text-xs text-muted">Coming soon</p></div>
+          <div class="section-card"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"><span class="text-accent font-heading text-lg">P</span></div><h3 class="text-lg font-heading text-white">Portfolio</h3></div><p class="text-xs text-muted mb-3">Industry: Creative &amp; Personal</p><p class="text-xs text-muted">Coming soon</p></div>
+          <div class="section-card"><div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"><span class="text-accent font-heading text-lg">B</span></div><h3 class="text-lg font-heading text-white">Blog</h3></div><p class="text-xs text-muted mb-3">Industry: Content &amp; Media</p><p class="text-xs text-muted">Coming soon</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PLAYBOOKS & PROMPTS ===== -->
+    <section id="playbooks" class="py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Playbooks &amp; Prompts</h2>
+        <p class="text-muted mb-12 max-w-xl">Operational playbooks for project delivery and AI prompts for design workflow acceleration.</p>
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="section-card p-8"><div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-5"><i data-lucide="book-open" class="w-7 h-7 text-accent"></i></div><h3 class="text-2xl font-heading mb-2">Delivery Playbook</h3><p class="text-sm text-muted mb-4">End-to-end project delivery workflow from discovery to handoff. Includes milestones, checklists, and quality gates.</p><a href="playbooks/delivery-playbook.md" class="text-sm text-accent hover:underline">Open →</a></div>
+          <div class="section-card p-8"><div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-5"><i data-lucide="users" class="w-7 h-7 text-accent"></i></div><h3 class="text-2xl font-heading mb-2">Client Acquisition</h3><p class="text-sm text-muted mb-4">Structured approach to client acquisition including outreach templates, pitch frameworks, and onboarding sequences.</p><a href="playbooks/client-acquisition.md" class="text-sm text-accent hover:underline">Open →</a></div>
+        </div>
+        <h3 class="text-3xl font-heading mb-6">AI Prompts</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">Stitch</span><h4 class="text-base font-heading text-white">Component Generator</h4><p class="text-xs text-muted mt-1">prompts/stitch/component-generator.md</p><a href="prompts/stitch/component-generator.md" class="text-xs text-accent mt-2 inline-block hover:underline">Open →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">Stitch</span><h4 class="text-base font-heading text-white">Industry Presets</h4><p class="text-xs text-muted mt-1">prompts/stitch/industry-presets.md</p><a href="prompts/stitch/industry-presets.md" class="text-xs text-accent mt-2 inline-block hover:underline">Open →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">Stitch</span><h4 class="text-base font-heading text-white">Landing Page Generator</h4><p class="text-xs text-muted mt-1">prompts/stitch/landing-page-generator.md</p><a href="prompts/stitch/landing-page-generator.md" class="text-xs text-accent mt-2 inline-block hover:underline">Open →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">OpenCode</span><h4 class="text-base font-heading text-white">Add Section</h4><p class="text-xs text-muted mt-1">prompts/opencode/add-section.md</p><a href="prompts/opencode/add-section.md" class="text-xs text-accent mt-2 inline-block hover:underline">Open →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">OpenCode</span><h4 class="text-base font-heading text-white">Experience Request</h4><p class="text-xs text-muted mt-1">prompts/opencode/experience-request.md</p><a href="prompts/opencode/experience-request.md" class="text-xs text-accent mt-2 inline-block hover:underline">Open →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">OpenCode</span><h4 class="text-base font-heading text-white">Full Website</h4><p class="text-xs text-muted mt-1">prompts/opencode/full-website.md</p><a href="prompts/opencode/full-website.md" class="text-xs text-accent mt-2 inline-block hover:underline">Open →</a></div>
+          <div class="section-card"><span class="badge bg-accent/10 text-accent mb-2 inline-block">OpenCode</span><h4 class="text-base font-heading text-white">Implement from Stitch</h4><p class="text-xs text-muted mt-1">prompts/opencode/implement-from-stitch.md</p><a href="prompts/opencode/implement-from-stitch.md" class="text-xs text-accent mt-2 inline-block hover:underline">Open →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BIBLES ===== -->
+    <section id="bibles" class="py-24 px-6 bg-secondary/30">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Reference Atlases</h2>
+        <p class="text-muted mb-12 max-w-xl">Three comprehensive reference documents that form the foundation of the Lumary OS design language.</p>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="section-card p-8 text-center"><div class="w-20 h-20 mx-auto bg-accent/10 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="palette" class="w-10 h-10 text-accent"></i></div><h3 class="text-2xl font-heading mb-3">Color Bible</h3><p class="text-sm text-muted mb-4">Complete color system with palettes, accessibility contrast ratios, semantic tokens, and industry-specific accent recommendations.</p><a href="color-bible/" class="text-sm text-accent hover:underline">Explore Colors →</a></div>
+          <div class="section-card p-8 text-center"><div class="w-20 h-20 mx-auto bg-accent/10 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="activity" class="w-10 h-10 text-accent"></i></div><h3 class="text-2xl font-heading mb-3">Motion Bible</h3><p class="text-sm text-muted mb-4">Animation principles, easing curves, duration guidelines, choreography patterns, and performance considerations for motion.</p><a href="motion-bible/" class="text-sm text-accent hover:underline">Explore Motion →</a></div>
+          <div class="section-card p-8 text-center"><div class="w-20 h-20 mx-auto bg-accent/10 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="brain" class="w-10 h-10 text-accent"></i></div><h3 class="text-2xl font-heading mb-3">Psychology Atlas</h3><p class="text-sm text-muted mb-4">Psychological principles mapped to design decisions: cognitive load, Hick's Law, von Restorff effect, and emotional design frameworks.</p><a href="psychology-atlas/" class="text-sm text-accent hover:underline">Explore Psychology →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DESIGN TOKENS OVERVIEW ===== -->
+    <section id="tokens" class="py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Design Tokens</h2>
+        <p class="text-muted mb-12 max-w-xl">Every template in Lumary OS uses a consistent token system. Primary (#0F172A), secondary (#1E293B), surface (#F8FAFC), and muted (#94A3B8) remain constant. The accent token shifts per industry.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="section-card"><div class="w-full h-16 rounded-xl mb-3" style="background:#0F172A;border:1px solid rgba(255,255,255,0.1)"></div><h3 class="text-lg font-heading text-white mb-1">Primary</h3><p class="text-xs text-muted">#0F172A</p><p class="text-xs text-muted">Dark navy base for all templates</p></div>
+          <div class="section-card"><div class="w-full h-16 rounded-xl mb-3" style="background:#1E293B;border:1px solid rgba(255,255,255,0.1)"></div><h3 class="text-lg font-heading text-white mb-1">Secondary</h3><p class="text-xs text-muted">#1E293B</p><p class="text-xs text-muted">Elevated surfaces and cards</p></div>
+          <div class="section-card"><div class="w-full h-16 rounded-xl mb-3" style="background:#F8FAFC;border:1px solid rgba(255,255,255,0.1)"></div><h3 class="text-lg font-heading text-white mb-1">Surface</h3><p class="text-xs text-muted">#F8FAFC</p><p class="text-xs text-muted">Light mode surfaces (future)</p></div>
+          <div class="section-card"><div class="w-full h-16 rounded-xl mb-3" style="background:#94A3B8;border:1px solid rgba(255,255,255,0.1)"></div><h3 class="text-lg font-heading text-white mb-1">Muted</h3><p class="text-xs text-muted">#94A3B8</p><p class="text-xs text-muted">Secondary text and subtle UI</p></div>
+        </div>
+        <h3 class="text-3xl font-heading mt-12 mb-6">Industry Accent Tokens</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="section-card"><div class="w-full h-12 rounded-xl mb-3" style="background:#F59E0B"></div><h3 class="text-lg font-heading text-white mb-1">Construction</h3><p class="text-xs text-muted">#F59E0B (Amber)</p><p class="text-xs text-muted">Fonts: Bebas Neue + DM Sans</p></div>
+          <div class="section-card"><div class="w-full h-12 rounded-xl mb-3" style="background:#3B82F6"></div><h3 class="text-lg font-heading text-white mb-1">SaaS</h3><p class="text-xs text-muted">#3B82F6 (Blue)</p><p class="text-xs text-muted">Fonts: DM Sans + Inter</p></div>
+          <div class="section-card"><div class="w-full h-12 rounded-xl mb-3" style="background:#D4AF37"></div><h3 class="text-lg font-heading text-white mb-1">Real Estate</h3><p class="text-xs text-muted">#D4AF37 (Gold)</p><p class="text-xs text-muted">Fonts: Cormorant Garamond + Inter</p></div>
+          <div class="section-card"><div class="w-full h-12 rounded-xl mb-3" style="background:#EF4444"></div><h3 class="text-lg font-heading text-white mb-1">Restaurant</h3><p class="text-xs text-muted">#EF4444 (Red)</p><p class="text-xs text-muted">Fonts: DM Serif Display + Inter</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GETTING STARTED ===== -->
+    <section id="getting-started" class="py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Getting Started</h2>
+        <p class="text-muted mb-12 max-w-xl">Lumary OS is designed to be consumed in layers. Here's the recommended path for different roles.</p>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="section-card p-8"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4"><i data-lucide="code" class="w-6 h-6 text-accent"></i></div><h3 class="text-xl font-heading mb-2">For Developers</h3><p class="text-sm text-muted">Start with the Component Bible (4 systems), then explore the Pattern Library (8 types). Use templates as reference implementations. Key docs: 10-Component System, 16-Development Workflow.</p></div>
+          <div class="section-card p-8"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4"><i data-lucide="palette" class="w-6 h-6 text-accent"></i></div><h3 class="text-xl font-heading mb-2">For Designers</h3><p class="text-sm text-muted">Begin with the Color Bible, Motion Bible, and Psychology Atlas. Then study the Experience Database for interaction patterns. Key docs: 06-Design Language, 07-Motion Language.</p></div>
+          <div class="section-card p-8"><div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4"><i data-lucide="target" class="w-6 h-6 text-accent"></i></div><h3 class="text-xl font-heading mb-2">For Strategists</h3><p class="text-sm text-muted">Read the Manifesto and Philosophy first. Then explore the Business Model and Client Onboarding docs. Use playbooks for operational guidance. Key docs: 00-Manifesto, 17-Business Model.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCES DEEP DIVE ===== -->
+    <section id="experiences-deep" class="py-24 px-6 bg-secondary/30">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Signature Experiences</h2>
+        <p class="text-muted mb-12 max-w-xl">The core experiences that define Lumary OS. Each is a reusable, composable interaction pattern.</p>
+        <div class="space-y-6">
+          <div class="section-card p-8 flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center shrink-0"><span class="text-2xl font-heading text-accent">001</span></div>
+            <div><h3 class="text-2xl font-heading mb-2">The Awakening</h3><p class="text-sm text-muted mb-3">Cinematic staggered reveal for hero sections. Orchestrates background, headline, subtext, and CTA in a choreographed sequence. Used in all templates as the primary arrival experience.</p><span class="badge bg-green-500/10 text-green-400">Production</span><span class="badge bg-accent/10 text-accent ml-2">Arrival</span></div>
+          </div>
+          <div class="section-card p-8 flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center shrink-0"><span class="text-2xl font-heading text-accent">002</span></div>
+            <div><h3 class="text-2xl font-heading mb-2">The Cascade</h3><p class="text-sm text-muted mb-3">Staggered card reveal for service/feature grids. Each card fades and translates upward in sequence, creating a waterfall effect. Used in every template for feature showcases.</p><span class="badge bg-green-500/10 text-green-400">Production</span><span class="badge bg-accent/10 text-accent ml-2">Cards</span></div>
+          </div>
+          <div class="section-card p-8 flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center shrink-0"><span class="text-2xl font-heading text-accent">004</span></div>
+            <div><h3 class="text-2xl font-heading mb-2">The Counter</h3><p class="text-sm text-muted mb-3">Animated stat counters that increment on scroll. Uses GSAP snap for integer precision. Configurable target, suffix, and duration. Present in all templates for trust-building.</p><span class="badge bg-green-500/10 text-green-400">Production</span><span class="badge bg-accent/10 text-accent ml-2">Scroll</span></div>
+          </div>
+          <div class="section-card p-8 flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center shrink-0"><span class="text-2xl font-heading text-accent">005</span></div>
+            <div><h3 class="text-2xl font-heading mb-2">Magnetic Nav</h3><p class="text-sm text-muted mb-3">Navigation links that follow the cursor with elastic easing. Creates a playful, premium feel. Applied to all nav-link elements across every template.</p><span class="badge bg-green-500/10 text-green-400">Production</span><span class="badge bg-accent/10 text-accent ml-2">Navigation</span></div>
+          </div>
+          <div class="section-card p-8 flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center shrink-0"><span class="text-2xl font-heading text-accent">007</span></div>
+            <div><h3 class="text-2xl font-heading mb-2">Tilt Card</h3><p class="text-sm text-muted mb-3">3D perspective tilt on hover for service/feature cards. Subtle rotation based on cursor position. Enhances the tactile feel of interactive cards.</p><span class="badge bg-green-500/10 text-green-400">Production</span><span class="badge bg-accent/10 text-accent ml-2">Cards</span></div>
+          </div>
+          <div class="section-card p-8 flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center shrink-0"><span class="text-2xl font-heading text-accent">021</span></div>
+            <div><h3 class="text-2xl font-heading mb-2">Timeline Scroll</h3><p class="text-sm text-muted mb-3">Animated timeline items that fade and slide in on scroll. Used in the About section to tell company history. Each item animates with a staggered delay.</p><span class="badge bg-green-500/10 text-green-400">Production</span><span class="badge bg-accent/10 text-accent ml-2">Storytelling</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PLATFORM SUPPORT ===== -->
+    <section id="platform" class="py-24 px-6 bg-secondary/30">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Platform Support</h2>
+        <p class="text-muted mb-12 max-w-xl">Lumary OS templates and experiences are tested across all major browsers and device classes.</p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="section-card p-8"><h3 class="text-xl font-heading mb-4">Browser Support</h3><div class="space-y-3"><div class="flex items-center justify-between text-sm"><span>Chrome 90+</span><span class="text-accent">● Full support</span></div><div class="flex items-center justify-between text-sm"><span>Firefox 88+</span><span class="text-accent">● Full support</span></div><div class="flex items-center justify-between text-sm"><span>Safari 15+</span><span class="text-accent">● Full support</span></div><div class="flex items-center justify-between text-sm"><span>Edge 90+</span><span class="text-accent">● Full support</span></div></div></div>
+          <div class="section-card p-8"><h3 class="text-xl font-heading mb-4">Device Support</h3><div class="space-y-3"><div class="flex items-center justify-between text-sm"><span>Desktop (1920+)</span><span class="text-accent">● Full support</span></div><div class="flex items-center justify-between text-sm"><span>Laptop (1366+)</span><span class="text-accent">● Full support</span></div><div class="flex items-center justify-between text-sm"><span>Tablet (768+)</span><span class="text-accent">● Responsive</span></div><div class="flex items-center justify-between text-sm"><span>Mobile (320+)</span><span class="text-accent">● Responsive</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VERSION HISTORY ===== -->
+    <section id="versions" class="py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Version History</h2>
+        <p class="text-muted mb-12 max-w-xl">Track the evolution of the Lumary OS design system.</p>
+        <div class="space-y-4 max-w-2xl">
+          <div class="section-card p-6 flex items-start gap-4"><div class="badge bg-accent/10 text-accent shrink-0 mt-0.5">v1.0.0</div><div><p class="text-sm font-semibold">Initial Release</p><p class="text-xs text-muted">June 30, 2026 — Complete design system with 26 docs, 53+ experiences, 20+ patterns, 4 component systems, 7 templates, 2 playbooks, 8 prompts, and 3 reference atlases.</p></div></div>
+          <div class="section-card p-6 flex items-start gap-4"><div class="badge bg-accent/10 text-accent shrink-0 mt-0.5">v0.9.0</div><div><p class="text-sm font-semibold">Beta Release</p><p class="text-xs text-muted">May 15, 2026 — All core docs and 4 production templates (Construction, SaaS, Real Estate, Restaurant). All major experiences implemented.</p></div></div>
+          <div class="section-card p-6 flex items-start gap-4"><div class="badge bg-accent/10 text-accent shrink-0 mt-0.5">v0.5.0</div><div><p class="text-sm font-semibold">Alpha Release</p><p class="text-xs text-muted">March 1, 2026 — Foundation: Manifesto, Philosophy, Principles, Design Language, Color Bible, Motion Bible. Single template (Construction) as proof of concept.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PERFORMANCE & METRICS ===== -->
+    <section id="performance" class="py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-5xl md:text-6xl font-heading mb-4">Performance &amp; Quality</h2>
+        <p class="text-muted mb-12 max-w-xl">Every template is built to exacting standards. These metrics are verified before any template is marked as production-ready.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="section-card text-center p-8"><div class="text-3xl font-heading text-accent mb-2">&gt;95</div><p class="text-sm font-semibold mb-1">Lighthouse Score</p><p class="text-xs text-muted">Performance target</p></div>
+          <div class="section-card text-center p-8"><div class="text-3xl font-heading text-accent mb-2">100%</div><p class="text-sm font-semibold mb-1">Accessibility Pass</p><p class="text-xs text-muted">WCAG 2.1 AA minimum</p></div>
+          <div class="section-card text-center p-8"><div class="text-3xl font-heading text-accent mb-2">&lt;3s</div><p class="text-sm font-semibold mb-1">LCP Target</p><p class="text-xs text-muted">Largest Contentful Paint</p></div>
+          <div class="section-card text-center p-8"><div class="text-3xl font-heading text-accent mb-2">0</div><p class="text-sm font-semibold mb-1">CLS</p><p class="text-xs text-muted">Cumulative Layout Shift</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer" class="py-16 px-6 border-t border-white/5">
+      <div class="max-w-6xl mx-auto text-center">
+        <a href="/" class="text-3xl font-heading text-white mb-4 block">Lumary <span class="text-accent">OS</span></a>
+        <p class="text-muted text-sm mb-6">Experience-Driven Design System v1.0</p>
+        <div class="flex justify-center gap-6 mb-8">
+          <span class="text-xs text-muted">Last updated: June 30, 2026</span>
+          <span class="text-xs text-muted">Built by Lumary Studio</span>
+        </div>
+        <div class="flex justify-center gap-4">
+          <a href="docs/00-manifesto.md" class="text-xs text-muted hover:text-accent transition-colors">Manifesto</a>
+          <a href="CHANGELOG.md" class="text-xs text-muted hover:text-accent transition-colors">Changelog</a>
+          <a href="README.md" class="text-xs text-muted hover:text-accent transition-colors">README</a>
+          <a href="SKILL.md" class="text-xs text-muted hover:text-accent transition-colors">SKILL</a>
+        </div>
+        <p class="text-xs text-muted mt-8">&copy; 2026 Lumary Studio. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reducedMotion && typeof Lenis !== 'undefined') {
+      const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), orientation: 'vertical', smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    // ===== SECTION REVEALS =====
+    if (!reducedMotion) {
+      const revealSections = document.querySelectorAll('.section-card');
+      gsap.utils.toArray(revealSections).forEach(function(card, i) {
+        gsap.from(card, {
+          y: 30, opacity: 0, duration: 0.5, delay: (i % 6) * 0.05,
+          ease: 'power2.out',
+          scrollTrigger: { trigger: card, start: 'top 92%' }
+        });
+      });
+    }
+
+    // ===== STATS COUNTERS =====
+    document.querySelectorAll('.stat-number').forEach(function(counter) {
+      const target = parseInt(counter.dataset.target);
+      const prefix = counter.closest('.stat-item')?.querySelector('.stat-prefix')?.textContent || '';
+      gsap.to(counter, {
+        innerText: target, duration: 2, ease: 'power3.out', snap: { innerText: 1 },
+        scrollTrigger: { trigger: counter, start: 'top 85%' },
+        onUpdate: function() {
+          const val = Math.floor(this.targets()[0].innerText);
+          counter.textContent = val + prefix;
+        }
+      });
+    });
+
+    // ===== SIDEBAR NAV ACTIVE STATE =====
+    const sidebarLinks = document.querySelectorAll('.sidebar a');
+    const sections = document.querySelectorAll('section[id], footer[id]');
+    window.addEventListener('scroll', function() {
+      let current = '';
+      sections.forEach(function(section) {
+        const top = section.offsetTop - 120;
+        if (window.scrollY >= top) current = section.getAttribute('id');
+      });
+      sidebarLinks.forEach(function(link) {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+      });
+    }, { passive: true });
+
+
+  });
+  </script>
+</body>
+</html>

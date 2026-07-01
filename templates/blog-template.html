@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Miangani Review — Stories at the Intersection of Culture, Design & Innovation | miangani.co.tz</title>
+  <meta name="description" content="The Miangani Review is a premium digital magazine exploring the future of African creativity, technology, and culture. Based in Dar es Salaam, Tanzania.">
+  <link rel="canonical" href="https://miangani.co.tz/">
+  <meta property="og:title" content="The Miangani Review — Stories at the Intersection of Culture, Design & Innovation">
+  <meta property="og:description" content="A premium digital magazine exploring the future of African creativity, technology, and culture.">
+  <meta property="og:image" content="https://miangani.co.tz/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Miangani Review — Stories at the Intersection of Culture, Design & Innovation">
+  <meta name="twitter:description" content="A premium digital magazine exploring the future of African creativity, technology, and culture.">
+  <meta name="twitter:image" content="https://miangani.co.tz/og-image.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "The New Wave of African Digital Art",
+    "description": "A deep exploration of how a new generation of digital artists across the continent is redefining visual culture through technology and heritage.",
+    "image": "https://miangani.co.tz/og-image.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Amara Nabo",
+      "url": "https://miangani.co.tz/author/amara-nabo"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Miangani Review",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://miangani.co.tz/logo.png"
+      }
+    },
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-06-30",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://miangani.co.tz"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "The Miangani Review",
+    "url": "https://miangani.co.tz",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://miangani.co.tz/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "The Miangani Review",
+    "url": "https://miangani.co.tz",
+    "logo": "https://miangani.co.tz/logo.png",
+    "description": "A premium digital magazine exploring the future of African creativity, technology, and culture.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dar es Salaam",
+      "addressCountry": "TZ"
+    },
+    "sameAs": [
+      "https://twitter.com/miangani",
+      "https://instagram.com/miangani",
+      "https://linkedin.com/company/miangani"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: 'var(--primary)', secondary: 'var(--secondary)', accent: 'var(--accent)', surface: 'var(--surface)', muted: 'var(--muted)' },
+          fontFamily: { heading: ['Prata', 'serif'], body: ['Source Sans 3', 'sans-serif'] },
+          borderRadius: { DEFAULT: '12px' },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');</script>
+
+  <style>
+    :root {
+      --primary: #0F172A;
+      --secondary: #1E293B;
+      --accent: #F97316;
+      --surface: #F8FAFC;
+      --muted: #94A3B8;
+      --bg: #0F172A;
+      --text: #F8FAFC;
+      --card-bg: #1E293B;
+      --border: rgba(255,255,255,0.05);
+      --border-hover: rgba(255,255,255,0.1);
+      --overlay: rgba(15,23,42,0.85);
+      --shadow: rgba(0,0,0,0.3);
+    }
+    html.light {
+      --primary: #FFFFFF;
+      --secondary: #F1F5F9;
+      --accent: #EA580C;
+      --surface: #0F172A;
+      --muted: #64748B;
+      --bg: #FFFFFF;
+      --text: #0F172A;
+      --card-bg: #F8FAFC;
+      --border: rgba(0,0,0,0.08);
+      --border-hover: rgba(0,0,0,0.12);
+      --overlay: rgba(255,255,255,0.85);
+      --shadow: rgba(0,0,0,0.08);
+    }
+    body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: var(--text); }
+    h1, h2, h3, h4 { font-family: 'Prata', serif; line-height: 1.3; }
+    h1 { font-size: clamp(2.5rem, 8vw, 5rem); }
+    h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+    img, video, iframe { max-width: 100%; height: auto; }
+    .article-card, .featured-card { will-change: transform; }
+    section[id] { scroll-margin-top: 80px; }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    ::selection { background: var(--accent); color: var(--bg); }
+    .category-tab-active { background: var(--accent) !important; color: var(--bg) !important; border-color: var(--accent) !important; }
+    .split-line { overflow: hidden; }
+    .split-line > span { display: block; }
+    .announcement-bar { background: linear-gradient(90deg, #0F172A 0%, #1E293B 50%, #0F172A 100%); }
+    .section-divider { line-height: 0; overflow: hidden; }
+    .section-divider svg { display: block; width: 100%; height: 60px; }
+    .share-tooltip { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%) scale(0.8); opacity: 0; pointer-events: none; transition: all 0.2s ease; background: var(--card-bg); border: 1px solid var(--border-hover); padding: 4px 10px; border-radius: 8px; white-space: nowrap; font-size: 12px; color: var(--muted); }
+    .share-btn:hover .share-tooltip { opacity: 1; transform: translateX(-50%) scale(1); pointer-events: auto; }
+    .theme-toggle { cursor: pointer; }
+    .infinite-carousel { mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%); }
+    .carousel-item { flex-shrink: 0; width: clamp(220px, 40vw, 310px); border-radius: 16px; overflow: hidden; user-select: none; }
+    @media (min-width: 768px) { .carousel-item { width: clamp(260px, 28vw, 360px); } }
+    @media (min-width: 1024px) { .carousel-item { width: clamp(300px, 22vw, 400px); } }
+    .carousel-item img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+    @media (max-width: 767px) {
+      nav a, .nav-link { padding: 12px 0; min-height: 48px; }
+      .mobile-full { width: 100%; }
+    }
+    .testimonial-slide { will-change: opacity, filter; }
+    .morph-dot.active { transform: scale(1.3); background: var(--accent) !important; }
+  </style>
+</head>
+<body class="antialiased">
+  <!-- Skip to content -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-accent focus:text-primary focus:rounded-lg">Skip to main content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div class="progress-container fixed top-0 left-0 right-0 z-[100] h-0.5 bg-[var(--border)]">
+    <div class="progress-fill h-full bg-accent origin-left" style="transform: scaleX(0);"></div>
+  </div>
+
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="announcement-bar relative z-50 py-2.5 text-center text-xs text-muted tracking-wider overflow-hidden border-b border-[var(--border)]">
+    <div class="relative z-10">Curated stories for the curious mind &mdash; <span class="text-accent font-semibold">Free weekly edition</span></div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="fixed top-10 left-4 right-4 z-50" role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-6 py-4 rounded-2xl transition-all duration-500 bg-transparent">
+      <div class="flex items-center justify-between">
+        <a href="/" class="nav-link text-xl md:text-2xl font-heading text-[var(--text)]">
+          <span class="nav-label">The Miangani Review</span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <div class="relative group">
+            <a href="#featured" class="nav-link text-sm text-[var(--text)]/80 hover:text-accent transition-colors duration-200"><span class="nav-label">Categories</span></a>
+            <div class="absolute top-full left-0 mt-2 w-48 bg-[var(--card-bg)] backdrop-blur-xl border border-[var(--border-hover)] rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none group-hover:pointer-events-auto shadow-xl">
+              <div class="p-2 space-y-1">
+                <a href="#" class="block px-4 py-2 text-sm text-[var(--text)]/80 hover:text-accent hover:bg-[var(--border)] rounded-lg transition-colors">Culture</a>
+                <a href="#" class="block px-4 py-2 text-sm text-[var(--text)]/80 hover:text-accent hover:bg-[var(--border)] rounded-lg transition-colors">Design</a>
+                <a href="#" class="block px-4 py-2 text-sm text-[var(--text)]/80 hover:text-accent hover:bg-[var(--border)] rounded-lg transition-colors">Technology</a>
+                <a href="#" class="block px-4 py-2 text-sm text-[var(--text)]/80 hover:text-accent hover:bg-[var(--border)] rounded-lg transition-colors">Business</a>
+                <a href="#" class="block px-4 py-2 text-sm text-[var(--text)]/80 hover:text-accent hover:bg-[var(--border)] rounded-lg transition-colors">Travel</a>
+              </div>
+            </div>
+          </div>
+          <a href="#articles" class="nav-link text-sm text-[var(--text)]/80 hover:text-accent transition-colors duration-200"><span class="nav-label">Stories</span></a>
+          <a href="#popular" class="nav-link text-sm text-[var(--text)]/80 hover:text-accent transition-colors duration-200"><span class="nav-label">Most Read</span></a>
+          <a href="#about" class="nav-link text-sm text-[var(--text)]/80 hover:text-accent transition-colors duration-200"><span class="nav-label">About</span></a>
+          <a href="#subscribe" class="px-5 py-2.5 bg-accent text-primary rounded-lg text-sm font-semibold hover:bg-accent/90 transition-all duration-200">Subscribe</a>
+          <button id="themeToggle" class="theme-toggle p-2 rounded-lg text-muted hover:text-accent transition-colors" aria-label="Toggle theme">
+            <svg class="dark-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="light-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+          <button id="searchBtn" class="text-muted hover:text-accent transition-colors p-1" aria-label="Open search">
+            <i data-lucide="search" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <button class="md:hidden text-[var(--text)] p-2" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 bg-primary z-40 translate-x-full transition-transform duration-300 ease-in-out md:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="flex flex-col items-center justify-center h-full gap-6 text-2xl">
+      <a href="#featured" class="text-[var(--text)] hover:text-accent transition-colors" onclick="closeMenu()">Featured</a>
+      <a href="#articles" class="text-[var(--text)] hover:text-accent transition-colors" onclick="closeMenu()">Stories</a>
+      <a href="#popular" class="text-[var(--text)] hover:text-accent transition-colors" onclick="closeMenu()">Most Read</a>
+      <a href="#about" class="text-[var(--text)] hover:text-accent transition-colors" onclick="closeMenu()">About</a>
+      <a href="#subscribe" onclick="closeMenu()" class="px-8 py-4 bg-accent text-primary rounded-xl font-semibold">Subscribe</a>
+      <button id="themeToggleMobile" class="theme-toggle p-2 rounded-lg text-muted hover:text-accent transition-colors" aria-label="Toggle theme">
+        <svg class="dark-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        <svg class="light-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Search Overlay -->
+  <div id="searchOverlay" class="fixed inset-0 bg-[var(--overlay)] backdrop-blur-xl z-[60] opacity-0 invisible transition-all duration-300" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="max-w-2xl mx-auto px-6 pt-32">
+      <form class="relative" onsubmit="return false;">
+        <input type="search" id="searchInput" placeholder="Search stories..." class="w-full px-6 py-4 bg-secondary border border-[var(--border-hover)] rounded-2xl text-[var(--text)] text-xl placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/30 outline-none transition-all duration-200" aria-label="Search stories">
+        <button type="button" id="searchClose" class="absolute right-4 top-1/2 -translate-y-1/2 text-muted hover:text-[var(--text)] transition-colors" aria-label="Close search">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </form>
+      <p class="text-sm text-muted mt-4 text-center">Search across all stories, categories, and authors</p>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <!-- exp-013: Split text reveal, exp-001: The Awakening cinematic staggered -->
+    <section id="featured" class="hero scroll-mt-20 min-h-screen flex items-end relative overflow-hidden pb-20">
+      <div class="hero-bg absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80" alt="" class="w-full h-full object-cover" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/60 to-transparent"></div>
+      </div>
+      <div class="relative z-10 max-w-6xl mx-auto px-6 w-full text-white">
+        <div class="max-w-4xl">
+          <div class="hero-category inline-flex items-center gap-2 px-4 py-1.5 bg-accent text-primary text-xs font-semibold uppercase tracking-widest rounded-full mb-6">Culture</div>
+          <h1 class="hero-heading text-5xl md:text-7xl lg:text-8xl font-heading leading-tight mb-6">
+            <span class="split-line"><span>The New Wave</span></span>
+            <span class="split-line"><span>of African</span></span>
+            <span class="split-line"><span>Digital Art</span></span>
+          </h1>
+          <p class="hero-subtext text-lg md:text-xl text-gray-300 max-w-2xl mb-8">
+            Across the continent, a new generation of artists is blending ancient visual traditions with cutting-edge technology to create something entirely unprecedented.
+          </p>
+          <div class="hero-meta flex flex-wrap items-center gap-4 text-sm text-muted">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent font-semibold text-xs">AN</div>
+              <div>
+                <span class="block text-[var(--text)] font-semibold text-sm">Amara Nabo</span>
+                <span class="block text-xs text-muted">Senior Culture Editor</span>
+              </div>
+            </div>
+            <span class="w-1 h-1 rounded-full bg-muted"></span>
+            <span>Jun 28, 2026</span>
+            <span class="w-1 h-1 rounded-full bg-muted"></span>
+            <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> 8 min read</span>
+            <!-- Share Buttons -->
+            <div class="flex items-center gap-2 ml-2 border-l border-[var(--border-hover)] pl-4">
+              <button class="share-btn relative text-muted hover:text-accent transition-colors" aria-label="Share on Twitter" onclick="window.open('https://twitter.com/intent/tweet?text=The%20New%20Wave%20of%20African%20Digital%20Art&url=https://miangani.co.tz', '_blank')">
+                <i data-lucide="twitter" class="w-4 h-4"></i>
+                <span class="share-tooltip">Share on X</span>
+              </button>
+              <button class="share-btn relative text-muted hover:text-accent transition-colors" aria-label="Share on LinkedIn" onclick="window.open('https://linkedin.com/share?url=https://miangani.co.tz', '_blank')">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+                <span class="share-tooltip">Share on LinkedIn</span>
+              </button>
+              <button class="share-btn relative text-muted hover:text-accent transition-colors" aria-label="Copy link" onclick="navigator.clipboard.writeText('https://miangani.co.tz').then(function(){var t=this.querySelector('.share-tooltip');t.textContent='Copied!';setTimeout(function(){t.textContent='Copy link'},2000)}.bind(this))">
+                <i data-lucide="link" class="w-4 h-4"></i>
+                <span class="share-tooltip">Copy link</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center scroll-indicator">
+        <span class="text-sm text-muted">Scroll to explore</span>
+        <div class="w-6 h-10 border-2 border-muted rounded-full mx-auto mt-2 flex justify-center p-1">
+          <div class="w-1.5 h-2.5 bg-accent rounded-full animate-bounce"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,20 C360,50 720,10 1080,40 Q1260,55 1440,30 L1440,60 L0,60 Z" fill="rgba(249,115,22,0.03)"/></svg></div>
+
+    <!-- ===== FEATURED STORIES ===== -->
+    <!-- exp-002: The Cascade -->
+    <section class="py-16 md:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex items-center justify-between mb-12">
+          <div>
+            <span class="text-sm font-semibold text-accent uppercase tracking-widest">Editor's Pick</span>
+            <h2 class="text-4xl md:text-5xl font-heading mt-3">Featured Stories</h2>
+          </div>
+          <a href="#articles" class="hidden sm:flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors">
+            View All <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <article class="featured-card group relative rounded-2xl overflow-hidden border border-[var(--border-hover)] bg-secondary hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1768327240031-1c5542e7530c?w=600&q=80" alt="African digital art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Design</span>
+              <h3 class="text-xl font-heading mt-2 mb-3 group-hover:text-accent transition-colors">How Zanzibar's Spice Trade Inspired a Design Revolution</h3>
+              <p class="text-sm text-muted leading-relaxed">The aromatic heritage of Zanzibar's spice islands is finding new expression in contemporary furniture, textiles, and graphic design.</p>
+              <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[var(--border)] text-xs text-muted">
+                <span>By Zuri Hassan</span>
+                <span>Jun 25, 2026</span>
+                <span>6 min read</span>
+              </div>
+            </div>
+          </article>
+          <article class="featured-card group relative rounded-2xl overflow-hidden border border-[var(--border-hover)] bg-secondary hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80" alt="Tech hub in Kigali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Technology</span>
+              <h3 class="text-xl font-heading mt-2 mb-3 group-hover:text-accent transition-colors">Kigali's Rise as a Tech Hub: A Firsthand Account</h3>
+              <p class="text-sm text-muted leading-relaxed">Rwanda's capital is positioning itself as Africa's Silicon Valley. Here's what it looks like on the ground.</p>
+              <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[var(--border)] text-xs text-muted">
+                <span>By Kofi Mensah</span>
+                <span>Jun 23, 2026</span>
+                <span>10 min read</span>
+              </div>
+            </div>
+          </article>
+          <article class="featured-card group relative rounded-2xl overflow-hidden border border-[var(--border-hover)] bg-secondary hover:-translate-y-2 hover:shadow-xl hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=600&q=80" alt="African fashion" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Culture</span>
+              <h3 class="text-xl font-heading mt-2 mb-3 group-hover:text-accent transition-colors">Why African Fashion Is Having a Global Moment</h3>
+              <p class="text-sm text-muted leading-relaxed">From Lagos to London, African designers are reshaping the global fashion landscape with bold patterns and sustainable practices.</p>
+              <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[var(--border)] text-xs text-muted">
+                <span>By Nia Njoki</span>
+                <span>Jun 20, 2026</span>
+                <span>7 min read</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,20 C360,50 720,10 1080,40 Q1260,55 1440,30 L1440,60 L0,60 Z" fill="rgba(249,115,22,0.03)"/></svg></div>
+
+    <!-- ===== INFINITE CAROUSEL: Trending Now (exp-054) ===== -->
+    <section class="scroll-mt-20 py-16 md:py-24 px-4 md:px-6 overflow-hidden bg-[var(--card-bg)]">
+      <div class="max-w-6xl mx-auto mb-10 md:mb-12">
+        <span class="text-sm font-semibold text-accent uppercase tracking-widest">Trending</span>
+        <h2 class="text-4xl md:text-5xl font-heading mt-3">Trending Now</h2>
+        <p class="mt-4 text-muted max-w-xl">The stories everyone's talking about this week.</p>
+      </div>
+      <div class="infinite-carousel relative" data-speed="40" role="region" aria-label="Trending articles carousel">
+        <div class="carousel-track flex gap-5 md:gap-6 w-max cursor-grab active:cursor-grabbing select-none" role="list">
+          <div class="carousel-item" role="listitem">
+            <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&q=80" alt="AI in Africa article" loading="lazy" />
+            <div class="p-4" style="background: var(--bg);">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Technology</span>
+              <h4 class="font-heading text-base mt-1" style="color: var(--text);">How AI Is Transforming African Agriculture</h4>
+              <p class="text-xs text-muted mt-2">By Amara Osei &bull; 8 min read</p>
+            </div>
+          </div>
+          <div class="carousel-item" role="listitem">
+            <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&q=80" alt="African fashion article" loading="lazy" />
+            <div class="p-4" style="background: var(--bg);">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Culture</span>
+              <h4 class="font-heading text-base mt-1" style="color: var(--text);">The Rise of Afrofuturism in Film & Music</h4>
+              <p class="text-xs text-muted mt-2">By Chidi Okonkwo &bull; 12 min read</p>
+            </div>
+          </div>
+          <div class="carousel-item" role="listitem">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80" alt="Healthcare article" loading="lazy" />
+            <div class="p-4" style="background: var(--bg);">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Business</span>
+              <h4 class="font-heading text-base mt-1" style="color: var(--text);">Rwanda's Telemedicine Revolution</h4>
+              <p class="text-xs text-muted mt-2">By Fatima Diallo &bull; 6 min read</p>
+            </div>
+          </div>
+          <div class="carousel-item" role="listitem">
+            <img src="https://images.unsplash.com/photo-1496449903678-68ddcb189a24?w=400&q=80" alt="Urban design article" loading="lazy" />
+            <div class="p-4" style="background: var(--bg);">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Design</span>
+              <h4 class="font-heading text-base mt-1" style="color: var(--text);">The New Face of Nairobi's Skyline</h4>
+              <p class="text-xs text-muted mt-2">By Zuri Hassan &bull; 9 min read</p>
+            </div>
+          </div>
+          <div class="carousel-item" role="listitem">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80" alt="Startup article" loading="lazy" />
+            <div class="p-4" style="background: var(--bg);">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Business</span>
+              <h4 class="font-heading text-base mt-1" style="color: var(--text);">Lagos Startup Ecosystem Hits $2B Valuation</h4>
+              <p class="text-xs text-muted mt-2">By Kofi Mensah &bull; 7 min read</p>
+            </div>
+          </div>
+          <div class="carousel-item" role="listitem">
+            <img src="https://images.unsplash.com/photo-1741377772075-5f0f0d21d6b4?w=400&q=80" alt="Photography article" loading="lazy" />
+            <div class="p-4" style="background: var(--bg);">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Culture</span>
+              <h4 class="font-heading text-base mt-1" style="color: var(--text);">Inside Tanzania's Thriving Photography Scene</h4>
+              <p class="text-xs text-muted mt-2">By Nia Njoki &bull; 5 min read</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,20 C360,50 720,10 1080,40 Q1260,55 1440,30 L1440,60 L0,60 Z" fill="rgba(249,115,22,0.03)"/></svg></div>
+
+    <!-- ===== CATEGORY FILTER TABS + STORY GRID ===== -->
+    <!-- exp-007: Tilt Card, exp-002: The Cascade -->
+    <section id="articles" class="scroll-mt-20 py-16 md:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-sm font-semibold text-accent uppercase tracking-widest">Browse by Topic</span>
+          <h2 class="text-4xl md:text-5xl font-heading mt-3">Latest Stories</h2>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+          <button class="category-tab category-tab-active px-5 py-2.5 text-sm font-semibold rounded-full border border-[var(--border-hover)] bg-secondary text-[var(--text)] hover:bg-accent hover:text-primary hover:border-accent transition-all duration-200" data-category="all">All</button>
+          <button class="category-tab px-5 py-2.5 text-sm font-semibold rounded-full border border-[var(--border-hover)] bg-secondary text-[var(--text)] hover:bg-accent hover:text-primary hover:border-accent transition-all duration-200" data-category="culture">Culture</button>
+          <button class="category-tab px-5 py-2.5 text-sm font-semibold rounded-full border border-[var(--border-hover)] bg-secondary text-[var(--text)] hover:bg-accent hover:text-primary hover:border-accent transition-all duration-200" data-category="design">Design</button>
+          <button class="category-tab px-5 py-2.5 text-sm font-semibold rounded-full border border-[var(--border-hover)] bg-secondary text-[var(--text)] hover:bg-accent hover:text-primary hover:border-accent transition-all duration-200" data-category="technology">Technology</button>
+          <button class="category-tab px-5 py-2.5 text-sm font-semibold rounded-full border border-[var(--border-hover)] bg-secondary text-[var(--text)] hover:bg-accent hover:text-primary hover:border-accent transition-all duration-200" data-category="business">Business</button>
+          <button class="category-tab px-5 py-2.5 text-sm font-semibold rounded-full border border-[var(--border-hover)] bg-secondary text-[var(--text)] hover:bg-accent hover:text-primary hover:border-accent transition-all duration-200" data-category="travel">Travel</button>
+        </div>
+        <div class="article-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <article class="tilt-card article-card group rounded-2xl border border-[var(--border-hover)] bg-secondary overflow-hidden transition-all duration-300" data-category="culture">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80" alt="Nairobi startup scene" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <div class="p-5">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Culture</span>
+              <h3 class="text-lg font-heading mt-2 mb-2 group-hover:text-accent transition-colors">The Women Shaping Nairobi's Startup Scene</h3>
+              <p class="text-sm text-muted leading-relaxed line-clamp-2">Meet the female founders and VCs transforming Kenya's entrepreneurial landscape.</p>
+              <div class="flex items-center gap-2 mt-3 text-xs text-muted"><span>Jun 18, 2026</span><span>·</span><span>5 min read</span></div>
+            </div>
+          </article>
+          <article class="tilt-card article-card group rounded-2xl border border-[var(--border-hover)] bg-secondary overflow-hidden transition-all duration-300" data-category="design">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&q=80" alt="Swahili calligraphy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <div class="p-5">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Design</span>
+              <h3 class="text-lg font-heading mt-2 mb-2 group-hover:text-accent transition-colors">The Art of Swahili Calligraphy in Modern Design</h3>
+              <p class="text-sm text-muted leading-relaxed line-clamp-2">How centuries-old calligraphic traditions are being reinterpreted for the digital age.</p>
+              <div class="flex items-center gap-2 mt-3 text-xs text-muted"><span>Jun 14, 2026</span><span>·</span><span>8 min read</span></div>
+            </div>
+          </article>
+          <article class="tilt-card article-card group rounded-2xl border border-[var(--border-hover)] bg-secondary overflow-hidden transition-all duration-300" data-category="technology">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1767477665602-ab4e96be7701?w=600&q=80" alt="Connectivity" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <div class="p-5">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Technology</span>
+              <h3 class="text-lg font-heading mt-2 mb-2 group-hover:text-accent transition-colors">From M-Pesa to Starlink: Africa's Connectivity Revolution</h3>
+              <p class="text-sm text-muted leading-relaxed line-clamp-2">How mobile money paved the way for a continent-wide digital transformation.</p>
+              <div class="flex items-center gap-2 mt-3 text-xs text-muted"><span>Jun 10, 2026</span><span>·</span><span>12 min read</span></div>
+            </div>
+          </article>
+          <article class="tilt-card article-card group rounded-2xl border border-[var(--border-hover)] bg-secondary overflow-hidden transition-all duration-300" data-category="travel">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80" alt="Serengeti safari" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <div class="p-5">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Travel</span>
+              <h3 class="text-lg font-heading mt-2 mb-2 group-hover:text-accent transition-colors">Building the First Carbon-Neutral Safari Lodge in the Serengeti</h3>
+              <p class="text-sm text-muted leading-relaxed line-clamp-2">A bold experiment in luxury tourism that gives back to the land.</p>
+              <div class="flex items-center gap-2 mt-3 text-xs text-muted"><span>Jun 6, 2026</span><span>·</span><span>9 min read</span></div>
+            </div>
+          </article>
+          <article class="tilt-card article-card group rounded-2xl border border-[var(--border-hover)] bg-secondary overflow-hidden transition-all duration-300" data-category="business">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&q=80" alt="Lagos entrepreneurs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <div class="p-5">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Business</span>
+              <h3 class="text-lg font-heading mt-2 mb-2 group-hover:text-accent transition-colors">Inside the Studio: Weaving Tradition into Contemporary Furniture</h3>
+              <p class="text-sm text-muted leading-relaxed line-clamp-2">How a new wave of designers is preserving ancestral weaving techniques through modern furniture.</p>
+              <div class="flex items-center gap-2 mt-3 text-xs text-muted"><span>Jun 2, 2026</span><span>·</span><span>7 min read</span></div>
+            </div>
+          </article>
+          <article class="tilt-card article-card group rounded-2xl border border-[var(--border-hover)] bg-secondary overflow-hidden transition-all duration-300" data-category="technology">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="African tech" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <div class="p-5">
+              <span class="text-xs font-semibold text-accent uppercase tracking-wider">Technology</span>
+              <h3 class="text-lg font-heading mt-2 mb-2 group-hover:text-accent transition-colors">Kigali's Rise as a Tech Hub: A Firsthand Account</h3>
+              <p class="text-sm text-muted leading-relaxed line-clamp-2">Rwanda's ambitious vision for a tech-driven economy is taking shape.</p>
+              <div class="flex items-center gap-2 mt-3 text-xs text-muted"><span>May 28, 2026</span><span>·</span><span>10 min read</span></div>
+            </div>
+          </article>
+        </div>
+        <!-- Load More -->
+        <div class="load-more-wrapper flex justify-center mt-12">
+          <button id="loadMoreBtn" class="px-8 py-4 bg-accent text-primary rounded-xl font-semibold hover:bg-accent/90 hover:-translate-y-0.5 transition-all duration-200">Load More</button>
+        </div>
+
+        <!-- Inline Newsletter CTA -->
+        <div class="mx-auto max-w-2xl mt-16">
+          <div class="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-accent/10 via-secondary to-secondary border border-accent/10 text-center">
+            <p class="text-lg font-heading text-[var(--text)] mb-3">Enjoying the stories? Get weekly insights delivered to your inbox.</p>
+            <form class="inline-newsletter flex flex-col sm:flex-row gap-3 max-w-md mx-auto" novalidate>
+              <div class="flex-1">
+                <label for="inline-email" class="sr-only">Email address</label>
+                <input type="email" id="inline-email" name="email" required class="w-full px-5 py-3 bg-primary border border-[var(--border-hover)] rounded-xl text-[var(--text)] placeholder:text-muted focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all duration-200" placeholder="Enter your email">
+              </div>
+              <button type="submit" class="px-6 py-3 bg-accent text-primary font-semibold rounded-xl hover:bg-accent/90 transition-all duration-200 whitespace-nowrap">Subscribe</button>
+            </form>
+            <p class="mt-4 text-sm text-muted">Join 52,000+ monthly readers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,20 C360,50 720,10 1080,40 Q1260,55 1440,30 L1440,60 L0,60 Z" fill="rgba(249,115,22,0.03)"/></svg></div>
+
+    <!-- ===== MOST READ ===== -->
+    <section id="popular" class="scroll-mt-20 py-16 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-sm font-semibold text-accent uppercase tracking-widest">Trending</span>
+          <h2 class="text-4xl md:text-5xl font-heading mt-3">Most Read This Month</h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="popular-card group p-6 rounded-2xl border border-[var(--border-hover)] bg-secondary hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="text-3xl font-heading text-accent/40 mb-4">01</div>
+            <h3 class="text-base font-heading mb-2 group-hover:text-accent transition-colors">The Women Shaping Nairobi's Startup Scene</h3>
+            <p class="text-xs text-muted">By Nia Njoki &middot; 45K reads</p>
+          </div>
+          <div class="popular-card group p-6 rounded-2xl border border-[var(--border-hover)] bg-secondary hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="text-3xl font-heading text-accent/40 mb-4">02</div>
+            <h3 class="text-base font-heading mb-2 group-hover:text-accent transition-colors">How Zanzibar's Spice Trade Inspired a Design Revolution</h3>
+            <p class="text-xs text-muted">By Zuri Hassan &middot; 38K reads</p>
+          </div>
+          <div class="popular-card group p-6 rounded-2xl border border-[var(--border-hover)] bg-secondary hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="text-3xl font-heading text-accent/40 mb-4">03</div>
+            <h3 class="text-base font-heading mb-2 group-hover:text-accent transition-colors">From M-Pesa to Starlink: Africa's Connectivity Revolution</h3>
+            <p class="text-xs text-muted">By Kwame Asante &middot; 32K reads</p>
+          </div>
+          <div class="popular-card group p-6 rounded-2xl border border-[var(--border-hover)] bg-secondary hover:border-accent/30 transition-all duration-300 cursor-pointer">
+            <div class="text-3xl font-heading text-accent/40 mb-4">04</div>
+            <h3 class="text-base font-heading mb-2 group-hover:text-accent transition-colors">Building the First Carbon-Neutral Safari Lodge in the Serengeti</h3>
+            <p class="text-xs text-muted">By Thabo Molefe &middot; 29K reads</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,20 C360,50 720,10 1080,40 Q1260,55 1440,30 L1440,60 L0,60 Z" fill="rgba(249,115,22,0.03)"/></svg></div>
+
+    <!-- ===== STATS: THE COUNTER ===== -->
+    <!-- exp-004: The Counter -->
+    <section class="stats-section py-16 md:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="stat-item p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)]">
+          <div class="stat-number text-5xl font-heading text-accent" data-target="840">0</div>
+          <div class="stat-prefix hidden">+</div>
+          <p class="text-muted mt-2">Stories Published</p>
+        </div>
+        <div class="stat-item p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)]">
+          <div class="stat-number text-5xl font-heading text-accent" data-target="52">0</div>
+          <div class="stat-prefix hidden">K+</div>
+          <p class="text-muted mt-2">Monthly Readers</p>
+        </div>
+        <div class="stat-item p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)]">
+          <div class="stat-number text-5xl font-heading text-accent" data-target="36">0</div>
+          <p class="text-muted mt-2">Contributing Writers</p>
+        </div>
+        <div class="stat-item p-6 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)]">
+          <div class="stat-number text-5xl font-heading text-accent" data-target="7">0</div>
+          <p class="text-muted mt-2">Years of Storytelling</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,20 C360,50 720,10 1080,40 Q1260,55 1440,30 L1440,60 L0,60 Z" fill="rgba(249,115,22,0.03)"/></svg></div>
+
+    <!-- ===== ABOUT + TIMELINE ===== -->
+    <!-- exp-021: Timeline Scroll -->
+    <section id="about" class="scroll-mt-20 py-16 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-sm font-semibold text-accent uppercase tracking-widest">Our Story</span>
+          <h2 class="text-4xl md:text-5xl font-heading mt-3">Behind The Miangani Review</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto">Miangani &mdash; meaning &ldquo;civilization&rdquo; in Swahili &mdash; is our lens for examining the ideas shaping modern Africa.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-[var(--border-hover)]">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Editorial team at work in Dar es Salaam" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/10 rounded-2xl -z-10 border border-accent/20"></div>
+          </div>
+          <div>
+            <h3 class="text-3xl font-heading mb-6">A Platform for Stories That Matter</h3>
+            <div class="space-y-4 text-muted leading-relaxed">
+              <p>Founded in Dar es Salaam in 2019, The Miangani Review began as a small newsletter among friends and grew into one of the most respected digital magazines covering African creativity, technology, and culture.</p>
+              <p>Our team of 36 writers, editors, and photographers spans 12 countries across the continent and its diaspora. Every story we publish is fact-checked, edited, and crafted with care because we believe the African narrative deserves nothing less than excellence.</p>
+            </div>
+            <div class="timeline mt-10 relative pl-8 before:absolute before:left-[11px] before:top-2 before:bottom-0 before:w-0.5 before:bg-[var(--border-hover)]">
+              <div class="timeline-item relative mb-8">
+                <div class="absolute left-[-26px] top-1 w-[22px] h-[22px] rounded-full bg-accent border-[5px] border-primary shadow-[0_0_0_2px_rgba(249,115,22,0.3)]"></div>
+                <span class="text-sm font-semibold text-accent">2019</span>
+                <p class="text-sm text-muted mt-1">The Miangani Review launched as a weekly newsletter from Dar es Salaam with 150 subscribers.</p>
+              </div>
+              <div class="timeline-item relative mb-8">
+                <div class="absolute left-[-26px] top-1 w-[22px] h-[22px] rounded-full bg-accent border-[5px] border-primary shadow-[0_0_0_2px_rgba(249,115,22,0.3)]"></div>
+                <span class="text-sm font-semibold text-accent">2022</span>
+                <p class="text-sm text-muted mt-1">Reached 30K monthly readers and expanded to 20 contributors across 8 African countries.</p>
+              </div>
+              <div class="timeline-item relative">
+                <div class="absolute left-[-26px] top-1 w-[22px] h-[22px] rounded-full bg-accent border-[5px] border-primary shadow-[0_0_0_2px_rgba(249,115,22,0.3)]"></div>
+                <span class="text-sm font-semibold text-accent">2026</span>
+                <p class="text-sm text-muted mt-1">52K+ monthly readers, 840+ stories published, 36 writers across the continent and diaspora.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,20 C360,50 720,10 1080,40 Q1260,55 1440,30 L1440,60 L0,60 Z" fill="rgba(249,115,22,0.03)"/></svg></div>
+
+    <!-- ===== MORPHING TESTIMONIALS (exp-055) ===== -->
+    <section id="testimonials" class="scroll-mt-20 py-16 md:py-24 px-4 md:px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="text-sm font-semibold text-accent uppercase tracking-widest">Testimonials</span>
+        <h2 class="text-4xl md:text-5xl font-heading mt-3 mb-14 md:mb-20">What Our Readers Say</h2>
+        <div class="testimonial-morph relative min-h-[280px] md:min-h-[240px]" role="region" aria-label="Testimonials" aria-live="polite">
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="0">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">&ldquo;The Miangani Review consistently delivers stories that you simply won't find anywhere else. Their perspective on African innovation is essential reading for anyone who wants to understand where the world is heading.&rdquo;</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Chioma Okafor</p>
+              <p class="text-xs md:text-sm text-muted mt-1">Design Director, Studio Kalakuta</p>
+            </div>
+          </div>
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="1">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">&ldquo;I look forward to every issue. The writing is superb, the topics are relevant, and the design is beautiful. It's one of the few publications I actually read cover to cover.&rdquo;</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Kwame Mensah</p>
+              <p class="text-xs md:text-sm text-muted mt-1">Venture Partner, Mosi Capital</p>
+            </div>
+          </div>
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="2">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">&ldquo;The Miangani Review captures the nuance and complexity of modern Africa in a way that no other publication does. Every article feels like it was written with deep care and understanding.&rdquo;</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Amina Mohamed</p>
+              <p class="text-xs md:text-sm text-muted mt-1">Professor of African Studies, UDSM</p>
+            </div>
+          </div>
+        </div>
+        <div class="morph-dots flex justify-center gap-3 mt-10" role="tablist" aria-label="Testimonial navigation">
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="0" aria-label="Testimonial 1"></button>
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="1" aria-label="Testimonial 2"></button>
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="2" aria-label="Testimonial 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,20 C360,50 720,10 1080,40 Q1260,55 1440,30 L1440,60 L0,60 Z" fill="rgba(249,115,22,0.03)"/></svg></div>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section id="subscribe" class="scroll-mt-20 py-16 md:py-24 px-4 md:px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="p-10 md:p-16 rounded-3xl bg-gradient-to-br from-accent/10 via-secondary to-secondary border border-accent/10 relative overflow-hidden">
+          <div class="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-accent/5 blur-3xl"></div>
+          <div class="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-accent/5 blur-3xl"></div>
+          <span class="relative text-sm font-semibold text-accent uppercase tracking-widest">Stay Informed</span>
+          <h2 class="relative text-4xl md:text-5xl font-heading mt-4 mb-4">Join 52,000+ Readers</h2>
+          <p class="relative text-muted max-w-md mx-auto mb-8">Get the latest stories exploring African creativity, technology, and culture delivered to your inbox every week.</p>
+          <form class="newsletter-form relative max-w-md mx-auto flex flex-col sm:flex-row gap-3" novalidate>
+            <div class="flex-1">
+              <label for="newsletter-email" class="sr-only">Email address</label>
+              <input type="email" id="newsletter-email" name="email" required class="w-full px-5 py-3.5 bg-primary border border-[var(--border-hover)] rounded-xl text-[var(--text)] placeholder:text-muted focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all duration-200" placeholder="Enter your email">
+              <p class="newsletter-error text-sm text-red-400 mt-2 hidden" role="alert">Please enter a valid email address.</p>
+            </div>
+            <button type="submit" class="newsletter-btn px-6 py-3.5 bg-accent text-primary font-semibold rounded-xl hover:bg-accent/90 transition-all duration-200 whitespace-nowrap">Subscribe</button>
+          </form>
+          <p class="relative text-xs text-muted mt-4">No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,20 C360,50 720,10 1080,40 Q1260,55 1440,30 L1440,60 L0,60 Z" fill="rgba(249,115,22,0.03)"/></svg></div>
+
+    <!-- ===== FAQ ACCORDION ===== -->
+    <section id="faq" class="faq-section scroll-mt-20 py-16 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-sm font-semibold text-accent uppercase tracking-widest">FAQ</span>
+          <h2 class="text-4xl md:text-5xl font-heading mt-3">Frequently Asked Questions</h2>
+          <p class="text-muted mt-4">Everything you need to know about The Miangani Review.</p>
+        </div>
+        <div class="space-y-4">
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-secondary [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-semibold">How often do you publish new stories?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-6 pb-6 text-muted leading-relaxed">We publish 3&ndash;5 new stories every week across five categories: Culture, Design, Technology, Business, and Travel. Our editorial team curates each piece to ensure depth, accuracy, and relevance.</div>
+          </details>
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-secondary [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-semibold">Is The Miangani Review free?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-6 pb-6 text-muted leading-relaxed">Yes! Our weekly newsletter is completely free. We also offer a premium membership with exclusive long-form stories, ad-free reading, and early access to every edition.</div>
+          </details>
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-secondary [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-semibold">Can I contribute a story?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-6 pb-6 text-muted leading-relaxed">We welcome pitches from writers across the continent and diaspora. Please submit your story idea through our contact form and our editorial team will review it within two weeks.</div>
+          </details>
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-secondary [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-semibold">How can I advertise with you?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-6 pb-6 text-muted leading-relaxed">We offer sponsored content, newsletter sponsorships, and display advertising. Reach out to our partnerships team at partners@miangani.co.tz for rates and availability.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,20 C360,50 720,10 1080,40 Q1260,55 1440,30 L1440,60 L0,60 Z" fill="rgba(249,115,22,0.03)"/></svg></div>
+
+    <!-- ===== CTA ===== -->
+    <section id="cta" class="cta-section py-16 md:py-24 px-4 md:px-6 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-accent/20 via-[#0F172A] to-[#0F172A]/90"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(249,115,22,0.08),transparent_50%)]"></div>
+      <div class="cta-content relative z-10 max-w-3xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-heading text-white mb-6">Become a Contributor</h2>
+        <p class="text-lg text-gray-300 mb-10 max-w-xl mx-auto">Have a story to tell? We're always looking for fresh voices to share perspectives on African creativity, technology, and culture.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#subscribe" class="px-10 py-5 bg-accent text-primary rounded-xl font-semibold text-lg hover:bg-accent/90 hover:-translate-y-0.5 transition-all duration-300 shadow-lg shadow-[var(--shadow)]">Subscribe Free</a>
+          <a href="#contact" class="px-10 py-5 bg-[var(--border)] text-[var(--text)] rounded-xl font-semibold text-lg border border-[var(--border-hover)] hover:bg-[var(--border-hover)] transition-all duration-300">Submit a Pitch</a>
+        </div>
+        <p class="text-sm text-muted mt-6">No spam. Unsubscribe anytime.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,20 C360,50 720,10 1080,40 Q1260,55 1440,30 L1440,60 L0,60 Z" fill="rgba(249,115,22,0.03)"/></svg></div>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section scroll-mt-20 py-16 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="contact-content max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
+        <div>
+          <span class="text-sm font-semibold text-accent uppercase tracking-widest">Contact</span>
+          <h2 class="text-4xl md:text-5xl font-heading mt-4 mb-6">Get in Touch</h2>
+          <p class="text-muted mb-8">Have a story idea, feedback, or just want to say hello? We'd love to hear from you.</p>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center gap-4"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"><i data-lucide="mail" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Email</p><a href="mailto:hello@miangani.co.tz" class="text-sm text-muted hover:text-accent transition-colors">hello@miangani.co.tz</a></div></div>
+            <div class="flex items-center gap-4"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"><i data-lucide="message-circle" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Editorial</p><a href="mailto:editors@miangani.co.tz" class="text-sm text-muted hover:text-accent transition-colors">editors@miangani.co.tz</a></div></div>
+            <div class="flex items-center gap-4"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"><i data-lucide="map-pin" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Location</p><p class="text-sm text-muted">Dar es Salaam, Tanzania</p></div></div>
+            <div class="flex items-center gap-4"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"><i data-lucide="globe" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Social</p><p class="text-sm text-muted">@miangani across all platforms</p></div></div>
+          </div>
+          <div class="aspect-video rounded-2xl overflow-hidden border border-[var(--border-hover)] bg-primary flex items-center justify-center text-muted text-sm">
+            <div class="text-center"><i data-lucide="map" class="w-8 h-8 mx-auto mb-2 text-accent/60"></i><p>Dar es Salaam, Tanzania</p></div>
+          </div>
+        </div>
+        <form class="contact-form space-y-6" novalidate>
+          <div class="form-group"><label for="name" class="block text-sm font-medium mb-2">Full Name</label><input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-gray-500 transition-all duration-200" placeholder="Jane Doe"><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter your name.</p></div>
+          <div class="form-group"><label for="email" class="block text-sm font-medium mb-2">Email Address</label><input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-gray-500 transition-all duration-200" placeholder="jane@example.com"><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter a valid email.</p></div>
+          <div class="form-group"><label for="subject" class="block text-sm font-medium mb-2">Subject</label><select id="subject" name="subject" class="w-full px-4 py-3 bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all duration-200"><option value="" disabled selected>Select a topic</option><option value="editorial">Editorial Inquiry</option><option value="advertising">Advertising</option><option value="contribution">Guest Contribution</option><option value="feedback">Feedback</option><option value="other">Other</option></select></div>
+          <div class="form-group"><label for="message" class="block text-sm font-medium mb-2">Message</label><textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-gray-500 transition-all duration-200 resize-none" placeholder="Tell us how we can help..."></textarea><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter a message.</p></div>
+          <button type="submit" class="btn-submit w-full px-8 py-4 bg-accent text-primary font-semibold rounded-xl hover:bg-accent/90 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"><span class="btn-text">Send Message</span><span class="btn-spinner hidden"><svg class="animate-spin w-5 h-5 mx-auto" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg></span></button>
+          <div class="form-success hidden text-center py-4 bg-green-500/10 rounded-xl text-green-400 font-semibold" role="alert">Message sent successfully! We'll get back to you within 48 hours.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="py-16 px-6 border-t border-[var(--border)]">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div class="col-span-2 md:col-span-1">
+          <a href="/" class="text-2xl font-heading text-[var(--text)] mb-4 block">The Miangani Review</a>
+          <p class="text-sm text-muted leading-relaxed max-w-xs">A premium digital magazine exploring the future of African creativity, technology, and culture based in Dar es Salaam, Tanzania.</p>
+          <div class="flex gap-4 mt-6">
+            <a href="#" aria-label="Instagram" class="text-muted hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Twitter" class="text-muted hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" aria-label="LinkedIn" class="text-muted hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="RSS Feed" class="text-muted hover:text-accent transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.479 3.292-3.293 3.292C1.479 24.002 0 22.523 0 20.71c0-1.816 1.479-3.295 3.291-3.295zM15.707 24h-4.801c0-6.034-4.871-10.905-10.905-10.905V8.294c8.464 0 15.706 7.215 15.706 15.706z"/></svg></a>
+          </div>
+        </div>
+        <div><h4 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider mb-4">Topics</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Culture</a></li><li><a href="#" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Design</a></li><li><a href="#" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Technology</a></li><li><a href="#" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Business</a></li><li><a href="#" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Travel</a></li></ul></div>
+        <div><h4 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider mb-4">Company</h4><ul class="space-y-3"><li><a href="#about" class="text-sm text-muted hover:text-[var(--text)] transition-colors">About Us</a></li><li><a href="#testimonials" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Testimonials</a></li><li><a href="#faq" class="text-sm text-muted hover:text-[var(--text)] transition-colors">FAQ</a></li><li><a href="#contact" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Contact</a></li></ul></div>
+        <div><h4 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider mb-4">Legal</h4><ul class="space-y-3"><li><a href="#" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Privacy Policy</a></li><li><a href="#" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Terms of Service</a></li><li><a href="#" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Cookie Policy</a></li></ul></div>
+      </div>
+      <div class="pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-muted">&copy; 2026 The Miangani Review. All rights reserved.</p>
+        <div class="flex gap-6"><a href="#" class="text-xs text-muted hover:text-[var(--text)] transition-colors">Privacy Policy</a><a href="#" class="text-xs text-muted hover:text-[var(--text)] transition-colors">Terms of Service</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/255767000000?text=Hi%20The%20Miangani%20Review%2C%20I'd%20like%20to%20connect!" target="_blank" rel="noopener noreferrer" class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-green-400 hover:scale-110 hover:-translate-y-1 transition-all duration-300" aria-label="Contact us on WhatsApp"><svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="fixed bottom-24 right-6 z-50 w-12 h-12 bg-accent/20 backdrop-blur-xl border border-accent/30 rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-accent/30" aria-label="Back to top"><svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg></button>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.468.0"></script>
+
+
+  <script>
+  (function() {
+    var html = document.documentElement;
+    function updateThemeIcons() {
+      var isLight = html.classList.contains('light');
+      document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+        var darkIcon = btn.querySelector('.dark-icon');
+        var lightIcon = btn.querySelector('.light-icon');
+        if (darkIcon) darkIcon.classList.toggle('hidden', isLight);
+        if (lightIcon) lightIcon.classList.toggle('hidden', !isLight);
+      });
+    }
+    function setTheme(theme) {
+      if (theme === 'light') {
+        html.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+      }
+      updateThemeIcons();
+    }
+    var savedTheme = localStorage.getItem('theme');
+    var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (savedTheme) setTheme(savedTheme);
+    else setTheme(prefersLight ? 'light' : 'dark');
+    document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        setTheme(html.classList.contains('light') ? 'dark' : 'light');
+      });
+    });
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme')) setTheme(e.matches ? 'light' : 'dark');
+    });
+  })();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ===== LENIS =====
+    if (!reducedMotion && typeof Lenis !== 'undefined') {
+      const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), orientation: 'vertical', smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    // ===== LUCIDE ICONS =====
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    // ===== MOBILE MENU =====
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    if (menuBtn) {
+      menuBtn.addEventListener('click', function() {
+        menuOpen = !menuOpen;
+        mobileMenu.style.transform = menuOpen ? 'translateX(0)' : 'translateX(100%)';
+        menuBtn.setAttribute('aria-expanded', menuOpen);
+        menuBtn.innerHTML = menuOpen
+          ? '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>'
+          : '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+        document.body.style.overflow = menuOpen ? 'hidden' : '';
+      });
+    }
+    window.closeMenu = function() { menuOpen = false; if (mobileMenu) mobileMenu.style.transform = 'translateX(100%)'; if (menuBtn) { menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>'; } document.body.style.overflow = ''; };
+
+    // ===== SEARCH OVERLAY =====
+    var searchBtn = document.getElementById('searchBtn');
+    var searchOverlay = document.getElementById('searchOverlay');
+    var searchClose = document.getElementById('searchClose');
+    var searchInput = document.getElementById('searchInput');
+    if (searchBtn && searchOverlay) {
+      function openSearch() {
+        searchOverlay.classList.remove('opacity-0', 'invisible');
+        searchOverlay.classList.add('opacity-100');
+        setTimeout(function() { if (searchInput) searchInput.focus(); }, 200);
+      }
+      function closeSearch() {
+        searchOverlay.classList.add('opacity-0', 'invisible');
+        searchOverlay.classList.remove('opacity-100');
+        if (searchInput) { searchInput.value = ''; activeSearch = ''; applyFilters(); }
+      }
+      searchBtn.addEventListener('click', openSearch);
+      if (searchClose) searchClose.addEventListener('click', closeSearch);
+      searchOverlay.addEventListener('click', function(e) { if (e.target === searchOverlay) closeSearch(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSearch(); });
+      if (searchInput) searchInput.addEventListener('input', function() { activeSearch = this.value; applyFilters(); });
+    }
+
+    // ===== NAVBAR =====
+    const navInner = document.querySelector('#navbar > div');
+    if (navInner) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          navInner.classList.add('bg-[var(--overlay)]', 'backdrop-blur-xl', 'shadow-lg', 'border', 'border-[var(--border-hover)]');
+          navInner.classList.remove('bg-transparent', 'border-transparent');
+        } else {
+          navInner.classList.remove('bg-[var(--overlay)]', 'backdrop-blur-xl', 'shadow-lg', 'border', 'border-[var(--border-hover)]');
+          navInner.classList.add('bg-transparent');
+        }
+      }, { passive: true });
+    }
+
+    // ===== SCROLL PROGRESS =====
+    const progressFill = document.querySelector('.progress-fill');
+    if (progressFill && !reducedMotion) {
+      gsap.to(progressFill, { scaleX: 1, ease: 'none', scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 0.3 } });
+    }
+
+    // ===== HERO: CINEMATIC + SPLIT REVEAL =====
+    if (!reducedMotion) {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      tl.fromTo('.hero img', { scale: 1.15, opacity: 0 }, { scale: 1, opacity: 1, duration: 2, ease: 'power4.out' })
+        .fromTo('.hero-category', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, '-=0.8')
+        .fromTo('.split-line > span', { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: 'power4.out' }, '-=0.5')
+        .fromTo('.hero-subtext', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.5')
+        .fromTo('.hero-meta', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.3')
+        .fromTo('.scroll-indicator', { opacity: 0 }, { opacity: 1, duration: 0.5 }, '-=0.2');
+    }
+
+    // ===== FEATURED CARDS: THE CASCADE =====
+    if (!reducedMotion) {
+      gsap.fromTo('.featured-card', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'power2.out', scrollTrigger: { trigger: '.featured-card', start: 'top 85%' } });
+    }
+
+    // Initialize pagination
+    currentPage = 1; updatePagination();
+
+    // ===== ARTICLE CARDS: THE CASCADE + TILT =====
+    if (!reducedMotion) {
+      var visibleCards = Array.from(document.querySelectorAll('.article-card')).filter(function(c) { return c.style.display !== 'none'; });
+      if (visibleCards.length) {
+        gsap.fromTo(visibleCards, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power2.out', scrollTrigger: { trigger: '.article-grid', start: 'top 85%' } });
+      }
+    }
+
+    // ===== TILT CARD =====
+    if (!reducedMotion) {
+      document.querySelectorAll('.tilt-card').forEach(function(card) {
+        card.addEventListener('mousemove', function(e) {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          gsap.to(card, { rotationY: x * 8, rotationX: -y * 8, transformPerspective: 1000, duration: 0.3, ease: 'power2.out' });
+        });
+        card.addEventListener('mouseleave', function() {
+          gsap.to(card, { rotationY: 0, rotationX: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
+        });
+      });
+    }
+
+    // ===== POPULAR CARDS =====
+    if (!reducedMotion) {
+      gsap.fromTo('.popular-card', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, stagger: 0.1, ease: 'power2.out', scrollTrigger: { trigger: '.popular-card', start: 'top 85%' } });
+    }
+
+    // ===== COUNTERS: THE COUNTER =====
+    document.querySelectorAll('.stat-number').forEach(function(counter) {
+      const target = parseInt(counter.dataset.target);
+      const prefix = counter.closest('.stat-item')?.querySelector('.stat-prefix')?.textContent || '';
+      gsap.to(counter, {
+        innerText: target, duration: 2, ease: 'power3.out', snap: { innerText: 1 },
+        scrollTrigger: { trigger: counter, start: 'top 85%' },
+        onUpdate: function() {
+          const val = Math.floor(this.targets()[0].innerText);
+          counter.textContent = val + prefix;
+        }
+      });
+    });
+
+    // ===== CTA SECTION ANIMATION =====
+    if (!reducedMotion) {
+      gsap.fromTo('.cta-section .cta-content', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: '#cta', start: 'top 80%' } });
+    }
+
+    // ===== CONTACT SECTION ANIMATION =====
+    if (!reducedMotion) {
+      gsap.fromTo('.contact-section .contact-content', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: '#contact', start: 'top 80%' } });
+    }
+
+    // ===== NEWSLETTER FORM =====
+    document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('#newsletter-email');
+      const error = this.querySelector('.newsletter-error');
+      if (email.value.trim() && email.validity.valid) {
+        error.classList.add('hidden');
+        gtag('event', 'newsletter_signup', { 'form_location': 'blog_subscribe' });
+        this.querySelector('.newsletter-btn').textContent = 'Subscribed!';
+        this.querySelector('.newsletter-btn').disabled = true;
+        this.querySelector('.newsletter-btn').classList.add('opacity-60');
+        email.value = '';
+      } else {
+        error.classList.remove('hidden');
+        // Shake animation
+        email.classList.add('shake');
+        setTimeout(function() { email.classList.remove('shake'); }, 500);
+      }
+    });
+
+    // ===== CATEGORY FILTER TABS =====
+    var activeCategory = 'all';
+    var activeSearch = '';
+    var currentPage = 1;
+    var ARTICLES_PER_PAGE = 3;
+    function applyFilters() {
+      var searchQuery = activeSearch.toLowerCase().trim();
+      currentPage = 1;
+      document.querySelectorAll('.article-card').forEach(function(card) {
+        var passCategory = activeCategory === 'all' || card.dataset.category === activeCategory;
+        var passSearch = !searchQuery || card.textContent.toLowerCase().indexOf(searchQuery) !== -1;
+        var show = passCategory && passSearch;
+        if (show) {
+          gsap.to(card, { opacity: 1, scale: 1, duration: 0.3 });
+          card.style.display = 'block';
+        } else {
+          gsap.to(card, { opacity: 0, scale: 0.95, duration: 0.3, onComplete: function() { card.style.display = 'none'; } });
+        }
+      });
+      document.querySelectorAll('.featured-card').forEach(function(card) {
+        var passSearch = !searchQuery || card.textContent.toLowerCase().indexOf(searchQuery) !== -1;
+        card.style.display = passSearch ? '' : 'none';
+      });
+      var msg = document.getElementById('searchNoResults');
+      if (searchQuery) {
+        var visible = document.querySelectorAll('.featured-card[style*="display: none"], .article-card[style*="display: none"]').length;
+        var total = document.querySelectorAll('.featured-card, .article-card').length;
+        if (visible === total) { if (!msg) { msg = document.createElement('p'); msg.id = 'searchNoResults'; msg.className = 'text-center text-muted mt-16 py-16'; msg.textContent = 'No stories found. Try a different search term.'; var sec = document.getElementById('articles'); if (sec) sec.appendChild(msg); } else { msg.style.display = ''; } } else { if (msg) msg.style.display = 'none'; }
+      } else { if (msg) msg.style.display = 'none'; }
+      updatePagination();
+    }
+    function loadMoreArticles() {
+      currentPage++;
+      var cards = document.querySelectorAll('.article-card');
+      var start = (currentPage - 1) * ARTICLES_PER_PAGE;
+      var end = Math.min(currentPage * ARTICLES_PER_PAGE, cards.length);
+      cards.forEach(function(card, index) {
+        if (index >= start && index < end) {
+          card.style.display = 'block';
+          if (!reducedMotion) {
+            gsap.fromTo(card, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' });
+          }
+        }
+      });
+      updatePagination();
+    }
+    function updatePagination() {
+      var isFiltered = activeCategory !== 'all' || activeSearch.trim() !== '';
+      var btn = document.getElementById('loadMoreBtn');
+      var wrapper = document.querySelector('.load-more-wrapper');
+      var cards = document.querySelectorAll('.article-card');
+      var total = cards.length;
+      if (isFiltered) { if (wrapper) wrapper.style.display = 'none'; return; }
+      if (wrapper) wrapper.style.display = 'flex';
+      var end = Math.min(currentPage * ARTICLES_PER_PAGE, total);
+      cards.forEach(function(card, index) {
+        if (index < end) { card.style.display = 'block'; }
+        else { card.style.display = 'none'; }
+      });
+      if (end >= total) { btn.textContent = 'All articles loaded'; btn.disabled = true; btn.classList.add('opacity-50', 'cursor-not-allowed'); }
+      else { btn.textContent = 'Load More'; btn.disabled = false; btn.classList.remove('opacity-50', 'cursor-not-allowed'); }
+    }
+    document.querySelectorAll('.category-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.category-tab').forEach(function(t) { t.classList.remove('category-tab-active'); });
+        this.classList.add('category-tab-active');
+        activeCategory = this.dataset.category;
+        applyFilters();
+      });
+    });
+
+    // ===== LOAD MORE =====
+    document.getElementById('loadMoreBtn')?.addEventListener('click', loadMoreArticles);
+
+    // ===== TIMELINE SCROLL =====
+    if (!reducedMotion) {
+      gsap.utils.toArray('.timeline-item').forEach(function(item, i) {
+        gsap.from(item, { x: -30, opacity: 0, duration: 0.6, delay: i * 0.2, ease: 'power2.out', scrollTrigger: { trigger: item, start: 'top 85%' } });
+      });
+    }
+
+    // ===== MORPHING TESTIMONIALS (exp-055) =====
+    function initMorphingTestimonials(container) {
+      if (!container) return;
+      var slides = container.querySelectorAll('.testimonial-slide');
+      var dots = document.querySelectorAll('.morph-dot');
+      if (slides.length < 2) return;
+      var current = 0, isAnimating = false, interval;
+      function showSlide(index) {
+        if (isAnimating || index === current) return;
+        isAnimating = true;
+        var prev = slides[current];
+        var next = slides[index];
+        gsap.to(prev, { opacity: 0, y: -10, filter: 'blur(4px)', duration: 0.5, ease: 'power2.in', onComplete: function() { prev.classList.remove('active'); prev.style.transform = ''; prev.style.filter = ''; }});
+        gsap.set(next, { opacity: 0, y: 10, filter: 'blur(4px)' });
+        next.classList.add('active');
+        gsap.to(next, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.7, ease: 'power2.out', onComplete: function() { isAnimating = false; }});
+        dots.forEach(function(d) { d.classList.remove('active'); d.setAttribute('aria-selected', 'false'); });
+        if (dots[index]) { dots[index].classList.add('active'); dots[index].setAttribute('aria-selected', 'true'); }
+        current = index;
+      }
+      function nextSlide() { showSlide((current + 1) % slides.length); }
+      dots.forEach(function(d) { d.addEventListener('click', function() { showSlide(parseInt(this.dataset.index)); clearInterval(interval); startInterval(); }); });
+      function startInterval() { interval = setInterval(nextSlide, 5000); }
+      container.addEventListener('mouseenter', function() { clearInterval(interval); });
+      container.addEventListener('mouseleave', function() { startInterval(); });
+      var touchStartX = 0;
+      container.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+      container.addEventListener('touchend', function(e) { var diff = e.changedTouches[0].clientX - touchStartX; if (Math.abs(diff) > 50) { if (diff < 0) nextSlide(); else showSlide((current - 1 + slides.length) % slides.length); } clearInterval(interval); startInterval(); }, { passive: true });
+      slides[0].classList.add('active');
+      gsap.set(slides[0], { opacity: 1, y: 0, filter: 'blur(0px)' });
+      if (dots[0]) { dots[0].classList.add('active'); dots[0].setAttribute('aria-selected', 'true'); }
+      startInterval();
+    }
+    if (!reducedMotion) {
+      initMorphingTestimonials(document.querySelector('.testimonial-morph'));
+    }
+
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.faq-item summary').forEach(function(summary) {
+      summary.addEventListener('click', function(e) {
+        const details = this.closest('details');
+        const isOpen = details.hasAttribute('open');
+        document.querySelectorAll('.faq-item[open]').forEach(function(d) { if (d !== details) d.removeAttribute('open'); });
+        if (!reducedMotion) {
+          if (isOpen) { gsap.to(details.querySelector('div'), { height: 0, opacity: 0, duration: 0.2, onComplete: function() { details.removeAttribute('open'); } }); e.preventDefault(); }
+        }
+      });
+    });
+
+    // ===== FORM VALIDATION =====
+    document.querySelectorAll('.contact-form input, .contact-form textarea, .contact-form select').forEach(function(field) {
+      field.addEventListener('blur', function() { validateField(field); });
+      field.addEventListener('input', function() { if (field.dataset.touched) validateField(field); });
+      field.addEventListener('change', function() { if (field.dataset.touched) validateField(field); });
+      field.addEventListener('focus', function() { field.dataset.touched = 'true'; });
+    });
+    function validateField(field) {
+      const error = field.parentElement.querySelector('.form-error');
+      if (!field.validity.valid || (field.hasAttribute('required') && !field.value.trim())) {
+        field.classList.add('border-red-400'); field.classList.remove('border-[var(--border-hover)]');
+        if (error) error.classList.remove('hidden'); return false;
+      } else {
+        field.classList.remove('border-red-400'); field.classList.add('border-green-500/50', 'border');
+        if (error) error.classList.add('hidden'); return true;
+      }
+    }
+    document.querySelector('.contact-form')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.btn-submit');
+      const text = btn.querySelector('.btn-text');
+      const spinner = btn.querySelector('.btn-spinner');
+      const success = this.querySelector('.form-success');
+      let valid = true;
+      this.querySelectorAll('input[required], textarea[required]').forEach(function(f) { if (!validateField(f)) valid = false; });
+      if (!valid) return;
+      btn.disabled = true; text.classList.add('hidden'); spinner.classList.remove('hidden');
+      await new Promise(function(r) { setTimeout(r, 1500); });
+      spinner.classList.add('hidden'); success.classList.remove('hidden'); btn.style.display = 'none';
+      gtag('event', 'form_submit', { 'form_location': 'contact' });
+    });
+
+    // ===== BACK TO TOP =====
+    const backBtn = document.getElementById('backToTop');
+    if (backBtn) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) { backBtn.classList.remove('opacity-0', 'invisible'); backBtn.classList.add('opacity-100'); }
+        else { backBtn.classList.add('opacity-0', 'invisible'); backBtn.classList.remove('opacity-100'); }
+      }, { passive: true });
+      backBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+
+    // ===== ANALYTICS EVENTS =====
+    document.querySelectorAll('.btn-primary, .hero-cta, .newsletter-btn, .category-tab').forEach(function(btn) {
+      btn.addEventListener('click', function() { if (typeof gtag !== 'undefined') gtag('event', 'cta_click', { 'cta_text': this.textContent.trim() }); });
+    });
+    document.querySelector('.whatsapp-float')?.addEventListener('click', function() { if (typeof gtag !== 'undefined') gtag('event', 'whatsapp_click'); });
+
+    // ===== SCROLL DEPTH TRACKING =====
+    if (typeof gtag !== 'undefined') {
+      var trackedDepths = new Set();
+      window.addEventListener('scroll', function() {
+        var depth = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+        [25, 50, 75, 100].forEach(function(t) { if (depth >= t && !trackedDepths.has(t)) { trackedDepths.add(t); gtag('event', 'scroll_depth', { 'percent': t }); } });
+      }, { passive: true });
+    }
+
+    // ===== MAGNETIC NAV =====
+    if (!reducedMotion) {
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        var text = link.querySelector('.nav-label');
+        if (text) {
+          link.addEventListener('mousemove', function(e) {
+            var rect = link.getBoundingClientRect();
+            var x = (e.clientX - rect.left - rect.width / 2) * 0.15;
+            var y = (e.clientY - rect.top - rect.height / 2) * 0.15;
+            gsap.to(text, { x: x, y: y, duration: 0.3, ease: 'power2.out' });
+          });
+          link.addEventListener('mouseleave', function() {
+            gsap.to(text, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
+          });
+        }
+      });
+    }
+
+    // ===== NEWSLETTER SHAKE (exp-037) =====
+    const style = document.createElement('style');
+    style.textContent = '@keyframes shake { 0%,100% { transform: translateX(0); } 10%,30%,50%,70%,90% { transform: translateX(-4px); } 20%,40%,60%,80% { transform: translateX(4px); } } .shake { animation: shake 0.5s ease-in-out; border-color: #ef4444 !important; }';
+    document.head.appendChild(style);
+
+    // ===== INFINITE SCROLLING CAROUSEL (exp-054) =====
+    function initInfiniteCarousel(container) {
+      if (!container || reducedMotion) return;
+      var track = container.querySelector('.carousel-track');
+      if (!track) return;
+      var items = Array.from(track.children);
+      if (items.length < 2) return;
+      items.forEach(function(item) {
+        var clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+      });
+      var gap = parseFloat(getComputedStyle(track).gap) || 16;
+      var itemWidth = items[0].offsetWidth + gap;
+      var halfWidth = itemWidth * items.length;
+      var speed = parseFloat(container.dataset.speed) || 40;
+      var duration = halfWidth / speed;
+      var tween = gsap.to(track, { x: -halfWidth, ease: 'none', duration: duration, repeat: -1, onRepeat: function() { gsap.set(track, { x: 0 }); } });
+      var isDragging = false, startX = 0, dragOffset = 0, currentX = 0;
+      function onStart(e) { isDragging = true; tween.pause(); startX = e.clientX || e.touches[0].clientX; currentX = gsap.getProperty(track, 'x'); }
+      function onMove(e) { if (!isDragging) return; e.preventDefault(); var clientX = e.clientX || e.touches[0].clientX; dragOffset = clientX - startX; var newX = currentX + dragOffset; if (newX > 0) newX -= halfWidth; if (newX < -halfWidth) newX += halfWidth; gsap.set(track, { x: newX }); }
+      function onEnd() { if (!isDragging) return; isDragging = false; var current = gsap.getProperty(track, 'x'); var remainder = current % halfWidth; gsap.set(track, { x: -halfWidth + remainder }); tween.play(); }
+      track.addEventListener('mousedown', onStart); window.addEventListener('mousemove', onMove); window.addEventListener('mouseup', onEnd);
+      track.addEventListener('touchstart', onStart, { passive: true }); window.addEventListener('touchmove', onMove, { passive: false }); window.addEventListener('touchend', onEnd);
+      container.addEventListener('mouseenter', function() { tween.pause(); });
+      container.addEventListener('mouseleave', function() { if (!isDragging) tween.play(); });
+    }
+    document.querySelectorAll('.infinite-carousel').forEach(initInfiniteCarousel);
+
+
+  });
+  </script>
+</body>
+</html>

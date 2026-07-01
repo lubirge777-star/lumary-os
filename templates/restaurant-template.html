@@ -3,41 +3,860 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="[Restaurant Name] — Experience exceptional dining in [Location]. View our menu, make a reservation, and explore our story." />
-  <title>[Restaurant Name] — Fine Dining | Lumary Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <title>The Spice Merchant — Fine Dining | Dar es Salaam</title>
+  <meta name="description" content="The Spice Merchant offers an exceptional fine dining experience in Dar es Salaam. French-inspired cuisine crafted by Chef Fatima. Reserve your table today." />
+  <link rel="canonical" href="https://thespicemerchant.co.tz/" />
+  <meta property="og:title" content="The Spice Merchant — Fine Dining" />
+  <meta property="og:description" content="Exceptional dining in Dar es Salaam. Where every dish tells a story." />
+  <meta property="og:image" content="https://thespicemerchant.co.tz/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "The Spice Merchant",
+    "image": "https://thespicemerchant.co.tz/og-image.jpg",
+    "address": { "@type": "PostalAddress", "streetAddress": "15 Pemba Road", "addressLocality": "Dar es Salaam", "addressCountry": "TZ" },
+    "telephone": "+255712345678",
+    "servesCuisine": "Swahili Coastal",
+    "priceRange": "$$$",
+    "openingHours": "Tu-Su 12:00-22:00",
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "203" },
+    "url": "https://thespicemerchant.co.tz"
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { primary: '#1A0F0A', secondary: '#2D1810', accent: '#E85D3A', surface: '#FFF8F0', muted: '#A08068', text: '#F5E6D3' },
-          fontFamily: { heading: ['Cormorant Garamond', 'serif'], body: ['Nunito', 'sans-serif'] },
+          colors: { primary: 'var(--primary)', secondary: 'var(--secondary)', accent: 'var(--accent)', surface: 'var(--surface)', muted: 'var(--muted)' },
+          fontFamily: { heading: ['DM Serif Display', 'serif'], body: ['Inter', 'sans-serif'] },
+          borderRadius: { DEFAULT: '12px' },
         }
       }
     }
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');</script>
+
   <style>
-    body { font-family: 'Nunito', sans-serif; background: #1A0F0A; color: #F5E6D3; }
-    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; }
-    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+    :root {
+      --primary: #0F172A;
+      --secondary: #1E293B;
+      --accent: #EF4444;
+      --surface: #F8FAFC;
+      --muted: #94A3B8;
+      --bg: #0F172A;
+      --text: #F8FAFC;
+      --card-bg: #1E293B;
+      --border: rgba(255,255,255,0.05);
+      --border-hover: rgba(255,255,255,0.1);
+      --overlay: rgba(15,23,42,0.85);
+      --shadow: rgba(0,0,0,0.3);
+    }
+    html.light {
+      --primary: #FFFFFF;
+      --secondary: #F1F5F9;
+      --accent: #DC2626;
+      --surface: #0F172A;
+      --muted: #64748B;
+      --bg: #FFFFFF;
+      --text: #0F172A;
+      --card-bg: #F8FAFC;
+      --border: rgba(0,0,0,0.08);
+      --border-hover: rgba(0,0,0,0.12);
+      --overlay: rgba(255,255,255,0.85);
+      --shadow: rgba(0,0,0,0.08);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    h1, h2, h3, h4 { font-family: 'DM Serif Display', serif; line-height: 1.1; }
+    h1 { font-size: clamp(2.5rem, 8vw, 5rem); }
+    h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+    img, video, iframe { max-width: 100%; height: auto; }
+    section[id] { scroll-margin-top: 80px; }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    ::selection { background: #EF4444; color: #FFFFFF; }
+    .theme-toggle { cursor: pointer; }
+    html.light .dark-icon { display: none; }
+    html.light .light-icon { display: block; }
+    .dark-icon { display: block; }
+    .light-icon { display: none; }
+    html.light .progress-container { background: rgba(0,0,0,0.06); }
+    @media (max-width: 767px) {
+      nav a, .nav-link { padding: 12px 0; min-height: 48px; }
+      .mobile-full { width: 100%; }
+    }
+    .testimonial-slide { will-change: opacity, filter; }
+    .morph-dot.active { transform: scale(1.3); background: var(--accent) !important; }
+    .dish-card { transition: border-color 0.3s, box-shadow 0.3s; will-change: transform; }
+    .tilt-card { will-change: transform; }
+    .dish-card:hover { border-color: var(--accent) !important; box-shadow: 0 0 0 1px var(--accent); }
+    .dish-card.active { border-color: var(--accent) !important; }
+    .dish-card.active .dish-chevron { transform: rotate(180deg); }
   </style>
 </head>
-<body>
-  <!-- Simplified structure — hero, ambiance, menu, location, footer -->
-  <nav class="fixed top-4 left-4 right-4 z-50"><div class="max-w-6xl mx-auto px-6 py-4 rounded-2xl bg-primary/80 backdrop-blur-xl border border-white/10"><div class="flex justify-between items-center"><a href="/" class="text-2xl font-heading">[Logo]</a><div class="hidden md:flex items-center gap-8"><a href="#menu" class="text-sm hover:text-accent transition-colors">Menu</a><a href="#reservations" class="px-5 py-2.5 bg-accent text-white rounded-lg text-sm font-semibold">Reserve a Table</a></div></div></div></nav>
-  
-  <section class="hero min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-[#1A0F0A] to-[#2D1810]">
-    <div class="text-center max-w-4xl px-6 z-10">
-      <h1 class="text-6xl md:text-8xl font-heading mb-4">An Experience<br />to Savor</h1>
-      <p class="text-lg text-[#A08068] mb-10 max-w-xl mx-auto">Where every dish tells a story. Fine dining in the heart of Dar es Salaam.</p>
-      <a href="#reservations" class="inline-flex px-10 py-5 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent/90 transition-all">Make a Reservation</a>
+<body class="antialiased" >
+  <!-- Skip to content (accessibility) -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg">Skip to main content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div class="progress-container fixed top-0 left-0 right-0 z-[100] h-0.5 bg-[var(--border)]" >
+    <div class="progress-fill h-full bg-accent" style="transform: scaleX(0); transform-origin: left" ></div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <!-- Experience: Magnetic Nav (exp-005) + Floating Nav pattern -->
+  <nav id="navbar" class="fixed top-0 md:top-4 left-0 md:left-4 right-0 md:right-4 z-50" role="navigation" aria-label="Main navigation">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 py-4 rounded-none md:rounded-2xl transition-all duration-500 bg-transparent">
+      <div class="flex items-center justify-between">
+        <a href="/" class="nav-link text-2xl font-heading" >
+          <span class="nav-label">THE SPICE MERCHANT</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <button id="themeToggle" class="theme-toggle p-2 rounded-lg text-muted"  aria-label="Toggle theme">
+            <svg class="dark-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="light-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#menu" class="nav-link text-sm transition-colors duration-200" style="opacity: 0.8" ><span class="nav-label">Menu</span></a>
+            <a href="#about" class="nav-link text-sm transition-colors duration-200" style="opacity: 0.8" ><span class="nav-label">Our Story</span></a>
+            <a href="#gallery" class="nav-link text-sm transition-colors duration-200" style="opacity: 0.8" ><span class="nav-label">Gallery</span></a>
+            <a href="#testimonials" class="nav-link text-sm transition-colors duration-200" style="opacity: 0.8" ><span class="nav-label">Reviews</span></a>
+            <a href="#reservations" class="px-5 py-2.5 font-semibold rounded-lg text-sm transition-all duration-200 bg-accent" style="color: #FFFFFF" >Reserve a Table</a>
+          </div>
+          <button class="md:hidden p-2" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
     </div>
-  </section>
-  
-  <footer class="py-16 px-6 border-t border-white/5 text-center text-sm text-muted">&copy; 2026 [Restaurant Name]. All rights reserved.</footer>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 z-40 translate-x-full transition-transform duration-300 ease-in-out md:hidden bg-[var(--primary)]"  role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="flex flex-col items-center justify-center h-full gap-8 text-2xl">
+      <a href="#menu" class="transition-colors"  onclick="closeMenu()">Menu</a>
+      <a href="#about" class="transition-colors"  onclick="closeMenu()">Our Story</a>
+      <a href="#gallery" class="transition-colors"  onclick="closeMenu()">Gallery</a>
+      <a href="#testimonials" class="transition-colors"  onclick="closeMenu()">Reviews</a>
+      <a href="#reservations" onclick="closeMenu()" class="px-8 py-4 font-semibold rounded-xl bg-accent" style="color: #FFFFFF" >Reserve a Table</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <!-- Experience 001: The Awakening (cinematic staggered reveal) -->
+    <section class="hero min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div class="hero-bg absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80" alt="" class="w-full h-full object-cover" />
+        <div class="absolute inset-0" style="background: linear-gradient(to bottom, var(--overlay), var(--overlay) 50%, var(--bg) 90%);"></div>
+      </div>
+      <div class="relative z-10 text-center max-w-4xl px-6">
+        <p class="hero-badge text-sm tracking-[0.3em] uppercase mb-4 font-semibold text-accent" >Fine Dining Since 2015</p>
+        <h1 class="hero-heading font-heading leading-none mb-6" >
+          An Experience<br /><span  class="italic text-accent">to Savor</span>
+        </h1>
+        <p class="hero-subtext max-w-xl mx-auto mb-10 text-muted" style="font-size: clamp(1rem, 2.5vw, 1.25rem)" >
+          Where every dish tells a story. Fine dining in the heart of Dar es Salaam.
+        </p>
+        <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#reservations" class="inline-flex items-center gap-2 px-8 py-4 md:px-10 md:py-5 font-semibold rounded-xl transition-all duration-300 bg-accent" style="color: #FFFFFF; box-shadow: 0 10px 15px -3px var(--shadow)" >
+            Make a Reservation <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#menu" class="px-8 py-4 md:px-10 md:py-5 font-semibold rounded-xl transition-all duration-300 mobile-full md:w-auto bg-[var(--border)] border-[var(--border-hover)]" >View Our Menu</a>
+        </div>
+      </div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center scroll-indicator">
+        <span class="text-muted" style="font-size: 0.75rem">Scroll to explore</span>
+        <div class="w-6 h-10 border-2 rounded-full mx-auto mt-2 flex justify-center p-1 border-[var(--muted)]" >
+          <div class="w-1.5 h-2.5 rounded-full animate-bounce bg-accent" ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOCIAL PROOF ===== -->
+    <section class="py-16 px-4 md:px-6 border-t-[var(--border)] border-b-[var(--border)]" >
+      <div class="max-w-6xl mx-auto">
+        <p class="text-center text-sm uppercase tracking-widest mb-8 text-muted" >Featured in</p>
+        <div class="flex flex-wrap justify-center gap-8 md:gap-12 items-center" style="opacity: 0.4;">
+          <span class="text-lg md:text-xl font-heading" >Food &amp; Wine</span>
+          <span class="text-lg md:text-xl font-heading" >Tanzania Food Awards</span>
+          <span class="text-lg md:text-xl font-heading" >The East African</span>
+          <span class="text-lg md:text-xl font-heading" >Michezo na Utamaduni</span>
+          <span class="text-lg md:text-xl font-heading" >Swahili Times</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <!-- Experience 004: The Counter -->
+    <section class="stats-section py-20 md:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 text-center">
+        <div class="stat-item p-6 rounded-2xl border-[var(--border)] bg-[var(--card-bg)]"  >
+          <div class="stat-number text-4xl md:text-5xl font-heading text-accent"  data-target="203">0</div>
+          <div class="stat-prefix hidden">+</div>
+          <p class="mt-2 text-muted" >5-Star Reviews</p>
+        </div>
+        <div class="stat-item p-6 rounded-2xl border-[var(--border)] bg-[var(--card-bg)]"  >
+          <div class="stat-number text-4xl md:text-5xl font-heading text-accent"  data-target="10">0</div>
+          <div class="stat-prefix hidden">+</div>
+          <p class="mt-2 text-muted" >Years of Excellence</p>
+        </div>
+        <div class="stat-item p-6 rounded-2xl border-[var(--border)] bg-[var(--card-bg)]"  >
+          <div class="stat-number text-4xl md:text-5xl font-heading text-accent"  data-target="50">0</div>
+          <div class="stat-prefix hidden">+</div>
+          <p class="mt-2 text-muted" >Seasonal Dishes</p>
+        </div>
+        <div class="stat-item p-6 rounded-2xl border-[var(--border)] bg-[var(--card-bg)]"  >
+          <div class="stat-number text-4xl md:text-5xl font-heading text-accent"  data-target="15">0</div>
+          <div class="stat-prefix hidden">+</div>
+          <p class="mt-2 text-muted" >Awards Won</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT + TIMELINE ===== -->
+    <!-- Experience 021: The Timeline Scroll + About pattern -->
+    <section id="about" class="about-section py-20 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]" >
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden border-[var(--border-hover)]" >
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Chef at work in our kitchen" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="absolute -bottom-6 -right-6 w-24 md:w-32 h-24 md:h-32 rounded-2xl -z-10" style="background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2);"></div>
+        </div>
+        <div>
+          <span class="text-sm font-semibold uppercase tracking-widest text-accent" >Our Story</span>
+          <h2 class="font-heading mt-4 mb-6" >Where Passion Meets Plate</h2>
+          <div class="space-y-4 text-muted" >
+            <p>Founded by Chef Fatima in 2015, The Spice Merchant was born from a lifelong love of gastronomy. With training in Paris and experience in Michelin-starred kitchens, Chef Fatima brings world-class technique to every plate.</p>
+            <p>Our philosophy is simple: source the finest ingredients, honor their natural flavors, and present them with artistry. Every dish is a conversation between tradition and innovation.</p>
+          </div>
+          <!-- Timeline -->
+          <div class="timeline mt-10 relative pl-8 before:absolute before:left-[11px] before:top-2 before:bottom-0 before:w-0.5" style="--tw-before-bg: var(--border);">
+            <div class="timeline-item relative mb-8">
+              <div class="absolute left-[-26px] top-1 w-[22px] h-[22px] rounded-full border-[5px] bg-accent border-[var(--primary)]" style="box-shadow: 0 0 0 2px rgba(239,68,68,0.3)" ></div>
+              <span class="text-sm font-semibold text-accent" >2015</span>
+              <p class="text-sm mt-1 text-muted" >The Spice Merchant opens its doors in Dar es Salaam.</p>
+            </div>
+            <div class="timeline-item relative mb-8">
+              <div class="absolute left-[-26px] top-1 w-[22px] h-[22px] rounded-full border-[5px] bg-accent border-[var(--primary)]" style="box-shadow: 0 0 0 2px rgba(239,68,68,0.3)" ></div>
+              <span class="text-sm font-semibold text-accent" >2019</span>
+              <p class="text-sm mt-1 text-muted" >Awarded "Best Fine Dining" by Tanzania Food Awards. Menu relaunch.</p>
+            </div>
+            <div class="timeline-item relative mb-8">
+              <div class="absolute left-[-26px] top-1 w-[22px] h-[22px] rounded-full border-[5px] bg-accent border-[var(--primary)]" style="box-shadow: 0 0 0 2px rgba(239,68,68,0.3)" ></div>
+              <span class="text-sm font-semibold text-accent" >2026</span>
+              <p class="text-sm mt-1 text-muted" >15+ awards, 200+ 5-star reviews. A Dar es Salaam institution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MENU HIGHLIGHTS ===== -->
+    <!-- Experience 002: The Cascade (staggered card reveal) + Tilt Card (exp-007) -->
+    <section id="menu" class="py-20 md:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-sm font-semibold uppercase tracking-widest text-accent" >Crafted with Care</span>
+          <h2 class="font-heading mt-4" >Menu Highlights</h2>
+          <p class="mt-4 max-w-xl mx-auto text-muted" >Seasonal ingredients, timeless techniques, unforgettable flavors.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div class="tilt-card dish-card p-6 md:p-8 rounded-2xl transition-all duration-300 cursor-pointer border-[var(--border-hover)] bg-[var(--card-bg)]" data-dish="0"  >
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center gap-3"><div class="w-12 md:w-14 h-12 md:h-14 rounded-xl flex items-center justify-center shrink-0 relative" style="background: rgba(239,68,68,0.1);"><i data-lucide="utensils-crossed" class="w-6 md:w-7 h-6 md:h-7 text-accent" ></i><span class="absolute -top-1 -right-1 text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full" style="background: var(--accent); color: #FFFFFF; line-height: 1.2;">Chef's Special</span></div><h3 class="text-xl md:text-2xl font-heading" >Wagyu Tartare</h3></div>
+              <div class="flex items-center gap-2"><span class="font-semibold shrink-0 text-accent" >$28</span><i data-lucide="chevron-down" class="dish-chevron w-5 h-5 transition-transform duration-300 text-muted" ></i></div>
+            </div>
+            <p class="text-muted">Prime Japanese wagyu, cured egg yolk, capers, and toasted sourdough. Finished with micro herbs and truffle oil.</p>
+            <div class="dish-details overflow-hidden" style="max-height: 0; opacity: 0;">
+              <div class="pt-4 mt-4 border-t border-[var(--border)]" >
+                <div class="flex flex-wrap gap-2 mb-3"><span class="text-xs px-3 py-1 rounded-full font-medium text-accent" style="background: rgba(239,68,68,0.1)" >Gluten-Free Option</span><span class="text-xs px-3 py-1 rounded-full font-medium text-accent" style="background: rgba(239,68,68,0.1)" >Contains Dairy</span></div>
+                <p class="text-muted" style="font-size: 0.875rem"><strong >Preparation:</strong> Hand-diced wagyu seasoned with Dijon, Worcestershire, and house-made Tabasco. Served with freshly toasted brioche.</p>
+                <p style="font-size: 0.875rem"  class="mt-2 text-muted"><strong >Origin:</strong> Kagoshima Prefecture, Japan — A5 grade, sustainably farmed.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card dish-card p-6 md:p-8 rounded-2xl transition-all duration-300 cursor-pointer border-[var(--border-hover)] bg-[var(--card-bg)]" data-dish="1"  >
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center gap-3"><div class="w-12 md:w-14 h-12 md:h-14 rounded-xl flex items-center justify-center shrink-0" style="background: rgba(239,68,68,0.1);"><i data-lucide="utensils-crossed" class="w-6 md:w-7 h-6 md:h-7 text-accent" ></i></div><h3 class="text-xl md:text-2xl font-heading" >Pan-Seared Scallops</h3></div>
+              <div class="flex items-center gap-2"><span class="font-semibold shrink-0 text-accent" >$34</span><i data-lucide="chevron-down" class="dish-chevron w-5 h-5 transition-transform duration-300 text-muted" ></i></div>
+            </div>
+            <p class="text-muted">Diver scallops, cauliflower purée, brown butter, and crispy sage. Served with citrus beurre blanc.</p>
+            <div class="dish-details overflow-hidden" style="max-height: 0; opacity: 0;">
+              <div class="pt-4 mt-4 border-t border-[var(--border)]" >
+                <div class="flex flex-wrap gap-2 mb-3"><span class="text-xs px-3 py-1 rounded-full font-medium text-accent" style="background: rgba(239,68,68,0.1)" >Gluten-Free</span><span class="text-xs px-3 py-1 rounded-full font-medium text-accent" style="background: rgba(239,68,68,0.1)" >Sustainable Seafood</span></div>
+                <p class="text-muted" style="font-size: 0.875rem"><strong >Preparation:</strong> Dry-aged scallops seared in clarified butter, served over silky cauliflower purée with brown butter sage sauce.</p>
+                <p style="font-size: 0.875rem"  class="mt-2 text-muted"><strong >Origin:</strong> Maine coast, hand-harvested by diver — MSC certified sustainable.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-card dish-card p-6 md:p-8 rounded-2xl transition-all duration-300 cursor-pointer border-[var(--border-hover)] bg-[var(--card-bg)]" data-dish="2"  >
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center gap-3"><div class="w-12 md:w-14 h-12 md:h-14 rounded-xl flex items-center justify-center shrink-0" style="background: rgba(239,68,68,0.1);"><i data-lucide="wine" class="w-6 md:w-7 h-6 md:h-7 text-accent" ></i></div><h3 class="text-xl md:text-2xl font-heading" >Wine Pairing</h3></div>
+              <div class="flex items-center gap-2"><span class="font-semibold shrink-0 text-accent" >$65</span><i data-lucide="chevron-down" class="dish-chevron w-5 h-5 transition-transform duration-300 text-muted" ></i></div>
+            </div>
+            <p class="text-muted">Curated 5-glass flight selected by our sommelier to complement each course. Available with any tasting menu.</p>
+            <div class="dish-details overflow-hidden" style="max-height: 0; opacity: 0;">
+              <div class="pt-4 mt-4 border-t border-[var(--border)]" >
+                <div class="flex flex-wrap gap-2 mb-3"><span class="text-xs px-3 py-1 rounded-full font-medium text-accent" style="background: rgba(239,68,68,0.1)" >Vintage Selection</span><span class="text-xs px-3 py-1 rounded-full font-medium text-accent" style="background: rgba(239,68,68,0.1)" >Sommelier's Pick</span></div>
+                <p class="text-muted" style="font-size: 0.875rem"><strong >Pairing Includes:</strong> Sancerre (starter), Chablis (seafood), Barolo (main), Sauternes (dessert), Tawny Port (finish).</p>
+                <p style="font-size: 0.875rem"  class="mt-2 text-muted"><strong >Note:</strong> Each pour is 3 oz. Full bottle upgrades available. Non-alcoholic pairing also offered.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-10"><button class="dish-toggle-all px-8 py-3 rounded-xl font-semibold text-sm transition-all duration-300 bg-accent" style="color: #fff"  aria-label="Expand all dish details">Expand All</button></div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <!-- Process pattern (4-step) -->
+    <section class="process-section py-20 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]" >
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-sm font-semibold uppercase tracking-widest text-accent" >From Kitchen to Table</span>
+          <h2 class="font-heading mt-4" >Our Philosophy</h2>
+          <p class="mt-4 max-w-xl mx-auto text-muted" >Every dish is a journey through four pillars of culinary excellence.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div class="process-step text-center relative">
+            <div class="w-20 md:w-24 h-20 md:h-24 mx-auto rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-[var(--primary)]" style="background: rgba(239,68,68,0.1)" ><span class="text-xl md:text-2xl font-bold text-accent" >01</span></div>
+            <h3 class="text-base md:text-lg font-semibold mb-3" >Source</h3>
+            <p class="text-xs md:text-sm text-muted" >We select the finest seasonal ingredients from local farms.</p>
+          </div>
+          <div class="process-step text-center relative">
+            <div class="w-20 md:w-24 h-20 md:h-24 mx-auto rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-[var(--primary)]" style="background: rgba(239,68,68,0.1)" ><span class="text-xl md:text-2xl font-bold text-accent" >02</span></div>
+            <h3 class="text-base md:text-lg font-semibold mb-3" >Craft</h3>
+            <p class="text-xs md:text-sm text-muted" >Our chefs apply classic techniques with innovative flair.</p>
+          </div>
+          <div class="process-step text-center relative">
+            <div class="w-20 md:w-24 h-20 md:h-24 mx-auto rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-[var(--primary)]" style="background: rgba(239,68,68,0.1)" ><span class="text-xl md:text-2xl font-bold text-accent" >03</span></div>
+            <h3 class="text-base md:text-lg font-semibold mb-3" >Present</h3>
+            <p class="text-xs md:text-sm text-muted" >Every plate is a work of art, thoughtfully composed.</p>
+          </div>
+          <div class="process-step text-center relative">
+            <div class="w-20 md:w-24 h-20 md:h-24 mx-auto rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-[var(--primary)]" style="background: rgba(239,68,68,0.1)" ><span class="text-xl md:text-2xl font-bold text-accent" >04</span></div>
+            <h3 class="text-base md:text-lg font-semibold mb-3" >Savor</h3>
+            <p class="text-xs md:text-sm text-muted" >You experience flavors that linger long after the meal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <!-- Masonry Gallery pattern -->
+    <section id="gallery" class="gallery-section py-20 md:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-sm font-semibold uppercase tracking-widest text-accent" >Visual Feast</span>
+          <h2 class="font-heading mt-4" >Our Gallery</h2>
+          <p class="mt-4 max-w-xl mx-auto text-muted" >A glimpse into the ambiance, artistry, and passion that define us.</p>
+        </div>
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-4 md:gap-6 space-y-4 md:space-y-6">
+          <div class="gallery-item break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" alt="Beautifully plated dish" class="w-full h-auto" loading="lazy" />
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 bg-[var(--overlay)]" >
+              <div class="text-center"><h3 class="text-xl font-heading mb-2" >Seared Salmon</h3><p class="text-sm text-muted" >With seasonal vegetables</p></div>
+            </div>
+          </div>
+          <div class="gallery-item break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1776993298576-dd8a9205926f?w=600&q=80" alt="Elegant dining room interior" class="w-full h-auto" loading="lazy" />
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 bg-[var(--overlay)]" >
+              <div class="text-center"><h3 class="text-xl font-heading mb-2" >The Dining Room</h3><p class="text-sm text-muted" >Intimate ambiance</p></div>
+            </div>
+          </div>
+          <div class="gallery-item break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Artisanal pizza being prepared" class="w-full h-auto" loading="lazy" />
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 bg-[var(--overlay)]" >
+              <div class="text-center"><h3 class="text-xl font-heading mb-2" >Open Kitchen</h3><p class="text-sm text-muted" >Watch the magic happen</p></div>
+            </div>
+          </div>
+          <div class="gallery-item break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?w=600&q=80" alt="Dessert plate with chocolate" class="w-full h-auto" loading="lazy" />
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 bg-[var(--overlay)]" >
+              <div class="text-center"><h3 class="text-xl font-heading mb-2" >Chocolate Fondant</h3><p class="text-sm text-muted" >Our signature dessert</p></div>
+            </div>
+          </div>
+          <div class="gallery-item break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Bar area with cocktails" class="w-full h-auto" loading="lazy" />
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 bg-[var(--overlay)]" >
+              <div class="text-center"><h3 class="text-xl font-heading mb-2" >The Bar</h3><p class="text-sm text-muted" >Handcrafted cocktails</p></div>
+            </div>
+          </div>
+          <div class="gallery-item break-inside-avoid group relative rounded-2xl overflow-hidden cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1551218372-a8789b81b253?w=600&q=80" alt="Chef plating a dish" class="w-full h-auto" loading="lazy" />
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 bg-[var(--overlay)]" >
+              <div class="text-center"><h3 class="text-xl font-heading mb-2" >Chef's Table</h3><p class="text-sm text-muted" >Exclusive dining experience</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MORPHING TESTIMONIALS (exp-055) ===== -->
+    <section id="testimonials" class="py-16 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="text-xs md:text-sm font-semibold text-accent uppercase tracking-widest">Guest Reviews</span>
+        <h2 class="font-heading text-4xl md:text-5xl mt-4 mb-14 md:mb-20">What Our Guests Say</h2>
+        <div class="testimonial-morph relative min-h-[280px] md:min-h-[240px]" role="region" aria-label="Testimonials" aria-live="polite">
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="0">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"An unforgettable evening. Every course was a masterpiece. The wine pairing elevated the entire experience. We'll be back."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Claire Nkosi</p>
+              <p class="text-xs md:text-sm text-muted mt-1">Regular Guest</p>
+            </div>
+          </div>
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="1">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"The tasting menu was extraordinary. Chef Fatima's creativity shines in every dish. The service was impeccable."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Thomas Patel</p>
+              <p class="text-xs md:text-sm text-muted mt-1">Food Critic</p>
+            </div>
+          </div>
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="2">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"Romantic ambiance, exquisite food, and a wine list that rivals the best. Perfect for special occasions — or any night you want to feel special."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Sofia Juma</p>
+              <p class="text-xs md:text-sm text-muted mt-1">Anniversary Guest</p>
+            </div>
+          </div>
+        </div>
+        <div class="morph-dots flex justify-center gap-3 mt-10" role="tablist" aria-label="Testimonial navigation">
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="0" aria-label="Testimonial 1"></button>
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="1" aria-label="Testimonial 2"></button>
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="2" aria-label="Testimonial 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <!-- FAQ Accordion pattern -->
+    <section id="faq" class="faq-section py-20 md:py-24 px-4 md:px-6">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-sm font-semibold uppercase tracking-widest text-accent" >FAQ</span>
+          <h2 class="font-heading mt-4" >Common Questions</h2>
+        </div>
+        <div class="space-y-4">
+          <details class="faq-item group rounded-2xl transition-all duration-300 border-[var(--border-hover)] bg-[var(--card-bg)]"  >
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-semibold" >How do I make a reservation?</span><svg class="w-5 h-5 group-open:rotate-180 transition-transform duration-300" style="color: var(--muted);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-6 pb-6 leading-relaxed text-muted" >Book online using the reservation form below, or call us at +255 712 345 678. For parties of 8+, please call to arrange.</div>
+          </details>
+          <details class="faq-item group rounded-2xl transition-all duration-300 border-[var(--border-hover)] bg-[var(--card-bg)]"  >
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-semibold" >Do you accommodate dietary restrictions?</span><svg class="w-5 h-5 group-open:rotate-180 transition-transform duration-300" style="color: var(--muted);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-6 pb-6 leading-relaxed text-muted" >Yes. Please inform us of any dietary restrictions or allergies when booking. Our chefs are happy to customize dishes to accommodate your needs.</div>
+          </details>
+          <details class="faq-item group rounded-2xl transition-all duration-300 border-[var(--border-hover)] bg-[var(--card-bg)]"  >
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-semibold" >What is your dress code?</span><svg class="w-5 h-5 group-open:rotate-180 transition-transform duration-300" style="color: var(--muted);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-6 pb-6 leading-relaxed text-muted" >Smart casual to formal. We encourage guests to dress up for the occasion, but there is no strict dress code.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <!-- CTA Section pattern -->
+    <section class="cta-section py-20 md:py-24 px-4 md:px-6 relative overflow-hidden">
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom right, rgba(239,68,68,0.2), var(--bg) 60%, var(--bg) 90%);"></div>
+      <div class="absolute inset-0" style="background: radial-gradient(circle at 30% 50%, rgba(239,68,68,0.08), transparent 50%);"></div>
+      <div class="relative z-10 max-w-3xl mx-auto text-center">
+        <h2 class="font-heading mb-6" >Reserve Your Experience</h2>
+        <p class="mb-10 max-w-xl mx-auto text-muted" style="font-size: clamp(1rem, 2.5vw, 1.125rem)" >Join us for an unforgettable evening of exceptional cuisine and warm hospitality.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#reservations" class="px-8 py-4 md:px-10 md:py-5 font-semibold rounded-xl transition-all duration-300 bg-accent" style="color: #FFFFFF; box-shadow: 0 10px 15px -3px var(--shadow)" >Book a Table</a>
+          <a href="tel:+255712345678" class="px-8 py-4 md:px-10 md:py-5 font-semibold rounded-xl mobile-full md:w-auto bg-[var(--border)] border-[var(--border-hover)]" >Call to Reserve</a>
+        </div>
+        <p class="text-sm mt-6 text-muted" >Tuesday–Sunday, 12:00–22:00</p>
+      </div>
+    </section>
+
+    <!-- ===== RESERVATIONS / CONTACT ===== -->
+    <!-- Contact Form pattern (with validation) -->
+    <section id="reservations" class="contact-section py-20 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]" >
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16">
+        <div>
+          <span class="text-sm font-semibold uppercase tracking-widest text-accent" >Reservations</span>
+          <h2 class="font-heading mt-4 mb-6" >Book Your Table</h2>
+          <p class="mb-8 text-muted" >Fill out the form and we'll confirm your reservation within 2 hours.</p>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center gap-4"><div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(239,68,68,0.1);"><i data-lucide="phone" class="w-5 h-5 text-accent" ></i></div><div><p class="text-sm font-semibold" >Phone</p><a href="tel:+255712345678" class="text-sm transition-colors text-muted" >+255 712 345 678</a></div></div>
+            <div class="flex items-center gap-4"><div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(239,68,68,0.1);"><i data-lucide="mail" class="w-5 h-5 text-accent" ></i></div><div><p class="text-sm font-semibold" >Email</p><a href="mailto:reservations@thespicemerchant.com" class="text-sm transition-colors text-muted" >reservations@thespicemerchant.com</a></div></div>
+            <div class="flex items-center gap-4"><div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(239,68,68,0.1);"><i data-lucide="map-pin" class="w-5 h-5 text-accent" ></i></div><div><p class="text-sm font-semibold" >Location</p><p class="text-sm text-muted" >15 Pemba Road, Dar es Salaam</p></div></div>
+            <div class="flex items-center gap-4"><div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(239,68,68,0.1);"><i data-lucide="clock" class="w-5 h-5 text-accent" ></i></div><div><p class="text-sm font-semibold" >Hours</p><p class="text-sm text-muted" >Tue–Sun: 12:00–22:00 | Mon: Closed</p></div></div>
+          </div>
+        </div>
+        <!-- Form -->
+        <form class="contact-form space-y-6" novalidate>
+          <div class="form-group"><label for="name" class="block text-sm font-medium mb-2" >Full Name</label><input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl outline-none placeholder: transition-all duration-200 border-[var(--border-hover)]" style="background: transparent"  placeholder="John Doe" /><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter your name.</p></div>
+          <div class="form-group"><label for="email" class="block text-sm font-medium mb-2" >Email Address</label><input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl outline-none transition-all duration-200 border-[var(--border-hover)]" style="background: transparent"  placeholder="john@example.com" /><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter a valid email.</p></div>
+          <div class="form-group"><label for="phone" class="block text-sm font-medium mb-2" >Phone Number</label><input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-xl outline-none transition-all duration-200 border-[var(--border-hover)]" style="background: transparent"  placeholder="+255 712 345 678" /><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter your phone number.</p></div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="form-group"><label for="date" class="block text-sm font-medium mb-2" >Date</label><input type="date" id="date" name="date" required class="w-full px-4 py-3 rounded-xl outline-none transition-all duration-200 border-[var(--border-hover)]" style="background: transparent"  /><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please select a date.</p></div>
+            <div class="form-group"><label for="time" class="block text-sm font-medium mb-2" >Time</label><input type="time" id="time" name="time" required class="w-full px-4 py-3 rounded-xl outline-none transition-all duration-200 border-[var(--border-hover)]" style="background: transparent"  /><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please select a time.</p></div>
+          </div>
+          <div class="form-group"><label for="guests" class="block text-sm font-medium mb-2" >Number of Guests</label><select id="guests" name="guests" class="w-full px-4 py-3 rounded-xl outline-none transition-all duration-200 border-[var(--border-hover)]" style="background: transparent" ><option value="1">1 Guest</option><option value="2" selected>2 Guests</option><option value="3">3 Guests</option><option value="4">4 Guests</option><option value="5">5 Guests</option><option value="6">6 Guests</option><option value="7">7 Guests</option><option value="8">8+ Guests (call to book)</option></select></div>
+          <div class="form-group"><label for="message" class="block text-sm font-medium mb-2" >Special Requests</label><textarea id="message" name="message" rows="3" class="w-full px-4 py-3 rounded-xl outline-none transition-all duration-200 resize-none border-[var(--border-hover)]" style="background: transparent"  placeholder="Allergies, celebrations, seating preferences..."></textarea></div>
+          <button type="submit" class="btn-submit w-full px-8 py-4 font-semibold rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed bg-accent" style="color: #FFFFFF" ><span class="btn-text">Confirm Reservation</span><span class="btn-spinner hidden"><svg class="animate-spin w-5 h-5 mx-auto" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg></span></button>
+          <div class="form-success hidden text-center py-4 rounded-xl font-semibold" style="background: rgba(34,197,94,0.1); color: #4ade80;" role="alert">Reservation request sent! We'll confirm within 2 hours.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="py-12 md:py-16 px-4 md:px-6 border-t-[var(--border)]" >
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div class="sm:col-span-2 md:col-span-1">
+          <a href="/" class="text-2xl font-heading mb-4 block" >THE SPICE MERCHANT</a>
+          <p class="text-sm leading-relaxed max-w-xs text-muted" >Where every dish tells a story. Fine dining in the heart of Dar es Salaam.</p>
+          <div class="flex gap-4 mt-6">
+            <a href="#" aria-label="Instagram" class="text-muted"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="#" aria-label="Facebook" class="text-muted"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" aria-label="TripAdvisor" class="text-muted"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12S6.2 22.5 12 22.5 22.5 17.8 22.5 12 17.8 1.5 12 1.5zm3 15l-3-2.5-3 2.5V6h6v10.5z"/></svg></a>
+          </div>
+        </div>
+        <div><h4 class="text-sm font-semibold uppercase tracking-wider mb-4" >Menu</h4><ul class="space-y-3"><li><a href="#menu" class="text-sm transition-colors text-muted" >Dinner Menu</a></li><li><a href="#menu" class="text-sm transition-colors text-muted" >Wine List</a></li><li><a href="#menu" class="text-sm transition-colors text-muted" >Tasting Menu</a></li><li><a href="#menu" class="text-sm transition-colors text-muted" >Desserts</a></li></ul></div>
+        <div><h4 class="text-sm font-semibold uppercase tracking-wider mb-4" >Hours</h4><ul class="space-y-3"><li class="text-sm text-muted" >Tue–Thu: 12:00–22:00</li><li class="text-sm text-muted" >Fri–Sat: 12:00–23:00</li><li class="text-sm text-muted" >Sun: 12:00–21:00</li><li class="text-sm text-muted" >Mon: Closed</li></ul></div>
+        <div><h4 class="text-sm font-semibold uppercase tracking-wider mb-4" >Contact</h4><ul class="space-y-3"><li class="text-sm text-muted" >15 Pemba Road, Dar es Salaam</li><li><a href="tel:+255712345678" class="text-sm transition-colors text-muted" >+255 712 345 678</a></li><li><a href="mailto:reservations@thespicemerchant.com" class="text-sm transition-colors text-muted" >reservations@thespicemerchant.com</a></li></ul></div>
+      </div>
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 border-t-[var(--border)]" >
+        <p class="text-sm text-muted" >&copy; 2026 The Spice Merchant. All rights reserved.</p>
+        <div class="flex gap-6"><a href="#" class="text-xs transition-colors text-muted" >Privacy Policy</a><a href="#" class="text-xs transition-colors text-muted" >Terms of Service</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/255712345678?text=Hi%20The%20Spice%20Merchant%2C%20I'd%20like%20to%20make%20a%20reservation." target="_blank" rel="noopener noreferrer" class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-400 hover:scale-110 hover:-translate-y-1 transition-all duration-300" aria-label="Contact us on WhatsApp"><svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="fixed bottom-24 right-6 z-50 w-12 h-12 backdrop-blur-xl rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 bg-accent border-[var(--accent)]" style="opacity: 0.2"  aria-label="Back to top"><svg class="w-5 h-5" style="color: var(--accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg></button>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.468.0"></script>
+
+
+  <script>
+  (function() {
+    var html = document.documentElement;
+    function updateThemeIcons() {
+      var isLight = html.classList.contains('light');
+      document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+        var darkIcon = btn.querySelector('.dark-icon');
+        var lightIcon = btn.querySelector('.light-icon');
+        if (darkIcon) darkIcon.classList.toggle('hidden', isLight);
+        if (lightIcon) lightIcon.classList.toggle('hidden', !isLight);
+      });
+    }
+    function setTheme(theme) {
+      if (theme === 'light') {
+        html.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+      }
+      updateThemeIcons();
+    }
+    var savedTheme = localStorage.getItem('theme');
+    var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (savedTheme) setTheme(savedTheme);
+    else setTheme(prefersLight ? 'light' : 'dark');
+    document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        setTheme(html.classList.contains('light') ? 'dark' : 'light');
+      });
+    });
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme')) setTheme(e.matches ? 'light' : 'dark');
+    });
+  })();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reducedMotion && typeof Lenis !== 'undefined') {
+      const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), orientation: 'vertical', smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    if (menuBtn) {
+      menuBtn.addEventListener('click', function() {
+        menuOpen = !menuOpen;
+        mobileMenu.style.transform = menuOpen ? 'translateX(0)' : 'translateX(100%)';
+        menuBtn.setAttribute('aria-expanded', menuOpen);
+        menuBtn.innerHTML = menuOpen
+          ? '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>'
+          : '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+        document.body.style.overflow = menuOpen ? 'hidden' : '';
+      });
+    }
+    window.closeMenu = function() { menuOpen = false; if (mobileMenu) mobileMenu.style.transform = 'translateX(100%)'; if (menuBtn) { menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>'; } document.body.style.overflow = ''; };
+
+    const navInner = document.querySelector('#navbar > div');
+    if (navInner) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          navInner.style.background = 'var(--overlay)';
+          navInner.style.backdropFilter = 'blur(24px)';
+          navInner.style.border = '1px solid var(--border)';
+          navInner.style.boxShadow = '0 10px 15px -3px var(--shadow)';
+        } else {
+          navInner.style.background = 'transparent';
+          navInner.style.backdropFilter = 'none';
+          navInner.style.border = 'none';
+          navInner.style.boxShadow = 'none';
+        }
+      }, { passive: true });
+    }
+
+    const progressFill = document.querySelector('.progress-fill');
+    if (progressFill && !reducedMotion) {
+      gsap.to(progressFill, { scaleX: 1, ease: 'none', scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 0.3 } });
+    }
+
+    if (!reducedMotion) {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      tl.fromTo('.hero img', { scale: 1.1, opacity: 0 }, { scale: 1, opacity: 1, duration: 2, ease: 'power4.out' })
+        .fromTo('.hero-badge', { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=1.5')
+        .fromTo('.hero-heading', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, '-=0.5')
+        .fromTo('.hero-subtext', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.5')
+        .fromTo('.hero-cta', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.3')
+        .fromTo('.scroll-indicator', { opacity: 0 }, { opacity: 1, duration: 0.5 }, '-=0.2');
+    }
+
+    document.querySelectorAll('.stat-number').forEach(function(counter) {
+      const target = parseInt(counter.dataset.target);
+      const prefix = counter.closest('.stat-item')?.querySelector('.stat-prefix')?.textContent || '';
+      gsap.to(counter, {
+        innerText: target, duration: 2, ease: 'power3.out', snap: { innerText: 1 },
+        scrollTrigger: { trigger: counter, start: 'top 85%' },
+        onUpdate: function() {
+          const val = Math.floor(this.targets()[0].innerText);
+          counter.textContent = val + prefix;
+        }
+      });
+    });
+
+    if (!reducedMotion) {
+      gsap.utils.toArray('.timeline-item').forEach(function(item, i) {
+        gsap.from(item, { x: -30, opacity: 0, duration: 0.6, delay: i * 0.2, ease: 'power2.out', scrollTrigger: { trigger: item, start: 'top 85%' } });
+      });
+    }
+
+    if (!reducedMotion) {
+      gsap.fromTo('.dish-card', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'power2.out', scrollTrigger: { trigger: '#menu .grid', start: 'top 85%' } });
+    }
+
+    if (!reducedMotion) {
+      gsap.fromTo('.process-step', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.2, ease: 'power2.out', scrollTrigger: { trigger: '.process-section', start: 'top 80%' } });
+    }
+
+    if (!reducedMotion) {
+      gsap.utils.toArray('.gallery-item').forEach(function(item, i) {
+        gsap.from(item, { y: 30, opacity: 0, duration: 0.5, delay: i * 0.1, ease: 'power2.out', scrollTrigger: { trigger: item, start: 'top 90%' } });
+      });
+    }
+
+    // ===== CTA SECTION =====
+    if (!reducedMotion) {
+      gsap.fromTo('.cta-section h2', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, scrollTrigger: { trigger: '.cta-section', start: 'top 85%' } });
+      gsap.fromTo('.cta-section p', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, delay: 0.15, scrollTrigger: { trigger: '.cta-section', start: 'top 85%' } });
+      gsap.fromTo('.cta-section .flex', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, delay: 0.3, scrollTrigger: { trigger: '.cta-section', start: 'top 85%' } });
+    }
+
+    // ===== CONTACT SECTION =====
+    if (!reducedMotion) {
+      gsap.fromTo('#reservations h2', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, scrollTrigger: { trigger: '#reservations', start: 'top 85%' } });
+      gsap.fromTo('#reservations .space-y-4', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, delay: 0.1, scrollTrigger: { trigger: '#reservations', start: 'top 85%' } });
+      gsap.fromTo('.contact-form .form-group', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, stagger: 0.08, scrollTrigger: { trigger: '.contact-form', start: 'top 85%' } });
+    }
+
+    function initMorphingTestimonials(container) {
+      if (!container) return;
+      var slides = container.querySelectorAll('.testimonial-slide');
+      var dots = document.querySelectorAll('.morph-dot');
+      if (slides.length < 2) return;
+      var current = 0, isAnimating = false, interval;
+      function showSlide(index) {
+        if (isAnimating || index === current) return;
+        isAnimating = true;
+        var prev = slides[current];
+        var next = slides[index];
+        gsap.to(prev, { opacity: 0, y: -10, filter: 'blur(4px)', duration: 0.5, ease: 'power2.in', onComplete: function() { prev.classList.remove('active'); prev.style.transform = ''; prev.style.filter = ''; }});
+        gsap.set(next, { opacity: 0, y: 10, filter: 'blur(4px)' });
+        next.classList.add('active');
+        gsap.to(next, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.7, ease: 'power2.out', onComplete: function() { isAnimating = false; }});
+        dots.forEach(function(d) { d.classList.remove('active'); d.setAttribute('aria-selected', 'false'); });
+        if (dots[index]) { dots[index].classList.add('active'); dots[index].setAttribute('aria-selected', 'true'); }
+        current = index;
+      }
+      function nextSlide() { showSlide((current + 1) % slides.length); }
+      dots.forEach(function(d) { d.addEventListener('click', function() { showSlide(parseInt(this.dataset.index)); clearInterval(interval); startInterval(); }); });
+      function startInterval() { interval = setInterval(nextSlide, 5000); }
+      container.addEventListener('mouseenter', function() { clearInterval(interval); });
+      container.addEventListener('mouseleave', function() { startInterval(); });
+      var touchStartX = 0;
+      container.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+      container.addEventListener('touchend', function(e) { var diff = e.changedTouches[0].clientX - touchStartX; if (Math.abs(diff) > 50) { if (diff < 0) nextSlide(); else showSlide((current - 1 + slides.length) % slides.length); } clearInterval(interval); startInterval(); }, { passive: true });
+      slides[0].classList.add('active');
+      gsap.set(slides[0], { opacity: 1, y: 0, filter: 'blur(0px)' });
+      if (dots[0]) { dots[0].classList.add('active'); dots[0].setAttribute('aria-selected', 'true'); }
+      startInterval();
+    }
+    if (!reducedMotion) {
+      initMorphingTestimonials(document.querySelector('.testimonial-morph'));
+    }
+
+    document.querySelectorAll('.faq-item summary').forEach(function(summary) {
+      summary.addEventListener('click', function(e) {
+        const details = this.closest('details');
+        const isOpen = details.hasAttribute('open');
+        document.querySelectorAll('.faq-item[open]').forEach(function(d) { if (d !== details) d.removeAttribute('open'); });
+        if (!reducedMotion) {
+          if (isOpen) { gsap.to(details.querySelector('div'), { height: 0, opacity: 0, duration: 0.2, onComplete: function() { details.removeAttribute('open'); } }); e.preventDefault(); }
+        }
+      });
+    });
+
+    document.querySelectorAll('.contact-form input, .contact-form textarea, .contact-form select').forEach(function(field) {
+      field.addEventListener('blur', function() { validateField(field); });
+      field.addEventListener('input', function() { if (field.dataset.touched) validateField(field); });
+      field.addEventListener('focus', function() { field.dataset.touched = 'true'; });
+    });
+    function validateField(field) {
+      const error = field.parentElement.querySelector('.form-error');
+      if (!field.validity.valid || (field.hasAttribute('required') && !field.value.trim())) {
+        field.style.borderColor = '#f87171';
+        if (error) error.classList.remove('hidden'); return false;
+      } else {
+        field.style.borderColor = 'var(--border-hover)';
+        if (error) error.classList.add('hidden'); return true;
+      }
+    }
+    document.querySelector('.contact-form')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.btn-submit');
+      const text = btn.querySelector('.btn-text');
+      const spinner = btn.querySelector('.btn-spinner');
+      const success = this.querySelector('.form-success');
+      btn.disabled = true; text.classList.add('hidden'); spinner.classList.remove('hidden');
+      await new Promise(function(r) { setTimeout(r, 1500); });
+      spinner.classList.add('hidden'); success.classList.remove('hidden'); btn.style.display = 'none';
+      gtag('event', 'form_submit', { 'form_location': 'reservations' });
+    });
+
+    const backBtn = document.getElementById('backToTop');
+    if (backBtn) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) { backBtn.classList.remove('opacity-0', 'invisible'); backBtn.classList.add('opacity-100'); }
+        else { backBtn.classList.add('opacity-0', 'invisible'); backBtn.classList.remove('opacity-100'); }
+      }, { passive: true });
+      backBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+
+    document.querySelectorAll('.btn-primary, .hero-cta').forEach(function(btn) {
+      btn.addEventListener('click', function() { if (typeof gtag !== 'undefined') gtag('event', 'cta_click', { 'cta_text': this.textContent.trim() }); });
+    });
+    document.querySelector('.whatsapp-float')?.addEventListener('click', function() { if (typeof gtag !== 'undefined') gtag('event', 'whatsapp_click'); });
+
+    var dishCards = document.querySelectorAll('.dish-card');
+    var dishToggleAll = document.querySelector('.dish-toggle-all');
+    var allExpanded = false;
+    dishCards.forEach(function(card) {
+      card.addEventListener('click', function() {
+        var details = this.querySelector('.dish-details');
+        var isOpen = this.classList.contains('active');
+        if (!reducedMotion) {
+          if (isOpen) {
+            gsap.to(details, { maxHeight: 0, opacity: 0, duration: 0.3, ease: 'power2.in' });
+            this.classList.remove('active');
+          } else {
+            gsap.set(details, { display: 'block' });
+            gsap.to(details, { maxHeight: details.scrollHeight, opacity: 1, duration: 0.4, ease: 'power2.out' });
+            this.classList.add('active');
+          }
+        } else {
+          this.classList.toggle('active');
+          details.style.maxHeight = isOpen ? '0' : details.scrollHeight + 'px';
+          details.style.opacity = isOpen ? '0' : '1';
+        }
+      });
+    });
+    if (dishToggleAll) {
+      dishToggleAll.addEventListener('click', function() {
+        allExpanded = !allExpanded;
+        this.textContent = allExpanded ? 'Collapse All' : 'Expand All';
+        dishCards.forEach(function(card) {
+          var details = card.querySelector('.dish-details');
+          if (allExpanded && !card.classList.contains('active')) {
+            card.classList.add('active');
+            if (!reducedMotion) { gsap.set(details, { display: 'block' }); gsap.to(details, { maxHeight: details.scrollHeight, opacity: 1, duration: 0.4, ease: 'power2.out' }); }
+            else { details.style.maxHeight = details.scrollHeight + 'px'; details.style.opacity = '1'; }
+          } else if (!allExpanded && card.classList.contains('active')) {
+            card.classList.remove('active');
+            if (!reducedMotion) { gsap.to(details, { maxHeight: 0, opacity: 0, duration: 0.3, ease: 'power2.in' }); }
+            else { details.style.maxHeight = '0'; details.style.opacity = '0'; }
+          }
+        });
+      });
+    }
+
+    if (typeof gtag !== 'undefined') {
+      var trackedDepths = new Set();
+      window.addEventListener('scroll', function() {
+        var depth = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+        [25, 50, 75, 100].forEach(function(t) { if (depth >= t && !trackedDepths.has(t)) { trackedDepths.add(t); gtag('event', 'scroll_depth', { 'percent': t }); } });
+      }, { passive: true });
+    }
+
+    if (!reducedMotion) {
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        var text = link.querySelector('.nav-label');
+        if (text) {
+          link.addEventListener('mousemove', function(e) {
+            var rect = link.getBoundingClientRect();
+            var x = (e.clientX - rect.left - rect.width / 2) * 0.15;
+            var y = (e.clientY - rect.top - rect.height / 2) * 0.15;
+            gsap.to(text, { x: x, y: y, duration: 0.3, ease: 'power2.out' });
+          });
+          link.addEventListener('mouseleave', function() {
+            gsap.to(text, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
+          });
+        }
+      });
+    }
+
+
+  });
+  </script>
 </body>
 </html>

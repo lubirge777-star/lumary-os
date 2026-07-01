@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STUDIO NABO — Creative Agency & Design Studio | Arusha, Tanzania</title>
+  <meta name="description" content="STUDIO NABO is a creative agency and design studio in Arusha, Tanzania. We craft premium brand experiences, digital products, and visual identities for ambitious brands across Africa and beyond." />
+  <link rel="canonical" href="https://studionabo.com/" />
+  <meta property="og:title" content="STUDIO NABO — Creative Agency & Design Studio" />
+  <meta property="og:description" content="Premium creative agency crafting brand experiences, digital products, and visual identities in Arusha, Tanzania and Nairobi." />
+  <meta property="og:image" content="https://studionabo.com/og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="STUDIO NABO — Creative Agency & Design Studio" />
+  <meta name="twitter:description" content="Premium creative agency crafting brand experiences, digital products, and visual identities in Arusha, Tanzania and Nairobi." />
+  <meta name="twitter:image" content="https://studionabo.com/og-image.jpg" />
+  <meta name="theme-color" content="#0F172A" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "STUDIO NABO",
+    "description": "Creative agency and design studio crafting premium brand experiences, digital products, and visual identities.",
+    "image": "https://studionabo.com/og-image.jpg",
+    "url": "https://studionabo.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Amara Nabo",
+      "jobTitle": "Creative Director & Founder",
+      "url": "https://studionabo.com"
+    },
+    "address": [
+      { "@type": "PostalAddress", "addressLocality": "Arusha", "addressCountry": "Tanzania" },
+      { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "Kenya" }
+    ],
+    "contactPoint": { "@type": "ContactPoint", "telephone": "+255-768-000-123", "contactType": "customer service" },
+    "sameAs": ["https://instagram.com/studionabo", "https://linkedin.com/company/studionabo", "https://dribbble.com/studionabo"],
+    "foundingDate": "2014",
+    "numberOfEmployees": "40+"
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: 'var(--primary)', secondary: 'var(--secondary)', accent: 'var(--accent)', surface: 'var(--surface)', muted: 'var(--muted)' },
+          fontFamily: { heading: ['Space Grotesk', 'sans-serif'], body: ['Inter', 'sans-serif'] },
+          borderRadius: { DEFAULT: '12px' },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');</script>
+
+  <style>
+    :root {
+      --primary: #0F172A;
+      --secondary: #1E293B;
+      --accent: #8B5CF6;
+      --surface: #F8FAFC;
+      --muted: #94A3B8;
+      --bg: #0F172A;
+      --text: #F8FAFC;
+      --card-bg: #1E293B;
+      --border: rgba(255,255,255,0.05);
+      --border-hover: rgba(255,255,255,0.1);
+      --overlay: rgba(15,23,42,0.85);
+      --shadow: rgba(0,0,0,0.3);
+    }
+    html.light {
+      --primary: #FFFFFF;
+      --secondary: #F1F5F9;
+      --accent: #7C3AED;
+      --surface: #0F172A;
+      --muted: #64748B;
+      --bg: #FFFFFF;
+      --text: #0F172A;
+      --card-bg: #F8FAFC;
+      --border: rgba(0,0,0,0.08);
+      --border-hover: rgba(0,0,0,0.12);
+      --overlay: rgba(255,255,255,0.85);
+      --shadow: rgba(0,0,0,0.08);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+    h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; line-height: 1.15; }
+    h1 { font-size: clamp(2.5rem, 8vw, 5rem); }
+    h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+    h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+    img, video, iframe { max-width: 100%; height: auto; }
+    section[id] { scroll-margin-top: 80px; }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    ::selection { background: var(--accent); color: var(--bg); }
+    .spotlight { pointer-events: none; }
+    .masonry-grid { columns: 1; column-gap: 1.5rem; }
+    .masonry-grid > * { break-inside: avoid; margin-bottom: 1.5rem; }
+    @media (min-width: 768px) { .masonry-grid { columns: 2; } }
+    @media (min-width: 1024px) { .masonry-grid { columns: 3; } }
+    .section-divider { overflow: hidden; line-height: 0; margin-top: -1px; }
+    .section-divider svg { display: block; width: 100%; height: 60px; }
+    .cursor-ring { transition: width 0.2s, height 0.2s, background-color 0.2s; will-change: transform, width, height; }
+    .cursor-dot { will-change: transform; }
+    .grayscale-img { filter: grayscale(1) brightness(0.7); transition: filter 0.5s ease; will-change: filter; }
+    .grayscale-img:hover { filter: grayscale(0) brightness(1); }
+    .theme-toggle { cursor: pointer; }
+    .infinite-carousel { mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%); }
+    .carousel-item { flex-shrink: 0; user-select: none; display: flex; align-items: center; justify-content: center; }
+    .carousel-item span { font-size: clamp(1rem, 2.5vw, 1.5rem); white-space: nowrap; padding: 0 1.5rem; }
+    .tilt-card { will-change: transform; }
+    .orb-1, .orb-2, .orb-3 { will-change: transform, opacity; }
+    @media (max-width: 767px) {
+      nav a, .nav-link { padding: 12px 0; min-height: 48px; }
+      .mobile-full { width: 100%; }
+    }
+    .morph-dot.active { transform: scale(1.3); background: var(--accent) !important; }
+  </style>
+</head>
+<body class="antialiased">
+  <!-- Skip to content -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-accent focus:text-white focus:rounded-lg">Skip to main content</a>
+
+  <!-- Custom Cursor (exp-004) -->
+  <div id="cursor-dot" class="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 hidden md:block cursor-dot"></div>
+  <div id="cursor-ring" class="cursor-ring fixed top-0 left-0 w-8 h-8 border border-white/40 rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 hidden md:block" style="transition: width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s;"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="progress-container fixed top-0 left-0 right-0 z-[100] h-0.5 bg-[var(--border)]">
+    <div class="progress-fill h-full bg-accent origin-left" style="transform: scaleX(0);"></div>
+  </div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 py-5 transition-all duration-500 bg-transparent">
+      <div class="flex items-center justify-between">
+        <a href="/" class="nav-link text-2xl font-heading font-bold text-[var(--text)]">
+          <span class="nav-label">STUDIO NABO</span>
+        </a>
+        <div class="hidden md:flex items-center gap-10">
+          <a href="#work" class="nav-link text-sm text-[var(--text)]/70 hover:text-[var(--text)] transition-colors duration-200 relative group"><span class="nav-label">Work</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span></a>
+          <a href="#services" class="nav-link text-sm text-[var(--text)]/70 hover:text-[var(--text)] transition-colors duration-200 relative group"><span class="nav-label">Services</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span></a>
+          <a href="#about" class="nav-link text-sm text-[var(--text)]/70 hover:text-[var(--text)] transition-colors duration-200 relative group"><span class="nav-label">About</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span></a>
+          <a href="#process" class="nav-link text-sm text-[var(--text)]/70 hover:text-[var(--text)] transition-colors duration-200 relative group"><span class="nav-label">Process</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span></a>
+          <a href="#insights" class="nav-link text-sm text-[var(--text)]/70 hover:text-[var(--text)] transition-colors duration-200 relative group"><span class="nav-label">Insights</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span></a>
+          <a href="#contact" class="px-6 py-3 bg-accent text-white rounded-xl text-sm font-semibold hover:bg-accent/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[var(--shadow)] transition-all duration-300">Start a Project</a>
+          <button id="themeToggleDesktop" class="theme-toggle p-2 rounded-lg text-muted hover:text-accent transition-colors" aria-label="Toggle theme">
+            <svg class="dark-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="light-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="themeToggle" class="theme-toggle p-2 rounded-lg text-muted hover:text-accent transition-colors" aria-label="Toggle theme">
+            <svg class="dark-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            <svg class="light-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </button>
+        <button class="md:hidden text-muted hover:text-accent p-2 z-50" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="w-6 h-6 menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="fixed inset-0 bg-[var(--overlay)] backdrop-blur-xl z-40 translate-x-full transition-transform duration-300 ease-in-out md:hidden flex items-center justify-center" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="flex flex-col items-center justify-center h-full gap-10 text-3xl">
+      <a href="#work" class="text-[var(--text)]/80 hover:text-accent transition-colors" onclick="closeMenu()">Work</a>
+      <a href="#services" class="text-[var(--text)]/80 hover:text-accent transition-colors" onclick="closeMenu()">Services</a>
+      <a href="#about" class="text-[var(--text)]/80 hover:text-accent transition-colors" onclick="closeMenu()">About</a>
+      <a href="#process" class="text-[var(--text)]/80 hover:text-accent transition-colors" onclick="closeMenu()">Process</a>
+      <a href="#insights" class="text-[var(--text)]/80 hover:text-accent transition-colors" onclick="closeMenu()">Insights</a>
+      <a href="#contact" onclick="closeMenu()" class="px-10 py-4 bg-accent text-white rounded-xl font-semibold text-xl">Start a Project</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ===== HERO ===== -->
+    <section class="hero min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div class="hero-bg absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-violet-900/50 via-[#0F172A]/70 to-[#0F172A]/95 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1600&q=80" alt="" class="w-full h-full object-cover hero-bg-img" />
+      </div>
+      <!-- Floating gradient orbs -->
+      <div class="orb orb-1 absolute top-1/4 left-[15%] w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
+      <div class="orb orb-2 absolute bottom-1/3 right-[20%] w-96 h-96 bg-violet-500/8 rounded-full blur-3xl"></div>
+      <div class="orb orb-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl"></div>
+      <!-- Decorative element -->
+      <div class="hero-deco absolute top-20 right-10 md:right-20 text-accent/20 text-8xl font-heading font-bold select-none">✦</div>
+      <div class="hero-deco-2 absolute bottom-32 left-8 text-accent/10 text-6xl font-heading font-bold select-none">+</div>
+      <div class="relative z-20 text-center max-w-5xl px-6 text-white">
+        <span class="hero-badge inline-block px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent border border-accent/30 bg-accent/10 rounded-full mb-8 backdrop-blur-sm">Est. 2014 — Arusha &amp; Nairobi</span>
+        <h1 class="hero-heading text-6xl md:text-8xl lg:text-9xl font-heading leading-none mb-6 overflow-hidden">
+          <span class="hero-line block">We Craft Brands</span>
+          <span class="hero-line block text-accent">That Move People</span>
+        </h1>
+        <p class="hero-subtext text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
+          STUDIO NABO is a creative agency crafting premium brand experiences, digital products, and visual identities for ambitious brands across Africa and beyond.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-5 justify-center">
+          <a href="#work" class="hero-cta inline-flex items-center gap-3 px-10 py-5 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent/90 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-[var(--shadow)]">
+            View Our Work <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+          <a href="#contact" class="hero-cta inline-flex items-center gap-3 px-10 py-5 bg-[var(--border)] text-[var(--text)] rounded-xl font-semibold text-lg border border-[var(--border-hover)] hover:bg-[var(--border-hover)] hover:-translate-y-1 transition-all duration-300">
+            Get in Touch <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center scroll-indicator z-20">
+        <span class="text-xs text-muted uppercase tracking-widest">Scroll to explore</span>
+        <div class="w-5 h-8 border-2 border-muted/50 rounded-full mx-auto mt-2 flex justify-center p-1">
+          <div class="w-1 h-2.5 bg-accent rounded-full animate-bounce"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,30 Q360,60 720,30 Q1080,0 1440,30 L1440,60 L0,60 Z" fill="rgba(139,92,246,0.03)"/></svg></div>
+
+    <!-- ===== INFINITE CAROUSEL: Clients (exp-054) ===== -->
+    <section id="clients" class="clients-section scroll-mt-20 py-16 md:py-24 px-4 md:px-6 overflow-hidden">
+      <div class="max-w-6xl mx-auto mb-10">
+        <p class="text-center text-xs text-muted uppercase tracking-[0.2em]">Trusted by forward-thinking brands</p>
+      </div>
+      <div class="infinite-carousel relative" data-speed="25" role="region" aria-label="Client logo carousel">
+        <div class="carousel-track flex gap-0 w-max cursor-grab active:cursor-grabbing select-none opacity-60" role="list">
+          <div class="carousel-item" role="listitem">
+            <span class="text-lg md:text-2xl font-heading font-bold text-[var(--text)]">Serengeti Airways</span>
+          </div>
+          <div class="carousel-item" role="listitem">
+            <span class="text-lg md:text-2xl font-heading font-bold text-[var(--text)]">Mount Meru Coffee</span>
+          </div>
+          <div class="carousel-item" role="listitem">
+            <span class="text-lg md:text-2xl font-heading font-bold text-[var(--text)]">Zanzibar Blue Resort</span>
+          </div>
+          <div class="carousel-item" role="listitem">
+            <span class="text-lg md:text-2xl font-heading font-bold text-[var(--text)]">Kilimanjaro Tech</span>
+          </div>
+          <div class="carousel-item" role="listitem">
+            <span class="text-lg md:text-2xl font-heading font-bold text-[var(--text)]">Rift Valley Wines</span>
+          </div>
+          <div class="carousel-item" role="listitem">
+            <span class="text-lg md:text-2xl font-heading font-bold text-[var(--text)]">Lake Manyara Lodge</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider (reversed wave) -->
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,30 Q360,0 720,30 Q1080,60 1440,30 L1440,60 L0,60 Z" fill="rgba(139,92,246,0.03)"/></svg></div>
+
+    <!-- ===== STATS COUNTERS ===== -->
+    <section class="stats-section py-16 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="stat-item p-8 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)] hover:border-accent/20 hover:-translate-y-1 transition-all duration-300">
+          <div class="stat-number text-5xl font-heading text-accent" data-target="200" data-prefix="+">0</div>
+          <p class="text-muted mt-2 text-sm">Brands Transformed</p>
+        </div>
+        <div class="stat-item p-8 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)] hover:border-accent/20 hover:-translate-y-1 transition-all duration-300">
+          <div class="stat-number text-5xl font-heading text-accent" data-target="12" data-prefix="+">0</div>
+          <p class="text-muted mt-2 text-sm">Years of Craft</p>
+        </div>
+        <div class="stat-item p-8 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)] hover:border-accent/20 hover:-translate-y-1 transition-all duration-300">
+          <div class="stat-number text-5xl font-heading text-accent" data-target="40" data-prefix="+">0</div>
+          <p class="text-muted mt-2 text-sm">Team Members</p>
+        </div>
+        <div class="stat-item p-8 rounded-2xl bg-[var(--card-bg)] border border-[var(--border)] hover:border-accent/20 hover:-translate-y-1 transition-all duration-300">
+          <div class="stat-number text-5xl font-heading text-accent" data-target="15" data-prefix="">0</div>
+          <p class="text-muted mt-2 text-sm">Countries Reached</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,30 Q360,60 720,30 Q1080,0 1440,30 L1440,60 L0,60 Z" fill="rgba(139,92,246,0.03)"/></svg></div>
+
+    <!-- ===== ABOUT + PHILOSOPHY ===== -->
+    <section id="about" class="about-section scroll-mt-20 py-16 md:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-[var(--border-hover)]">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="STUDIO NABO creative team collaborating in Arusha" class="w-full h-full object-cover about-img" loading="lazy" />
+          </div>
+          <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-accent/10 rounded-2xl -z-10 border border-accent/20"></div>
+          <div class="absolute -top-6 -left-6 w-24 h-24 bg-accent/5 rounded-full -z-10"></div>
+        </div>
+        <div class="about-content">
+          <span class="text-sm font-semibold text-accent uppercase tracking-[0.2em]">Our Story</span>
+          <h2 class="text-5xl md:text-6xl font-heading mt-4 mb-6 about-heading">Creativity Meets<br />Craftsmanship</h2>
+          <div class="space-y-4 text-muted leading-relaxed about-text">
+            <p>STUDIO NABO was born in Arusha, 2014, from a simple belief: great design has the power to transform businesses. Founded by Amara Nabo, we've grown from a solo venture into a 40+ member creative studio with offices in Arusha and Nairobi, working with brands across 15 countries.</p>
+            <p>Every project we take on is driven by purpose, precision, and a relentless commitment to quality. We don't just make things look good — we solve problems, tell stories, and build lasting impact for brands that dare to stand out.</p>
+            <p>Our philosophy is rooted in African creativity — bold, vibrant, and deeply human. We weave cultural richness into modern design, creating brand experiences that resonate globally while staying authentically local.</p>
+          </div>
+          <div class="flex gap-4 mt-8">
+            <a href="#contact" class="px-8 py-4 bg-accent text-white rounded-xl font-semibold text-sm hover:bg-accent/90 hover:-translate-y-0.5 transition-all duration-300">Work With Us</a>
+            <a href="#process" class="px-8 py-4 bg-[var(--border)] text-[var(--text)] rounded-xl font-semibold text-sm border border-[var(--border-hover)] hover:bg-[var(--border-hover)] hover:-translate-y-0.5 transition-all duration-300">Our Process</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider (reversed wave) -->
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,30 Q360,0 720,30 Q1080,60 1440,30 L1440,60 L0,60 Z" fill="rgba(139,92,246,0.03)"/></svg></div>
+
+    <!-- ===== TIMELINE ===== -->
+    <section class="timeline-section py-16 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-sm font-semibold text-accent uppercase tracking-[0.2em]">Our Journey</span>
+          <h2 class="text-5xl md:text-6xl font-heading mt-4">A Decade of Craft</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto">From a single desk in Arusha to a creative studio with global reach.</p>
+        </div>
+        <div class="timeline relative pl-10 md:pl-0 md:ml-0 before:absolute before:left-[19px] md:before:left-1/2 md:before:-translate-x-px before:top-2 before:bottom-0 before:w-0.5 before:bg-[var(--border-hover)]">
+          <div class="timeline-item relative mb-12 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+            <div class="absolute left-[-34px] md:left-auto md:right-[-9px] top-1 w-[30px] h-[30px] rounded-full bg-accent border-[6px] border-secondary shadow-[0_0_0_2px_rgba(139,92,246,0.3)] z-10"></div>
+            <div class="p-6 rounded-2xl bg-secondary border border-[var(--border-hover)] hover:border-accent/20 transition-all duration-300">
+              <span class="text-sm font-bold text-accent">2014</span>
+              <p class="text-muted mt-2 text-sm leading-relaxed">Amara Nabo founded STUDIO NABO in Arusha, Tanzania with a vision to bring world-class design to East Africa.</p>
+            </div>
+          </div>
+          <div class="timeline-item relative mb-12 md:w-1/2 md:pl-12 md:ml-auto">
+            <div class="absolute left-[-34px] md:left-[-9px] top-1 w-[30px] h-[30px] rounded-full bg-accent border-[6px] border-secondary shadow-[0_0_0_2px_rgba(139,92,246,0.3)] z-10"></div>
+            <div class="p-6 rounded-2xl bg-secondary border border-[var(--border-hover)] hover:border-accent/20 transition-all duration-300">
+              <span class="text-sm font-bold text-accent">2018</span>
+              <p class="text-muted mt-2 text-sm leading-relaxed">Expanded to a full-service studio with 12+ team members. Opened second office in Nairobi, Kenya.</p>
+            </div>
+          </div>
+          <div class="timeline-item relative mb-12 md:w-1/2 md:pr-12 md:ml-0 md:text-right">
+            <div class="absolute left-[-34px] md:left-auto md:right-[-9px] top-1 w-[30px] h-[30px] rounded-full bg-accent border-[6px] border-secondary shadow-[0_0_0_2px_rgba(139,92,246,0.3)] z-10"></div>
+            <div class="p-6 rounded-2xl bg-secondary border border-[var(--border-hover)] hover:border-accent/20 transition-all duration-300">
+              <span class="text-sm font-bold text-accent">2022</span>
+              <p class="text-muted mt-2 text-sm leading-relaxed">100+ projects delivered, 15 industry awards. Launched motion design and digital products divisions.</p>
+            </div>
+          </div>
+          <div class="timeline-item relative mb-12 md:w-1/2 md:pl-12 md:ml-auto">
+            <div class="absolute left-[-34px] md:left-[-9px] top-1 w-[30px] h-[30px] rounded-full bg-accent border-[6px] border-secondary shadow-[0_0_0_2px_rgba(139,92,246,0.3)] z-10"></div>
+            <div class="p-6 rounded-2xl bg-secondary border border-[var(--border-hover)] hover:border-accent/20 transition-all duration-300">
+              <span class="text-sm font-bold text-accent">2026</span>
+              <p class="text-muted mt-2 text-sm leading-relaxed">200+ brands transformed, 40+ team members across two continents. Named among Africa's top creative agencies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,30 Q360,60 720,30 Q1080,0 1440,30 L1440,60 L0,60 Z" fill="rgba(139,92,246,0.03)"/></svg></div>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="services-section scroll-mt-20 py-16 md:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-sm font-semibold text-accent uppercase tracking-[0.2em]">What We Do</span>
+          <h2 class="text-5xl md:text-6xl font-heading mt-4">Our Expertise</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto">Holistic brand experiences crafted across every touchpoint.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="tilt-card service-card p-8 rounded-2xl border border-[var(--border-hover)] bg-secondary hover:-translate-y-2 hover:shadow-xl hover:shadow-[var(--shadow)] hover:border-accent/30 transition-all duration-300 cursor-pointer group">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-all duration-300"><i data-lucide="palette" class="w-7 h-7 text-accent"></i></div>
+            <h3 class="text-xl font-heading mb-3 group-hover:text-accent transition-colors">Brand Identity</h3>
+            <p class="text-muted text-sm leading-relaxed">Strategic brand identities rooted in African creativity. Logos, color systems, typography, and brand guidelines that capture your essence.</p>
+          </div>
+          <div class="tilt-card service-card p-8 rounded-2xl border border-[var(--border-hover)] bg-secondary hover:-translate-y-2 hover:shadow-xl hover:shadow-[var(--shadow)] hover:border-accent/30 transition-all duration-300 cursor-pointer group">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-all duration-300"><i data-lucide="monitor" class="w-7 h-7 text-accent"></i></div>
+            <h3 class="text-xl font-heading mb-3 group-hover:text-accent transition-colors">Digital Products</h3>
+            <p class="text-muted text-sm leading-relaxed">Beautiful, performant websites, e-commerce platforms, and web applications that blend stunning aesthetics with seamless UX.</p>
+          </div>
+          <div class="tilt-card service-card p-8 rounded-2xl border border-[var(--border-hover)] bg-secondary hover:-translate-y-2 hover:shadow-xl hover:shadow-[var(--shadow)] hover:border-accent/30 transition-all duration-300 cursor-pointer group">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-all duration-300"><i data-lucide="camera" class="w-7 h-7 text-accent"></i></div>
+            <h3 class="text-xl font-heading mb-3 group-hover:text-accent transition-colors">Motion Design</h3>
+            <p class="text-muted text-sm leading-relaxed">High-impact motion graphics, brand films, and animated content that bring your brand story to life with cinematic quality.</p>
+          </div>
+          <div class="tilt-card service-card p-8 rounded-2xl border border-[var(--border-hover)] bg-secondary hover:-translate-y-2 hover:shadow-xl hover:shadow-[var(--shadow)] hover:border-accent/30 transition-all duration-300 cursor-pointer group">
+            <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-all duration-300"><i data-lucide="rocket" class="w-7 h-7 text-accent"></i></div>
+            <h3 class="text-xl font-heading mb-3 group-hover:text-accent transition-colors">Brand Strategy</h3>
+            <p class="text-muted text-sm leading-relaxed">Data-driven brand positioning, market research, and strategic roadmaps that drive measurable business growth and market share.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider (reversed wave) -->
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,30 Q360,0 720,30 Q1080,60 1440,30 L1440,60 L0,60 Z" fill="rgba(139,92,246,0.03)"/></svg></div>
+
+    <!-- ===== PROCESS ===== -->
+    <section id="process" class="process-section scroll-mt-20 py-16 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-sm font-semibold text-accent uppercase tracking-[0.2em]">How We Work</span>
+          <h2 class="text-5xl md:text-6xl font-heading mt-4">Our Process</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto">A proven creative methodology honed over 12 years and 200+ projects.</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8 relative">
+          <div class="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-accent/20 via-accent/40 to-accent/20"></div>
+          <div class="process-step text-center relative">
+            <div class="w-24 h-24 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-secondary group-hover:bg-accent/20 transition-all duration-300">
+              <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <h3 class="text-lg font-heading font-semibold mb-3 text-accent">01. Immerse</h3>
+            <p class="text-sm text-muted leading-relaxed max-w-[220px] mx-auto">Deep immersion into your brand, audience, market, and culture. We listen, research, and absorb everything.</p>
+          </div>
+          <div class="process-step text-center relative">
+            <div class="w-24 h-24 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-secondary">
+              <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <h3 class="text-lg font-heading font-semibold mb-3 text-accent">02. Imagine</h3>
+            <p class="text-sm text-muted leading-relaxed max-w-[220px] mx-auto">Creative ideation and concept development. We explore bold directions, sketch ideas, and push boundaries.</p>
+          </div>
+          <div class="process-step text-center relative">
+            <div class="w-24 h-24 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-secondary">
+              <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+            </div>
+            <h3 class="text-lg font-heading font-semibold mb-3 text-accent">03. Craft</h3>
+            <p class="text-sm text-muted leading-relaxed max-w-[220px] mx-auto">Meticulous design and development execution. Every pixel, every color, every interaction is intentional.</p>
+          </div>
+          <div class="process-step text-center relative">
+            <div class="w-24 h-24 mx-auto bg-accent/10 rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-secondary">
+              <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+            </div>
+            <h3 class="text-lg font-heading font-semibold mb-3 text-accent">04. Launch</h3>
+            <p class="text-sm text-muted leading-relaxed max-w-[220px] mx-auto">Seamless launch, ongoing support, and growth partnership. We ensure lasting impact and measurable results.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,30 Q360,60 720,30 Q1080,0 1440,30 L1440,60 L0,60 Z" fill="rgba(139,92,246,0.03)"/></svg></div>
+
+    <!-- ===== PORTFOLIO GALLERY ===== -->
+    <section id="work" class="gallery-section scroll-mt-20 py-16 md:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-sm font-semibold text-accent uppercase tracking-[0.2em]">Our Work</span>
+          <h2 class="text-5xl md:text-6xl font-heading mt-4">Featured Projects</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto">A selection of brands we've had the privilege to transform.</p>
+        </div>
+        <!-- Filter tabs -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+          <button class="filter-tab px-5 py-2.5 rounded-full text-sm font-medium bg-accent text-white transition-all duration-200" data-filter="all">All</button>
+          <button class="filter-tab px-5 py-2.5 rounded-full text-sm font-medium bg-[var(--border)] text-muted hover:text-[var(--text)] hover:bg-[var(--border-hover)] transition-all duration-200" data-filter="branding">Branding</button>
+          <button class="filter-tab px-5 py-2.5 rounded-full text-sm font-medium bg-[var(--border)] text-muted hover:text-[var(--text)] hover:bg-[var(--border-hover)] transition-all duration-200" data-filter="digital">Digital</button>
+          <button class="filter-tab px-5 py-2.5 rounded-full text-sm font-medium bg-[var(--border)] text-muted hover:text-[var(--text)] hover:bg-[var(--border-hover)] transition-all duration-200" data-filter="motion">Motion</button>
+        </div>
+        <div class="masonry-grid" id="workGrid">
+          <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" data-category="branding" data-description="A complete visual identity redesign for Tanzania's flagship airline, including logo systems, aircraft livery, crew uniforms, and digital touchpoints. The rebrand drove a 34% increase in premium cabin bookings within six months." data-client="Serengeti Airways Ltd." data-year="2025">
+            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&q=80" alt="Serengeti Airways brand overhaul project" class="w-full h-auto grayscale-img" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/95 via-[#0F172A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
+              <span class="text-xs text-accent font-semibold uppercase tracking-wider mb-1">Branding</span>
+              <h3 class="text-xl font-heading mb-2">Serengeti Airways — Brand Overhaul</h3>
+              <a href="#" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors">View Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" data-category="digital" data-description="An end-to-end brand experience spanning packaging design, e-commerce platform, and café interiors. The bold color palette and hand-illustrated motifs helped secure placement in 200+ specialty retailers globally." data-client="Mount Meru Coffee Co." data-year="2025">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Mount Meru Coffee digital experience" class="w-full h-auto grayscale-img" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/95 via-[#0F172A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
+              <span class="text-xs text-accent font-semibold uppercase tracking-wider mb-1">Digital</span>
+              <h3 class="text-xl font-heading mb-2">Mount Meru Coffee — Packaging &amp; Identity</h3>
+              <a href="#" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors">View Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" data-category="digital" data-description="A immersive website and booking platform that captures the sensory experience of the resort before guests arrive. Features interactive villa tours, live availability, and a concierge messaging system." data-client="Zanzibar Blue Hospitality" data-year="2026">
+            <img src="https://images.unsplash.com/photo-1550684376-efcbd6e3f031?w=600&q=80" alt="Zanzibar Blue Resort digital experience" class="w-full h-auto grayscale-img" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/95 via-[#0F172A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
+              <span class="text-xs text-accent font-semibold uppercase tracking-wider mb-1">Digital</span>
+              <h3 class="text-xl font-heading mb-2">Zanzibar Blue Resort — Digital Experience</h3>
+              <a href="#" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors">View Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" data-category="branding" data-description="A sophisticated label redesign for a premium East African wine estate. Each varietal's label tells a visual story of its terroir through custom-illustrated flora and fauna native to the region." data-client="Rift Valley Vineyards Ltd." data-year="2025">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Rift Valley Wines brand identity" class="w-full h-auto grayscale-img" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/95 via-[#0F172A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
+              <span class="text-xs text-accent font-semibold uppercase tracking-wider mb-1">Branding</span>
+              <h3 class="text-xl font-heading mb-2">Rift Valley Wines — Label &amp; Brand Identity</h3>
+              <a href="#" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors">View Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" data-category="motion" data-description="A cinematic brand film blending live-action and motion design to unveil Kilimanjaro Tech's AI-powered logistics platform. The launch campaign reached 2.4 million views across social channels in the first week." data-client="Kilimanjaro Technologies Inc." data-year="2026">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&q=80" alt="Kilimanjaro Tech motion campaign" class="w-full h-auto grayscale-img" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/95 via-[#0F172A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
+              <span class="text-xs text-accent font-semibold uppercase tracking-wider mb-1">Motion</span>
+              <h3 class="text-xl font-heading mb-2">Kilimanjaro Tech — Launch Film</h3>
+              <a href="#" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors">View Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" data-category="branding" data-description="A nature-inspired visual identity for an exclusive safari lodge. The monogram incorporates acacia tree silhouettes, and the brand guidelines extend across signage, stationery, and guest amenities." data-client="Manyara Safari Lodges Ltd." data-year="2024">
+            <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=600&q=80" alt="Lake Manyara Safari Lodge brand identity" class="w-full h-auto grayscale-img" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/95 via-[#0F172A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
+              <span class="text-xs text-accent font-semibold uppercase tracking-wider mb-1">Branding</span>
+              <h3 class="text-xl font-heading mb-2">Lake Manyara Lodge — Visual Identity</h3>
+              <a href="#" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors">View Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" data-category="digital" data-description="A direct-to-consumer e-commerce platform featuring a subscription engine, personalized brewing guides, and ethically-sourced product stories. Monthly recurring revenue grew 210% year over year." data-client="Mount Meru Coffee Co." data-year="2026">
+            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&q=80" alt="Mount Meru Coffee e-commerce platform" class="w-full h-auto grayscale-img" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/95 via-[#0F172A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
+              <span class="text-xs text-accent font-semibold uppercase tracking-wider mb-1">Digital</span>
+              <h3 class="text-xl font-heading mb-2">Mount Meru Coffee — E-Commerce Platform</h3>
+              <a href="#" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors">View Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" data-category="motion" data-description="A poetic short film capturing the harvest season in Tanzania's Southern Highlands. Narrated by the winemaker, it weaves together tradition, terroir, and the art of winemaking." data-client="Rift Valley Vineyards Ltd." data-year="2025">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Rift Valley Wines motion campaign" class="w-full h-auto grayscale-img" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/95 via-[#0F172A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
+              <span class="text-xs text-accent font-semibold uppercase tracking-wider mb-1">Motion</span>
+              <h3 class="text-xl font-heading mb-2">Rift Valley Wines — Brand Film</h3>
+              <a href="#" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors">View Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+          <div class="gallery-item group relative rounded-2xl overflow-hidden cursor-pointer" data-category="branding" data-description="A comprehensive 120-page brand guidelines document covering logo usage, typography, photography style, tone of voice, and application across all customer touchpoints — from in-flight to digital." data-client="Serengeti Airways Ltd." data-year="2026">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="Serengeti Airways brand guidelines" class="w-full h-auto grayscale-img" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/95 via-[#0F172A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-6">
+              <span class="text-xs text-accent font-semibold uppercase tracking-wider mb-1">Branding</span>
+              <h3 class="text-xl font-heading mb-2">Serengeti Airways — Brand Guidelines</h3>
+              <a href="#" class="inline-flex items-center gap-2 text-sm text-white/80 hover:text-accent transition-colors">View Project <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider (reversed wave) -->
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,30 Q360,0 720,30 Q1080,60 1440,30 L1440,60 L0,60 Z" fill="rgba(139,92,246,0.03)"/></svg></div>
+
+    <!-- ===== MORPHING TESTIMONIALS (exp-055) ===== -->
+    <section id="testimonials" class="scroll-mt-20 py-16 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="text-sm font-semibold text-accent uppercase tracking-[0.2em]">Testimonials</span>
+        <h2 class="text-5xl md:text-6xl font-heading mt-4 mb-14 md:mb-20">Kind Words</h2>
+        <div class="testimonial-morph relative min-h-[280px] md:min-h-[240px]" role="region" aria-label="Testimonials" aria-live="polite">
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="0">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"STUDIO NABO completely transformed our brand. Their strategic approach and creative excellence delivered results beyond our expectations. The Serengeti Airways rebrand doubled our customer engagement in six months."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Fatima Othman</p>
+              <p class="text-xs md:text-sm text-muted mt-1">CEO, Serengeti Airways</p>
+            </div>
+          </div>
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="1">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"Working with Amara and the STUDIO NABO team was an absolute pleasure. Their packaging design for Mount Meru Coffee captured the heart of our brand. Our export sales increased by 40% within three months of the rebrand."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">James Mwangi</p>
+              <p class="text-xs md:text-sm text-muted mt-1">Founder, Mount Meru Coffee Co.</p>
+            </div>
+          </div>
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="2">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"The digital experience STUDIO NABO created for Zanzibar Blue Resort is nothing short of breathtaking. Our online booking conversions went up by 65% after the launch. They understood our vision from day one and delivered beyond it."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Elena Petrova</p>
+              <p class="text-xs md:text-sm text-muted mt-1">Director of Operations, Zanzibar Blue Resort</p>
+            </div>
+          </div>
+          <div class="testimonial-slide absolute inset-0 flex flex-col items-center justify-center opacity-0 pointer-events-none" data-index="3">
+            <blockquote class="text-lg md:text-2xl lg:text-3xl font-heading leading-relaxed mb-8 max-w-2xl text-[var(--text)]">"Professional, creative, and incredibly responsive. STUDIO NABO understood our tech brand instantly and delivered a launch film that perfectly captured our mission. They've earned a permanent spot on our roster."</blockquote>
+            <div class="author-info">
+              <p class="font-semibold text-sm md:text-base text-[var(--text)]">Kwame Osei</p>
+              <p class="text-xs md:text-sm text-muted mt-1">CTO, Kilimanjaro Tech</p>
+            </div>
+          </div>
+        </div>
+        <div class="morph-dots flex justify-center gap-3 mt-10" role="tablist" aria-label="Testimonial navigation">
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="0" aria-label="Testimonial 1"></button>
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="1" aria-label="Testimonial 2"></button>
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="2" aria-label="Testimonial 3"></button>
+          <button class="morph-dot w-2.5 h-2.5 rounded-full bg-[var(--muted)]/40 hover:bg-accent/60 transition-all duration-300 cursor-pointer" role="tab" aria-selected="false" data-index="3" aria-label="Testimonial 4"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,30 Q360,60 720,30 Q1080,0 1440,30 L1440,60 L0,60 Z" fill="rgba(139,92,246,0.03)"/></svg></div>
+
+    <!-- ===== BLOG PREVIEW ===== -->
+    <section id="insights" class="insights-section scroll-mt-20 py-16 md:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-sm font-semibold text-accent uppercase tracking-[0.2em]">Insights</span>
+          <h2 class="text-5xl md:text-6xl font-heading mt-4">Latest Thinking</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto">Thoughts on design, branding, and building great products.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <article class="blog-card group rounded-2xl border border-[var(--border-hover)] bg-secondary overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--shadow)] hover:border-accent/20 transition-all duration-300">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80" alt="The Art of Brand Storytelling in Africa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-accent font-semibold uppercase tracking-wider">Branding</span>
+              <h3 class="text-xl font-heading mt-2 mb-3 group-hover:text-accent transition-colors">The Art of Brand Storytelling in Africa</h3>
+              <p class="text-sm text-muted leading-relaxed">How to craft a narrative that honors African heritage while connecting with global audiences and building lasting brand loyalty.</p>
+              <a href="#" class="inline-flex items-center gap-2 text-sm text-accent mt-4 hover:gap-3 transition-all">Read More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </article>
+          <article class="blog-card group rounded-2xl border border-[var(--border-hover)] bg-secondary overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--shadow)] hover:border-accent/20 transition-all duration-300">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="Design Trends Shaping 2026" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-accent font-semibold uppercase tracking-wider">Design</span>
+              <h3 class="text-xl font-heading mt-2 mb-3 group-hover:text-accent transition-colors">Design Trends Shaping 2026</h3>
+              <p class="text-sm text-muted leading-relaxed">From generative AI to neo-brutalism — the trends defining modern digital experiences and how African brands can lead the charge.</p>
+              <a href="#" class="inline-flex items-center gap-2 text-sm text-accent mt-4 hover:gap-3 transition-all">Read More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </article>
+          <article class="blog-card group rounded-2xl border border-[var(--border-hover)] bg-secondary overflow-hidden hover:-translate-y-1 hover:shadow-xl hover:shadow-[var(--shadow)] hover:border-accent/20 transition-all duration-300">
+            <div class="aspect-[16/9] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Building a Brand That Scales Across Africa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+            <div class="p-6">
+              <span class="text-xs text-accent font-semibold uppercase tracking-wider">Strategy</span>
+              <h3 class="text-xl font-heading mt-2 mb-3 group-hover:text-accent transition-colors">Building a Brand That Scales Across Africa</h3>
+              <p class="text-sm text-muted leading-relaxed">A strategic framework for creating brand systems that grow with your business across diverse markets and cultural contexts.</p>
+              <a href="#" class="inline-flex items-center gap-2 text-sm text-accent mt-4 hover:gap-3 transition-all">Read More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider (reversed wave) -->
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,30 Q360,0 720,30 Q1080,60 1440,30 L1440,60 L0,60 Z" fill="rgba(139,92,246,0.03)"/></svg></div>
+
+    <!-- ===== FAQ ACCORDION ===== -->
+    <section id="faq" class="faq-section scroll-mt-20 py-16 md:py-24 px-4 md:px-6 bg-[var(--card-bg)]">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-sm font-semibold text-accent uppercase tracking-[0.2em]">FAQ</span>
+          <h2 class="text-5xl md:text-6xl font-heading mt-4">Common Questions</h2>
+          <p class="text-muted mt-4 max-w-xl mx-auto">Everything you need to know about working with STUDIO NABO.</p>
+        </div>
+        <div class="space-y-4">
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-secondary [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-semibold">What's your typical project timeline?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-6 pb-6 text-muted leading-relaxed text-sm">Timelines vary based on scope and complexity. Brand identity projects typically take 6-8 weeks, website builds range 8-16 weeks, and motion projects 4-8 weeks. We'll provide a detailed timeline during our Immerse phase.</div>
+          </details>
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-secondary [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-semibold">How much does a project typically cost?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-6 pb-6 text-muted leading-relaxed text-sm">Every project is unique. Our pricing is project-based and tailored to your specific needs and goals. Brand identity projects start at $15K, while digital products range from $20K-$100K+. Contact us for a custom quote.</div>
+          </details>
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-secondary [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-semibold">Do you work with startups and small businesses?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-6 pb-6 text-muted leading-relaxed text-sm">Absolutely. We work with businesses of all sizes, from ambitious startups to established enterprises. We offer scalable solutions and can tailor our approach to your budget and growth stage. Some of our best work has been with early-stage brands.</div>
+          </details>
+          <details class="faq-item group rounded-2xl border border-[var(--border-hover)] bg-secondary [&[open]]:border-accent/30 transition-all duration-300">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none"><span class="font-semibold">What's your process for getting started?</span><svg class="w-5 h-5 text-muted group-open:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+            <div class="px-6 pb-6 text-muted leading-relaxed text-sm">Start by filling out our contact form or booking a free discovery call. We'll learn about your project, discuss goals and budget, and if we're a good fit, we'll craft a detailed proposal and timeline for you. Response within 24 hours.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,30 Q360,60 720,30 Q1080,0 1440,30 L1440,60 L0,60 Z" fill="rgba(139,92,246,0.03)"/></svg></div>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta-section py-16 md:py-24 px-4 md:px-6 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-accent/20 via-[#0F172A] to-[#0F172A]/90"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(139,92,246,0.1),transparent_50%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.06),transparent_50%)]"></div>
+      <div class="relative z-10 max-w-3xl mx-auto text-center">
+        <h2 class="text-5xl md:text-6xl font-heading text-white mb-6">Ready to Create Something <span class="text-accent">Extraordinary</span>?</h2>
+        <p class="text-lg text-gray-300 mb-10 max-w-xl mx-auto">Let's bring your vision to life. Book a free discovery call — no strings attached.</p>
+        <div class="flex flex-col sm:flex-row gap-5 justify-center">
+          <a href="#contact" class="cta-btn px-10 py-5 bg-accent text-white rounded-xl font-semibold text-lg hover:bg-accent/90 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-[var(--shadow)]">Start Your Project</a>
+          <a href="https://cal.com/studionabo" target="_blank" rel="noopener" class="cta-btn px-10 py-5 bg-[var(--border)] text-[var(--text)] rounded-xl font-semibold text-lg border border-[var(--border-hover)] hover:bg-[var(--border-hover)] hover:-translate-y-1 transition-all duration-300">Book a Call</a>
+        </div>
+        <p class="text-sm text-muted mt-6">Response within 24 hours</p>
+      </div>
+    </section>
+
+    <!-- Section Divider (reversed wave) -->
+    <div class="section-divider"><svg viewBox="0 0 1440 60" fill="none"><path d="M0,30 Q360,0 720,30 Q1080,60 1440,30 L1440,60 L0,60 Z" fill="rgba(139,92,246,0.03)"/></svg></div>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section scroll-mt-20 py-16 md:py-24 px-4 md:px-6">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
+        <div class="contact-info">
+          <span class="text-sm font-semibold text-accent uppercase tracking-[0.2em]">Contact</span>
+          <h2 class="text-5xl md:text-6xl font-heading mt-4 mb-6">Let's Talk</h2>
+          <p class="text-muted mb-8 leading-relaxed">Have a project in mind? We'd love to hear about it. Fill out the form and we'll get back to you within 24 hours.</p>
+          <div class="space-y-5 mb-8">
+            <div class="flex items-center gap-4 contact-detail"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="mail" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Email</p><a href="mailto:hello@studionabo.com" class="text-sm text-muted hover:text-accent transition-colors">hello@studionabo.com</a></div></div>
+            <div class="flex items-center gap-4 contact-detail"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="phone" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Phone</p><a href="tel:+255768000123" class="text-sm text-muted hover:text-accent transition-colors">+255 768 000 123</a></div></div>
+            <div class="flex items-center gap-4 contact-detail"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="map-pin" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Locations</p><p class="text-sm text-muted">Arusha, Tanzania &amp; Nairobi, Kenya</p></div></div>
+            <div class="flex items-center gap-4 contact-detail"><div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="clock" class="w-5 h-5 text-accent"></i></div><div><p class="text-sm font-semibold">Availability</p><p class="text-sm text-muted">Mon–Fri, 8:00 AM – 6:00 PM (EAT)</p></div></div>
+          </div>
+          <div class="flex gap-4">
+            <a href="https://instagram.com/studionabo" target="_blank" rel="noopener" aria-label="Instagram" class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center text-muted hover:text-accent hover:bg-accent/20 transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="https://linkedin.com/company/studionabo" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center text-muted hover:text-accent hover:bg-accent/20 transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="https://dribbble.com/studionabo" target="_blank" rel="noopener" aria-label="Dribbble" class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center text-muted hover:text-accent hover:bg-accent/20 transition-all"><i data-lucide="dribbble" class="w-5 h-5"></i></a>
+            <a href="https://twitter.com/studionabo" target="_blank" rel="noopener" aria-label="X / Twitter" class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center text-muted hover:text-accent hover:bg-accent/20 transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+        <!-- Form -->
+        <form class="contact-form space-y-6" novalidate>
+          <div class="form-group"><label for="name" class="block text-sm font-medium mb-2">Full Name</label><input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-gray-500 transition-all duration-200" placeholder="Your name" /><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter your name.</p></div>
+          <div class="form-group"><label for="email" class="block text-sm font-medium mb-2">Email Address</label><input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-gray-500 transition-all duration-200" placeholder="you@example.com" /><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please enter a valid email.</p></div>
+          <div class="form-group"><label for="company" class="block text-sm font-medium mb-2">Company / Project Name</label><input type="text" id="company" name="company" class="w-full px-4 py-3 bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-gray-500 transition-all duration-200" placeholder="Your company" /></div>
+          <div class="form-group"><label for="budget" class="block text-sm font-medium mb-2">Budget Range</label><select id="budget" name="budget" class="w-full px-4 py-3 bg-transparent border border-[var(--border-hover)] rounded-xl text-muted focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all duration-200"><option value="" disabled selected>Select a range</option><option value="<10k">Under $10K</option><option value="10k-25k">$10K – $25K</option><option value="25k-75k">$25K – $75K</option><option value="75k+">$75K+</option></select></div>
+          <div class="form-group"><label for="message" class="block text-sm font-medium mb-2">Tell Us About Your Project</label><textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 bg-transparent border border-[var(--border-hover)] rounded-xl text-[var(--text)] focus:border-accent focus:ring-1 focus:ring-accent outline-none placeholder:text-gray-500 transition-all duration-200 resize-none" placeholder="Describe your project, goals, timeline, and budget..."></textarea><p class="form-error text-sm text-red-400 mt-1 hidden" role="alert">Please tell us about your project.</p></div>
+          <button type="submit" class="btn-submit w-full px-8 py-4 bg-accent text-white font-semibold rounded-xl hover:bg-accent/90 hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"><span class="btn-text">Send Message</span><span class="btn-spinner hidden"><svg class="animate-spin w-5 h-5 mx-auto" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg></span></button>
+          <div class="form-success hidden text-center py-4 bg-green-500/10 rounded-xl text-green-400 font-semibold" role="alert">Message sent successfully! We'll be in touch within 24 hours.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="py-16 px-6 border-t border-[var(--border)] bg-[var(--card-bg)]">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        <div class="col-span-2 md:col-span-2">
+          <a href="/" class="text-2xl font-heading font-bold text-[var(--text)] mb-4 block">STUDIO NABO</a>
+          <p class="text-sm text-muted leading-relaxed max-w-xs">A creative agency crafting premium brand experiences, digital products, and visual identities for ambitious brands worldwide.</p>
+          <div class="flex gap-4 mt-6">
+            <a href="https://instagram.com/studionabo" target="_blank" rel="noopener" aria-label="Instagram" class="text-muted hover:text-accent transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="https://linkedin.com/company/studionabo" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-muted hover:text-accent transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="https://dribbble.com/studionabo" target="_blank" rel="noopener" aria-label="Dribbble" class="text-muted hover:text-accent transition-colors"><i data-lucide="dribbble" class="w-5 h-5"></i></a>
+            <a href="https://twitter.com/studionabo" target="_blank" rel="noopener" aria-label="X / Twitter" class="text-muted hover:text-accent transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+        <div><h4 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider mb-4">Services</h4><ul class="space-y-3"><li><a href="#services" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Brand Identity</a></li><li><a href="#services" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Digital Products</a></li><li><a href="#services" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Motion Design</a></li><li><a href="#services" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Brand Strategy</a></li></ul></div>
+        <div><h4 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider mb-4">Explore</h4><ul class="space-y-3"><li><a href="#work" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Our Work</a></li><li><a href="#about" class="text-sm text-muted hover:text-[var(--text)] transition-colors">About Us</a></li><li><a href="#process" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Our Process</a></li><li><a href="#insights" class="text-sm text-muted hover:text-[var(--text)] transition-colors">Insights</a></li></ul></div>
+        <div><h4 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider mb-4">Contact</h4><ul class="space-y-3"><li class="text-sm text-muted">Arusha, Tanzania</li><li class="text-sm text-muted">Nairobi, Kenya</li><li><a href="tel:+255768000123" class="text-sm text-muted hover:text-[var(--text)] transition-colors">+255 768 000 123</a></li><li><a href="mailto:hello@studionabo.com" class="text-sm text-muted hover:text-[var(--text)] transition-colors">hello@studionabo.com</a></li></ul></div>
+      </div>
+      <div class="pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-muted">&copy; 2026 STUDIO NABO. All rights reserved.</p>
+        <div class="flex gap-6"><a href="#" class="text-xs text-muted hover:text-[var(--text)] transition-colors">Privacy Policy</a><a href="#" class="text-xs text-muted hover:text-[var(--text)] transition-colors">Terms of Service</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/255768000123?text=Hi%20STUDIO%20NABO%2C%20I'd%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 hover:bg-green-400 hover:scale-110 hover:-translate-y-1 transition-all duration-300" aria-label="Contact us on WhatsApp"><svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="fixed bottom-24 right-6 z-50 w-12 h-12 bg-accent/20 backdrop-blur-xl border border-accent/30 rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-accent/30 hover:scale-110" aria-label="Back to top"><i data-lucide="arrow-up" class="w-5 h-5 text-accent"></i></button>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+
+  <script>
+  (function() {
+    var html = document.documentElement;
+    function updateThemeIcons() {
+      var isLight = html.classList.contains('light');
+      document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+        var darkIcon = btn.querySelector('.dark-icon');
+        var lightIcon = btn.querySelector('.light-icon');
+        if (darkIcon) darkIcon.classList.toggle('hidden', isLight);
+        if (lightIcon) lightIcon.classList.toggle('hidden', !isLight);
+      });
+    }
+    function setTheme(theme) {
+      if (theme === 'light') {
+        html.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+      }
+      updateThemeIcons();
+    }
+    var savedTheme = localStorage.getItem('theme');
+    var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    if (savedTheme) setTheme(savedTheme);
+    else setTheme(prefersLight ? 'light' : 'dark');
+    document.querySelectorAll('.theme-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        setTheme(html.classList.contains('light') ? 'dark' : 'light');
+      });
+    });
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme')) setTheme(e.matches ? 'light' : 'dark');
+    });
+  })();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ===== LENIS (smooth scroll) =====
+    if (!reducedMotion && typeof Lenis !== 'undefined') {
+      const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), orientation: 'vertical', smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
+    }
+
+    // ===== LUCIDE ICONS =====
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    // ===== MOBILE MENU =====
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    if (menuBtn) {
+      menuBtn.addEventListener('click', function() {
+        menuOpen = !menuOpen;
+        mobileMenu.style.transform = menuOpen ? 'translateX(0)' : 'translateX(100%)';
+        menuBtn.setAttribute('aria-expanded', menuOpen);
+        menuBtn.innerHTML = menuOpen
+          ? '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>'
+          : '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+        document.body.style.overflow = menuOpen ? 'hidden' : '';
+      });
+    }
+    window.closeMenu = function() { menuOpen = false; if (mobileMenu) mobileMenu.style.transform = 'translateX(100%)'; if (menuBtn) { menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>'; } document.body.style.overflow = ''; };
+
+    // ===== NAVBAR =====
+    const navInner = document.querySelector('#navbar > div');
+    if (navInner) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          navInner.classList.add('bg-[var(--overlay)]', 'backdrop-blur-xl', 'shadow-lg', 'border-b', 'border-[var(--border-hover)]');
+          navInner.classList.remove('bg-transparent');
+        } else {
+          navInner.classList.remove('bg-[var(--overlay)]', 'backdrop-blur-xl', 'shadow-lg', 'border-b', 'border-[var(--border-hover)]');
+          navInner.classList.add('bg-transparent');
+        }
+      }, { passive: true });
+    }
+
+    // ===== SCROLL PROGRESS =====
+    const progressFill = document.querySelector('.progress-fill');
+    if (progressFill && !reducedMotion) {
+      gsap.to(progressFill, { scaleX: 1, ease: 'none', scrollTrigger: { trigger: 'body', start: 'top top', end: 'bottom bottom', scrub: 0.3 } });
+    }
+
+    // ===== CUSTOM CURSOR (optimized: rAF loop, no per-frame GSAP tweens) =====
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorRing = document.getElementById('cursor-ring');
+    if (cursorDot && cursorRing && !reducedMotion) {
+      var mouse = { x: 0, y: 0 };
+      document.addEventListener('mousemove', function(e) { mouse.x = e.clientX; mouse.y = e.clientY; });
+      function updateCursor() {
+        gsap.set(cursorDot, { x: mouse.x, y: mouse.y });
+        gsap.set(cursorRing, { x: mouse.x, y: mouse.y });
+        requestAnimationFrame(updateCursor);
+      }
+      requestAnimationFrame(updateCursor);
+      document.querySelectorAll('a, button, .tilt-card, .gallery-item, input, textarea, select').forEach(function(el) {
+        el.addEventListener('mouseenter', function() { gsap.to(cursorRing, { width: 56, height: 56, borderColor: 'rgba(139,92,246,0.5)', backgroundColor: 'rgba(139,92,246,0.1)', duration: 0.3 }); });
+        el.addEventListener('mouseleave', function() { gsap.to(cursorRing, { width: 32, height: 32, borderColor: 'rgba(255,255,255,0.4)', backgroundColor: 'transparent', duration: 0.3 }); });
+      });
+    }
+
+    // ===== HERO: CINEMATIC REVEAL =====
+    if (!reducedMotion) {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      tl.fromTo('.hero-bg-img', { scale: 1.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 2, ease: 'power4.out' })
+        .fromTo('.orb-1', { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.5, ease: 'power2.out' }, '-=1.5')
+        .fromTo('.orb-2', { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.5, ease: 'power2.out' }, '-=1.2')
+        .fromTo('.hero-badge', { y: 30, opacity: 0, scale: 0.95 }, { y: 0, opacity: 1, scale: 1, duration: 0.8 }, '-=1')
+        .fromTo('.hero-line', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.2 }, '-=0.6')
+        .fromTo('.hero-deco', { opacity: 0, rotation: -45, scale: 0 }, { opacity: 1, rotation: 0, scale: 1, duration: 1 }, '-=0.8')
+        .fromTo('.hero-deco-2', { opacity: 0, rotation: 45, scale: 0 }, { opacity: 1, rotation: 0, scale: 1, duration: 1 }, '-=0.7')
+        .fromTo('.hero-subtext', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, '-=0.5')
+        .fromTo('.hero-cta', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.15 }, '-=0.3')
+        .fromTo('.scroll-indicator', { opacity: 0 }, { opacity: 1, duration: 0.5 }, '-=0.2');
+
+      // Floating orbs animation
+      gsap.to('.orb-1', { y: -30, x: 20, duration: 6, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+      gsap.to('.orb-2', { y: 20, x: -30, duration: 8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+      gsap.to('.orb-3', { scale: 1.05, opacity: 0.6, duration: 4, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+    }
+
+    // ===== COUNTERS =====
+    document.querySelectorAll('.stat-number').forEach(function(counter) {
+      const target = parseInt(counter.dataset.target);
+      const prefix = counter.dataset.prefix || '';
+      const obj = { val: 0 };
+      gsap.to(obj, {
+        val: target, duration: 2.5, ease: 'power3.out',
+        scrollTrigger: { trigger: counter, start: 'top 85%' },
+        onUpdate: function() { counter.textContent = Math.floor(obj.val) + prefix; }
+      });
+    });
+
+    // ===== CLIENTS BAR =====
+    if (!reducedMotion) {
+
+    }
+
+    // ===== ABOUT =====
+    if (!reducedMotion) {
+      gsap.fromTo('.about-img', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: '.about-section', start: 'top 80%' } });
+      gsap.fromTo('.about-heading', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out', scrollTrigger: { trigger: '.about-content', start: 'top 80%' } });
+      gsap.fromTo('.about-text p', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.15, ease: 'power2.out', scrollTrigger: { trigger: '.about-text', start: 'top 80%' } });
+    }
+
+    // ===== TIMELINE =====
+    if (!reducedMotion) {
+      gsap.utils.toArray('.timeline-item').forEach(function(item, i) {
+        const fromLeft = item.classList.contains('md:text-right') || item.classList.contains('md:ml-0');
+        gsap.from(item, { x: fromLeft ? -40 : 40, opacity: 0, duration: 0.6, delay: i * 0.2, ease: 'power2.out', scrollTrigger: { trigger: item, start: 'top 85%' } });
+      });
+    }
+
+    // ===== SERVICES: THE CASCADE =====
+    if (!reducedMotion) {
+      gsap.fromTo('.service-card', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'power2.out', scrollTrigger: { trigger: '#services .grid', start: 'top 85%' } });
+    }
+
+    // ===== TILT CARD =====
+    if (!reducedMotion) {
+      document.querySelectorAll('.tilt-card').forEach(function(card) {
+        card.addEventListener('mousemove', function(e) {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          gsap.to(card, { rotationY: x * 8, rotationX: y * -8, transformPerspective: 1000, duration: 0.3, ease: 'power2.out' });
+        });
+        card.addEventListener('mouseleave', function() {
+          gsap.to(card, { rotationY: 0, rotationX: 0, duration: 0.5, ease: 'power2.out' });
+        });
+      });
+    }
+
+    // ===== PROCESS STEPS =====
+    if (!reducedMotion) {
+      gsap.fromTo('.process-step', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.2, ease: 'power2.out', scrollTrigger: { trigger: '.process-section', start: 'top 80%' } });
+    }
+
+    // ===== PORTFOLIO GALLERY =====
+    if (!reducedMotion) {
+      gsap.utils.toArray('.gallery-item').forEach(function(item, i) {
+        gsap.from(item, { y: 30, opacity: 0, scale: 0.95, duration: 0.5, delay: i * 0.08, ease: 'power2.out', scrollTrigger: { trigger: item, start: 'top 90%' } });
+      });
+    }
+
+    // ===== FILTER TABS =====
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const workItems = document.querySelectorAll('.gallery-item');
+    if (filterTabs.length) {
+      filterTabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          const filter = this.dataset.filter;
+          filterTabs.forEach(function(t) { t.classList.remove('bg-accent', 'text-white'); t.classList.add('bg-[var(--border)]', 'text-muted'); });
+          this.classList.remove('bg-[var(--border)]', 'text-muted'); this.classList.add('bg-accent', 'text-white');
+          if (filter === 'all') {
+            workItems.forEach(function(item) { item.style.display = 'block'; });
+          } else {
+            workItems.forEach(function(item) {
+              item.style.display = item.dataset.category === filter ? 'block' : 'none';
+            });
+          }
+          if (!reducedMotion) {
+            gsap.fromTo('.gallery-item[style*="block"], .gallery-item:not([style*="none"])', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, stagger: 0.05, ease: 'power2.out' });
+          }
+        });
+      });
+    }
+
+    // ===== MORPHING TESTIMONIALS (exp-055) =====
+    function initMorphingTestimonials(container) {
+      if (!container) return;
+      var slides = container.querySelectorAll('.testimonial-slide');
+      var dots = document.querySelectorAll('.morph-dot');
+      if (slides.length < 2) return;
+      var current = 0, isAnimating = false, interval;
+      function showSlide(index) {
+        if (isAnimating || index === current) return;
+        isAnimating = true;
+        var prev = slides[current];
+        var next = slides[index];
+        gsap.to(prev, { opacity: 0, y: -10, filter: 'blur(4px)', duration: 0.5, ease: 'power2.in', onComplete: function() { prev.classList.remove('active'); prev.style.transform = ''; prev.style.filter = ''; }});
+        gsap.set(next, { opacity: 0, y: 10, filter: 'blur(4px)' });
+        next.classList.add('active');
+        gsap.to(next, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.7, ease: 'power2.out', onComplete: function() { isAnimating = false; }});
+        dots.forEach(function(d) { d.classList.remove('active'); d.setAttribute('aria-selected', 'false'); });
+        if (dots[index]) { dots[index].classList.add('active'); dots[index].setAttribute('aria-selected', 'true'); }
+        current = index;
+      }
+      function nextSlide() { showSlide((current + 1) % slides.length); }
+      dots.forEach(function(d) { d.addEventListener('click', function() { showSlide(parseInt(this.dataset.index)); clearInterval(interval); startInterval(); }); });
+      function startInterval() { interval = setInterval(nextSlide, 5000); }
+      container.addEventListener('mouseenter', function() { clearInterval(interval); });
+      container.addEventListener('mouseleave', function() { startInterval(); });
+      var touchStartX = 0;
+      container.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+      container.addEventListener('touchend', function(e) { var diff = e.changedTouches[0].clientX - touchStartX; if (Math.abs(diff) > 50) { if (diff < 0) nextSlide(); else showSlide((current - 1 + slides.length) % slides.length); } clearInterval(interval); startInterval(); }, { passive: true });
+      slides[0].classList.add('active');
+      gsap.set(slides[0], { opacity: 1, y: 0, filter: 'blur(0px)' });
+      if (dots[0]) { dots[0].classList.add('active'); dots[0].setAttribute('aria-selected', 'true'); }
+      startInterval();
+    }
+    if (!reducedMotion) {
+      initMorphingTestimonials(document.querySelector('.testimonial-morph'));
+    }
+
+    // ===== FAQ ACCORDION =====
+    document.querySelectorAll('.faq-item summary').forEach(function(summary) {
+      summary.addEventListener('click', function(e) {
+        const details = this.closest('details');
+        const isOpen = details.hasAttribute('open');
+        document.querySelectorAll('.faq-item[open]').forEach(function(d) { if (d !== details) d.removeAttribute('open'); });
+        if (!reducedMotion) {
+          if (isOpen) { gsap.to(details.querySelector('div'), { height: 0, opacity: 0, duration: 0.2, onComplete: function() { details.removeAttribute('open'); } }); e.preventDefault(); }
+        }
+      });
+    });
+
+    // ===== FAQ STAGGER =====
+    if (!reducedMotion) {
+      gsap.fromTo('.faq-item', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, stagger: 0.1, ease: 'power2.out', scrollTrigger: { trigger: '.faq-section', start: 'top 85%' } });
+    }
+
+    // ===== BLOG CARDS =====
+    if (!reducedMotion) {
+      gsap.fromTo('.blog-card', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.15, ease: 'power2.out', scrollTrigger: { trigger: '.insights-section .grid', start: 'top 85%' } });
+    }
+
+    // ===== CTA =====
+    if (!reducedMotion) {
+      gsap.fromTo('.cta-section .text-5xl', { scale: 0.95, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: 'power2.out', scrollTrigger: { trigger: '.cta-section', start: 'top 85%' } });
+      gsap.fromTo('.cta-btn', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power2.out', scrollTrigger: { trigger: '.cta-section', start: 'top 85%' } });
+    }
+
+    // ===== CONTACT =====
+    if (!reducedMotion) {
+      gsap.fromTo('.contact-info', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out', scrollTrigger: { trigger: '.contact-section', start: 'top 85%' } });
+      gsap.fromTo('.contact-detail', { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, stagger: 0.1, ease: 'power2.out', scrollTrigger: { trigger: '.contact-section', start: 'top 85%' } });
+      gsap.fromTo('.contact-form .form-group', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, stagger: 0.08, ease: 'power2.out', scrollTrigger: { trigger: '.contact-form', start: 'top 85%' } });
+    }
+
+    // ===== FORM VALIDATION =====
+    document.querySelectorAll('.contact-form input, .contact-form textarea, .contact-form select').forEach(function(field) {
+      field.addEventListener('blur', function() { validateField(field); });
+      field.addEventListener('input', function() { if (field.dataset.touched) validateField(field); });
+      field.addEventListener('focus', function() { field.dataset.touched = 'true'; });
+    });
+    function validateField(field) {
+      const error = field.parentElement.querySelector('.form-error');
+      if (!field.validity.valid || (field.hasAttribute('required') && !field.value.trim())) {
+        field.classList.add('border-red-400'); field.classList.remove('border-[var(--border-hover)]');
+        if (error) error.classList.remove('hidden'); return false;
+      } else {
+        field.classList.remove('border-red-400'); field.classList.add('border-green-500/50');
+        if (error) error.classList.add('hidden'); return true;
+      }
+    }
+    document.querySelector('.contact-form')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.btn-submit');
+      const text = btn.querySelector('.btn-text');
+      const spinner = btn.querySelector('.btn-spinner');
+      const success = this.querySelector('.form-success');
+      let valid = true;
+      this.querySelectorAll('[required]').forEach(function(f) { if (!validateField(f)) valid = false; });
+      if (!valid) return;
+      btn.disabled = true; text.classList.add('hidden'); spinner.classList.remove('hidden');
+      await new Promise(function(r) { setTimeout(r, 1500); });
+      spinner.classList.add('hidden'); success.classList.remove('hidden'); btn.style.display = 'none';
+      if (typeof gtag !== 'undefined') gtag('event', 'form_submit', { 'form_location': 'contact' });
+    });
+
+    // ===== BACK TO TOP =====
+    const backBtn = document.getElementById('backToTop');
+    if (backBtn) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) { backBtn.classList.remove('opacity-0', 'invisible'); backBtn.classList.add('opacity-100'); }
+        else { backBtn.classList.add('opacity-0', 'invisible'); backBtn.classList.remove('opacity-100'); }
+      }, { passive: true });
+      backBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+
+    // ===== ANALYTICS EVENTS =====
+    document.querySelectorAll('.hero-cta, .cta-btn, .cta-section a[href="#contact"]').forEach(function(btn) {
+      btn.addEventListener('click', function() { if (typeof gtag !== 'undefined') gtag('event', 'cta_click', { 'cta_text': this.textContent.trim() }); });
+    });
+    document.querySelector('.whatsapp-float')?.addEventListener('click', function() { if (typeof gtag !== 'undefined') gtag('event', 'whatsapp_click'); });
+
+    // ===== SCROLL DEPTH TRACKING =====
+    if (typeof gtag !== 'undefined') {
+      var trackedDepths = new Set();
+      window.addEventListener('scroll', function() {
+        var depth = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+        [25, 50, 75, 100].forEach(function(t) { if (depth >= t && !trackedDepths.has(t)) { trackedDepths.add(t); gtag('event', 'scroll_depth', { 'percent': t }); } });
+      }, { passive: true });
+    }
+
+    // ===== MAGNETIC NAV =====
+    if (!reducedMotion) {
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        var text = link.querySelector('.nav-label');
+        if (text) {
+          link.addEventListener('mousemove', function(e) {
+            var rect = link.getBoundingClientRect();
+            var x = (e.clientX - rect.left - rect.width / 2) * 0.15;
+            var y = (e.clientY - rect.top - rect.height / 2) * 0.15;
+            gsap.to(text, { x: x, y: y, duration: 0.3, ease: 'power2.out' });
+          });
+          link.addEventListener('mouseleave', function() {
+            gsap.to(text, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
+          });
+        }
+      });
+    }
+
+    // ===== INFINITE SCROLLING CAROUSEL (exp-054) =====
+    function initInfiniteCarousel(container) {
+      if (!container || reducedMotion) return;
+      var track = container.querySelector('.carousel-track');
+      if (!track) return;
+      var items = Array.from(track.children);
+      if (items.length < 2) return;
+      items.forEach(function(item) {
+        var clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+      });
+      var gap = parseFloat(getComputedStyle(track).gap) || 16;
+      var itemWidth = items[0].offsetWidth + gap;
+      var halfWidth = itemWidth * items.length;
+      var speed = parseFloat(container.dataset.speed) || 40;
+      var duration = halfWidth / speed;
+      var tween = gsap.to(track, { x: -halfWidth, ease: 'none', duration: duration, repeat: -1, onRepeat: function() { gsap.set(track, { x: 0 }); } });
+      var isDragging = false, startX = 0, dragOffset = 0, currentX = 0;
+      function onStart(e) { isDragging = true; tween.pause(); startX = e.clientX || e.touches[0].clientX; currentX = gsap.getProperty(track, 'x'); }
+      function onMove(e) { if (!isDragging) return; e.preventDefault(); var clientX = e.clientX || e.touches[0].clientX; dragOffset = clientX - startX; var newX = currentX + dragOffset; if (newX > 0) newX -= halfWidth; if (newX < -halfWidth) newX += halfWidth; gsap.set(track, { x: newX }); }
+      function onEnd() { if (!isDragging) return; isDragging = false; var current = gsap.getProperty(track, 'x'); var remainder = current % halfWidth; gsap.set(track, { x: -halfWidth + remainder }); tween.play(); }
+      track.addEventListener('mousedown', onStart); window.addEventListener('mousemove', onMove); window.addEventListener('mouseup', onEnd);
+      track.addEventListener('touchstart', onStart, { passive: true }); window.addEventListener('touchmove', onMove, { passive: false }); window.addEventListener('touchend', onEnd);
+      container.addEventListener('mouseenter', function() { tween.pause(); });
+      container.addEventListener('mouseleave', function() { if (!isDragging) tween.play(); });
+    }
+    document.querySelectorAll('.infinite-carousel').forEach(initInfiniteCarousel);
+
+
+  });
+  </script>
+  <!-- ===== PROJECT DETAIL MODAL ===== -->
+  <div id="projectModal" class="fixed inset-0 z-[70] p-4 opacity-0 invisible transition-all duration-300" style="background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center;">
+    <div class="max-w-3xl w-full max-h-[85vh] overflow-y-auto rounded-3xl p-8 md:p-10" style="background: var(--card-bg); border: 1px solid var(--border); pointer-events: auto;">
+      <div class="flex items-start justify-between mb-6">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-accent" id="modalCategory"></span>
+          <h3 class="text-2xl md:text-3xl font-heading mt-1" id="modalTitle" style="color: var(--text);"></h3>
+        </div>
+        <button id="modalClose" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-[var(--border)] transition-colors" aria-label="Close project detail" style="color: var(--muted);">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="aspect-[16/9] rounded-2xl overflow-hidden mb-6 bg-secondary">
+        <img id="modalImage" src="" alt="" class="w-full h-full object-cover">
+      </div>
+      <p class="leading-relaxed" id="modalDescription" style="color: var(--muted);"></p>
+      <div class="mt-3 text-sm text-muted" id="modalMeta"></div>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <span class="px-3 py-1.5 text-xs font-semibold rounded-full bg-accent/10 text-accent" id="modalCategoryBadge"></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // ===== PROJECT DETAIL MODAL =====
+  (function() {
+    var modal = document.getElementById('projectModal');
+    if (!modal) return;
+    var modalClose = document.getElementById('modalClose');
+    var modalImg = document.getElementById('modalImage');
+    var modalTitle = document.getElementById('modalTitle');
+    var modalCategory = document.getElementById('modalCategory');
+    var modalCategoryBadge = document.getElementById('modalCategoryBadge');
+    var modalDescription = document.getElementById('modalDescription');
+    var modalMeta = document.getElementById('modalMeta');
+    function closeModal() { gsap.to(modal, { opacity: 0, visibility: 'hidden', duration: 0.2 }); document.body.style.overflow = ''; }
+    document.querySelectorAll('.gallery-item').forEach(function(item) {
+      var link = item.querySelector('.inline-flex');
+      if (!link) return;
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var img = item.querySelector('img');
+        var title = item.querySelector('h3');
+        var category = item.querySelector('.text-accent.font-semibold');
+        if (modalImg) { modalImg.src = img ? img.src.replace('w=600', 'w=1200') : ''; modalImg.alt = img ? img.alt : ''; }
+        if (modalTitle) modalTitle.textContent = title ? title.textContent : '';
+        if (modalCategory) modalCategory.textContent = category ? category.textContent : '';
+        if (modalCategoryBadge) modalCategoryBadge.textContent = category ? category.textContent : '';
+        if (modalDescription) modalDescription.textContent = item.dataset.description || 'A bespoke creative project by STUDIO NABO. Click the close button or press Escape to return to the portfolio.';
+        if (modalMeta) modalMeta.textContent = 'Client: ' + (item.dataset.client || '-') + '  \u2022  Year: ' + (item.dataset.year || '-');
+        gsap.to(modal, { opacity: 1, visibility: 'visible', duration: 0.3 });
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+  })();
+  </script>
+</body>
+</html>
